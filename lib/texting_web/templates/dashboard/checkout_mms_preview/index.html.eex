@@ -1,0 +1,101 @@
+
+    
+<div class="mms-preview-flexbox">
+  <div class="mms-preview-flexitem">
+
+    <div class="mms-preview-sub-flexbox">
+
+      <div class="mms-preview-sub-flexitem">
+          
+        <div class="card">
+          <div class="card-header card-header-icon" data-background-color="purple">
+            <i class="material-icons">perm_device_information</i>
+          </div>
+          
+          <div class="card-content">
+            <h4 class="card-title">Information</h4>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="info-wrapper">
+                  <p>Number of Recipients: <strong><span id="recipients-count"><%= @recipients.counts %> recipients.</span></strong></p>
+                  <p>Your remaining Credits: <strong><%= @user.credits %> credits.</strong></p>
+                  <p>Total Credit will be used: <strong><span id="total-price"><%= @credit_used %> Credit(s).</span></strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mms-preview-sub-flexitem">
+
+        <div class="card">
+          <div class="card-header card-header-icon" data-background-color="purple">
+            <i class="material-icons">message</i>
+          </div>
+          <div class="card-content">
+            <h4 class="card-title">Campaign Contents</h4>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="info-wrapper">
+                  <p>Campaign Name: <strong><span id="recipients-count"><%= @name %></span></strong></p>
+                  <p>Campaign Description: <strong><%= @description %></strong></p>
+                  <p>Message: <strong><span id="total-price"><%= @message %></span></strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mms-preview-sub-flexitem">
+        <div class="card">
+            <div class="card-header card-header-icon" data-background-color="purple">
+              <i class="material-icons">send</i>
+            </div>
+            <div class="card-content">
+              <h4 class="card-title">Please make sure all the information is correct and Click Send Message.</h4>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="info-wrapper">
+                      <div>
+                        <%= if show_buy_credit_button(@user.credits, @credit_used) do %> 
+                          <%= button "Buy Credit", method: "get", to: buy_credit_path(@conn, :new), class: "btn btn-primary" %>
+                        <% else %>
+                          <%= button "Back", method: "get",
+                                            to: checkout_mms_path(@conn, :show_mms),
+                                            class: "btn btn-github" %>
+                          <%= button "Send Message", method: "post", 
+                                            to: checkout_mms_preview_path(@conn, :send_mms), 
+                                            class: "btn btn-primary" %>
+                          
+                        <% end %>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="mms-preview-flexitem">
+    <div class="card">
+        <div class="card-header card-header-icon" data-background-color="purple">
+          <i class="material-icons">photo</i>
+        </div>
+        <div class="card-content">
+          <h4 class="card-title">Your Marketing Image</h4>
+          <div class="row">
+            <div class="col-md-12 image-column">
+              <div class="image-wrapper">
+                <img src="<%= @upload_image_url %>" alt="Upload Image" class="img-fluid mms-image">
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  
+</div>

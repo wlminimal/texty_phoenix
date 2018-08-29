@@ -1,0 +1,37 @@
+<h1>Phone verification</h1>
+
+<section class="login-section">
+
+  <div class="login-div">
+    <div class="ui raised segment">
+      <h1 class="ui huge header">Verify Phone Number</h1>
+      <div class="ui two column stackable center aligned grid">
+        <div class="column">
+
+          <p>Hello! <strong><%= @current_user.first_name %></strong> Please verify your phone number!</p>
+
+          <%= form_for @conn, phone_verify_path(@conn, :create), [as: :phone_verify, class: "ui form"], fn f -> %>
+          	
+  		
+            <div class="field">
+              <label>Phone Number</label>
+              <div>
+                <%= text_input(f, :phone_number, placeholder: "Enter 10 digit phone number ex)3336667777", required: true) %>
+                <%= error_message(f, :phone_number) %>
+              </div>
+            </div>
+                 
+            <div class="field">
+              <input class="ui button green medium" type="submit" name="" value="Send Code">
+          
+            </div>
+
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+

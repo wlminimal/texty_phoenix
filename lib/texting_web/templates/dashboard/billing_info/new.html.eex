@@ -1,0 +1,135 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-tabs" data-background-color="rose">
+              <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                  <ul class="nav nav-tabs" data-tabs="tabs">
+                    <li class="active">
+                      <a href="#profile" data-toggle="tab">
+                        <i class="material-icons">credit_card</i>
+                        Credit Card
+                      <div class="ripple-container"></div></a>
+                    </li>
+                    <li class="">
+                      <a href="#add-new-card" data-toggle="tab">
+                        <i class="material-icons">fiber_new</i>
+                        Add a new card
+                      <div class="ripple-container"></div></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+      
+            <div class="card-content">
+              <div class="tab-content">
+                <div class="tab-pane active" id="profile">
+                  <%= if @has_card do %>
+                  
+                  <div class="card">
+                     <!--  <div class="card-header">
+                          <h4 class="card-title">Collapsible Accordion</h4>
+                      </div> -->
+                      <div class="card-content">
+                          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <%= for card <- @cards do %>
+                            <div class="panel panel-default">
+                              <div class="panel-heading" role="tab" id="headingOne">
+                                  <a role="button" class="card-heading" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                      <%= display_card_logo(card.brand) %>
+                                      <h4 class="panel-title">
+                                      Ending with <%= card.last4 %>   Exp <%= card.exp_month %> / <%= card.exp_year %>
+                                      </h4>
+                                  </a>
+                                  
+                                  <%= if @default_card_id == card.id do %>
+                                    <button class="btn btn-primary btn-simple btn-xs">DEFAULT</button>
+                                  <% else %>
+                                    <%= button "Make Default", to: billing_info_path(@conn, :make_default_card, card.id), method: :post,
+                                                                                data: [confirm: "Make this card default card?"],
+                                                                                class: "btn btn-github btn-simple btn-xs" %>
+                                  <% end %>
+                                  <%= button "Remove", to: billing_info_path(@conn, :delete_card, card.id), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-simple btn-xs " %>
+                              </div>
+                              <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                  <div class="row">
+                                    <div class="col-sm-2">
+                                      <label>Card Type</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                      <%= card.brand %>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-sm-2">
+                                      <label>Expiration Date</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                      <%= card.exp_month %> / <%= card.exp_year %>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-sm-2">
+                                      <label>Last 4 Digits</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                      <%= card.last4 %>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-sm-2">
+                                      <label>Zipcode</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                      <%= card.address_zip %>
+                                    </div>
+                                  </div>
+                                    
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end for -->
+                            <% end %>
+                          </div>
+                      </div>
+                  </div>
+                 
+                  <% else %>
+                    <p> No credit card information </p>
+                  <% end  %>
+                </div>
+
+                <div class="tab-pane" id="add-new-card">
+                  <div class="card">
+                    <div class="card-header">
+                      <h4 class="card-title">Enter your Card information</h4>
+                    </div> 
+                    <div class="card-content">
+                      <div id="card-input">
+                        <%= form_for @conn, billing_info_path(@conn, :new), [as: :card_input, id: "payment-form"], fn f -> %>
+                          <label for="card-element">
+                            Credit or debit card
+                          </label>
+                          <div id="card-element">
+                            <!-- A Stripe Element will be inserted here. -->
+                          </div>
+                          <!-- Used to display Element errors. -->
+                          <div id="card-errors" role="alert"></div>
+                          <%= submit "Submit", class: "btn btn-rose" %>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

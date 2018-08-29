@@ -1,0 +1,79 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-icon" data-background-color="purple">
+                <i class="material-icons">contact_mail</i>
+          </div>
+
+          <div class="card-content">
+            <h2 class="card-title">Phonebooks <span class="header-description"> create a new phonebook or add it to a recipient list.</span></h2>
+            <p>"Unsubscriber" phonebook is automatically generated. It will contain any unsubscriber from your contacts. And you can not delete it.</p>
+            <div class="add-new-button-wrapper">
+              <%= button to: phonebook_path(@conn, :new), method: "get", class: "btn btn-github btn-sm" do %>
+                <i class="material-icons">add</i>New Phonebook
+              <% end %>
+            </div>
+            <%= if Enum.empty?(@phonebooks) do %>
+            <p>You don't have any phonebook.  Why don't you create one?</p>
+            <% else %>
+            <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>#</th>
+                                <th class="text-right">Actions</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <%= for phonebook <- @phonebooks do %>
+                            <%= if phonebook.name == "Unsubscriber" do %>
+                            <tr>
+                              <td class="unsubscriber"><%= phonebook.name %></td>
+                              <td class="contacts-count"><%= phonebook_total(phonebook.id) %></td>
+                              <td class="td-actions text-right">
+                                <%= button to: phonebook_path(@conn, :show, phonebook), method: "get", class: "btn btn-github" do %>
+                                  <i class="material-icons icon-button">play_arrow</i>
+                                <% end %>
+                              </td>
+                            </tr>
+                            <% else %>
+                            <tr>
+                                <td class=""><%= phonebook.name %></td>
+                                <td class="contacts-count"><%= phonebook_total(phonebook.id) %></td>
+                              
+                                <td class="td-actions text-right">
+                                  <%= button to: phonebook_path(@conn, :show, phonebook), method: "get", class: "btn btn-github" do %>
+                                    <i class="material-icons icon-button">play_arrow</i>
+                                  <% end %>
+                                    
+                                  <%= button to: phonebook_path(@conn, :edit, phonebook), method: "get", class: "btn btn-github" do %>
+                                    <i class="material-icons icon-button">edit</i>
+                                  <% end %>
+
+                                  <%= button to: phonebook_path(@conn, :delete, phonebook), method: "delete", class: "btn btn-danger" do %>
+                                    <i class="material-icons icon-button">close</i>
+                                  <% end %> 
+                                </td>
+                                <td>
+                                  <%= form_for @conn, recipient_path(@conn, :add), [as: :phonebook_recipients], fn f -> %>
+                                    <span><%= hidden_input f, :phonebook_id, value: phonebook.id %></span>
+                                    <span><%= submit "Add to Recipients List", id: "phonebook-recipients-button", class: "btn btn-primary" %>
+                                  <% end %>
+                                </td>
+                            </tr>
+                            <% end %>
+                          <% end %>
+                        
+                        </tbody>
+                    </table>
+            </div>
+
+            <% end %>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

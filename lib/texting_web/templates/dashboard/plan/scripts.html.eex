@@ -1,0 +1,80 @@
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+// Pre selected with current user's plan
+var userPlan = "<%= @user.stripe.plan_name %>";
+var userPlanFlexitem = document.getElementById(userPlan);
+//userPlanFlexitem.setAttribute("class", "selected-plan");
+var submitButton = document.getElementById(userPlan + "-Button");
+submitButton.setAttribute("disabled", "true");
+submitButton.setAttribute("class", "btn btn-primary btn-round choose-plan-button")
+submitButton.innerHTML = "Current Plan";
+
+
+// Choose Plan event handler
+var choosePlanButtons = document.querySelectorAll(".choose-plan-button");
+choosePlanButtons.forEach(function(button) {
+  button.addEventListener("click", function(e) {
+    e.preventDefault();
+    var form = button.parentNode.parentNode.parentNode;
+    console.log("Choose plan button Clicked!");
+    
+    var buttonId = e.target.id;
+    var planName = buttonId.substring(0, buttonId.indexOf('-'));
+    console.log(planName);
+    // Show modal
+    if(planName === "Free") {
+      window.swal({
+        title: "Are you sure?",
+        text: "You are about to change plan to " + planName +"." + " You can't use your remaining credit in Free plan",
+        showCancelButton: true,
+        confirmButtonColor: '#e91e63',
+        cancelButtonColor:  '#333333',
+        confirmButtonText: 'Yes, Change it!'
+      }).then((result) => {
+  
+        console.log("submited");
+        var loadingIcon = button.children[0];
+  
+        $(loadingIcon).removeClass("hide-icon");
+        button.innerHTML ='<span class="fas fa-spinner fa-spin fa-lg"></span>  Changing...';
+        // Diasble all button
+        var allButtons = document.querySelectorAll(".choose-plan-button");
+        allButtons.forEach(function(eachButton) {
+          eachButton.setAttribute("disabled", "true");
+        });
+      
+        form.submit();
+      })
+    } else {
+      window.swal({
+        title: "Are you sure?",
+        text: "You are about to change plan to " + planName,
+        showCancelButton: true,
+        confirmButtonColor: '#e91e63',
+        cancelButtonColor:  '#333333',
+        confirmButtonText: 'Yes, Change it!'
+      }).then((result) => {
+  
+        console.log("submited");
+        var loadingIcon = button.children[0];
+  
+        $(loadingIcon).removeClass("hide-icon");
+        button.innerHTML ='<span class="fas fa-spinner fa-spin fa-lg"></span>  Changing...';
+        // Diasble all button
+        var allButtons = document.querySelectorAll(".choose-plan-button");
+        allButtons.forEach(function(eachButton) {
+          eachButton.setAttribute("disabled", "true");
+        });
+      
+        form.submit();
+      })
+    }
+    
+  });
+});
+
+
+// DOMContentLoaded End
+});
+
+</script>

@@ -1,0 +1,4 @@
+<h3>Message from Customer</h3>
+<p>From : <%= @from_email %></p>
+<p>Name : <%= @name %></p>
+<p>Message : <%= @message %></p>

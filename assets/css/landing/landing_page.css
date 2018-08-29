@@ -1,0 +1,254 @@
+
+.wellcome-heading > h2 {
+  font-size: 45px;
+  color: #ffffff;
+  font-weight: 700;
+  position: relative;
+  z-index: 3;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #884bdf;
+  border-color: transparent;
+  box-shadow: 0 14px 26px -12px rgba(156, 39, 176, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(156, 39, 176, 0.2);
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #5b32b4;
+  border-color: transparent;
+  padding: 15px;
+}
+
+.hero-desc {
+  font-size: 19px;
+}
+section#features {
+  padding-top: 50px;
+}
+
+.plan-desc {
+  margin-top: 20px;
+}
+
+.menu_area #nav .nav-link#sign-in-link:hover {
+  
+  color: #222222;
+  border-color: transparent;
+  -webkit-transition-duration: 500ms;
+  -o-transition-duration: 500ms;
+  transition-duration: 500ms;
+}
+
+.special_description_content > h2 {
+  color: #5b32b4;
+  font-size: 34px;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+.special_description_content > h2 span {
+  font-size: 38px;
+  font-style: italic;
+}
+
+.form-control::placeholder {
+  color: #cec1f4;
+  opacity: 1;
+}
+
+.welcome-thumb {
+  /* width: 50%; */
+  width: 350px;
+  height: 700px;
+  position: relative;
+  z-index: 9;
+  bottom: 0;
+  top: 70px;
+  right: -200px;  
+  background-image: url("../images/mobile-bg.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.welcome-thumb img {
+  height: auto;
+  width: 76.2%;
+  margin-top: 80px;
+  margin-left: 35px;
+}
+
+.contact-card {
+  border-radius: 1.25rem;
+}
+
+.card .card-content {
+  padding: 45px 40px;
+  position: relative;
+}
+
+.card .card-title {
+  margin-top: 0;
+  margin-bottom: 33px;
+  font-family: 'Cabin', sans-serif;
+}
+
+
+.collapse.in{display:block !important;}tr.collapse.in{display:table-row}tbody.collapse.in{display:table-row-group}
+
+@media(max-width: 991px) {
+  .collapse.in{display:block !important;}tr.collapse.in{display:table-row}tbody.collapse.in{display:table-row-group}
+  .navbar .navbar-collapse.collapse, .navbar .navbar-collapse.collapsing {
+    display: none !important;
+  }
+  
+  .navbar .navbar-collapse.collapse.in {
+    display: block !important;
+  }
+}
+
+.navbar .navbar-collapse.collapse.in {
+  display: block !important;
+}
+
+
+/* Sign in Page */
+.sign-in-header {
+  font-size: 25px;
+  padding-left: 20px;
+  font-family: 'Cabin', sans-serif;
+}
+.login-section {
+  /* background: linear-gradient(-45deg, #5e57ea, #9647db); */
+  height: 100vh;
+}
+
+.login-div {
+  padding-top: 300px;
+}
+
+.alert:empty { display: none; }
+
+.login-header {
+  font-family: 'Cabin', sans-serif;
+  font-weight: 300;
+  color: #5b32b4;
+  font-size: 28px;
+  margin: 0;
+  padding: 20px 0;
+}
+
+.login-block{
+  padding: 30px;
+}
+
+.btn.submit-btn {
+  background: #fb397d;
+  height: 48px;
+  min-width: 185px;
+  color: #ffffff;
+  font-weight: 500;
+  border-radius: 22px 25px 22px 0;
+  margin-top: 20px;
+}
+
+.signin-email-label {
+
+}
+
+
+.navbar .navbar-nav > .active > a, .navbar .navbar-nav > .active > a:hover, .navbar .navbar-nav > .active > a:focus {
+  color: inherit;
+  background-color: transparent;
+}
+
+.btn-sign-in {
+  color: #fff;
+  background-color: #9c27b0;
+  border-radius: 3px;
+  position: relative;
+  padding: 12px 30px;
+  margin: 10px 1px;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  will-change: box-shadow, transform;
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 20px 0;
+}
+
+
+
+.sign-in-flexitem {
+  min-width: 500px;
+}
+
+.btn-sign-in:hover {
+  color: #fff;
+  background-color: #9c27b0;
+  box-shadow: 0 14px 26px -12px rgba(156, 39, 176, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(156, 39, 176, 0.2);
+}
+
+.sign-in-flexbox {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.form-horizontal .form-group {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.form-group {
+  padding-bottom: 10px;
+  margin: 8px 0 0 0;
+      margin-right: 0px;
+      margin-left: 0px;
+}
+
+.form-group {
+  position: relative;
+}
+
+.signin-header {
+  color: #5b32b4;
+  font-size: 72px;
+  font-weight: 700;
+  font-family: 'Cabin', sans-serif;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.card-content.terms-text {
+  font-family: sans-serif;
+}
+
+.card-content.terms-text p {
+  color: #333333;
+  font-size: 14px;
+  font-weight: 300;
+  margin-top: 0;
+}
+
+.terms-flexbox {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+}
+
+.signin-header > a {
+  color: #89229b;
+}

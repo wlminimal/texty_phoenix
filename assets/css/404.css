@@ -1,0 +1,19 @@
+
+.container-404 {
+  background-color: #FFFFFF;
+  height: 100vh;
+}
+
+.container-404 img {
+  margin: 0 auto;
+}
+
+.centered-block {
+  text-align: center;
+  margin-right: 110px;
+}
+
+.container-500 {
+  background-color: #87B5AB;
+  height: 100vh;
+}

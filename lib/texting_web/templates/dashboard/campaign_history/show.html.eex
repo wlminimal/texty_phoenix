@@ -1,0 +1,74 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="camp-history-flexbox">
+
+        <div class="camp-history-flexitem content">
+          <div class="card">
+            <div class="card-header card-header-icon" data-background-color="purple">
+                  <i class="material-icons">history</i>
+            </div>
+      
+            <div class="card-content">
+              <h2 class="card-title"><%= @campaign.name %> <span class="header-description"><%= @campaign.description %></span></h2>
+              <div class="camp-info-block">
+                <p class="sent-message">Messages: <%= @campaign.message %></p>
+                <%= if @has_bitly do %>
+                  <p>Shorten Url: 
+                    <a href="<%= @bitly.bitlink_url %>"><%= @bitly.bitlink_id %></a>
+                  </p>
+                  <p>Total Clicks: <%= @bitly.total_clicks %></p>
+                <% else %>
+                  <p>Shorten Url:  No shorten url generated.</p>
+                <% end %>
+              </div>
+              <div class="table-wrapper">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Recipient Name</th>
+                            <th>Phone Number</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <%= for msg_status <- @message_statuses do %>
+                            <tr>
+                              <td><%= msg_status.name %></td>
+                              <td><%= display_phone_number(msg_status.to) %></td>
+                              <td><%= msg_status.status %></td>
+                            </tr>
+                          <% end %>
+                        </tbody>
+                    </table>
+                    <%= pagination_links @message_statuses %> 
+                    <div>
+                    </div>
+                    
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <%= if @has_image do %>
+        <div class="camp-history-flexitem image">
+            <div class="card">
+              <div class="card-header card-header-icon" data-background-color="purple">
+                    <i class="material-icons">image</i>
+              </div>
+          
+              <div class="card-content">
+                <h2 class="card-title">Attached Image</h2>
+                <img src="<%= @image_url %>" alt="Sent Image" class="attached-image">
+              </div>
+            </div>
+        </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+

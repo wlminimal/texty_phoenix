@@ -1,0 +1,10 @@
+<script>
+  // display uploaded file name
+  document.getElementById("contact-uploader").onchange = function() {
+    document.getElementById("contactFileName").value = this.value.split(/(\\|\/)/g).pop();
+  };
+
+  document.getElementById("contact-uploader2").onchange = function() {
+    document.getElementById("contactFileName2").value = this.value.split(/(\\|\/)/g).pop();
+  };
+  </script>

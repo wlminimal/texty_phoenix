@@ -1,0 +1,864 @@
+html {
+	height: auto;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  background-color: #EEEEEE;
+}
+
+.alert:empty { display: none; }
+
+.campaign-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.main-panel > .content {
+  margin-top: 50px;
+  padding: 30px 15px;
+  min-height: calc(100vh - 123px);
+}
+
+.dashboard-flex-container {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.dashboard-flexitem.dashboard-wide {
+  padding: 0 10px;
+  flex-basis: 50%;
+}
+
+.dashboard-flexitem.dashboard-narrow {
+  padding: 0 10px;
+  flex-basis: 35%;
+}
+
+
+.dashboard-sub-flex-container {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.dashboard-sub-flexitem {
+  
+}
+
+.card .card-content .card-title.dashboard-chart-title{
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.recent-campaign-card {
+  height: 525px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.dashboard-card-title {
+ text-align: center;
+}
+
+.table-wrapper {
+  margin-top: 20px;
+}
+
+.dashboard-chart-card {
+  width: 450px;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+  padding: 8px 8px;
+  vertical-align: middle;
+}
+
+.table > thead > tr > th {
+  border-bottom-width: 1px;
+  font-size: 1.0em;
+  font-weight: 100;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+  padding: 8px 8px;
+  vertical-align: middle;
+}
+
+.flex-container {
+	max-width: 1280px;
+	margin: 0 auto 0 auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.flex-item {
+	flex: 0 1 auto;
+	max-width: 320px;
+	margin: 10px 10px 0 10px;
+	background-color: white;
+}
+
+
+.card-header > i.material-icons {
+  color: #FFFFFF;
+}
+.d-main-card-icon {
+	max-width: 64px;
+}
+
+.app-fab--absolute {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.dropdown-content {
+  background-color: #fff;
+  margin: 0;
+  display: none;
+  min-width: 150px;
+  overflow-y: auto;
+  opacity: 0;
+  position: absolute;
+  z-index: 999;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  margin-top: 84px;
+}
+
+
+.phonebook-header {
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+/* Dashboard Page */
+
+/* .card .card-header {
+  background: linear-gradient(60deg, #26c6da, #00acc1);
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 188, 212, 0.4);
+  margin: -10px 15px 0;
+  border-radius: 3px;
+  padding: 15px;
+  position: relative;
+  z-index: 3;
+ 
+} */
+.card-chart .card-header {
+  min-height: 90px;
+}
+
+.card-chart .card-header > i {
+  text-align: center;
+  padding: 15px;
+}
+
+.card-chart .card-title {
+  font-size: 22px;
+}
+
+.card-header img {
+  height: 160px;
+  width: 160px;
+}
+
+.canvas-wrapper {
+  margin: 0 auto;
+}
+
+.card-title {
+  margin-top: 0;
+  margin-bottom: 3px;
+}
+
+.card .card-content .card-title {
+  display: block;
+  line-height: 32px;
+}
+
+.card .card-header.card-header-icon + .card-content .card-title {
+  padding-bottom: 0px;
+}
+
+.campaign-name {
+  font-size: 22px;
+  text-align: center;
+}
+
+.card .card-action .card-header {
+  min-height: 150px;
+}
+
+/* Phonebook Page */
+
+
+.header-description {
+  font-size: 14px;
+  padding-left: 10px;
+}
+.table .btn {
+  line-height: 1.42857143;
+  height: 42px;
+}
+
+.table .btn i.icon-button {
+  padding-right: 5px;
+}
+
+.table .td-actions .btn {
+  margin: 0px;
+  padding: 10px;
+}
+
+.add-new-button-wrapper {
+  margin-left: -5px;
+}
+
+.add-new-button-wrapper .btn {
+  line-height: 1.42857143;
+  height: 42px;
+}
+
+.add-new-button-wrapper .btn i {
+  padding-right: 5px;
+}
+
+.card .btn {
+  line-height: 1.42857143;
+  height: 42px;
+}
+
+.back-link {
+  padding-left: 20px;
+}
+
+.form-wrapper {
+  margin-top: 40px;
+}
+
+.helper-text {
+  font-size: 12px;
+  color: #3C4858;
+  margin-top: 5px;
+}
+
+.warning-text {
+  font-size: 12px;
+  color: #e91e63;
+}
+
+.checkbox-text {
+  float: left;
+}
+
+/* 
+.card .card-header {
+  background: linear-gradient(60deg, #26c6da, #00acc1);
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 188, 212, 0.4);
+  margin: -10px 15px 0;
+  border-radius: 3px;
+  padding: 15px;
+  position: relative;
+  z-index: 3;
+} */
+
+
+/* Recipients Page */
+.dashboard-flexitem.narrow {
+  flex-basis: 40%;
+  padding: 0 10px;
+}
+
+.dashboard-flexitem.wide {
+  flex-basis: 60%;
+  padding: 0 10px;
+}
+
+.info-wrapper {
+  margin-top: 20px;
+}
+
+.sms-description {
+  padding-top: 20px;
+}
+
+span.italic {
+  font-style: italic;
+}
+
+
+#message-length-info {
+  color: #d81b60;
+  font-size: 12px;
+}
+
+/* checkout page */
+
+.sendsms_card {
+  /* height: 672px; */
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.sendmms_card {
+  /* height: 750px; */
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.image-uploader {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+}
+
+.image-uploader input.upload-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+
+/* CheckoutPreview Page */
+.mms-preview-flexbox {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.mms-preview-flexitem {
+  padding: 0 10px;
+  flex-basis: 45%;
+}
+
+.mms-preview-sub-flexbox {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.mms-preview-sub-flexitem {
+  padding: 0 10px;
+}
+
+.sms-preview-flexbox {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.sms-preview-flexitem {
+  padding: 0 10px;
+  flex-basis: 50%;
+}
+
+.mms-image {
+  max-width: 500px;
+}
+
+.image-column {
+  text-align: center;
+}
+
+.image-wrapper {
+  margin: 20px auto 0 auto;
+  
+}
+
+
+/* Plan Page */
+
+.plan-flexbox {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.plan-flexitem {
+  flex-basis: 30%;
+  margin: 10px;
+}
+
+.selected-plan {
+  border: 1px solid purple;
+}
+
+.header-block {
+  text-align: center;
+  text-transform: uppercase;
+  padding-right: 90px;
+}
+
+.plan-price {
+  padding-bottom: 20px;
+}
+
+.plan-name {
+  color: #222222;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.hide-icon {
+  display: none;
+}
+
+.show-icon {
+  display: inline;
+}
+
+.card-content span.fa-spinner {
+  padding-right: 5px;
+}
+
+
+/* Upload Contact Page */
+
+.upload-flexbox {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.upload-flexitem {
+  width: 500px;
+}
+
+/* Campaign History Page*/
+
+.camp-history-flexbox {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.camp-history-flexitem {
+  margin: 10px;
+}
+
+.camp-history-flexitem.content {
+  flex-basis: 50%;
+}
+
+.camp-history-flexitem.image {
+  flex-basis: 40%;
+}
+
+.camp-info-block {
+  border: 1px solid #d5d2d2;
+  margin-top: 20px;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.attached-image {
+  width: 300px;
+  margin-top: 20px;
+}
+
+
+/* Analytics Page */
+.analytics-flexbox {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.analytics-flexitem {
+  padding: 0 10px;
+}
+
+.analytics-flexitem.wide {
+  flex-basis: 60%;
+}
+
+.analytics-flexitem.narrow {
+  flex-basis: 30%;
+}
+
+.analytics-sub-flexbox {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Account Info Page */
+.account-info-label {
+  padding-left: 10px;
+}
+
+.tab-pane i.material-icons {
+ padding-top: 10px; 
+}
+
+.tab-pane .table tbody > tr > td:first-child {
+  width: 156px;
+}
+
+/* Billing Info */
+
+img.card-icon {
+  width: 35px;
+  padding-right: 5px;
+}
+
+.panel .panel-heading {
+  background-color: transparent;
+  border-bottom: 1px solid #ddd;
+  padding: 5px 10px 5px 0px;
+}
+
+
+/* Invoice Page */
+.billing-date {
+  font-size: 12px;
+}
+
+.panel .panel-heading a:hover, .panel .panel-heading a:active, .panel .panel-heading a[aria-expanded="true"] {
+  color: #333333;
+}
+
+#card-element {
+  padding: 20px 10px;
+  border: 1px dotted #5e57ea80;
+  margin: 10px 0;
+}
+
+
+/* Campaign Page */
+.campaign-flexbox {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+}
+
+.campaign-flexitem {
+  min-width: 350px;
+  padding: 20px;
+  max-width: 500px;
+}
+
+
+/* Admin */
+.admin-title {
+  padding-left: 8px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  font-size: 20px;
+}
+
+
+/* contact us page */
+.contact-us-block {
+  max-width: 600px;
+}
+
+/* Responsive */
+
+@media(max-width: 1350px) {
+  /* .dashboard-flexitem.dashboard-wide {
+    flex-basis: 50%;
+  }
+  
+  .dashboard-flexitem.dashboard-narrow {
+    flex-basis: 35%;
+  } */
+
+  .dashboard-chart-card {
+    width: 400px;
+  }
+
+  .dashboard-sub-flex-item {
+    flex-basis: 80%;
+  }
+
+  .plan-flexitem {
+    flex-basis: 25%;
+    margin: 10px;
+  }
+
+  .header-block {
+    margin-left: -30px;
+    padding-right: 240px;
+    margin-right: 100px;
+  }
+
+  .analytics-flexitem.wide {
+    flex-basis: 60%;
+  }
+  
+  .analytics-flexitem.narrow {
+    flex-basis: 30%;
+  }
+
+  .campaign-flexitem {
+    flex-basis: 60%;
+  }
+
+}
+
+@media(max-width: 1248px) {
+  .dashboard-chart-card {
+    width: 350px;
+  }
+
+  .analytics-flexitem.wide {
+    flex-basis: 60%;
+  }
+  
+  .analytics-flexitem.narrow {
+    flex-basis: 20%;
+  }
+
+  .campaign-flexitem {
+    flex-basis: 30%;
+  }
+
+}
+
+@media(max-width: 1024px) {
+  .app-fab--absolute {
+   bottom: 2.5rem;
+   right: 2.5rem;
+ }
+
+ .dashboard-flexitem {
+  flex-basis: 45%;
+  }
+
+  .dashboard-flexitem.narrow {
+    flex-basis: 100%;
+    padding: 0 10px;
+  }
+  
+  .dashboard-flexitem.wide {
+    flex-basis: 100%;
+    padding: 0 10px;
+  }
+
+  .mms-preview-flexitem {
+    flex-basis: 80%;
+  }
+
+
+  .plan-flexitem {
+    flex-basis: 35%;
+    margin: 10px;
+  }
+
+  .header-block {
+    margin-right: 130px;
+  }
+
+}
+
+@media(max-width: 992px) {
+  header, main, footer {
+    padding-left: 0px;
+  }
+
+  .dashboard-flexitem {
+    flex-basis: 80%;
+  }
+
+  .dashboard-sub-flex-item {
+    flex-basis: 80%;
+  }
+
+  .dashboard-flexitem.narrow {
+    padding: 0 10px;
+    flex-basis: 100%;
+  }
+  
+  .dashboard-flexitem.wide {
+    padding: 0 10px;
+    flex-basis: 100%;
+  }
+
+  .mms-preview-flexitem {
+    flex-basis: 80%;
+  }
+
+  .plan-flexitem {
+    flex-basis: 47%;
+    margin: 10px;
+  }
+
+  .header-block {
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  .analytics-flexitem.wide {
+    flex-basis: 100%;
+  }
+  
+  .analytics-flexitem.narrow {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .plan-flexitem {
+    flex-basis: 100%;
+    margin: 10px;
+  }
+
+  .upload-flexitem {
+    width: 100%;
+  }
+
+  .camp-history-flexitem.content {
+    flex-basis: 100%;
+  }
+
+  .camp-history-flexitem.image {
+    flex-basis: 100%;
+  }
+
+  .analytics-flexitem.wide {
+    flex-basis: 100%;
+  }
+  
+  .analytics-flexitem.narrow {
+    flex-basis: 100%;
+  }
+
+  .campaign-flexitem {
+    flex-basis: 100%;
+  }
+}
+
+@media(max-width: 479px){
+  .dashboard-flexitem {
+    flex-basis: 100%;
+  }
+
+  .dashboard-sub-flex-item {
+    flex-basis: 100%;
+  }
+
+  .dashboard-flexitem.narrow {
+    flex-basis: 100%;
+  }
+  
+  .dashboard-flexitem.wide {
+    flex-basis: 100%;
+  }
+
+  .mms-preview-flexitem {
+    flex-basis: 80%;
+  }
+  .plan-flexitem {
+    flex-basis: 100%;
+    margin: 10px;
+  }
+
+  .upload-flexitem {
+    width: 100%;
+  }
+
+  .camp-history-flexitem.content {
+    flex-basis: 100%;
+  }
+
+  .camp-history-flexitem.image {
+    flex-basis: 100%;
+  }
+
+  .card-title {
+    font-size: 15px;
+  }
+
+  .analytics-flexitem.wide {
+    flex-basis: 100%;
+  }
+  
+  .analytics-flexitem.narrow {
+    flex-basis: 100%;
+  }
+
+  .campaign-header {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .dashboard-flexitem .card {
+    width: 300px;
+  }
+  
+  .analytics-flexitem .card {
+    width: 300px;
+  }
+}

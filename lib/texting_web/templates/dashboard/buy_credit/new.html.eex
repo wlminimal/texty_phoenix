@@ -1,0 +1,186 @@
+ <div class="container">
+    <div class="container header-block">
+      <h3>You need credits for sending messages.</h3>
+      <p> Text Campaign costs 1 credit and Image Campaign costs 3 credits.
+      </p>
+    </div>
+     <div class="plan-flexbox">
+       
+          <div class="plan-flexitem">
+            <%= form_for @conn, buy_credit_path(@conn, :create), fn f -> %>
+              <div class="card card-pricing card-raised">
+                <div class="card-content">
+                  <h6 class="plan-name">700 Credits</h6>
+                  <!-- 
+                  <div class="icon icon-rose">
+                    <i class="material-icons">home</i>
+                  </div>
+                -->
+                  <h3 class="card-title plan-price">$35</h3>
+                  <p> 5 cents / credit</p>
+                  <p class="card-description">
+                    Up to 700 Text Campaigns or                  
+                  </p>
+                  <p class="card-description">
+                    Up to 233 Image Campaigns                  
+                  </p>
+                  <%= hidden_input f, :amount, class: "buy-creidt", value: "3500", data: [amount: "35", credit: "700"] %> 
+                  <%= submit id: "Ten-Button", class: "btn btn-primary btn-round buy-credit-button" do %>
+                    <span class="fas fa-spinner fa-spin fa-lg hide-icon"></span>
+                    Buy Credit
+                  <% end %>
+                </div>
+              </div>
+            <%end%>
+          </div>
+        
+  
+        
+          <div class="plan-flexitem">
+            <%= form_for @conn, buy_credit_path(@conn, :create), fn f -> %>
+            <div class="card card-pricing card-raised">
+              <div class="card-content">
+                <h6 class="plan-name">1150 Credits</h6>
+                <!-- 
+                <div class="icon icon-rose">
+                  <i class="material-icons">home</i>
+                </div>
+              -->
+                <h3 class="card-title plan-price">$55</h3>
+                <p> 4.90 cents / credit</p>
+                <p class="card-description">
+                  Up to 1150 Text Campaigns or
+                </p>
+                <p class="card-description">
+                  Up to 375 Image Campaigns                 
+                </p>
+                <%= hidden_input f, :amount, class: "buy-creidt", value: "5500", data: [amount: "55", credit: "1150"]  %> 
+                <%= submit id: "Twenty-Button", class: "btn btn-primary btn-round buy-credit-button" do %>
+                  <span class="fas fa-spinner fa-spin fa-lg hide-icon"></span> 
+                  Buy Credit
+                <% end %>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        
+  
+        
+          <div class="plan-flexitem">
+            <%= form_for @conn, buy_credit_path(@conn, :create), fn f -> %>
+              <div class="card card-pricing card-raised">
+                <div class="card-content">
+                  <h6 class="plan-name">2000 Credits</h6>
+                  <!-- 
+                  <div class="icon icon-rose">
+                    <i class="material-icons">home</i>
+                  </div>
+                -->
+                  <h3 class="card-title plan-price">$95</h3>
+                  <p> 4.754 cents / credit</p>
+                  <p class="card-description">
+                    Up to 2000 Text Campaigns or
+                  </p>
+                  <p class="card-description">
+                    Up to 666 Image Campaigns.                  
+                  </p>
+                  <%= hidden_input f, :amount, class: "buy-creidt", value: "9500", data: [amount: "95", credit: "2000"] %> 
+                  <%= submit id: "Fourty-Button", class: "btn btn-primary btn-round buy-credit-button" do %>
+                    <span class="fas fa-spinner fa-spin fa-lg hide-icon"></span> 
+                    Buy Credit
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        
+  
+        
+          <div class="plan-flexitem">
+            <%= form_for @conn, buy_credit_path(@conn, :create), fn f -> %>
+              <div class="card card-pricing card-raised">
+                <div class="card-content">
+                  <h6 class="plan-name">2900 Credits</h6>
+                  <!-- 
+                  <div class="icon icon-rose">
+                    <i class="material-icons">home</i>
+                  </div>
+                  -->
+                  <h3 class="card-title plan-price">$135</h3>
+                  <p> 4.655 cents / credit</p>
+                  <p class="card-description">
+                    Up to 2900 Text Campaigns or
+                  </p>
+                  <p class="card-description">
+                    Up to 966 Image Campaigns.                 
+                  </p>
+                  <%= hidden_input f, :amount, class: "buy-creidt", value: "13500", data: [amount: "135", credit: "2900"]  %> 
+                  <%= submit id: "Sixty-Button", class: "btn btn-primary btn-round buy-credit-button" do %>
+                    <span class="fas fa-spinner fa-spin fa-lg hide-icon"></span> 
+                    Buy Credit
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        
+  
+        
+          <div class="plan-flexitem">
+            <%= form_for @conn, buy_credit_path(@conn, :create), fn f -> %>
+            <div class="card card-pricing card-raised">
+              <div class="card-content">
+                <h6 class="plan-name">4000 Credits</h6>
+                <!-- 
+                <div class="icon icon-rose">
+                  <i class="material-icons">home</i>
+                </div>
+                -->
+                <h3 class="card-title plan-price">$185</h3>
+                <p> 4.625 cents / credit</p>
+                <p class="card-description">
+                  Up to 4000 Text Campaigns or
+                </p>
+                <p class="card-description">
+                  Up to 1333 Image Campaigns.                  
+                </p>
+                <%= hidden_input f, :amount, class: "buy-creidt", value: "18500", data: [amount: "185", credit: "4000"]  %> 
+                <%= submit id: "Eighty-Button", class: "btn btn-primary btn-round buy-credit-button" do %>
+                  <span class="fas fa-spinner fa-spin fa-lg hide-icon"></span> 
+                  Buy Credit
+                <% end %>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        
+        
+          <div class="plan-flexitem">
+            <%= form_for @conn, buy_credit_path(@conn, :create), fn f -> %>
+            <div class="card card-pricing card-raised">
+              <div class="card-content">
+                <h6 class="plan-name">5000 Credits</h6>
+                <!-- 
+                <div class="icon icon-rose">
+                  <i class="material-icons">home</i>
+                </div>
+              -->
+                <h3 class="card-title plan-price">$225</h3>
+                <p> 4.54 cents / credit</p>
+                <p class="card-description">
+                  Up to 5000 Text Campaigns or
+                </p>
+                <p class="card-description">
+                  Up to 1666 Image Campaigns.                 
+                </p>
+                <%= hidden_input f, :amount, class: "buy-creidt", value: "22500", data: [amount: "225", credit: "5000"]  %> 
+                <%= submit id: "Hundred-Button", class: "btn btn-primary btn-round buy-credit-button"  do %>
+                  <span class="fas fa-spinner fa-spin fa-lg hide-icon"></span> 
+                  Buy Credit
+                <% end %>
+              </div>
+            </div>
+            <% end %>
+          </div>
+     </div>
+   </div>

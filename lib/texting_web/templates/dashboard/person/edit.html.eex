@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header card-header-icon" data-background-color="purple">
+            <i class="material-icons">mail_outline</i>
+          </div>
+          <div class="card-content">
+            <h4 class="card-title form-title">Edit Contact -  <%= @phonebook.name %></h4>
+              <div class="form-wrapper">
+                <%= render "form.html", Map.put(assigns, :action, phonebook_person_path(@conn, :update, @phonebook.id, @person.id)) %>
+              </div>
+              <div>
+                <span><%= link "Back", to: phonebook_path(@conn, :show, @phonebook.id) %></span>
+              </div>
+             
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+

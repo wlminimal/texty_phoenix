@@ -1,0 +1,54 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-icon" data-background-color="purple">
+                  <i class="material-icons">history</i>
+            </div>
+  
+            <div class="card-content">
+                  <h2 class="card-title">Campaign History <span class="header-description"> Check your campaign history here.</span></h2>
+                    <div class="form-wrapper">
+                    <%= if Enum.empty?(@campaigns_history) do %>
+                      <p>You don't have any campaing histories.  Why don't you send campaign?</p>
+                    <% else %>
+                    
+                    <div class="table-responsive">
+                      <table class="table">
+                          <thead>
+                              <tr>
+                                  <th>Name</th>
+                                  <th>Description</th>
+                                  <th>Date</th>
+                                  <th>Type</th>
+                                  <th>Recipients</th>
+                                  <th class="text-right">Actions</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                            <%= for campaign <- @campaigns_history do %>
+                              <tr>
+                                <td><%= campaign.name %></td>
+                                <td><%= campaign.description %></td>
+                                <td><%= display_datetime(campaign.updated_at) %></td>
+                                <td><%= campaign.message_type %></td>
+                                <td><%= campaign.counts %></td>
+                                <td class="td-actions text-right">
+                                  <%= button to: campaign_history_path(@conn, :show, campaign.id), method: "get", class: "btn btn-github" do %>
+                                    <i class="material-icons icon-button">play_arrow</i>Detail
+                                  <% end %>
+                                </td>
+                              </tr>
+                            <% end %>
+                          
+                          </tbody>
+                      </table>
+                      <%= pagination_links @campaigns_history %>
+                  </div>
+                  <% end %>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,163 @@
+
+
+<div class="container-fluid">
+   <div class="analytics-flexbox">
+        <!-- Data Table Start-->
+        <div class="analytics-flexitem wide">
+            <div class="card">
+                <div class="card-header card-header-icon" data-background-color="purple">
+                  <i class="material-icons">assessment</i>
+                </div>
+                <div class="card-content">
+                  <h4 class="card-title">Campaign History</h4>
+                  <%= if @has_campaign do %>
+                  
+                      <div class="table-responsive table-sales">
+                          <table class="table centered table-striped">
+                            <thead>
+                              <tr>
+                                <th>Date</th>
+                                <th>Name</th>
+                                <th>description</th>
+                                <th>Analytics</th>
+                                <th>Details</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <%= for campaign <- @campaigns do %>
+                              <tr>
+                                <td><%= display_date(campaign.inserted_at) %></td>
+                                <td><%= campaign.name %></td>
+                                <td><p maxlength="10"><%= campaign.description %></p></td>
+                                <td>
+                                  <form>
+                                    <input type="hidden" name="campaign_id" value="<%= campaign.id %>">
+                                    <button class="btn btn-rose btn-sm btn-round btn-fab btn-fab-mini" drab-click="show_stats"><i class="material-icons">assessment</i></button>
+                                  </form>
+                                </td>
+                                <td><a class="btn btn-info btn-sm btn-round btn-fab btn-fab-mini" href="<%= campaign_history_path(@conn, :show, campaign.id) %>"><i class="material-icons">more</i></a></td>
+                              </tr>
+                              <% end %>
+                            </tbody>
+                          </table>
+                      </div> 
+                      <%= pagination_links @campaigns %>
+                  <%= else %>
+                  <h4>You don't have any campaign history. Why don't you send campaign?</h4>
+                  <% end %>
+                </div>
+              </div>
+        </div>
+        <!-- Data Table End-->
+        <div class="analytics-flexitem narrow">
+          <div class="analytics-sub-flexbox">
+            <!-- Chart 1 Start -->
+            <div class="analytics-sub-flexitem">
+              <div class="card" >
+                <div class="card-header card-header-icon" data-background-color="rose">
+                  <i class="material-icons">pie_chart</i> 
+                </div>
+                <div class="card-content">
+                  <h4 class="card-title">Delivery Result Chart</h4>
+                  
+                  <div class="row">
+                    <%= if @has_campaign do %>
+                    <div class="col-md-12">
+                      <div class="row">
+                        <div class="canvas-wrapper">
+                            <canvas id="analyticsChart"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <%= else %>
+                    <div class="col-md-12">
+                      <h4>You don't have any campaign history. Why don't you send campaign?</h4>
+                    </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div> 
+            </div>
+            <!-- Chart 1 End -->
+
+            <!-- Chart Data Start -->
+            <div class="analytics-sub-flexitem">
+                <div class="card" >
+                  <div class="card-header card-header-icon" data-background-color="purple">
+                    <i class="material-icons">assessment</i> 
+                  </div>
+                  <div class="card-content">
+                    <h4 class="card-title">Analytics Data</h4>
+                    
+                    <div class="row">
+                      <%= if @has_campaign do %>
+                      <div class="col-md-12">
+                        <div class="row">
+                            <div class="table-responsive">
+                              <table class="table centered">
+                                <thead>
+                                  <th>Total Sent</th>
+                                  <th>Deilvered</th>
+                                  <th>Undelivered</th>
+                                  <th>Total Clicks</th>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td><p id="total-sent" data-total-sent="<%= @total_sent %>"><%= @total_sent %></p></td>
+                                    <td><p id="deilvered-count" data-delivered-count="<%= @deilvered_count %>"><%= @deilvered_count %></p></td>
+                                    <td><p id="undelivered-count" data-undelivered-count="<%= @undelivered_count %>"><%= @undelivered_count %></p></td>
+                                    <td><p id="total-clicks" data-total-clicks="<%= @total_clicks %>"><%= @total_clicks %></p></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div> 
+                        </div>
+                      </div>
+                      
+                      <%= else %>
+                      <div class="col-md-12">
+                        <h4>You don't have any campaign history. Why don't you send campaign?</h4>
+                      </div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <!-- Chart Data End -->
+
+            <!-- Chart 2 Start -->
+            <div class="analytics-sub-flexitem">
+                <div class="card" >
+                    <div class="card-header card-header-icon" data-background-color="rose">
+                      <i class="material-icons">pie_chart</i> 
+                    </div>
+                    <div class="card-content">
+                      <h4 class="card-title">Subscriber Chart</h4>
+                      
+                      <div class="row">
+                        <%= if @has_campaign do %>
+                        <div class="col-md-12">
+                          <div class="row">
+                            <div class="canvas-wrapper">
+                                <canvas id="subscriberChart"></canvas>
+                            </div>
+                          </div>
+                        </div>
+                        <input type="hidden" name="all-contacts" id="all-contact" value="<%= @all_contacts %>">
+                        <input type="hidden" name="all-contacts" id="unsubscriber" value="<%= @unsubscriber_count %>">
+                        <%= else %>
+                        <div class="col-md-12">
+                          <h4>You don't have any subscriber. Why don't you send campaign?</h4>
+                        </div>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div> 
+            </div>
+            <!-- Chart 2 End -->
+          </div>
+        </div>
+        
+   </div>
+</div>

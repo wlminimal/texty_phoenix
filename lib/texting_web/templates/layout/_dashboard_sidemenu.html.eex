@@ -1,0 +1,182 @@
+<div class="sidebar" data-active-color="rose" data-background-color="white" data-image="<%= static_path(@conn, "/images/user-sidemenu-bg.jpg") %>"</div>>
+  <!--
+      Tip 1: You can change the color of active element of the sidebar using: data-active-color="purple | blue | green | orange | red | rose"
+      Tip 2: you can also add an image using data-image tag
+      Tip 3: you can change the color of the sidebar with data-background-color="white | black"
+  -->
+
+  <div class="logo">
+      <a href="texty.marketing" class="simple-text logo-mini">
+           
+      </a>
+
+      <a href="texty.marketingm" class="simple-text logo-normal">
+           Texty Marketing
+      </a>
+  </div>
+
+  <div class="sidebar-wrapper">
+    <div class="user">
+			<div class="photo">
+				<img src="<%= static_path(@conn, "/images/avatar2.png") %>" alt="User-Profile">
+			</div>
+			<div class="info">
+				<a href="#collapseAccount" data-toggle="collapse" class="collapsed" role="button" aria-expanded="false" aria-controls="collapseAccount">
+					<span>
+						 <%= @conn.assigns.current_user.first_name %>
+							<b class="caret"></b>
+					</span>
+				</a>
+			<!--	<a href="#!email"><span class="white-text email"><%= @conn.assigns.current_user.email %></span></a> -->
+				<div class="clearfix"></div>
+				<div class="collapse" id="collapseAccount">
+					<ul class="nav">
+						<li>
+							<a href="<%= account_info_path(@conn, :index) %>">
+								<span class="sidebar-mini"><i class="material-icons">email_outline</i></span>
+								<span class="sidebar-normal"><p> <%= @conn.assigns.current_user.email %></p></span>
+							</a>
+						</li>
+						<li>
+							<a href="<%= account_info_path(@conn, :index) %>">
+								<span class="sidebar-mini"><i class="material-icons">attach_money</i></span>
+								<span class="sidebar-normal"><p> Credits: <%= @conn.assigns.current_user.credits %></p></span>
+							</a>
+						</li>
+					</ul>
+			
+				
+				</div>
+			</div>
+		</div>
+		
+      <ul class="nav">
+				<li class="">
+					<a href="<%= dashboard_path(@conn, :new) %>">
+							<i class="material-icons">apps</i>
+							<p> Dashboard </p>
+					</a>
+				</li>
+				<li class="">
+					<a href="<%= campaign_path(@conn, :index) %>">
+							<i class="material-icons">send</i>
+							<p> Start Campaign </p>
+					</a>
+				</li>
+
+				<li>
+						<a href="<%= campaign_history_path(@conn, :index) %>">
+								<i class="material-icons">history</i>
+								<p> Campaign History </p>
+						</a>
+				</li>
+				<li>
+					<a href="#collapseContactMenu" data-toggle="collapse" class="collapsed" role="button" aria-expanded="false" aria-controls="collapseAccountMenu">
+						<i class="material-icons">contact_phone</i>
+						<p>Contact <b class="caret"></b></p>
+					</a>
+					<div class="clearfix"></div>
+					<div id="collapseContactMenu" class="collapse">
+						<ul class="nav">
+							<li>
+								<a href="<%= phonebook_path(@conn, :index) %>">
+										<i class="material-icons">contacts</i>
+										<p> Phonebook </p>
+								</a>
+							</li>
+							<li>
+								<a href="<%= upload_contact_path(@conn, :new) %>">
+										<i class="material-icons">cloud_upload</i>
+										<p> Upload Contact </p>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+       
+        
+        
+        <li>
+          <a href="<%= analytics_path(@conn, :index) %>">
+              <i class="material-icons">assessment</i>
+              <p> Analytics </p>
+          </a>
+				</li>
+
+				<li>
+					<a href="#collapseAccountMenu" data-toggle="collapse" class="collapsed" role="button" aria-expanded="false" aria-controls="collapseAccountMenu">
+						<i class="material-icons">account_box</i>
+						<p>Account <b class="caret"></b></p>
+					</a>
+					<div class="clearfix"></div>
+					<div id="collapseAccountMenu" class="collapse">
+						<ul class="nav">
+							<li>
+								<a href="<%= account_info_path(@conn, :index) %>">
+										<i class="material-icons">account_box</i>
+										<p> Detail </p>
+								</a>
+							</li>
+							<li>
+								<a href="<%= billing_info_path(@conn, :new) %>">
+										<i class="material-icons">monetization_on</i>
+										<p> Billing Info </p>
+								</a>
+							</li>
+							<li>
+								<a href="<%= invoice_path(@conn, :new) %>">
+										<i class="material-icons">receipt</i>
+										<p> Invoice </p>
+								</a>
+							</li>
+
+							<li>
+								<a href="<%= plan_path(@conn, :new) %>">
+										<i class="material-icons">content_paste</i>
+										<p> Plan </p>
+								</a>
+							</li>
+
+							<li>
+								<a href="<%= buy_credit_path(@conn, :new) %>">
+										<i class="material-icons">credit_card</i>
+										<p> Buy Credits </p>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<li>
+					<a href="<%= recipient_path(@conn, :show) %>">
+							<i class="material-icons">add_shopping_cart</i>
+							<p> Recipients <span class="recipients-notification"><%= recipient_count(@conn) %></span> </p>
+					</a>
+				</li>
+
+				<li class="">
+					<a href="<%= contact_us_path(@conn, :index) %>">
+							<i class="material-icons">email</i>
+							<p> Contact us </p>
+					</a>
+				</li>
+					
+        <li class="log-out">
+          <a href="/sign-out">
+              <i class="material-icons">highlight_off</i>
+              <p> Log out </p>
+          </a>
+				</li>
+				<%= if @conn.assigns.current_user.admin do %>
+					<li class="log-out">
+						<a href="<%= customer_path(@conn, :index) %>">
+								<i class="material-icons">lightbulb_outline</i>
+								<p> Admin </p>
+						</a>
+					</li>
+				<% end %>
+      </ul>
+	</div>
+	
+	<div class="sidebar-background"></div>
+</div>

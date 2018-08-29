@@ -1,0 +1,84 @@
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <div class="card">
+              <div class="card-header card-header-icon" data-background-color="purple">
+                    <i class="material-icons">assignment</i>
+              </div>
+    
+              <div class="card-content">
+                    <h2 class="card-title">Recipients List<span class="header-description"> You can remove a contact from list or click to send text or image campaign</span></h2>
+                    <div class="add-new-button-wrapper">
+                        <%= button to: phonebook_path(@conn, :index), method: "get", class: "btn btn-github btn-sm" do %>
+                          <i class="material-icons">add</i>Add More
+                        <% end %>
+                      </div>
+                    <%= if Enum.empty?(@recipients.line_items) do %>
+                      <p>Your recipients list is empty</p>
+                    <% else %>
+                    <div class="table-wrapper">
+                      <div class="table-responsive">
+                          <table class="table">
+                              <thead>
+                                  <tr>
+                                    <th>Select All</th>
+                                    <th>Name</th>
+                                    <th>Phone Number</th>
+                                    <th class="text-right">Actions</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <div class="checkbox">
+                                      <label>
+                                        <input type="checkbox" name="select-all" onclick="checkAll(this)" />
+                                      </label>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <%= form_for @conn, recipient_path(@conn, :delete_selected), [as: :recipient_delete, id: "delete-form"], fn f -> %>
+                                  <%= for recipient <- @page.entries do %>
+                                  <tr>
+                                      <td>
+                                        <div class="checkbox">
+                                          <label>
+                                            <input type="checkbox" name="recipients_list[]" value="<%= recipient.id %>" />
+                                          </label>
+                                        </div>
+                                      </td>
+                                      <td><%= recipient.name %></td>
+                                      <td><%= display_phone_number(recipient.phone_number) %></td>
+                                    
+                                      <td class="td-actions text-right">
+                                        <%= button to: recipient_path(@conn, :delete, recipient.id), method: "delete", data: [confirm: "Are you sure?"], class: "btn btn-danger delete-each-button" do %>
+                                          <i class="material-icons icon-button">close</i>Delete
+                                        <% end %> 
+                                      </td>
+                                  </tr>
+                                  <% end %>
+                                  <tr>
+                                      <td><%= submit "Delete", id: "delete-button", class: "btn btn-danger" %></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td class="td-actions text-right">
+                                        <%= button to: checkout_sms_path(@conn, :show_sms), method: "get", class: "btn btn-primary" do %>
+                                          <i class="material-icons icon-button">send</i>Text Campaign
+                                        <% end %>
+                                        <%= button to: checkout_mms_path(@conn, :show_mms), method: "get", class: "btn btn-primary" do %>
+                                          <i class="material-icons icon-button">send</i>Image Campaign
+                                        <% end %>
+                                       </td>
+                                  </tr>
+                                <% end %>
+                              </tbody>
+                          </table>
+                          <%= pagination_links @page %> 
+                      </div>
+                    </div>
+                    <% end %>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>

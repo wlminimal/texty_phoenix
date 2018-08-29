@@ -1,0 +1,112 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+
+        <div class="card-header card-header-tabs" data-background-color="rose">
+          <div class="nav-tabs-navigation">
+            <div class="nav-tabs-wrapper">
+              <ul class="nav nav-tabs" data-tabs="tabs">
+                <li class="active">
+                  <a href="#subscription_invoices" data-toggle="tab">
+                    <i class="material-icons">receipt</i>
+                    Subscription Invoices
+                  <div class="ripple-container"></div></a>
+                </li>
+                <li class="">
+                  <a href="#buy-credit-invoices" data-toggle="tab">
+                    <i class="material-icons">receipt</i>
+                    Buy Credit Invoices
+                  <div class="ripple-container"></div></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-content">
+          <div class="tab-content">
+            <!-- Subscription Invoices Start -->
+            <div class="tab-pane active" id="subscription_invoices">
+              <div class="card">
+                <div class="card-content">
+                    <p class="billing-date">Your next billing date is <%= unit_time_to_normal_time(@next_billing_date) %></p>
+                    <p class="billing-date">Amount due: <%= display_stripe_money(@amount_due) %></p>
+                  <%= if Enum.empty?(@invoices) do %>
+
+                    <p>You don't have any invoices.</p>
+                  <% else %>
+                    <div class="table-responsive">
+                      <table class="table table-striped">
+                        <thead>
+                         
+                          <tr>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Invoice Number</th>
+                            <th>Description</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <%= for invoice <- @invoices do %>
+                          <tr>
+                            <td><%= display_datetime(invoice.date) %></td>
+                            <td><%= invoice.type %></td> 
+                            <td><%= display_stripe_money(invoice.amount) %></td>
+                            <td><%= invoice.receipt_number %></td>
+                            <td><%= invoice.description %></td>
+                          </tr>
+                          <% end %>
+                        </tbody>
+                      </table>
+                    </div>
+                    <%= pagination_links @invoices %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            <!-- Subscription Invoices End -->
+            
+            <!-- Buy Credit Invoices Start -->
+            <div class="tab-pane" id="buy-credit-invoices">
+                <div class="card">
+                  <div class="card-content">
+                    <%= if Enum.empty?(@charge_history) do %>
+    
+                      <p>You don't have any invoices.</p>
+                    <% else %>
+                      <div class="table-responsive">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th>Date</th>
+                              <th>Amount</th>
+                              <th>Card</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <%= for charge <- @charge_history do %>
+                            <tr>
+                              <td><%= display_datetime(charge.date) %></td>
+                              <td><%= display_stripe_money(charge.amount) %></td>
+                              <td>Ending with  <%= charge.card %></td>
+                              <td><%= charge.description %></td>
+                            </tr>
+                            <% end %>
+                          </tbody>
+                        </table>
+                      </div>
+                      <%= pagination_links @charge_history %>
+                    <% end %>
+                  </div>
+                </div>
+            </div>
+            <!-- Buy Credit Invoices End -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

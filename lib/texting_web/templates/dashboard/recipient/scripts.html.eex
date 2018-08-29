@@ -1,0 +1,86 @@
+<script>
+  function checkAll(bx) {
+    var cbs = document.getElementsByTagName('input');
+    for(var i=0; i < cbs.length; i++) {
+      if(cbs[i].type == 'checkbox') {
+        cbs[i].checked = bx.checked;
+      }
+    }
+  }
+
+  // Select all delete button using sweetalert2
+  var button = document.getElementById("delete-button");
+  
+  if(button){
+    var deleteForm = document.getElementById("delete-form");
+    button.addEventListener('click', function(e){
+      e.preventDefault();
+      console.log("Delete Button Clicked!");
+      window.swal({
+        title: 'Are you sure?',
+        text:  'Remove contacts from Recipients List.',
+        showCancelButton: true,
+        confirmButtonColor: '#f44336',
+        cancelButtonColor:  '#333333',
+        confirmButtonText: 'Yes, Delete it!'
+        
+      }).then((result) => {
+        deleteForm.submit();
+        if(result.value) {
+          window.swal({
+            title: 'Deleted!',
+            text: 'Your contacts have been removed.',
+            timer: 5000,
+            type: 'success'
+          });
+        }
+      })
+    })
+  }
+  
+  // For each delete button using sweetalert2
+//  var buttons = document.querySelectorAll('.delete-each-button');
+//  if(buttons.length !== 0) {
+//    buttons.forEach(function(button) {
+//      button.addEventListener('click', function(e){
+//        e.stopPropagation();
+//        window.swal({
+//          title: 'Are you sure?',
+//          text:  'Remove contacts from Recipients List.',
+//          showCancelButton: true,
+//          confirmButtonColor: '#f44336',
+//          cancelButtonColor:  '#333333',
+//          confirmButtonText: 'Yes, Delete it!'
+//        }).then((result) => {
+//          if(result.value) {
+//           // $(this).trigger('click');
+//          }
+//        })
+//      })
+//    })
+//  }
+
+var buttons = document.querySelectorAll('.delete-each-button');
+if(buttons.length !== 0) {
+  buttons.forEach(function(button) {
+    button.addEventListener('phoenix.link.click', function (e) {
+      e.stopPropagation();
+      console.log("Hello!");
+    // window.swal({
+    //   title: 'Are you sure?',
+    //   text:  'Remove contacts from Recipients List.',
+    //   showCancelButton: true,
+    //   confirmButtonColor: '#f44336',
+    //   cancelButtonColor:  '#333333',
+    //   confirmButtonText: 'Yes, Delete it!'
+    // }).then((result) => {
+    //   if(result.value) {
+    //    // $(this).trigger('click');
+    //   }
+    // })
+      
+    }, false);
+  })
+}
+ 
+</script>

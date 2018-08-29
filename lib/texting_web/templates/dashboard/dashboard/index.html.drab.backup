@@ -1,0 +1,200 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header card-header-icon" data-background-color="rose">
+          <i class="material-icons">assessment</i>
+        </div>
+        <div class="card-content">
+          <h4 class="card-title">Most Recent Campaign</h4>
+          
+          <div class="row">
+            <%= if @has_campaign do %>
+            <div class="col-md-12">
+                <div class="table-responsive table-sales">
+                    <table class="table centered">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>Date</th>
+                          <th>Delivery Rate</th>
+                          <th></th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <%= for campaign <- @campaigns do %>
+                        <tr>
+                          <td><%= campaign.name %></td>
+                          <td><%= display_datetime(campaign.inserted_at) %></td>
+                          <td><%= calculate_percentage(campaign.id)%></td>
+                          <td>
+                            <form>
+                              <input type="hidden" name="campaign_id" value="<%= campaign.id %>">
+                              <button class="btn btn-rose btn-sm btn-round btn-fab btn-fab-mini" drab-click="show_dashboard_stats"><i class="material-icons">assessment</i></button>
+                            </form>
+                          </td>
+                          <td><a class="btn btn-info btn-sm btn-round btn-fab btn-fab-mini" href="<%= campaign_history_path(@conn, :show, campaign.id) %>"><i class="material-icons">more</i></a></td>
+                        </tr>
+                        <% end %>
+                      </tbody>
+                    </table>
+                </div> 
+              </div>
+            </div>
+            <%= else %>
+            <h3>No Campaign found, Try send!</h3>
+            <% end %>
+          </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card">
+          <div class="card-header card-header-icon" data-background-color="rose">
+            <i class="material-icons">assessment</i>
+          </div>
+          <div class="card-content">
+            <h4 class="card-title">Most Recent Campaign</h4>
+            
+            <div class="row">
+              <%= if @has_campaign do %>
+              <div class="col-md-12">
+                  <div class="row">
+                      <div class="canvas-wrapper">
+                          <canvas id="dashboardChart"></canvas>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <h4 class="campaign-name"><%= @recent_order.name %></h4>
+                        <table class="table centered">
+                          <thead>
+                            <th>Total Sent</th>
+                            <th>Deilvered</th>
+                            <th>Undelivered</th>
+                            <th>Total Clicks</th>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><p id="total-sent" data-total-sent="<%= @total_sent %>"><%= @total_sent %></p></td>
+                              <td><p id="deilvered-count" data-delivered-count="<%= @deilvered_count %>"><%= @deilvered_count %></p></td>
+                              <td><p id="undelivered-count" data-undelivered-count="<%= @undelivered_count %>"><%= @undelivered_count %></p></td>
+                              <td><p id="total-clicks" data-total-clicks="<%= @total_clicks %>"><%= @total_clicks %></p></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+              </div>
+              <%= else %>
+              <h3>No Campaign found, Try send!</h3>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+    
+  </div>
+
+  <div class="row">
+      <div class="col-md-3">
+        <div class="card card-chart">
+          <div class="card-header" data-background-color="green" data-header-animation="true">
+            <!-- <img src="<%= static_path(@conn, "/images/sms2.png") %>" alt=""> -->
+            <i class="material-icons medium center">textsms</i>
+          </div>
+          <div class="card-content">
+            <div class="card-actions">
+              <button type="button" class="btn btn-info btn-simple" rel="tooltip" data-placement="bottom" title="Send">
+                <i class="material-icons">send</i>
+              </button>
+            </div>
+
+            <h4 class="card-title">Send Text Messages</h4>
+            <p class="category">Send your text only messages. Somthing like discount coupon?</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">access_time</i><%= if @has_campaign do %> campaign sent <% end %> <%= @sms_time %>.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card card-chart">
+          <div class="card-header" data-background-color="rose" data-header-animation="true">
+            <i class="material-icons medium center">photo_album</i>
+          </div>
+          <div class="card-content">
+            <div class="card-actions">
+              <button type="button" class="btn btn-info btn-simple" rel="tooltip" data-placement="bottom" title="Refresh">
+                <i class="material-icons">send</i>
+              </button>
+            </div>
+
+            <h4 class="card-title">Send Image Messages</h4>
+            <p class="category">Picture is worth a thousand words. Send message with beautiful image.</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">access_time</i> <%= if @has_campaign do %>campaign sent<% end %> <%= @mms_time %>.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card card-chart">
+          <div class="card-header" data-background-color="purple" data-header-animation="true">
+            <i class="material-icons medium center">assessment</i>
+          </div>
+          <div class="card-content">
+            <div class="card-actions">
+              <a type="button" href="<%= analytics_path(@conn, :index)%>" class="btn btn-info btn-simple" rel="tooltip" data-placement="bottom" title="Analytics">
+                <i class="material-icons">assessment</i>
+              </a>
+            </div>
+
+            <h4 class="card-title">Analyticss</h4>
+            <p class="category">Check how your message goes. Delivered? or Undelivered?</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">access_time</i> <%= if @has_campaign do %>last updated<% end %> <%= @analytics_time %>.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card card-chart">
+          <div class="card-header" data-background-color="blue" data-header-animation="true">
+            <i class="material-icons medium center">monetization_on</i>
+          </div>
+          <div class="card-content">
+            <div class="card-actions">
+              <a type="button" class="btn btn-info btn-simple" href="<%= buy_credit_path(@conn, :new) %>" rel="tooltip" data-placement="bottom" title="Buy">
+                <i class="material-icons">shopping_cart</i>
+              </a>
+            </div>
+
+            <h4 class="card-title">Buy Credits</h4>
+            <p class="category">To send massive messages, you will need some credits!</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+      
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+

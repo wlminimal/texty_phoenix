@@ -1,0 +1,61 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-icon" data-background-color="purple">
+                  <i class="material-icons">person</i>
+            </div>
+  
+            <div class="card-content">
+                  <h2 class="card-title">Customers List</h2>
+                    <div class="form-wrapper">
+                    <%= if Enum.empty?(@customers) do %>
+                      <p>No Customer</p>
+                    <% else %>
+                    
+                    <div class="table-responsive">
+                      <table class="table">
+                          <thead>
+                              <tr>
+                                  <th>Name</th>
+                                  <th>Email</th>
+                                  <th>Phonenumber</th>
+                                  <th>Plan</th>
+                                  <th>Credit</th>
+                                  <th>Date Registered</th>
+                                  <th>Last Login</th>
+                                  <th class="text-right">Actions</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                            <%= for customer <- @customers do %>
+                              <tr>
+                                <td><%= display_fullname(customer) %></td>
+                                <td><%= customer.email %></td>
+                                <td><%= display_phone_number(customer.phone_number) %></td>
+                                <td><%= customer.stripe.plan_name %></td>
+                                <td><%= customer.credits %></td>
+                                <td><%= display_datetime(customer.inserted_at) %></td>
+                                <td><%= display_datetime(customer.last_login) %></td>
+                                <td class="td-actions text-right">
+                                  <%= button to: customer_path(@conn, :edit, customer.id), method: "get", class: "btn btn-github" do %>
+                                    <i class="material-icons icon-button">edit</i>Edit
+                                  <% end %>
+                                  <%= button to: customer_path(@conn, :show, customer.id), method: "get", class: "btn btn-github" do %>
+                                    <i class="material-icons icon-button">play_arrow</i>Detail
+                                  <% end %>
+                                </td>
+                              </tr>
+                            <% end %>
+                          
+                          </tbody>
+                      </table>
+                      <%= pagination_links @customers %>
+                    </div>
+                  <% end %>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,232 @@
+/* Menu Customize */
+nav {
+  color: #212121;
+  background-color: #ffffff;
+  width: 100%;
+  height: 84px;
+  /* line-height: 84px; */
+}
+
+nav .brand-logo {
+  position: absolute;
+  color: #212121;
+  display: inline-block;
+  font-size: 2.1rem;
+  padding: 0;
+}
+
+.recipients-notification {
+  position: absolute;
+  top: 5px;
+  border: 1px solid #FFF;
+  right: 10px;
+  font-size: 12px;
+  background: #6d61ea;
+  color: #FFFFFF;
+  min-width: 22px;
+  padding: 0px 5px;
+  height: 22px;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 19px;
+  display: block;
+}
+
+.log-out::before {
+  content: '';
+  position: absolute;
+  right: 15px;
+  height: 1px;
+  width: calc(100% - 30px);
+  background-color: rgba(180, 180, 180, 0.3);
+}
+
+.sidebar .sidebar-wrapper > .nav [data-toggle="collapse"] ~ div > ul > li > a i, .sidebar .sidebar-wrapper .user .info [data-toggle="collapse"] ~ div > ul > li > a i {
+  font-size: 17px;
+  line-height: 30px;
+  width: 26px;
+}
+
+.sidebar .sidebar-wrapper > .nav [data-toggle="collapse"] ~ div > ul > li > a .sidebar-mini, .sidebar .sidebar-wrapper .user .info [data-toggle="collapse"] ~ div > ul > li > a .sidebar-mini {
+  text-transform: uppercase;
+  width: 30px;
+  margin-right: 10px;
+  text-align: center;
+  letter-spacing: 1px;
+  position: relative;
+  float: left;
+  display: inherit;
+  margin-left: 5px;
+}
+
+
+.nav-wrapper {
+  padding-right: 50px;
+}
+
+.sidenav li.logo {
+  height: 84px;
+  background-color: #FFFFFF
+}
+
+.sidenav li > a#sidemenu-logo {
+  color: #222222;
+}
+
+ul.sidenav.sidenav-fixed:hover {
+  overflow-y: auto;
+}
+
+
+.sidenav .user-view {
+  margin-bottom: 18px;
+}
+
+.sidenav li > a {
+  color: #FFFFFF;
+  font-family: 'Dosis', sans-serif;
+  font-size: 16px;
+}
+
+.sidenav li > a:hover {
+  background-color: rgba(5, 5, 5, 0.29);
+}
+
+.sidenav {
+  overflow-y: auto;
+  width: 270px;
+  /* background-image: url("../images/user-sidemenu-bg.jpg"); */
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: cover;
+  background-color: #000b18;
+  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+
+.sidenav li > a > i, .sidenav li > a > [class^="mdi-"], .sidenav li > a li > a > [class*="mdi-"], .sidenav li > a > i.material-icons {
+  float: left;
+  height: 48px;
+  line-height: 48px;
+  margin: 0 32px 0 0;
+  width: 24px;
+  color: #FFFFFF;
+  font-size: 22px;
+}
+
+.sidenav .user-view .background {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background-image: url("../images/user-sidemenu-bg2.jpg");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: cover;
+  /* background-color: #03030366; */
+
+}
+
+nav ul a:hover {
+  background-color: #00324b80;
+}
+
+nav ul a {
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
+  font-size: 1rem;
+  color: #222222;
+  display: block;
+  padding: 0 15px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: 'Dosis', sans-serif;
+}
+
+.sidenav .user-view {
+    position: relative;
+    padding: 20px 32px 10px;
+    margin-bottom: 18px;
+}
+
+span.badge.new {
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: #fff;
+  background-color: #01579b;
+  border-radius: 2px;
+}
+
+.navbar .navbar-nav > li > a {
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+.navbar .navbar-nav > li > a:hover {
+  background-color: antiquewhite;
+}
+
+.sidebar .sidebar-background::after {
+
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  content: "";
+  display: block;
+  background: linear-gradient(-45deg, #9647db, #5e57ea);
+  /* background: #311b92; */
+  opacity: .93;
+  /* background-image: url("../images/user-sidemenu-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: cover; */
+}
+
+.sidebar .nav li:hover > a, .sidebar .nav li.active > [data-toggle="collapse"] {
+  background-color: rgb(123, 96, 251, 0.5);
+  color: #FFFFFF;
+  box-shadow: none;
+}
+
+.sidebar .nav i {
+
+  font-size: 24px;
+  float: left;
+  margin-right: 15px;
+  line-height: 30px;
+  width: 30px;
+  text-align: center;
+  color: #FFFFFF;
+
+}
+
+.sidebar .nav li > a {
+  color: #FFFFFF;
+}
+
+.sidebar .user a {
+
+  color: #FFFFFF;
+
+}
+
+.sidebar .logo .simple-text {
+  color: #FFFFFF;
+}
+
+.navbar .navbar-nav > li > a:hover, .navbar .navbar-nav > li > a:focus {
+  color: inherit;
+  background-color: rgba(200, 200, 200, 0.2);
+}
+
+.navbar > .container-fluid .navbar-brand {
+  margin-left: 15px;
+}
+.navbar-brand {
+  text-transform: uppercase;
+
+}

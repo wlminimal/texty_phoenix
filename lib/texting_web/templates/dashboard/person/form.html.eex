@@ -1,0 +1,25 @@
+<%= form_for @changeset, @action, [as: :person], fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group label-floating">
+    <%= label f, :name, class: "control-label" %>
+    <%= text_input f, :name, required: true, class: "form-control" %>
+    <%= error_tag f, :name %>
+  </div>
+  <div class="form-group label-floating">
+    <%= label f, :phone_number, class: "control-label" %>
+    <%= text_input f, :phone_number, required: true, class: "form-control", id: "contact-phone-number" %>
+    <p class="helper-text d-helper-text">Type 10 digit phone number including area code (ex 7778889999). </p>
+  	<p id="phonenumber-length-info" class="warning-text"></p>
+    <%= error_tag f, :phone_number %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-fill btn-primary" %>
+  </div>
+<% end %>
+  

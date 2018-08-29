@@ -1,0 +1,5 @@
+<h2>Edit Phonebook</h2>
+
+<%= render "form.html", Map.put(assigns, :action, phonebook_path(@conn, :update, @phonebook)) %>
+
+<span><%= link "Back", to: phonebook_path(@conn, :index) %></span>

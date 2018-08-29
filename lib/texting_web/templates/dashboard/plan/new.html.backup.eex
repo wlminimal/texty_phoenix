@@ -1,0 +1,72 @@
+<h1>Plan</h1>
+<h3>Your current plan is <%= @user.stripe.plan_name %> plan</h3>
+
+<%= form_for @conn, plan_path(@conn, :create), [id: "upgrade-plan-form"], fn f -> %>
+<div>
+    <p>
+      <label>
+        <input id="Free" class="plan" name="plan_id" type="radio" value="<%= @free_plan_id %>"/>
+        <span>Free Plan</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input id="Bronze" class="plan" name="plan_id" type="radio" value="<%= @bronze_plan_id %>"/>
+        <span>Bronze - $20/month (400 credits) - You can send 400 sms or 133 mms</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input id="Silver" class="plan" name="plan_id" type="radio" value="<%= @silver_plan_id %>" />
+        <span>Silver - $40/month (900 credits)- You can send 900 sms or 300 mms</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input id="Gold" class="plan" name="plan_id" type="radio" value="<%= @gold_plan_id %>" />
+        <span>Gold - $60/month (1500 credits)- You can send 1500 sms or 500 mms</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input id="Platinum" class="plan" name="plan_id" type="radio" value="<%= @platinum_plan_id %>" />
+        <span>Platinum - $100/month (2900 credits)- You can send 1900 sms or 966 mms</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input id="Diamond" class="plan" name="plan_id" type="radio" value="<%= @diamond_plan_id %>" />
+        <span>Diamond - $150/month (5000 credits)- You can send 5000 sms or 1666 mms</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input id="Master" class="plan" name="plan_id" type="radio" value="<%= @master_plan_id %>" />
+        <span>Master - $200/month (8000 credits)- You can send 8000 sms or 2666 mms</span>
+      </label>
+    </p>
+
+    <p>
+      <label>
+        <input id="GrandMaster" class="plan" name="plan_id" type="radio" value="<%= @grandmaster_plan_id %>" />
+        <span>Grand Master - $400/month (20000 credits)- You can send 20000 sms or 6666 mms</span>
+      </label>
+    </p>
+    
+  </div>
+  <br/>
+  <%= submit "Save Chages", class: "btn", id: "plan-change-button" %>
+  
+<% end %>
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Changing Plan</h4>
+      <p>You are about to change plan to <span id="plan-span">Free Plan</span>.</p>
+      <p>You will prorated to <span id="prorated-span">$99</span> at your billing cycle</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+      <a href="#!" id="proceed-button" class="modal-close waves-effect waves-green btn-flat">Proceed</a>
+    </div>
+  </div>

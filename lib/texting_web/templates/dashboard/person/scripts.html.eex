@@ -1,0 +1,13 @@
+<script>
+// Phone Number validation, Only numbers in phone numbers input field
+// var phoneNumbers = document.getElementById("contact-phone-number");
+// var errorBlock = document.getElementById("phonenumber-length-info");
+// phoneNumbers.addEventListener("keyup", function(){
+//   if(/^[0-9.,\s]+$/.test(this.value)) {
+//     errorBlock.innerHTML = "";
+//   } else {
+//     errorBlock.innerHTML = "Please Enter only numbers!";
+//   }
+// })
+
+</script>

@@ -1,0 +1,4 @@
+
+<h2>Hi! <%= @user.first_name %></h2>
+<p>Here is your sign-in link! <a href="<%= @link %>">Sign In</a></p>
+<p>Link will be expired in 10 min and never share your sign in link.</p>

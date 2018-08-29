@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Hello Texting!</title>
+
+    
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/css/materialize.min.css"> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/landing-page.css") %>">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.13/semantic.min.css"> -->
+  </head>
+
+  <body class="">
+     <!-- Preloader Start -->
+     <!-- <div id="preloader">
+        <div class="colorlib-load"></div>
+    </div>
+  -->
+  <!-- ***** Header Area Start ***** -->
+
+<!-- ***** Header Area End ***** -->
+
+    <%= render @view_module, @view_template, assigns %>
+
+
+    <!--  <script
+			  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+			  crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/js/materialize.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.13/semantic.min.js"></script> -->
+    <script type="text/javascript">
+     // $(document).ready(function(){
+     //   $('.welcome-thumb').slick({
+     //     autoplay: true
+     //   });
+     // });
+    </script>
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script>
+      (function ($) {
+        'use strict';
+        var $window = $(window);
+        $window.on('load', function () {
+          $.notify({
+            icon: "notifications",
+            message: "Our website uses cookies to ensure you get the best experience on our website."
+  
+          },{
+              type: 'rose',
+              timer: 100000,
+              placement: {
+                  from: 'bottom',
+                  align: 'right'
+              }
+          });
+      });
+      })(jQuery);
+    </script>
+  </body>
+</html>

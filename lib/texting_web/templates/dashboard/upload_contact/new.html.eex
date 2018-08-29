@@ -1,0 +1,127 @@
+<div class="container-fluid">
+  <div class="upload-flexbox">
+    <div class="upload-flexitem">
+      <div class="card">
+          <div class="card-header card-header-icon" data-background-color="purple">
+            <i class="material-icons">file_upload</i>
+          </div>
+          <div class="card-content">
+            <h4 class="card-title">Upload Contact to Existing Phonebook</h4>
+            <br>
+            <p>If your file contains duplicate phone number, it will added as 1 contact.</p>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="info-wrapper">
+                    <%= form_for @conn, upload_contact_path(@conn, :upload), [multipart: true], fn f -> %>
+                    <div class="col-sm-12">
+
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="form-group">
+                            <label for="phonebook">Choose Phonebook</label>
+                            <%= select f, :phonebook_id, Enum.map(@phonebooks, &{&1.name, &1.id}), prompt: "Choose your Phonebook", class: "form-control", required: true %>
+                            <%= error_tag f, :phonebook_id %>
+                          </div>
+                        </div>
+                      </div>
+    
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <input type="text" style="width: 250px;" id="contactFileName" placeholder="Choose File" disabled="disabled">
+                          <div class="image-uploader btn btn-github">
+                            <label>Upload Contact</label>
+                            <input type="file" id="contact-uploader" name="contact_csv" class="upload-button" required="true" >
+                          </div>
+                          <%= error_tag f, :contact_csv %>
+                          <div>
+                          <span class="helper-text d-helper-text">Max size is 2 MB. Only CSV file format. </span>
+                          </div>
+                          </div>
+                        </div>
+                      
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <button class="btn btn-primary" type="submit" name="action">Upload
+                            <i class="material-icons right">cloud_upload</i>
+                          </button>
+                          <a href="https://s3-us-west-1.amazonaws.com/text-marketing/admin/contact-template.csv" class="btn btn-rose">
+                            Download Template
+                          </a>
+                          <p>You can download our template or You can make your own. But make sure file must include header title as "name", "email", "phone_number".
+                          
+                            </p>
+                        </div>
+                      </div>
+                    </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="upload-flexitem">
+        <div class="card">
+            <div class="card-header card-header-icon" data-background-color="purple">
+              <i class="material-icons">file_upload</i>
+            </div>
+            <div class="card-content">
+              <h4 class="card-title">Upload Contact to New Phonebook</h4>
+              
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="info-wrapper">
+                      <%= form_for @conn, upload_contact_path(@conn, :upload), [multipart: true], fn f -> %>
+                      <div class="col-sm-12">
+  
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <div class="form-group">
+                              <label for="name">Name</label>
+                              <%= text_input f, :name, placeholder: "Enter New Phonebook Name", maxlength: 25, class: "form-control", required: true  %>
+                              <%= error_tag f, :phonebook %>
+                            </div>
+                          </div>
+                        </div>
+      
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <input type="text" style="width: 250px;" id="contactFileName2" placeholder="Choose File" disabled="disabled">
+                            <div class="image-uploader btn btn-github">
+                              <label>Upload Contact</label>
+                              <input type="file" id="contact-uploader2" name="contact_csv" class="upload-button" required="true" >
+                            </div>
+                            <%= error_tag f, :contact_csv %>
+                            <div>
+                            <span class="helper-text d-helper-text">Max size is 2 MB </span>
+                            </div>
+                            </div>
+                          </div>
+                        
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <button class="btn btn-primary" type="submit" name="action">Upload
+                              <i class="material-icons right">cloud_upload</i>
+                            </button>
+                            <a href="https://s3-us-west-1.amazonaws.com/text-marketing/admin/contact-template.csv" class="btn btn-rose">
+                              Download Template
+                            </a>
+                            <p>You can download our template or You can make your own. But make sure file must include header title as "name", "email", "phone_number".
+                          
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

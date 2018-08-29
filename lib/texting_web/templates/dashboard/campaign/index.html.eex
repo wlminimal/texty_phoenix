@@ -1,0 +1,41 @@
+<div class="container">
+  <h3 style="text-align: center;">Start a Campaign</h3>
+  <p style="text-align: center;">Send text messages or image messages by using this two method.</p>
+  <div class="campaign-flexbox">
+    <div class="campaign-flexitem">
+
+      <div class="card">
+        <div class="card-header card-header-icon" data-background-color="rose">
+          <i class="material-icons">contact_phone</i>
+        </div>
+        <div class="card-content">
+          <h4 class="card-title">Start from Phonebook</h4>
+          <br>
+          <br>
+          <p>Start by adding recipients from your contact. You can add individual contact one by one or add whole
+            phonebook to recipients list.
+          </p>
+          <br>
+          <a href="<%= phonebook_path(@conn, :index) %>" class="btn btn-primary">Go to Phonebook</a>
+        </div>
+      </div>
+    </div>
+    <div class="campaign-flexitem">
+      <div class="card">
+        <div class="card-header card-header-icon" data-background-color="rose">
+          <i class="material-icons">cloud_upload</i>
+        </div>
+        <div class="card-content">
+          <h4 class="card-title">Start by Uploading Contacts</h4>
+          <br>
+          <br>
+          <p>Start by uploading contacts from yout computer. You can upload csv file to existing phonebook or
+             you can create a new phonebook.
+          </p>
+          <br>
+          <a href="<%= upload_contact_path(@conn, :new) %>" class="btn btn-primary">Go to Upload</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

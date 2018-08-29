@@ -1,0 +1,39 @@
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+
+  var buyButtons = document.querySelectorAll(".buy-credit-button");
+  buyButtons.forEach(function(button) {
+    button.addEventListener("click", function(e) {
+      e.preventDefault();
+      var form = button.parentNode.parentNode.parentNode;
+      console.log("Buy Credit Button Clicked!");
+
+      var hiddenInput = $(button).siblings()[5];
+      console.log(hiddenInput);
+      var amount = hiddenInput.getAttribute("data-amount");
+      console.log(amount);
+      window.swal({
+        title: "Are you sure?",
+        text: "We will charge you " + "$"+ amount + ".",
+        showCancelButton: true,
+        confirmButtonColor: '#e91e63',
+        cancelButtonColor:  '#333333',
+        confirmButtonText: 'Yes, Charge it!'
+      }).then((result) =>{
+        var loadingIcon = button.children[0];
+
+        $(loadingIcon).removeClass("hide-icon");
+        button.innerHTML ='<span class="fas fa-spinner fa-spin fa-lg"></span>  Charging...';
+        // Diasble all button
+        var allButtons = document.querySelectorAll(".buy-credit-button");
+        allButtons.forEach(function(eachButton) {
+          eachButton.setAttribute("disabled", "true");
+        });
+
+        form.submit();
+      })
+    });
+  });
+
+});
+</script>

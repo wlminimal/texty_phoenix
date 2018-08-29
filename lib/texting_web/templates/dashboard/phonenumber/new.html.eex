@@ -1,0 +1,6 @@
+<h2> Your Phone numbers </h2>
+
+<h4> Your phone number lists! <h4>
+<%= for phonenumber <- @user.phonenumbers do %>
+<p> <%= phonenumber.friendly_name %> </p>
+<% end %>

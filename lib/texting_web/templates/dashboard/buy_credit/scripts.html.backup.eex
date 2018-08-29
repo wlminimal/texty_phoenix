@@ -1,0 +1,48 @@
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+
+var chargeutton = document.getElementById("charge-button");
+// Get a form
+var form = document.getElementById("buy-credit-form");
+
+// Get a confirm button
+var confirmButton = document.getElementById("confirm-button");
+
+// Get radio buttons
+var radioButtons = document.querySelectorAll(".amount");
+var chargeAmountSpan = document.getElementById("charge-amount");
+var creditAmountSpan = document.getElementById("credit-amount");
+// Radio Button Click Event
+function chargeRadioButtonClick(e) {
+  var target = e.target;
+  var amount = target.getAttribute("data-amount");
+  var credit = target.getAttribute("data-credit");
+  chargeAmountSpan.innerText = amount;
+  creditAmountSpan.innerText = credit;
+}
+
+radioButtons.forEach(function(element) {
+  element.addEventListener("click", chargeRadioButtonClick);
+});
+
+// GET A MODAL
+var modals = document.querySelectorAll(".modal");
+
+//console.log(modals);
+
+var modalInstances = M.Modal.init(modals, options);
+// Confirm before submit
+function beforeSubmit(e) {
+  e.preventDefault();
+  console.log(modalInstances);
+  modalInstances[0].open();
+}
+
+function confirmSubmit(e) {
+  form.submit();
+}
+
+chargeutton.addEventListener("click", beforeSubmit);
+confirmButton.addEventListener("click", confirmSubmit);
+});
+</script>

@@ -1,0 +1,165 @@
+
+<div class="container-fluid">
+	<div class="dashboard-flex-container">
+			<div class="dashboard-flexitem narrow">
+					<div class="dashboard-sub-flex-container">
+						<div class="dashboard-sub-flexitem">
+								<div class="card">
+									 <div class="card-header card-header-icon" data-background-color="purple">
+										<i class="material-icons">perm_device_information</i>
+									</div>
+									<div class="card-content">
+										<h4 class="card-title">Information</h4>
+										<div class="row">
+											<div class="col-md-12">
+												<div class="info-wrapper">
+													<p>Number of Recipients: <strong><span id="recipients-count"><%= @recipients.counts %> recipients.</span></strong></p>
+													<p>Your remaining Credits: <strong><%= @user.credits %> credits.</strong></p>
+													<p>Total Credit will be used: <strong><span id="total-price"><%= total_mms_price(@recipients.counts)%> Credit(s).</span></strong></p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+						</div>
+						<div class="dashboard-sub-flexitem">
+							<div class="card" >
+									<div class="card-header card-header-icon" data-background-color="purple">
+										<i class="material-icons">content_cut</i> 
+									</div>
+									<div class="card-content">
+										<h4 class="card-title">Shorten Your Link</h4>
+										<p class="helper-text">Paste or Type your url for better customer experience and analytics.</p>
+										<div class="row">
+											<div class="col-md-12">
+												<div class="row">
+													<div class="col-sm-12">
+														<div class="form-group">
+															<div class="info-wrapper">
+																<form>
+																	<label for="long_url">Type long URL here.(Including http://)</label>
+																	<textarea class="form-control"  row="2" id="long-url-textarea" name="long_url_textarea"><%= @long_url %> </textarea>
+																	<p id="long-url-error"></p>
+																	<button class="btn btn-github" drab="click:shorten_url">
+																			<i class="material-icons right">content_cut</i>Shorten
+																		</button>
+																</form>
+															</div>
+														</div>
+													</div>
+												</div>
+												
+												<!-- Shortened Url -->
+												<div class="row">
+													<div class="col-sm-12">
+														<div class="form-group">
+															<label for="long_url">Your short Url</label>
+															<textarea class="form-control" id="short-url-textarea" readonly><%= @shorten_url %> </textarea>
+															<p class="helper-text d-helper-text">Copy this text and paste in your message. </p>
+														</div>
+													</div>
+												</div>
+										</div>
+									</div>
+							 </div> 
+						 </div>
+					</div>
+				</div>
+			</div>
+		<div class="dashboard-flexitem wide">
+			<div class="card sendmms_card">
+				<div class="card-header card-header-icon" data-background-color="purple">
+					<i class="material-icons">send</i>
+				</div>
+				<div class="card-content">
+							<h4 class="card-title">Send Image Campaign</h4>
+							
+							<div class="row">
+								<div class="col-md-12">
+										<div class="row">
+											<div class="info-wrapper">
+												<%= form_for @conn, checkout_mms_path(@conn, :preview_mms), [as: :mms, multipart: true], fn f -> %>
+												<div class="col-sm-12">
+													<div>
+														<div class="row">
+															<div class="col-sm-12">
+																<div class="form-group">
+																	<label for="sms[name]">Name</label>
+																	<%= text_input f, :name, placeholder: "Enter Name for this campaign", maxlength: 25, class: "form-control", required: true  %>
+																	<%= error_tag f, :name %>
+																</div>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-sm-12">
+																<div class="form-group">
+																<label for="sms[description]">Description</label>
+																<%= text_input f, :description, placeholder: "Enter Description for this campaign", maxlength: 50, class: "form-control", required: true %>
+																<%= error_tag f, :description %>
+																</div>
+															</div>
+														</div>
+
+														<div class="row">
+															<div class="col-sm-12">
+																<input type="text" style="width: 250px;" id="imageFileName" placeholder="Choose File" disabled="disabled">
+																<div class="image-uploader btn btn-github">
+																	<label>Upload Image</label>
+																	<input type="file" id="mms-image-uploader" name="upload-image" class="upload-button" required="true" >
+																</div>
+																<div>
+																<span class="helper-text d-helper-text">Max size is 2 MB </span>
+																</div>
+																</div>
+															</div>
+														</div>
+											
+														<div class="row">
+															<div class="col-sm-12">
+																<div class="form-group">
+																	<i class="material-icons prefix">message</i>
+																	<%= textarea f, :message, class: "form-control", id: "message", row: "3", required: true %>
+																	<label for="message">Message</label>
+																	<%= error_tag f, :message %>
+																	<p class="helper-text d-helper-text">There is no text limit in Image Campaign </p>
+																	
+																	</p>
+																</div>
+															</div>
+														</div>
+											
+														<%= hidden_input f, :total_credit, value: 1 %>
+														<%= hidden_input f, :bitlink_id, value: @bitlink_id %>
+														<div class="row">
+															<div class="col-sm-12">
+																<button class="btn btn-primary" type="submit" name="action">Next
+																	<i class="material-icons right">send</i>
+																</button>
+															</div>
+														</div>
+
+														<div class="row">
+															<div class="col-sm-12">
+																<div class="sms-description">
+																	<blockquote>
+																		We highly recommend using our  <strong><span class="italic">shorten link function </span></strong>  and paste it in the message. Then when customers click
+																		we can track how many customers responded your campaign.
+																	</blockquote>
+																</div>
+															</div>
+														</div>
+													</div>
+												<% end %>
+											</div>
+											
+											</div>
+											</div>
+								</div>
+				</div>
+			</div>
+		</div>
+			
+		</div>
+		
+	</div>
+</div>

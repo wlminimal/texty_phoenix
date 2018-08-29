@@ -1,0 +1,9 @@
+
+<tr>
+  <td>
+    <h3>Message from Customer</h3>
+    <p>Name : <%= @name %></p>
+    <p>Message : <%= @message %></p>
+  </td>
+  
+</tr>

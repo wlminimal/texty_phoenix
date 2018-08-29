@@ -1,0 +1,498 @@
+
+
+<!-- ***** Header Area Start ***** -->
+<header class="header_area animated">
+  <div class="container-fluid">
+      <div class="row align-items-center">
+          <!-- Menu Area Start -->
+          <div class="col-12 col-lg-10">
+              <div class="menu_area">
+                  <nav class="navbar navbar-expand-lg navbar-light" id="landing-nav">
+                      <!-- Logo -->
+                      <a class="navbar-brand" href="/">Tx.</a>
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                      <!-- Menu Area -->
+                      <div class="collapse navbar-collapse" id="ca-navbar">
+                          <ul class="navbar-nav ml-auto" id="nav">
+                              <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                              <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                              <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                              <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+                              <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                              <li class="nav-item"><a class="nav-link" id="sign-in-link" href="/sign-in">Sign In</a></li>
+                          </ul>
+                          <div class="sing-up-button d-lg-none">
+                              <a href="/sign-up">Sign Up Free</a>
+                          </div>
+                      </div>
+                  </nav>
+              </div>
+          </div>
+          <!-- Signup btn -->
+          <div class="col-12 col-lg-2">
+              <div class="sing-up-button d-none d-lg-block">
+                  <a href="/sign-up">Sign Up Free</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</header>
+<!-- ***** Header Area End ***** -->
+<!-- ***** Wellcome Area Start ***** -->
+ <section class="wellcome_area clearfix" id="home">
+	<div class="container h-100">
+			<div class="row h-100 align-items-center">
+					<div class="col-10 col-md">
+							<div class="wellcome-heading">
+								<h2>New & Easiest way</h2>
+								<h2>to engage customers</h2>
+								<h3>T</h3>
+								<br>
+								<p class="hero-desc">Send massive text or image messages to your customer. </p>
+								<p class="hero-desc">It is Free to start. No Credit Cards Required. </p>
+							</div>
+							<div class="get-start-area">
+								<a href="/sign-up" class="btn btn-primary">Get 100 Free Credits</a>
+							</div>
+					</div>
+					<div class="col-2 col-md">
+						<div class="welcome-thumb wow fadeInDown" data-wow-delay="0.5s">
+							<!-- <img src="<%= static_path(@conn, "/images/mobile1.png") %>" alt=""> -->
+							<div><img src="<%= static_path(@conn, "/images/screen-capture1.jpg") %>" alt=""></div>
+							<div><img src="<%= static_path(@conn, "/images/screen-capture2.jpg") %>" alt=""></div>
+							<div><img src="<%= static_path(@conn, "/images/screen-capture3.jpg") %>" alt=""></div>
+						</div>
+					</div>
+			</div>
+	</div>
+	<!-- Welcome thumb -->
+	
+</section>
+<!-- ***** Wellcome Area End ***** -->
+
+    <!-- ***** Special Area Start ***** -->
+    <section class="special-area bg-white section_padding_100" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Section Heading Area -->
+                    <div class="section-heading text-center">
+                        <h2>Why You have to use Texty Marketing</h2>
+                        <div class="line-shape"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Single Special Area -->
+                <div class="col-12 col-md-4">
+                    <div class="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="single-icon">
+                            <i class="ti-mobile" aria-hidden="true"></i>
+                        </div>
+                        <h4>Open Rate over 99%</h4>
+                        <p>Every people has cell phone and every people check their messages upon arrival. 
+												</p>
+                    </div>
+                </div>
+                <!-- Single Special Area -->
+                <div class="col-12 col-md-4">
+                    <div class="single-special text-center wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="single-icon">
+                            <i class="ti-text" aria-hidden="true"></i>
+                        </div>
+                        <h4>Send Special Offer by Text Message</h4>
+                        <p>You can notify your customers about sales, discount coupon, special event and many more in a second.</p>
+                    </div>
+                </div>
+                <!-- Single Special Area -->
+                <div class="col-12 col-md-4">
+                    <div class="single-special text-center wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="single-icon">
+                            <i class="ti-gallery" aria-hidden="true"></i>
+                        </div>
+                        <h4>Send Picture of New Products by Image Message</h4>
+                        <p>Even better, Send text message with your beautiful image. This will catch your customers' attention.For example, new arrival product, Sales Item etc</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Special Description Area -->
+        <div class="special_description_area mt-150">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="special_description_img">
+                            <img src="<%= static_path(@conn, "/images/laptop-dashboard.png") %>" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-5 ml-xl-auto">
+                        <div class="special_description_content">
+                            <h2><span class="span-italic">Text Marketing</span> must be the first choice of your marketing strategy.</h2>
+                            <p>Most business uses Email marketing for their marketing strategy, because it is free. However there are lots of spam filtering and customer tends to give up opening marketing emails. But Everyone check their messages.</p>
+                            <div class="app-download-area">
+                                <div class="app-download-btn wow fadeInUp" data-wow-delay="0.2s">
+                                    <!-- Google Store Btn -->
+                                    <a href="/sign-up">
+                                        <p class="mb-0">Get 100 Free Credits</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Special Area End ***** -->
+
+<!-- ***** Awesome Features Start ***** -->
+<section class="awesome-feature-area bg-white section_padding_0_50 clearfix" id="features">
+	<div class="container">
+			<div class="row">
+					<div class="col-12">
+							<!-- Heading Text -->
+							<div class="section-heading text-center">
+									<h2>Awesome Features</h2>
+									<div class="line-shape"></div>
+							</div>
+					</div>
+			</div>
+
+			<div class="row">
+					<!-- Single Feature Start -->
+					<div class="col-12 col-sm-6 col-lg-4">
+							<div class="single-feature">
+									<i class="ti-infinite" aria-hidden="true"></i>
+									<h5>Unlimited Contacts</h5>
+									<p>You can add contacts as many as you want. There is no limit.</p>
+							</div>
+					</div>
+					<!-- Single Feature Start -->
+					<div class="col-12 col-sm-6 col-lg-4">
+							<div class="single-feature">
+									<i class="ti-pulse" aria-hidden="true"></i>
+									<h5>Fast and Reliable</h5>
+									<p>Our messaging service is very fast and reliable. We reach up to 99% delivery rate.</p>
+							</div>
+					</div>
+					<!-- Single Feature Start -->
+					<div class="col-12 col-sm-6 col-lg-4">
+							<div class="single-feature">
+									<i class="ti-dashboard" aria-hidden="true"></i>
+									<h5>Simple to use</h5>
+									<p>Our web interface is very simple to use. Create contacts, add it to list and click send!</p>
+							</div>
+					</div>
+					<!-- Single Feature Start -->
+					<div class="col-12 col-sm-6 col-lg-4">
+							<div class="single-feature">
+									<i class="ti-mobile" aria-hidden="true"></i>
+									<h5>Dedicated Phone number</h5>
+									<p>You will get 1 to 10 dedicated phone number for your business depend on your plan.</p>
+							</div>
+					</div>
+					<!-- Single Feature Start -->
+					<div class="col-12 col-sm-6 col-lg-4">
+							<div class="single-feature">
+									<i class="ti-location-pin" aria-hidden="true"></i>
+									<h5>Asian Language</h5>
+									<p>You can send a message in your own language. Asign Language(Chinese, Japanese and Korean) is available.</p>
+							</div>
+					</div>
+					<!-- Single Feature Start -->
+					<div class="col-12 col-sm-6 col-lg-4">
+							<div class="single-feature">
+									<i class="ti-stats-up" aria-hidden="true"></i>
+									<h5>Auto Scaler</h5>
+									<p>Distribute messages across a group of dedicated phone numbers to reach large audiences in a short amount of time.</p>
+							</div>
+					</div>
+			</div>
+
+	</div>
+</section>
+<!-- ***** Awesome Features End ***** -->
+
+
+<!-- ***** Pricing Plane Area Start *****==== -->
+<section class="pricing-plane-area section_padding_100_70 clearfix" id="pricing">
+	<div class="container">
+			<div class="row">
+					<div class="col-12">
+							<!-- Heading Text  -->
+							<div class="section-heading text-center">
+									<h2>Pricing Plan</h2>
+                  <div class="line-shape"></div>
+                  <p class="plan-desc">You will need credits and need to buy credits seperately.</p>
+							</div>
+					</div>
+			</div>
+
+			<div class="row no-gutters">
+          <div class="col-12 col-md-6 col-lg-3">
+							<!-- Package Price  -->
+							<div class="single-price-plan text-center">
+									<!-- Package Text  -->
+									<div class="package-plan">
+											<h5>Free Plan</h5>
+											<div class="ca-price d-flex justify-content-center">
+													<span></span>
+													<h4>Free</h4>
+											</div>
+									</div>
+									<div class="package-description">
+                      <p>0 Dedicated Phone Number</p>
+											<p>100 Free Credits</p>
+									</div>
+								
+							</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+							<!-- Package Price  -->
+							<div class="single-price-plan text-center">
+									<!-- Package Text  -->
+									<div class="package-plan">
+											<h5>Bronze Plan</h5>
+											<div class="ca-price d-flex justify-content-center">
+													<span>$</span>
+                          <h4>5</h4>
+                          <span> / month</span>
+											</div>
+									</div>
+									<div class="package-description">
+											<p>1 Dedicated Phone Number</p>
+											<p>Daily Message Limit is 250 messages</p>
+									</div>
+									
+							</div>
+					</div>
+					
+					<div class="col-12 col-md-6 col-lg-3">
+							<!-- Package Price  -->
+							<div class="single-price-plan active text-center">
+									<!-- Package Text  -->
+									<div class="package-plan">
+											<h5>Silver Plan</h5>
+											<div class="ca-price d-flex justify-content-center">
+													<span>$</span>
+                          <h4>10 </h4>
+                          <span> / month</span>
+											</div>
+									</div>
+									<div class="package-description">
+											<p>3 Dedicated Phone Number</p>
+											<p>Daily Message Limit is 750 messages</p>
+									</div>
+									
+							</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+							<!-- Package Price  -->
+							<div class="single-price-plan text-center">
+									<!-- Package Text  -->
+									<div class="package-plan">
+											<h5>Gold Plan</h5>
+											<div class="ca-price d-flex justify-content-center">
+													<span>$</span>
+                          <h4>15</h4>
+                          <span> / month</span>
+											</div>
+									</div>
+									<div class="package-description">
+											<p>5 Dedicated Phone Number</p>
+											<p>Daily Message Limit is 1250 messages</p>
+									</div>
+									
+							</div>
+					</div>
+			</div>
+  </div>
+  <div class="container">
+			<div class="row">
+					<div class="col-12">
+							<!-- Heading Text  -->
+							<div class="section-heading text-center">
+									<h2>Credit Price</h2>
+                  <div class="line-shape"></div>
+                  <p class="plan-desc">Pay as you go.</p>
+							</div>
+					</div>
+			</div>
+
+			<div class="row no-gutters">
+          <div class="col-12 col-md-6 col-lg-3">
+							<!-- Package Price  -->
+							<div class="single-price-plan text-center">
+									<!-- Package Text  -->
+									<div class="package-plan">
+											<h5>700 Credits</h5>
+											<div class="ca-price d-flex justify-content-center">
+													<span>$</span>
+													<h4>35</h4>
+											</div>
+									</div>
+									<div class="package-description">
+                      <p>5.0 cents / credit</p>
+                      <p>Up to 700 Text Messages</p>
+											<p>Up to 233 Image Messages</p>
+									</div>
+								
+							</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+							<!-- Package Price  -->
+							<div class="single-price-plan text-center">
+									<!-- Package Text  -->
+									<div class="package-plan">
+											<h5>1125 Credits</h5>
+											<div class="ca-price d-flex justify-content-center">
+													<span>$</span>
+													<h4>55</h4>
+											</div>
+									</div>
+									<div class="package-description">
+                      <p>4.9 cents / credit</p>
+											<p>Up to 1125 Text Messages</p>
+											<p>Up to 375 Image Messages</p>
+									</div>
+									
+							</div>
+					</div>
+					
+					<div class="col-12 col-md-6 col-lg-3">
+							<!-- Package Price  -->
+							<div class="single-price-plan active text-center">
+									<!-- Package Text  -->
+									<div class="package-plan">
+											<h5>2000 Credits</h5>
+											<div class="ca-price d-flex justify-content-center">
+													<span>$</span>
+													<h4>95</h4>
+											</div>
+									</div>
+									<div class="package-description">
+                      <p>4.754 cents / credit</p>
+											<p>Up to 2000 Text Messages</p>
+											<p>Up to 666 Image Messages</p>
+									</div>
+									
+							</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+							<!-- Package Price  -->
+							<div class="single-price-plan text-center">
+									<!-- Package Text  -->
+									<div class="package-plan">
+											<h5>2900 Credits</h5>
+											<div class="ca-price d-flex justify-content-center">
+													<span>$</span>
+													<h4>135</h4>
+											</div>
+									</div>
+									<div class="package-description">
+                      <p>4.655 cents / credit</p>
+											<p>Up to 2900 Text Messages</p>
+											<p>Up to 966 Image Messages</p>
+									</div>
+									
+							</div>
+					</div>
+			</div>
+	</div>
+</section>
+<!-- ***** Pricing Plane Area End ***** -->
+
+<!-- ***** CTA Area Start ***** -->
+<section class="our-monthly-membership section_padding_50 clearfix">
+	<div class="container">
+			<div class="row align-items-center">
+					<div class="col-md-8">
+							<div class="membership-description">
+									<h2>Join our Monthly Membership</h2>
+									<p>Find the perfect plan for you — 100% satisfaction guaranteed.</p>
+							</div>
+					</div>
+					<div class="col-md-4">
+							<div class="get-started-button wow bounceInDown" data-wow-delay="0.5s">
+									<a href="/sign-up">Get Started</a>
+							</div>
+					</div>
+			</div>
+	</div>
+</section>
+<!-- ***** CTA Area End ***** -->
+
+<!-- ***** Contact Us Area Start ***** -->
+<section class="footer-contact-area section_padding_100 clearfix" id="contact">
+	<div class="container">
+			<div class="row">
+					<div class="col-md-6">
+							<!-- Heading Text  -->
+							<div class="section-heading">
+									<h2>Get in touch with us!</h2>
+									<div class="line-shape"></div>
+							</div>
+							<div class="footer-text">
+									<p>If you have a question, Feel free to send a message. We will get back to you within 24 hours.</p>
+							</div>
+							<div class="phone-text">
+									<p><span>Text:</span> (213) 777 - 8888</p>
+							</div>
+							<div class="email-text">
+									<p><span>Email:</span> info@texty.marketing</p>
+							</div>
+					</div>
+					<div class="col-md-6">
+							<div class="card contact-card">
+					
+								<div class="card-content">
+									<%= form_for @conn, page_path(@conn, :create), [as: :contact_form], fn f -> %>
+										<div class="form-group label-floating">
+												<label class="control-label">Your Name</label>
+												<%= text_input f, :name, id: "name", class: "form-control", required: true %>
+										</div>
+										<div class="form-group label-floating">
+												<label class="control-label">Your Email</label>
+												<%= email_input	f, :email, id: "email", class: "form-control", required: true %>
+										</div>
+
+										<div class="form-group label-floating">
+												<label class="control-label">Your Message *</label>
+												<%= textarea f, :message, class: "form-control", cols: "30", id: "message", rows: "4", required: true %>
+										</div>
+
+									
+										<button type="submit" class="btn submit-btn">Submit</button>
+									<% end %>
+								</div>
+							</div>
+
+					</div>
+			</div>
+	</div>
+</section>
+<!-- ***** Contact Us Area End ***** -->
+
+    <!-- ***** Footer Area Start ***** -->
+    <footer class="footer-social-icon text-center section_padding_70 clearfix">
+        <!-- footer logo -->
+        <div class="footer-text">
+            <h2>Texty</h2>
+        </div>
+      
+        <div class="footer-menu">
+            <nav>
+                <ul>
+                    <li><a href="<%= terms_path(@conn, :index) %>">Terms &amp; Conditions</a></li>
+                    <li><a href="<%= privacy_path(@conn, :index) %>">Privacy Policy</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Foooter Text-->
+        <div class="copyright-text">
+            <!-- ***** Removing this text is now allowed! This template is licensed under CC BY 3.0 ***** -->
+            <p>Copyright ©2018 Texty. Designed by <a href="https://www.welikeminimal.com" target="_blank">We like minimal.</a></p>
+        </div>
+    </footer>
+    <!-- ***** Footer Area Start ***** -->
