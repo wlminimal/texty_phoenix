@@ -45,3 +45,4 @@ dashboardChart && window.DashboardChart.buildChart();
 
 // Add Contact Phone number mask.
 $("#contact-phone-number").mask("(000) 000-0000");
+$("#customer-phonenumber").mask("(000) 000-0000");

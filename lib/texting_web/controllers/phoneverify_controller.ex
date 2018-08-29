@@ -1,6 +1,7 @@
 defmodule TextingWeb.PhoneVerifyController do
 	use TextingWeb, :controller
 	alias Texting.PhoneVerify
+	alias Texting.Formatter
 
 	def new(conn, _params) do
 		case get_session(conn, :user_id) do
@@ -14,6 +15,7 @@ defmodule TextingWeb.PhoneVerifyController do
 	end
 
 	def create(conn, %{"phone_verify" => %{"phone_number" => phone_number}}) do
+		phone_number = Formatter.phone_number_formatter_without_one(phone_number)
 
 		case PhoneVerify.phone_verify_start(phone_number) do
 			{:ok, message} ->

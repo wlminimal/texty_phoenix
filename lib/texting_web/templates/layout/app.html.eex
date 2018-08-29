@@ -44,6 +44,7 @@
      // });
     </script>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <%= Drab.Client.run(@conn) %>
     <script>
       (function ($) {
         'use strict';

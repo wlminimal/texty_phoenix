@@ -1,37 +1,43 @@
-<h1>Phone verification</h1>
+
 
 <section class="login-section">
 
-  <div class="login-div">
-    <div class="ui raised segment">
-      <h1 class="ui huge header">Verify Phone Number</h1>
-      <div class="ui two column stackable center aligned grid">
-        <div class="column">
+  <p class="alert alert-primary" role="alert"><%= get_flash(@conn, :info) %></p>
+  <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+ 
+  <div class="sign-in-flexbox">
 
-          <p>Hello! <strong><%= @current_user.first_name %></strong> Please verify your phone number!</p>
-
-          <%= form_for @conn, phone_verify_path(@conn, :create), [as: :phone_verify, class: "ui form"], fn f -> %>
-          	
-  		
-            <div class="field">
-              <label>Phone Number</label>
-              <div>
-                <%= text_input(f, :phone_number, placeholder: "Enter 10 digit phone number ex)3336667777", required: true) %>
-                <%= error_message(f, :phone_number) %>
+      <div class="sign-in-flexitem">
+        <div class="login-block">
+          <h2 class="signin-header">Texty</h2>
+          <div class="card">
+              <div class="card-header card-header-icon" data-background-color="purple">
+                <i class="material-icons">phone_iphone</i><span class="sign-in-header">Verify Phone Number</span>
               </div>
-            </div>
-                 
-            <div class="field">
-              <input class="ui button green medium" type="submit" name="" value="Send Code">
-          
-            </div>
-
-          <% end %>
+              <div class="card-content">
+                <p class="card-title">Hello! <strong><%= @current_user.first_name %></strong></p>
+                <p>Please enter your phone number.
+                  We will send you 4 digits code.</p>
+                  <br>
+                
+                  <%= form_for @conn, phone_verify_path(@conn, :create), [as: :phone_verify, class: "ui form"], fn f -> %>
+                    <div class="form-group label-floating">
+                      <label class="control-label">Phone Number</label>
+                      <%= text_input(f, :phone_number, required: true, class: "form-control", autofocus: "true", id: "customer-phonenumber") %>
+                      <%= error_message(f, :phone_number) %>
+                      <br>
+                      <p>Enter 10 digit phone number ex)3336667777</p>
+                    </div>
+                    <button type="submit" class="btn btn-sign-in">Send Code</button>
+                  <% end %>
+              </div>
+          </div>
         </div>
       </div>
-    </div>
   </div>
-
+  
 </section>
+
+
 
 

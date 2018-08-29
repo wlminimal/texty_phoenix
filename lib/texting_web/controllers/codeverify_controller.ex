@@ -81,7 +81,7 @@ defmodule TextingWeb.CodeVerifyController do
         IO.puts "++++++++++ Erorr _++++++++++++++++++"
         conn
         |> put_flash(:error, reason)
-        |> render("new.html")
+        |> redirect(to: code_verify_path(conn, :new))
     end
   end
 

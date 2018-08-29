@@ -26,6 +26,16 @@ defmodule Texting.Formatter do
   end
 
   @doc """
+  Convert phone number to  213 333 4444
+  """
+  @spec phone_number_formatter(String.t) :: String.t
+  def phone_number_formatter_without_one(phone_number) do
+    formatted_phone_number = phone_number
+      |> String.replace([" ", "-", ")", "(", "="], "")
+    formatted_phone_number
+  end
+
+  @doc """
   Convert phone number from
   +12223334444 to
   12223334444
