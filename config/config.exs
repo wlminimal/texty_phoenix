@@ -11,7 +11,7 @@ config :texting,
 
 # Configures the endpoint
 config :texting, TextingWeb.Endpoint,
-  url: [host: "texty.marketing"],
+  url: [host: "localhost"],
   secret_key_base: Map.fetch!(System.get_env(), "SECRET_KEY_BASE"),
   render_errors: [view: TextingWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Texting.PubSub,
