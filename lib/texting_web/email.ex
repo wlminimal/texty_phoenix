@@ -15,7 +15,6 @@ defmodule TextingWeb.Email do
   def sign_in(user, link) do
     gatebot_email()
     |> to(user.email)
-    |> from("wlminimal@gmail.com")
     |> subject("Texty - Sign In Link")
     |> assign(:user, user)
     |> assign(:link, link)
@@ -36,7 +35,7 @@ defmodule TextingWeb.Email do
 
   defp gatebot_email() do
     new_email()
-    |> from("gatebot@texty.marketing")
+    |> from("info@texty.marketing")
     |> put_header("Reply-To", "info@texty.marketing")
     |> put_html_layout({TextingWeb.LayoutView, "email_gatebot.html"})
   end
