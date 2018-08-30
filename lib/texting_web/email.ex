@@ -14,7 +14,8 @@ defmodule TextingWeb.Email do
   # When user sign in via email or OAuth
   def sign_in(user, link) do
     gatebot_email()
-    |> to(user)
+    |> to(user.email)
+    |> from("wlminimal@gmail.com")
     |> subject("Your Sign In Link")
     |> assign(:user, user)
     |> assign(:link, link)

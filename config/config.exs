@@ -35,8 +35,11 @@ config :ex_twilio,
 
 # Bamboo
 config :texting, Texting.Mailer,
-  adapter: Bamboo.LocalAdapter,
-  open_email_in_browser_url: "http://localhost:4000/sent_emails"
+  # adapter: Bamboo.LocalAdapter,
+  # open_email_in_browser_url: "http://localhost:4000/sent_emails"
+  adapter: Bamboo.MailgunAdapter,
+  api_key: System.get_env("MAILGUN_API_KEY"),
+  domain: System.get_env("MAILGUN_DOMAIN")
 
 config :ueberauth, Ueberauth,
   providers: [
