@@ -252,3 +252,84 @@ section#features {
 .signin-header > a {
   color: #89229b;
 }
+
+/* Responsive */
+@media(max-width: 479px){
+  .login-div {
+    padding-top: 10px;
+  }
+
+  .sign-in-flexitem {
+    min-width: auto;
+  }
+
+  .sign-in-flexbox {
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  .sign-in-header {
+    font-size: 18px;
+    padding-left: 20px;
+    font-family: 'Cabin', sans-serif;
+  }
+
+  .card .card-content {
+    padding: 15px 20px;
+    position: relative;
+  }
+
+  .signin-header {
+    color: #5b32b4;
+    font-size: 42px;
+    font-weight: 700;
+    font-family: 'Cabin', sans-serif;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .card .card-title {
+    margin-top: 0;
+    margin-bottom: 23px;
+    font-family: 'Cabin', sans-serif;
+    font-size: 14px;
+  }
+
+  .wellcome-heading > h2 {
+    font-size: 35px;
+    color: #ffffff;
+    font-weight: 700;
+    position: relative;
+    z-index: 3;
+  }
+
+  .wellcome_area {
+    background-image: url(../images/bg-img/welcome-bg.png);
+    height: auto;
+    position: relative;
+    z-index: 1;
+    background-position: bottom center;
+    background-size: cover;
+  }
+  .special_description_content > h2 {
+    color: #5b32b4;
+    font-size: 24px;
+    margin-bottom: 30px;
+    line-height: 1.4;
+  }
+
+  .special_description_content > h2 span {
+    font-size: 28px;
+    font-style: italic;
+  }
+
+  .special_description_content{
+    margin-top: 20px;
+  }
+}
