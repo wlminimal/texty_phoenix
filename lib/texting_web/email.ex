@@ -16,7 +16,7 @@ defmodule TextingWeb.Email do
     gatebot_email()
     |> to(user.email)
     |> from("wlminimal@gmail.com")
-    |> subject("Your Sign In Link")
+    |> subject("Texty - Sign In Link")
     |> assign(:user, user)
     |> assign(:link, link)
     |> render(:sign_in)
