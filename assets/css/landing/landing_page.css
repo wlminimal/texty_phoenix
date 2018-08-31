@@ -7,6 +7,23 @@
   z-index: 3;
 }
 
+
+.logo-image {
+  height: 70px;
+  margin-top: -10px;
+}
+
+.logo-wrapper {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
 .btn-primary:hover {
   color: #fff;
   background-color: #884bdf;

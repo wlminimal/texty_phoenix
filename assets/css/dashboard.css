@@ -8,6 +8,14 @@ body {
   background-color: #EEEEEE;
 }
 
+.sidebar .logo {
+  padding: 15px 0px;
+  margin: 0 auto auto -45px;
+  display: block;
+  position: relative;
+  z-index: 4;
+}
+
 .alert:empty { display: none; }
 
 .campaign-header {

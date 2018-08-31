@@ -6,12 +6,14 @@
   -->
 
   <div class="logo">
-      <a href="texty.marketing" class="simple-text logo-mini">
-           
+      <a href="<%= dashboard_path(@conn, :new) %>" class="simple-text logo-mini">
+					
+        <!-- <img src="<%= static_path(@conn, "/images/l1.png") %>" style="height: 50px;" alt=""> -->
+       
       </a>
 
       <a href="texty.marketingm" class="simple-text logo-normal">
-           Texty Marketing
+        <img src="<%= static_path(@conn, "/images/t1.png") %>"  style="height: 40px;" alt="">
       </a>
   </div>
 
