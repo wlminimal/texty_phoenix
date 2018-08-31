@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="google-site-verification" content="DSGiTI2Lf03gy_18eDtPF_y5wvxEZdsVgUDXef9LnEU" />
+    <link rel="shortcut icon" type="image/png" href="<%= static_path(@conn, "/images/favicon.png") %>"/>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124971342-1"></script>
     <script>
