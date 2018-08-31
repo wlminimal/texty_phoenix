@@ -276,6 +276,11 @@ section#features {
     padding-top: 10px;
   }
 
+  .logo-image {
+    height: 30px;
+    margin-top: -10px;
+  }
+
   .sign-in-flexitem {
     min-width: auto;
   }

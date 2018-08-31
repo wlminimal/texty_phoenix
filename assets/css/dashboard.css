@@ -10,7 +10,7 @@ body {
 
 .sidebar .logo {
   padding: 15px 0px;
-  margin: 0 auto auto -45px;
+  margin-left: 20px;
   display: block;
   position: relative;
   z-index: 4;
