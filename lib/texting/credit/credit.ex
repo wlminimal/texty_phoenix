@@ -58,22 +58,18 @@ defmodule Texting.Credit do
   def add_extra_credit(amount, unit_price) do
     cond do
       # for free credit when sign up
-      amount == 500 ->
+      amount == 3500 ->
         div(amount, unit_price) # for free credit when sign up
-      amount == 1000 ->
-        div(amount, unit_price)
-      amount == 2000 ->
-        div(amount, unit_price) + 50 # save $2.50 (450)
-      amount == 4000 ->
-        div(amount, unit_price) + 100 # save $5.00 (900)
-      amount == 6000 ->
-        div(amount, unit_price) + 150 # save $7.50 (1350)
-      amount == 8000 ->
-        div(amount, unit_price) + 200 # save $10.00 (1800)
-      amount == 10000 ->
-        div(amount, unit_price) + 250 # save $12.50 (2250)
-      amount == 20000 ->
-        div(amount, unit_price) + 500 # save $25.00 (4500)
+      amount == 5500 ->
+        div(amount, unit_price) + 50
+      amount == 9500 ->
+        div(amount, unit_price) + 100
+      amount == 13500 ->
+        div(amount, unit_price) + 200
+      amount == 18500 ->
+        div(amount, unit_price) + 300
+      amount == 22500 ->
+        div(amount, unit_price) + 500
     end
   end
 
