@@ -81,7 +81,9 @@ defmodule TextingWeb.TwilioWebhookController do
       } = params
     message_status_struct = Messenger.get_message_status_by_message_sid(message_sid)
     Messenger.update_message_status(message_status_struct, %{from: Formatter.remove_plus_sign_from_phonenumber(from), status: status})
-    send_resp(conn, 200, "")
+    conn
+    |> put_resp_content_type("text/xml")
+    |> send_resp(200, "")
   end
 
   def message_status(conn, %{"MessageStatus" => status} = params) when status in ["sent", "queued", "receiving", "received", "accepted", "sending" ] do
@@ -102,6 +104,8 @@ defmodule TextingWeb.TwilioWebhookController do
       } = params
     message_status_struct = Messenger.get_message_status_by_message_sid(message_sid)
     Messenger.update_message_status(message_status_struct, %{from: Formatter.remove_plus_sign_from_phonenumber(from), status: "delivered"})
-    send_resp(conn, 200, "")
+    conn
+    |> put_resp_content_type("text/xml")
+    |> send_resp(200, "")
   end
 end

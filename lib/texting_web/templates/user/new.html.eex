@@ -20,7 +20,7 @@
                       <%= form_for @changeset, sign_up_path(@conn, :create), [as: :register, class: "ui form"], fn f -> %>
                       <div class="form-group label-floating">
                           <label class="control-label">First Name</label>
-                          <%= text_input f, :first_name, required: true, class: "form-control" %>
+                          <%= text_input f, :first_name, required: true, class: "form-control", autofocus: "true" %>
                           <%= error_message(f, :first_name) %>
                       </div>
 
@@ -32,7 +32,7 @@
 
                       <div class="form-group label-floating">
                         <label class="control-label">Email</label>
-                        <%= email_input f, :email, required: "true", autocapitalize: "none", autofocus: "true", class: "form-control" %>
+                        <%= email_input f, :email, required: "true", autocapitalize: "none",  class: "form-control" %>
                         <%= error_message(f, :email) %>
                       </div>
                       <button type="submit" class="btn btn-sign-in">Sign up</button>
