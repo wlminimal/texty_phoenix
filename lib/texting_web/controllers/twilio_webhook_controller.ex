@@ -92,9 +92,9 @@ defmodule TextingWeb.TwilioWebhookController do
     IO.inspect params
     IO.puts "+++++++++++++++++++++++++++++++++++++++++++"
     # TODO: Find better solution for this message status update.
-    # Twilio Status Callback is not working properly somethis.
+    # Twilio Status Callback is not working properly sometime.
     # Even though that message is delivered, status is not updated to "Delivered"
-    # So I just markked delivered for this message status
+    # So I just marked delivered for this message status
 
     %{"AccountSid" => _account_sid,
       "From" => from,

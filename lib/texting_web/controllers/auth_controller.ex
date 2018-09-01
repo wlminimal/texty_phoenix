@@ -98,7 +98,7 @@ defmodule TextingWeb.AuthController do
       user ->
         token = Account.generate_token(user)
         link = sign_in_url(conn, :create, token)
-        #TODO: Change to send email.
+
         IO.puts("+++++++++++++++++++++++")
         IO.puts(link)
         IO.puts("+++++++++++++++++++++++")

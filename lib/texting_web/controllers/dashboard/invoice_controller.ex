@@ -9,9 +9,17 @@ defmodule TextingWeb.Dashboard.InvoiceController do
     IO.inspect invoices
     IO.puts "+++++++++++ Invoices +++++++++++++"
     charge_history = Finance.list_charge_history(user.id, params)
-    upcoming_invoice = Finance.upcoming_invoice(user.stripe.customer_id)
-    render conn, "new.html", invoices: invoices, charge_history: charge_history,
+    case  Finance.upcoming_invoice(user.stripe.customer_id) do
+      {:ok, upcoming_invoice} ->
+        render conn, "new.html", invoices: invoices, charge_history: charge_history,
                              next_billing_date: upcoming_invoice.period_end,
-                             amount_due: upcoming_invoice.total
+                             amount_due: upcoming_invoice.total,
+                             no_upcoming_invoice: false
+      {:error, _reason} ->
+        render conn, "new.html", invoices: invoices, charge_history: charge_history,
+          next_billing_date: "",
+          amount_due: "",
+          no_upcoming_invoice: true
+    end
   end
 end

@@ -12,7 +12,7 @@ defmodule TextingWeb.Dashboard.Admin.CustomerController do
     stripe_customer = Finance.get_customer(user.stripe.customer_id)
     invoices = Finance.list_invoices(user.id, params)
     charge_history = Finance.list_charge_history(user.id, params)
-    upcoming_invoice = Finance.upcoming_invoice(user.stripe.customer_id)
+    #upcoming_invoice = Finance.upcoming_invoice(user.stripe.customer_id)
     phonebook_count = Contact.list_phonebooks(user.id) |> Enum.count
     contact_count = Contact.get_all_people_count(user.id)
     campaigns_history = Sales.get_all_confirmed_status_order_with_pagination(user.id, params)
@@ -27,8 +27,8 @@ defmodule TextingWeb.Dashboard.Admin.CustomerController do
           has_card: true,
           invoices: invoices,
           charge_history: charge_history,
-          next_billing_date: upcoming_invoice.period_end,
-          amount_due: upcoming_invoice.total,
+          # next_billing_date: upcoming_invoice.period_end,
+          # amount_due: upcoming_invoice.total,
           phonebook_count: phonebook_count,
           contact_count: contact_count,
           campaigns_history: campaigns_history
@@ -38,8 +38,8 @@ defmodule TextingWeb.Dashboard.Admin.CustomerController do
           has_card: false,
           invoices: invoices,
           charge_history: charge_history,
-          next_billing_date: upcoming_invoice.period_end,
-          amount_due: upcoming_invoice.total,
+          # next_billing_date: upcoming_invoice.period_end,
+          # amount_due: upcoming_invoice.total,
           phonebook_count: phonebook_count,
           contact_count: contact_count,
           campaigns_history: campaigns_history

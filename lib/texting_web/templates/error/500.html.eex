@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>Welcome to Phoenix!</title>
+    <link rel="shortcut icon" type="image/png" href="<%= static_path(@conn, "/images/favicon.png") %>"/>
+    <title>Texty - Oops Something went wrong!</title>
     <link rel="stylesheet" href="/css/app.css">
   </head>
 

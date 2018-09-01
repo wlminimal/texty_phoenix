@@ -156,8 +156,7 @@
               <div class="tab-pane active" id="subscription_invoices">
                 <div class="card">
                   <div class="card-content">
-                      <p class="billing-date">Your next billing date is <%= unit_time_to_normal_time(@next_billing_date) %></p>
-                      <p class="billing-date">Amount due: <%= display_stripe_money(@amount_due) %></p>
+                   
                     <%= if Enum.empty?(@invoices) do %>
     
                       <p>You don't have any invoices.</p>

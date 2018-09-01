@@ -159,7 +159,7 @@ defmodule Texting.Finance do
   """
   def upcoming_invoice(stripe_id) do
     case Payment.upcoming_invoice(stripe_id) do
-      {:ok, upcoming_invoice} -> upcoming_invoice
+      {:ok, upcoming_invoice} -> {:ok, upcoming_invoice}
       {:error, reason} -> {:error, reason}
     end
   end
