@@ -230,24 +230,25 @@ defmodule Texting.Messenger do
   def buy_and_setup_phonenumber(user, twilio, count) do
     #TODO: Use customer's area code in production
     area_code = Texting.Formatter.get_user_area_code(user)
-    account = System.get_env("TWILIO_TEST_ACCOUNT_SID") #twilio.account
-    token = System.get_env("TWILIO_TEST_AUTH_TOKEN")#twilio.token
-    #msid = twilio.msid
+
+    account = twilio.account #System.get_env("TWILIO_TEST_ACCOUNT_SID")
+    token = twilio.token #System.get_env("TWILIO_TEST_AUTH_TOKEN")
+    msid = twilio.msid
     Enum.each(1..count, fn _n ->
       phonenumber = buy_phone_number(500, account, token)
       create_phonenumber(user, %{number: phonenumber.phone_number,
                                  account_sid: phonenumber.account_sid,
                                  phonenumber_sid: phonenumber.sid,
                                  friendly_name: phonenumber.friendly_name})
-      # TODO: Uncomment later.. for production..
-      #add_phone_number_to_messaging_service(phonenumber.sid, msid, account, token)
+
+      add_phone_number_to_messaging_service(phonenumber.sid, msid, account, token)
     end)
   end
 
   def remove_and_release_phonenumber(user, twilio, count) do
     #TODO: Change to user's twilio account info
-    account = System.get_env("TWILIO_TEST_ACCOUNT_SID") #twilio.account
-    token = System.get_env("TWILIO_TEST_AUTH_TOKEN")#twilio.token
+    account = twilio.account #System.get_env("TWILIO_TEST_ACCOUNT_SID")
+    token = twilio.token #System.get_env("TWILIO_TEST_AUTH_TOKEN")
     phonenumbers = get_phonenumbers(user, count)
     Enum.each(phonenumbers, fn p ->
       release_phone_number(p.phonenumber_sid, account, token)
