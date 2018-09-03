@@ -48,8 +48,8 @@
 								<h2>to engage customers</h2>
 								<h3>T</h3>
 								<br>
-								<p class="hero-desc">Send massive text or image messages to your customer. </p>
-								<p class="hero-desc">It is Free to start. No Credit Cards Required. </p>
+								<p class="hero-desc">Send massive texts or image messages to your customer. </p>
+								<p class="hero-desc">It is Free to start. No Credit Card Required. </p>
 							</div>
 							<div class="get-start-area">
 								<a href="/sign-up" class="btn btn-primary">Get 100 Free Credits</a>
@@ -91,7 +91,7 @@
                             <i class="ti-mobile" aria-hidden="true"></i>
                         </div>
                         <h4>Open Rate over 99%</h4>
-                        <p>Every people has cell phone and every people check their messages upon arrival. 
+                        <p>Every people has cell phones and everyone checks their messages upon arrival. 
 												</p>
                     </div>
                 </div>
@@ -102,7 +102,7 @@
                             <i class="ti-text" aria-hidden="true"></i>
                         </div>
                         <h4>Send Special Offer by Text Message</h4>
-                        <p>You can notify your customers about sales, discount coupon, special event and many more in a second.</p>
+                        <p>You can notify your customers about sales, discount coupons, special events and anything else with click.</p>
                     </div>
                 </div>
                 <!-- Single Special Area -->
@@ -111,8 +111,8 @@
                         <div class="single-icon">
                             <i class="ti-gallery" aria-hidden="true"></i>
                         </div>
-                        <h4>Send Picture of New Products by Image Message</h4>
-                        <p>Even better, Send text message with your beautiful image. This will catch your customers' attention.For example, new arrival product, Sales Item etc</p>
+                        <h4>Send Pictures of New Products by Image Messages</h4>
+                        <p>Even better, Send text messages with your beautiful images. This will catch your customers' attention. For example, new arrival products, Sales Items etc</p>
                     </div>
                 </div>
             </div>
