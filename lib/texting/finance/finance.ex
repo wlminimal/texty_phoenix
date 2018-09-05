@@ -69,6 +69,8 @@ defmodule Texting.Finance do
 
 
 
+
+
   #####################################################################
   # Charge..
   #####################################################################
@@ -168,13 +170,22 @@ defmodule Texting.Finance do
   # Subscription
   #####################################################################
 
+  def create_subscription(user, stripe_id, plan_id) do
+    {:ok, %{id: subscription_id}} = Payment.create_subscription(%{customer: stripe_id, plan: plan_id})
+    %{ nickname: plan_name } = get_plan_by_id(plan_id)
+    stripe_changeset = change_stripe(user.stripe, %{subscription_id: subscription_id,
+                                                    plan_id: plan_id,
+                                                    plan_name: plan_name})
+    update_stripe(stripe_changeset)
+  end
+
   def update_subscription(subscription_id, plan_id) do
     Payment.update_subscription(subscription_id, %{"plan" => plan_id})
   end
 
 
   def cancel_subscription(subscription_id) do
-    Payment.cancel_subscription(subscription_id, %{at_period_end: true})
+    Payment.cancel_subscription(subscription_id, %{at_period_end: false})
   end
 
   def get_subscription_id(user) do
@@ -193,7 +204,9 @@ defmodule Texting.Finance do
       {:ok, subscription} ->
         %{ plan: plan } = subscription
         { :ok, plan }
-      {:error, _} ->
+      {:error, reason} ->
+        IO.puts "++++++++++Change Plan ++++++++++++++"
+        IO.inspect reason
         { :error, "Please enter your payment information." }
     end
   end

@@ -139,9 +139,10 @@ defmodule TextingWeb.Dashboard.PlanController do
   def downgrade_to_free_plan(user) do
     stripe_changeset = Finance.change_stripe(user.stripe)
     free_plan_id = System.get_env("FREE_PLAN_ID")
-    # cancel subscription at_period_end
+    # cancel subscription immediately
     subs_id = user.stripe.subscription_id
     Finance.cancel_subscription(subs_id)
+
 
     # and remove and release phone number
     account_sid = user.twilio.account
@@ -165,7 +166,9 @@ defmodule TextingWeb.Dashboard.PlanController do
     Messenger.update_twilio(twilio_changeset)
 
     # Update stipre's plan info
-    stripe_changeset = Ecto.Changeset.change(stripe_changeset, %{plan_name: "Free", plan_id: free_plan_id})
-    Finance.update_stripe(stripe_changeset)
+    # Subscribe to Free plan
+    Finance.create_subscription(user, user.stripe.customer_id, free_plan_id)
+    # stripe_changeset = Ecto.Changeset.change(stripe_changeset, %{plan_name: "Free", plan_id: free_plan_id})
+    # Finance.update_stripe(stripe_changeset)
   end
 end

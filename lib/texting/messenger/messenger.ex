@@ -228,7 +228,6 @@ defmodule Texting.Messenger do
   3. Add phone number to messaging service
   """
   def buy_and_setup_phonenumber(user, twilio, count) do
-    #TODO: Use customer's area code in production
     area_code = Texting.Formatter.get_user_area_code(user)
 
     account = twilio.account #System.get_env("TWILIO_TEST_ACCOUNT_SID")
@@ -244,6 +243,25 @@ defmodule Texting.Messenger do
       add_phone_number_to_messaging_service(phonenumber.sid, msid, account, token)
     end)
   end
+
+  # this is for dev only
+  # def buy_and_setup_phonenumber(user, twilio, count) do
+  #   #TODO: Use customer's area code in production
+  #   area_code = Texting.Formatter.get_user_area_code(user)
+
+  #   account = System.get_env("TWILIO_TEST_ACCOUNT_SID")
+  #   token = System.get_env("TWILIO_TEST_AUTH_TOKEN")
+  #   msid = twilio.msid
+  #   Enum.each(1..count, fn _n ->
+  #     phonenumber = buy_phone_number(500, account, token)
+  #     create_phonenumber(user, %{number: phonenumber.phone_number,
+  #                                account_sid: phonenumber.account_sid,
+  #                                phonenumber_sid: phonenumber.sid,
+  #                                friendly_name: phonenumber.friendly_name})
+
+  #     add_phone_number_to_messaging_service(phonenumber.sid, msid, account, token)
+  #   end)
+  # end
 
   def remove_and_release_phonenumber(user, twilio, count) do
     #TODO: Change to user's twilio account info
