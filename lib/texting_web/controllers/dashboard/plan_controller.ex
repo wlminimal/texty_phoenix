@@ -142,7 +142,7 @@ defmodule TextingWeb.Dashboard.PlanController do
     # cancel subscription immediately
     subs_id = user.stripe.subscription_id
     Finance.cancel_subscription(subs_id)
-
+    Finance.create_subscription(user, user.stripe.customer_id, free_plan_id)
 
     # and remove and release phone number
     account_sid = user.twilio.account
@@ -167,7 +167,7 @@ defmodule TextingWeb.Dashboard.PlanController do
 
     # Update stipre's plan info
     # Subscribe to Free plan
-    Finance.create_subscription(user, user.stripe.customer_id, free_plan_id)
+
     # stripe_changeset = Ecto.Changeset.change(stripe_changeset, %{plan_name: "Free", plan_id: free_plan_id})
     # Finance.update_stripe(stripe_changeset)
   end
