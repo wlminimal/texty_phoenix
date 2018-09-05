@@ -76,7 +76,7 @@
         $window.on('load', function () {
           $.notify({
             icon: "notifications",
-            message: "Our website uses cookies to ensure you get the best experience on our website."
+            message: "Our website uses cookies to ensure you get the best experience on our website. By continuing to use this site you are giving us your consent to do this."
   
           },{
               type: 'rose',

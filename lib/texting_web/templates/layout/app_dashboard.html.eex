@@ -69,6 +69,33 @@
 			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 			  crossorigin="anonymous"></script>
 -->		
+
+    <footer class="footer-social-icon text-center section_padding_70 clearfix">
+        <!-- footer logo -->
+        <div class="footer-text">
+      <img src="<%= static_path(@conn, "/images/l1.png") %>" style="height: 50px;" alt="">
+        </div>
+      
+        <div class="footer-menu">
+            <nav class="terms-menu">
+                <ul>
+                    <li><a href="<%= terms_path(@conn, :index) %>">Terms &amp; Conditions</a></li>
+                    <li><a href="<%= privacy_path(@conn, :index) %>">Privacy Policy</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Foooter Text-->
+        <div class="footer-info-block">
+          <p class="footer-info">Texty Marketing is a 100% opt-in service. We do not provide lists of phone numbers nor do we access or share our users' contact lists.</p>
+        </div>
+        <div class="footer-info-block">
+          <p class="footer-info">This website uses <a href="https://stripe.com"><img class="stripe-logo" src="<%= static_path(@conn, "/images/stripe_logo.png") %>" alt="Powered by Stripe."></a> which is most secure online payment system. And also protected by <a href="https://en.wikipedia.org/wiki/HTTPS" target="_blank">https</a></p>
+          <p class="footer-info"></p>
+        </div>
+        <div class="copyright-text">
+            <p>Copyright ©2018 Texty. Designed by <a href="https://www.welikeminimal.com" target="_blank">We like minimal.</a></p>
+        </div>
+    </footer>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     <%= Drab.Client.run(@conn, [current_user_id: @conn.assigns.current_user.id, order_id: @conn.assigns.recipients.id]) %>
     

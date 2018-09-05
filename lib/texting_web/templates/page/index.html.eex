@@ -482,9 +482,15 @@
                 </ul>
             </nav>
         </div>
-        <!-- Foooter Text-->
+				<!-- Foooter Text-->
+				<div class="footer-info-block">
+					<p class="footer-info">Texty Marketing is a 100% opt-in service. We do not provide lists of phone numbers nor do we access or share our users' contact lists.</p>
+				</div>
+				<div class="footer-info-block">
+					<p class="footer-info">This website uses <a href="https://stripe.com"><img class="stripe-logo" src="<%= static_path(@conn, "/images/stripe_logo.png") %>" alt="Powered by Stripe."></a> which is most secure online payment system. And also protected by <a href="https://en.wikipedia.org/wiki/HTTPS" target="_blank">https</a></p>
+					<p class="footer-info"></p>
+				</div>
         <div class="copyright-text">
-            <!-- ***** Removing this text is now allowed! This template is licensed under CC BY 3.0 ***** -->
             <p>Copyright ©2018 Texty. Designed by <a href="https://www.welikeminimal.com" target="_blank">We like minimal.</a></p>
         </div>
     </footer>

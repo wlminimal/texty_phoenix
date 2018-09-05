@@ -19,7 +19,9 @@ defmodule TextingWeb.TwilioWebhookController do
     # Get user by account sid...
     if free_account_sid == account_sid do
       # Do nothing
-      send_resp(conn, 200, "")
+      conn
+      |> put_resp_content_type("text/xml")
+      |> send_resp(200, "")
     else
       message = String.downcase(message)
       Enum.each(@stop_message, fn m ->
@@ -28,6 +30,7 @@ defmodule TextingWeb.TwilioWebhookController do
             user = Account.get_user_by_twilio(account_sid)
             from_number = String.slice(from_number, 1, 11)
 
+            # There will me multiple contacts spread over phonebook, so get them all
             people = Contact.get_people_by_phonenumber(user.id, from_number)
             unsubscribed_phonebook = Contact.get_or_create_unsubscribed_contact(user)
             people
@@ -38,9 +41,15 @@ defmodule TextingWeb.TwilioWebhookController do
               |> Ecto.Changeset.put_change(:phonebook_id, unsubscribed_phonebook.id)
               |> Repo.update()
             end)
-            send_resp(conn, 200, "")
+            #TODO: Substract 1 credit for each recipients respond.
+
+            conn
+            |> put_resp_content_type("text/xml")
+            |> send_resp(200, "")
           _ ->
-            send_resp(conn, 200, "")
+            conn
+            |> put_resp_content_type("text/xml")
+            |> send_resp(200, "")
         end
       end)
 
@@ -59,14 +68,16 @@ defmodule TextingWeb.TwilioWebhookController do
               |> Repo.update()
 
             end)
-            send_resp(conn, 200, "")
+            conn
+            |> put_resp_content_type("text/xml")
+            |> send_resp(200, "")
           _ ->
-            send_resp(conn, 200, "")
+            conn
+            |> put_resp_content_type("text/xml")
+            |> send_resp(200, "")
         end
       end)
     end
-
-    send_resp(conn, 200, "")
   end
 
   def message_status(conn, %{"MessageStatus" => status} = params) when status in ["delivered", "undelivered", "failed"] do

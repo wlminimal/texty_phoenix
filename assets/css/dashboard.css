@@ -8,6 +8,17 @@ body {
   background-color: #EEEEEE;
 }
 
+.main-panel {
+  background-color: #EEEEEE;
+  padding-bottom: 50px;
+}
+
+.wrapper {
+  position: relative;
+  top: 0;
+  height: auto;
+}
+
 .sidebar .logo {
   padding: 15px 0px;
   margin-left: 20px;
@@ -20,7 +31,6 @@ body {
 
 .campaign-header {
   text-align: center;
-  margin-bottom: 50px;
 }
 
 .main-panel > .content {
@@ -630,6 +640,65 @@ img.card-icon {
 /* contact us page */
 .contact-us-block {
   max-width: 600px;
+}
+
+/* Footer */
+.footer-info-block {
+  max-width: 500px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
+.section_padding_70 {
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+}
+
+nav.terms-menu {
+  background: transparent;
+  height: 2rem;
+}
+
+nav.terms-menu ul a:hover {
+  background-color: transparent;
+}
+
+.footer-menu ul li:last-child a {
+  border-right: 0 solid #ddd;
+}
+
+footer ul li a:hover {
+  text-decoration: none;
+}
+
+.footer-menu ul li a {
+  border-right: 2px solid #726a84;
+  display: block;
+  padding: 0 7.5px;
+  color: #726a84;
+}
+
+.footer-menu {
+  margin-bottom: 15px;
+}
+
+.footer-text {
+  margin-bottom: 15px;
+}
+
+.stripe-logo {
+  max-width: 50px;
+}
+
+.footer-info {
+  font-size: 12px;
+  margin-bottom: 0px;
+}
+
+.copyright-text > p {
+  margin-bottom: 0;
+  font-size: 12px;
 }
 
 /* Responsive */

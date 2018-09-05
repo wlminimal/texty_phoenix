@@ -265,9 +265,37 @@ section#features {
   justify-content: center;
   margin-top: 0;
 }
+.terms-logo {
+  max-width: 250px;
+}
 
+.terms-logo-block {
+  margin: 50px auto;
+  
+}
 .signin-header > a {
   color: #89229b;
+}
+
+/* Footer */
+.footer-info-block {
+  max-width: 500px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
+.stripe-logo {
+  max-width: 50px;
+}
+
+.footer-info {
+  font-size: 12px;
+  margin-bottom: 0px;
+}
+
+.copyright-text > p {
+  margin-bottom: 0;
+  font-size: 12px;
 }
 
 /* Responsive */

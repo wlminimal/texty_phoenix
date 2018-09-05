@@ -29,6 +29,9 @@ defmodule Texting.Credit do
     changeset
   end
 
+  @doc """
+  params "changeset" is user's changeset
+  """
   def substract_credit(changeset, credit_used) do
     remaining_credit = Changeset.get_field(changeset, :credits, 0 )
     new_credit = remaining_credit - credit_used
