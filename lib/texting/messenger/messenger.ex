@@ -235,7 +235,7 @@ defmodule Texting.Messenger do
     token = twilio.token #System.get_env("TWILIO_TEST_AUTH_TOKEN")
     msid = twilio.msid
     Enum.each(1..count, fn _n ->
-      phonenumber = buy_phone_number(500, account, token)
+      phonenumber = buy_phone_number(area_code, account, token)
       create_phonenumber(user, %{number: phonenumber.phone_number,
                                  account_sid: phonenumber.account_sid,
                                  phonenumber_sid: phonenumber.sid,
