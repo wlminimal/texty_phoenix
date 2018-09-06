@@ -84,6 +84,13 @@ defmodule TextingWeb.TwilioWebhookController do
                 |> Repo.update()
 
               end)
+
+              Sms.send_sms_with_messaging_service_async([from_number],
+                user.welcome_message.message,
+                user.twilio.msid,
+                "",
+                user.twilio.account,
+                user.twilio.token)
             end
 
 
