@@ -21,7 +21,7 @@ defmodule Texting.Contact.Person do
   def changeset(%Person{} = person, attrs) do
     person
     |> cast(attrs, [:name, :phone_number, :email, :subscribed, :previous_phonebook_id])
-    |> validate_required([:name, :phone_number])
+    |> validate_required([:phone_number])
     |> unique_constraint(:phone_number, name: :people_phone_number_phonebook_id_index)
     |> validate_format(:phone_number, ~r/^[0-9]+$/)
     |> validate_format(:email, ~r/@/)

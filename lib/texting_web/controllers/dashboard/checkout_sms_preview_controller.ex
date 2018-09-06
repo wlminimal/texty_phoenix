@@ -11,6 +11,9 @@ defmodule TextingWeb.Dashboard.CheckoutSmsPreviewController do
   def index(conn, _param) do
     recipients = conn.assigns.recipients
     user = conn.assigns.current_user
+    bitlink_id = get_session(conn, :bitly_id)
+    IO.puts "++++++++++++++ Bitlink ID +++++++++++++++++"
+    IO.inspect bitlink_id
     case recipients.counts == 0 do
       true ->
         conn

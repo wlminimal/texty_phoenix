@@ -90,10 +90,17 @@ defmodule Texting.Contact do
   end
 
   def create_person(phonebook, user, attrs \\ %{}) do
-    %{"phone_number" => phone_number} = attrs
+    %{"phone_number" => phone_number, "name" => name} = attrs
+    # if name is empty, enter default name "No name"
+    name =
+      if name == "" do
+        "No name"
+      end
     # Change phone number format to 1 213 333 3458 with no space
     formatted_phone_number = Formatter.phone_number_formatter(phone_number)
-    new_attrs = %{attrs | "phone_number" => formatted_phone_number}
+    new_attrs = %{attrs | "phone_number" => formatted_phone_number, "name" => name}
+    IO.puts "+++++++++++new_attrs+++++++++++++"
+    IO.inspect new_attrs
 
     changeset = build_assoc(phonebook, :people)
       |> Person.changeset(new_attrs)

@@ -23,7 +23,9 @@ defmodule TextingWeb.Dashboard.RecipientController do
         conn
         |> put_flash(:info, message)
         |> redirect(to: recipient_path(conn, :show))
-      {:error, _order} ->
+      {:error, reason} ->
+        IO.puts "++++++++++++++++++REASON+++++++++++++++++++"
+        IO.inspect reason
         conn
         |> put_flash(:error, "Error adding to recipients list!")
         |> redirect(to: phonebook_path(conn, :index))

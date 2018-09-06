@@ -29,7 +29,7 @@ defmodule Texting.Messenger do
       people = Contact.get_people_by_phonenumber(user_id, to)
       person = List.first(people)
       if person.name == nil do
-        name = "N/A"
+        name = "No name"
         %MessageStatus{to: to, from: nil, message: body,
         status: status, message_sid: message_sid,
         account_sid: account_sid, order_id: order_id, name: name}

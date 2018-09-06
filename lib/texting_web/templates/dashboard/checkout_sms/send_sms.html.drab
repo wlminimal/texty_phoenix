@@ -22,6 +22,7 @@
 										</div>
 									</div>
 							</div>
+							<!-- Shorten URL -->
 							<div class="dashboard-sub-flexitem">
 								<div class="card" >
 									  <div class="card-header card-header-icon" data-background-color="purple">
@@ -40,8 +41,8 @@
 																	<textarea class="form-control"  row="2" id="long-url-textarea" name="long_url_textarea"><%= @long_url %> </textarea>
 																	<p id="long-url-error"></p>
 																	<button class="btn btn-github" drab="click:shorten_url">
-																			<i class="material-icons right">content_cut</i>Shorten
-																		</button>
+																		<i class="material-icons right">content_cut</i>Shorten
+																	</button>
 																</form>
 															</div>
 														</div>
@@ -52,6 +53,7 @@
 														<div class="form-group col-sm-12">
 															<label for="long_url">Your short Url</label>
 															<textarea class="form-control" id="short-url-textarea" readonly><%= @shorten_url %> </textarea>
+															<input type="hidden" name="bitlink_id" value="<%= @bitlink_id %>" id="bitlink_id">
 															<p class="helper-text d-helper-text">Copy this text and paste in your message. </p>
 														</div>
 													</div>
@@ -74,7 +76,7 @@
                   <div class="col-md-12">
                       <div class="row">
 												<div class="info-wrapper">
-													<%= form_for @recipients_changeset, checkout_sms_path(@conn, :preview_sms), [as: :sms], fn f -> %>
+													<%= form_for @recipients_changeset, checkout_sms_path(@conn, :preview_sms), [as: :sms, id: "preview-form"], fn f -> %>
 													<div class="col-sm-12">
 														<div>
 															<div class="row">
@@ -106,10 +108,10 @@
 															</div>
 												
 															<%= hidden_input f, :total_credit, value: 1 %>
-															<%= hidden_input f, :bitlink_id, value: @bitlink_id %>
+															<%= hidden_input f, :bitlink_id, value: "" %>
 															<div class="row">
 																<div class="col-sm-12">
-																	<button class="btn btn-primary" type="submit" name="action">Next
+																	<button class="btn btn-primary" type="submit" name="action" id="next-button">Next
 																		<i class="material-icons right">send</i>
 																	</button>
 																</div>

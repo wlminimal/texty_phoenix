@@ -4,24 +4,41 @@
 
 </script>
 <script>
+document.addEventListener("DOMContentLoaded", function(e){
+  var textArea = document.getElementById("message");
 
-var textArea = document.getElementById("message");
+  if (textArea) {
+    var infoBlock = document.getElementById("message-length-info");
+    var totalPriceBlock = document.getElementById("total-price");
+    var recipientsCount = document.getElementById("recipients-count").textContent;
+    var hiddenInput = document.getElementById("sms_total_credit");
+    var credit = 1;
+    textArea.addEventListener("keyup", function(){
+      console.log("Hello from keyup!");
+      var info = window.splitter.split(this.value);
+      var recipientsCountNumber =  parseInt(recipientsCount);
+      infoBlock.innerHTML = "Your Remaining Letters are " +info.remainingInPart + " and will charge " +credit * info.parts.length + " credit(s) for each recipients";
+      totalCredit = credit * info.parts.length * recipientsCountNumber;
+      totalPriceBlock.innerHTML = totalCredit + " Credit(s)";
+      hiddenInput.value = totalCredit;
+    });
 
-if (textArea) {
-  var infoBlock = document.getElementById("message-length-info");
-  var totalPriceBlock = document.getElementById("total-price");
-  var recipientsCount = document.getElementById("recipients-count").textContent;
-  var hiddenInput = document.getElementById("sms_total_credit");
-  var credit = 1;
-  textArea.addEventListener("keyup", function(){
-    var info = window.splitter.split(this.value);
-    var recipientsCountNumber =  parseInt(recipientsCount);
-    infoBlock.innerHTML = "Your Remaining Letters are " +info.remainingInPart + " and will charge " +credit * info.parts.length + " credit(s) for each recipients";
-    totalCredit = credit * info.parts.length * recipientsCountNumber;
-    totalPriceBlock.innerHTML = totalCredit + " Credit(s)";
-    hiddenInput.value = totalCredit;
+  }
+
+  var nextButton = document.getElementById("next-button");
+  nextButton.addEventListener("click", function(e){
+    e.preventDefault();
+    console.log("Next Button Clicked!");
+    var form = document.getElementById("preview-form");
+
+    var bitlinkID = document.getElementById("bitlink_id").value;
+    var smsBitLinkId = document.getElementById("sms_bitlink_id");
+    smsBitLinkId.value = bitlinkID;
+    form.submit();
+
   });
-}
+});
+
 
 
 
