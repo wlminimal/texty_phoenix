@@ -44,6 +44,10 @@
                         <%= submit  class: "btn btn-fill btn-primary" do %>
                           <i class="material-icons">save</i>Save
                         <% end %>
+                        <span class="back-link">
+                          <a href="<%= account_info_path(@conn, :index) %>">Back</a>
+                        </span>
+                        
                       </div>
                     </div>
                   </div>
