@@ -1,7 +1,8 @@
 defmodule Texting.Account do
   import Ecto.Query
+  import Ecto
   alias Texting.Repo
-  alias Texting.Account.User
+  alias Texting.Account.{User, WelcomeMessage}
   alias Texting.Messenger
   alias Timex
 
@@ -29,16 +30,16 @@ defmodule Texting.Account do
     conn.assigns.current_user
   end
   def get_user_by_id(id) do
-    Repo.one(from u in User, where: u.id == ^id, preload: [:twilio, :stripe, :orders, :phonebooks, :phonenumbers])
+    Repo.one(from u in User, where: u.id == ^id, preload: [:twilio, :stripe, :orders, :phonebooks, :phonenumbers, :welcome_message])
   end
 
   def get_user_by_email(email) do
-    Repo.one(from u in User, where: u.email == ^email, preload: [:twilio, :stripe, :orders, :phonebooks, :phonenumbers])
+    Repo.one(from u in User, where: u.email == ^email, preload: [:twilio, :stripe, :orders, :phonebooks, :phonenumbers, :welcome_message])
   end
 
   def get_user_by_twilio(account_sid) do
     twilio = Messenger.get_twilio_struct(account_sid)
-    query = from u in User, where: u.id == ^twilio.user_id, preload: [:phonebooks]
+    query = from u in User, where: u.id == ^twilio.user_id, preload: [:phonebooks, :twilio, :welcome_message]
     Repo.one(query)
   end
 
@@ -72,5 +73,25 @@ defmodule Texting.Account do
     IO.inspect user_changeset
     IO.puts "+++++++user_changeset++++++++++++"
     update_user(user_changeset)
+  end
+
+  def change_welcome_message(%WelcomeMessage{} = welcome_message, attrs \\ %{}) do
+    welcome_message
+    |> WelcomeMessage.changeset(attrs)
+  end
+
+  def create_welcome_message(user, attrs \\ %{message: "Enter your welcome message"}) do
+    build_assoc(user, :welcome_message)
+    |> WelcomeMessage.changeset(attrs)
+    |> Repo.insert!
+  end
+
+  def update_welcome_message(changeset) do
+    changeset |> Repo.update!
+  end
+
+  def get_welcome_message_by_user_id(user) do
+    query = from wm in WelcomeMessage, where: wm.user_id == ^user.id
+    Repo.one(query)
   end
 end

@@ -4,6 +4,7 @@ defmodule TextingWeb.TwilioWebhookController do
   alias Texting.Repo
   alias Texting.Messenger
   alias Texting.Formatter
+  alias Texting.Sms
 
   @stop_message ["stop", "no", "unsubscribe"]
   @subscribe_message ["start", "yes", "subscribe"]
@@ -30,7 +31,7 @@ defmodule TextingWeb.TwilioWebhookController do
             user = Account.get_user_by_twilio(account_sid)
             from_number = String.slice(from_number, 1, 11)
 
-            # There will me multiple contacts spread over phonebook, so get them all
+            # There will be multiple contacts spread over phonebook, so get them all
             people = Contact.get_people_by_phonenumber(user.id, from_number)
             unsubscribed_phonebook = Contact.get_or_create_unsubscribed_contact(user)
             people
@@ -43,13 +44,9 @@ defmodule TextingWeb.TwilioWebhookController do
             end)
             #TODO: Substract 1 credit for each recipients respond.
 
-            conn
-            |> put_resp_content_type("text/xml")
-            |> send_resp(200, "")
+
           _ ->
-            conn
-            |> put_resp_content_type("text/xml")
-            |> send_resp(200, "")
+            :ok
         end
       end)
 
@@ -58,25 +55,46 @@ defmodule TextingWeb.TwilioWebhookController do
           true ->
             user = Account.get_user_by_twilio(account_sid)
             from_number = String.slice(from_number, 1, 11)
-            people = Contact.get_people_by_phonenumber(user.id, from_number)
-            people
-            |> Enum.each(fn p ->
-              changeset = Contact.change_person(p)
-              changeset
-              |> Ecto.Changeset.put_change(:subscribed, true)
-              |> Ecto.Changeset.put_change(:phonebook_id, p.previous_phonebook_id)
-              |> Repo.update()
 
-            end)
-            conn
-            |> put_resp_content_type("text/xml")
-            |> send_resp(200, "")
+            people = Contact.get_people_by_phonenumber(user.id, from_number)
+            if Enum.empty?(people) do
+              # Get Subscriber phonebook
+              subscriber_phonebook = Contact.get_or_create_subscribed_contact(user)
+              # create a contact(person)
+              from_number = from_number |> Formatter.display_phone_number
+              attrs = %{"phone_number" => from_number, "name" => ""}
+              Contact.create_person(subscriber_phonebook, user, attrs)
+
+              # Send welcome message
+              # welcome_message = Account.get_welcome_message_by_user_id(user)
+             # status_callback = System.get_env("MESSAGE_STATUS_CALLBACK")
+              Sms.send_sms_with_messaging_service_async([from_number],
+                user.welcome_message.message,
+                user.twilio.msid,
+                "",
+                user.twilio.account,
+                user.twilio.token)
+            else
+              people
+              |> Enum.each(fn p ->
+                changeset = Contact.change_person(p)
+                changeset
+                |> Ecto.Changeset.put_change(:subscribed, true)
+                |> Ecto.Changeset.put_change(:phonebook_id, p.previous_phonebook_id)
+                |> Repo.update()
+
+              end)
+            end
+
+
           _ ->
-            conn
-            |> put_resp_content_type("text/xml")
-            |> send_resp(200, "")
+            :ok
         end
       end)
+
+      conn
+      |> put_resp_content_type("text/xml")
+      |> send_resp(200, "")
     end
   end
 

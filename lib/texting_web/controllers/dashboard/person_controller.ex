@@ -23,24 +23,23 @@ defmodule TextingWeb.Dashboard.PersonController do
     IO.puts "+++++++++++++Person Params+++++++++++++++++++++++"
     IO.inspect person_params
     IO.puts "+++++++++++++Person Params+++++++++++++++++++++++"
-    case TextingWeb.Dashboard.PhonebookController.is_unsubscriber_contact?(phonebook.id, user) do
+    with false <- Contact.is_unsubscriber_contact?(phonebook.id, user),
+         false <- Contact.is_subscriber_contact?(phonebook.id, user) do
+      case Contact.create_person(phonebook, user, person_params) do
+        {:ok, _person} ->
+          conn
+          |> put_flash(:info, "New Contact created successfully")
+          |> redirect(to: phonebook_path(conn, :show, phonebook.id))
+        {:error, %Ecto.Changeset{} = changeset} ->
+          conn
+          |> render("new.html", changeset: changeset, phonebook: phonebook)
+      end
+    else
       true ->
         # Don't let the user add people to unsubscriber phonebook name
         conn
-        |> put_flash(:error, "You can't add a contact to Unsubscriber Phonebook manually")
+        |> put_flash(:error, "You can't add a contact to Unsubscriber or Subscriber Phonebook manually")
         |> redirect(to: phonebook_path(conn, :index))
-
-      false ->
-        case Contact.create_person(phonebook, user, person_params) do
-
-          {:ok, _person} ->
-            conn
-            |> put_flash(:info, "New Contact created successfully")
-            |> redirect(to: phonebook_path(conn, :show, phonebook.id))
-          {:error, %Ecto.Changeset{} = changeset} ->
-            conn
-            |> render("new.html", changeset: changeset, phonebook: phonebook)
-        end
     end
   end
 

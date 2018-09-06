@@ -13,7 +13,7 @@
                 <li class="">
                   <a href="#business-phone" data-toggle="tab">
                     <i class="material-icons">contact_phone</i>
-                    Business Phone Number
+                    Business Info
                   <div class="ripple-container"></div></a>
                 </li>
               </ul>
@@ -113,7 +113,7 @@
                     <td>
                       <div class="">
                         <label>
-                          Phone Number
+                          Business Phone Number
                         </label>
                       </div>
                     </td>
@@ -125,6 +125,30 @@
                       <a type="button" rel="tooltip" title="Upgrade Plan" href="<%= plan_path(@conn, :new) %>" class="btn btn-primary btn-simple btn-xs">
                         <i class="material-icons">+</i>
                       </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div><label for="">Welcome Message</label></div>
+                    </td>
+                    <td>
+                      <%= if @user.welcome_message == nil do %>
+                        <p>Please click "+" button to create new welcome message</p>
+                      <% else %>
+                        <%= @user.welcome_message.message %>
+                      <% end %>
+                    </td>
+                    <td class="td-actions text-right">
+                      <%= if @user.welcome_message == nil do %>
+                        <a type="button" rel="tooltip" title="Create Message" href="<%= account_info_path(@conn, :new_welcome_message) %>" class="btn btn-primary btn-simple btn-xs">
+                          <i class="material-icons">+</i>
+                        </a>
+                      <% else %>
+                        <a type="button" rel="tooltip" title="Edit Message" href="<%= account_info_path(@conn, :edit_welcome_message) %>" class="btn btn-primary btn-simple btn-xs">
+                          <i class="material-icons">edit</i>
+                        </a>
+                      <% end %>
+                      
                     </td>
                   </tr>
                 </tbody>

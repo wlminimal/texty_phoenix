@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header card-header-icon" data-background-color="purple">
+            <i class="material-icons">mail_outline</i>
+          </div>
+          <div class="card-content">
+            <h4 class="card-title form-title">Add Welcome Message</h4>
+              <div class="form-wrapper">
+              <%= form_for @changeset, @action, fn f -> %>
+                <%= if @changeset.action do %>
+                  <div class="alert alert-danger">
+                    <p>Oops, something went wrong! Please check the errors below.</p>
+                  </div>
+                <% end %>
+  
+                <div class="form-group label-floating">
+                  <%= label f, :message, class: "control-label" %>
+                  <%= textarea f, :message, class: "form-control", maxlength: 160 %>
+                  <%= error_tag f, :message %>
+                </div>
+  
+                <div class="form-group">
+                  <%= submit "Submit", class: "btn btn-fill btn-primary" %>
+                  <span class="back-link"><%= link "Back", to: account_info_path(@conn, :index) %></span>
+                </div>
+              <% end %>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

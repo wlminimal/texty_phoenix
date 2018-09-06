@@ -9,11 +9,15 @@
             <div class="card-content">
                   <h2 class="card-title"><%= @phonebook.name %> <span class="header-description"> create a new contact or add it to a recipient list.</span></h2>
                   <div class="add-new-button-wrapper">
+                    <%= if @phonebook.name == "Unsubscriber" || @phonebook.name == "Subscriber" do %>
+                      
+                    <% else %>
                     <%= button to: phonebook_person_path(@conn, :new, @phonebook), method: "get", class: "btn btn-github btn-sm" do %>
-                      <i class="material-icons">add</i>New Contact
-                    <% end %>
-                    <%= button to: phonebook_path(@conn, :edit, @phonebook), method: "get", class: "btn btn-github btn-sm" do %>
-                      <i class="material-icons">edit</i>Edit Phonebook
+                        <i class="material-icons">add</i>New Contact
+                      <% end %>
+                      <%= button to: phonebook_path(@conn, :edit, @phonebook), method: "get", class: "btn btn-github btn-sm" do %>
+                        <i class="material-icons">edit</i>Edit Phonebook
+                      <% end %>
                     <% end %>
                   </div>
                   <%= if Enum.count(@people.entries) == 0 do %>

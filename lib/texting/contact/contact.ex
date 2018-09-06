@@ -39,10 +39,45 @@ defmodule Texting.Contact do
         {:ok, unsubscribed_phonebook} = build_assoc(user, :phonebooks)
           |> Phonebook.changeset(%{"name" => "Unsubscriber"})
           |> Repo.insert()
-        unsubscribed_phonebook
+          unsubscribed_phonebook
       unsubscribed_phonebook ->
         unsubscribed_phonebook
     end
+  end
+
+  def get_or_create_subscribed_contact(user) do
+    case get_phonebook_by_name("Subscriber", user.id) do
+      nil ->
+        # create Subscribed phonebook
+        {:ok, subscribed_phonebook} = build_assoc(user, :phonebooks)
+          |> Phonebook.changeset(%{"name" => "Subscriber"})
+          |> Repo.insert()
+          subscribed_phonebook
+      subscribed_phonebook ->
+         subscribed_phonebook
+    end
+  end
+
+  def is_unsubscriber_contact?(phonebook_id, user) when is_binary(phonebook_id) do
+    unsubscribed_phonebook = get_phonebook_by_name("Unsubscriber", user.id)
+    {phonebook_id, ""} = Integer.parse(phonebook_id)
+    phonebook_id == unsubscribed_phonebook.id
+  end
+
+  def is_unsubscriber_contact?(phonebook_id, user) do
+    unsubscribed_phonebook = get_phonebook_by_name("Unsubscriber", user.id)
+    phonebook_id == unsubscribed_phonebook.id
+  end
+
+  def is_subscriber_contact?(phonebook_id, user) when is_binary(phonebook_id) do
+    subscribed_phonebook = get_phonebook_by_name("Subscriber", user.id)
+    {phonebook_id, ""} = Integer.parse(phonebook_id)
+    phonebook_id == subscribed_phonebook.id
+  end
+
+  def is_subscriber_contact?(phonebook_id, user) do
+    subscribed_phonebook = get_phonebook_by_name("Subscriber", user.id)
+    phonebook_id == subscribed_phonebook.id
   end
 
   def update_phonebook(%Phonebook{} = phonebook, attrs) do

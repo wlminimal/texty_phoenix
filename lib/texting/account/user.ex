@@ -5,6 +5,7 @@ defmodule Texting.Account.User do
   alias Texting.Sales.Order
   alias Texting.Messenger.{Twilio, Phonenumber}
   alias Texting.Finance.Stripe
+  alias Texting.Account.WelcomeMessage
 
   schema "users" do
     field :email, :string
@@ -17,6 +18,7 @@ defmodule Texting.Account.User do
     field :credits, :integer
     field :admin, :boolean
 
+    has_one :welcome_message, WelcomeMessage
     has_one :twilio, Twilio
     has_one :stripe, Stripe
     has_many :phonebooks, Phonebook

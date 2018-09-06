@@ -129,6 +129,12 @@ defmodule TextingWeb.Router do
     get "/account-info/:id", AccountInfoController, :edit
     put "/account-info", AccountInfoController, :update
 
+    get "/account-info-welcome-message", AccountInfoController, :new_welcome_message
+    post "/account-info-welcome-message", AccountInfoController, :create_welcome_message
+    get "/account-info-welcome-message/edit", AccountInfoController, :edit_welcome_message
+    put "/account-info-welcome-message", AccountInfoController, :update_welcome_message
+
+
     resources "/phonebooks", PhonebookController do
       resources "/people", PersonController, except: [:index]
     end
