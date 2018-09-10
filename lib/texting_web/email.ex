@@ -33,6 +33,14 @@ defmodule TextingWeb.Email do
     |> render(:contact_us)
   end
 
+  def new_customer(customer_name) do
+    gatebot_email()
+    |> to("info@texty.marketing")
+    |> subject("New customer signs up")
+    |> assign(:customer_name, customer_name)
+    |> render(:new_customer)
+  end
+
   defp gatebot_email() do
     new_email()
     |> from("info@texty.marketing")

@@ -1,0 +1,2 @@
+New Customer signs up
+name: <%= @customer_name %>

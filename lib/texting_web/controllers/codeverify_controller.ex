@@ -7,6 +7,8 @@ defmodule TextingWeb.CodeVerifyController do
   alias Texting.Formatter
   alias Ecto.Multi
   alias Texting.Repo
+  alias TextingWeb.Email
+  alias Texting.Mailer
 
 
   def new(conn, _params) do
@@ -44,7 +46,11 @@ defmodule TextingWeb.CodeVerifyController do
             stripe_changeset = Finance.create_stripe(user, %{customer_id: stripe_id, subscription_id: subscription_id, plan_id: plan_id, plan_name: plan_name})
 
             case update_user_twilio_stripe_account(user_changeset, twilio_changeset, stripe_changeset) do
-              {:ok, %{user: _user, twilio: _twilio, stripe: _stripe}} ->
+              {:ok, %{user: user, twilio: _twilio, stripe: _stripe}} ->
+                # Send email to admin to inform new user
+                Email.new_customer(user.first_name) |> Mailer.deliver_later()
+
+                #TODO: Send welcome email to customer.
                 conn
                 |> delete_session(:phone_number)
                 |> put_flash(:info, message)

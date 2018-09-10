@@ -107,7 +107,7 @@ defmodule TextingWeb.AuthController do
         Email.sign_in(user, link) |> Mailer.deliver_later
         conn
         |> put_flash(:info, "We sent you One-Time Sign in link by email. Please check your email.")
-        |> render(:new)
+        |> redirect(to: sign_in_path(conn, :new))
     end
   end
 
