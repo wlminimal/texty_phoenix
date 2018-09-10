@@ -1,5 +1,6 @@
 defmodule TextingWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :texting
+  use Appsignal.Phoenix
 
   socket "/socket", TextingWeb.UserSocket
 

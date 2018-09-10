@@ -715,6 +715,7 @@ nav.terms-menu ul a:hover {
   width: calc(100% - 260px);
 } */
 
+
 /* Responsive */
 
 @media(max-width: 1350px) {
@@ -755,6 +756,10 @@ nav.terms-menu ul a:hover {
 
   .campaign-flexitem {
     flex-basis: 60%;
+  }
+
+  .container {
+    width: auto;
   }
 
 }
@@ -841,11 +846,18 @@ nav.terms-menu ul a:hover {
     margin-right: 130px;
   }
 
+  .container {
+    width: auto;
+  }
 }
 
 @media(max-width: 992px) {
   header, main, footer {
     padding-left: 0px;
+  }
+
+  .container {
+    width: auto;
   }
 
   .dashboard-flexitem {
@@ -895,6 +907,10 @@ nav.terms-menu ul a:hover {
     margin: 10px;
   }
 
+  .container {
+    width: auto;
+  }
+
   .upload-flexitem {
     width: 100%;
   }
@@ -924,6 +940,11 @@ nav.terms-menu ul a:hover {
   .dashboard-flexitem {
     flex-basis: 100%;
   }
+
+  .container {
+    width: auto;
+  }
+
 
   .dashboard-sub-flex-item {
     flex-basis: 100%;
@@ -980,5 +1001,16 @@ nav.terms-menu ul a:hover {
   
   .analytics-flexitem .card {
     width: 300px;
+  }
+  .main-panel > .footer {
+    padding: 10px;
+  }
+
+  .dashboard-flex-container {
+    justify-content: center;
+  }
+
+  .analytics-flexbox {
+    justify-content: center;
   }
 }

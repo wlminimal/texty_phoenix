@@ -9,13 +9,17 @@ use Mix.Config
 config :texting,
   ecto_repos: [Texting.Repo]
 
+config :texting, Texting.Repo,
+  loggers: [Appsignal.Ecto, Ecto.LogEntry]
+
 # Configures the endpoint
 config :texting, TextingWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: Map.fetch!(System.get_env(), "SECRET_KEY_BASE"),
   render_errors: [view: TextingWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Texting.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+           adapter: Phoenix.PubSub.PG2],
+  instrumenters: [Appsignal.Phoenix.Instrumenter]
 
 # Configures Elixir's Logger
 config :logger, :console,
@@ -23,6 +27,11 @@ config :logger, :console,
   metadata: [:user_id],
   level: :debug
 
+config :appsignal, :config,
+  active: true,
+  name: "Texty Marketing",
+  push_api_key: System.get_env("APPSIGNAL_PUSH_API_KEY"),
+  env: Mix.env
 
 # Change Later : Application.get_env()
 config :stripity_stripe,
@@ -58,7 +67,9 @@ config :ueberauth, Ueberauth.Strategy.Facebook.OAuth,
   client_secret: System.get_env("FACEBOOK_CLIENT_SECRET")
 
 config :phoenix, :template_engines,
-  drab: Drab.Live.Engine
+  drab: Drab.Live.Engine,
+  eex: Appsignal.Phoenix.Template.EExEngine,
+  exs: Appsignal.Phoenix.Template.ExsEngine
 
 config :drab, TextingWeb.Endpoint,
   otp_app: :texting,
