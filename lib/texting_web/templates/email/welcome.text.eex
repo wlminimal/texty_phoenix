@@ -1,0 +1,4 @@
+
+<h2>Hi! <%= @user.first_name %></h2>
+<p>Please verify your email. <a href="<%= @link %>">Verify Email</a></p>
+<p>Link will be expired in 10 min.</p>

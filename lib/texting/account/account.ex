@@ -69,9 +69,6 @@ defmodule Texting.Account do
   def timestamp_login_time(user) do
     now = Timex.now
     user_changeset =  change_user(user, %{last_login: now})
-    IO.puts "+++++++user_changeset++++++++++++"
-    IO.inspect user_changeset
-    IO.puts "+++++++user_changeset++++++++++++"
     update_user(user_changeset)
   end
 

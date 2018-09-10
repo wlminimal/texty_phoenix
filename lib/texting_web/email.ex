@@ -5,7 +5,7 @@ defmodule TextingWeb.Email do
   def welcome(user, link) do
     gatebot_email()
     |> to(user)
-    |> subject("Welcome! Confirm Your Address")
+    |> subject("Verify Your Email Address")
     |> assign(:user, user)
     |> assign(:link, link)
     |> render(:welcome)

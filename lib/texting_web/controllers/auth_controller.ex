@@ -45,6 +45,7 @@ defmodule TextingWeb.AuthController do
   #   |> render(conn, "")
   # end
 
+
   # Sign in process using passwordless sign in
 
   def create(conn, %{"token" => token}) do

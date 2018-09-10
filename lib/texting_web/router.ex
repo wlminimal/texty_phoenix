@@ -62,7 +62,7 @@ defmodule TextingWeb.Router do
   scope "/", TextingWeb do
     pipe_through [:browser, :loaduser]
 
-    get "/phoneverify", PhoneVerifyController, :new
+    get "/phoneverify/:token", PhoneVerifyController, :new
     post "/phoneverify", PhoneVerifyController, :create
     get "/codeverify", CodeVerifyController, :new
     post "/codeverify", CodeVerifyController, :create
