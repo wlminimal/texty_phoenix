@@ -56,7 +56,7 @@ defmodule Texting.Account do
     from_numbers
   end
 
-  # passwordless login... generate_toke!
+  # passwordless login... generate_token!
   def generate_token(user) do
     Phoenix.Token.sign(TextingWeb.Endpoint, "user", user.id)
   end

@@ -784,6 +784,27 @@ nav.terms-menu ul a:hover {
     font-size: 15px;
   }
 
+  .header-block {
+    text-align: center;
+    text-transform: uppercase;
+    padding-right: 0;
+    padding-left: 0;
+    margin-left: 0;
+    padding-right: 0;
+    margin-right: 0;
+  }
+
+  .plan-flexbox {
+    justify-content: center;
+  }
+
+  .plan-flexitem {
+    flex-basis: 30%;
+  }
+
+  .card-pricing .card-title {
+    margin-top: 5px;
+  }
 } 
 
 @media(max-width: 1024px) {
