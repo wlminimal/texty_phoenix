@@ -97,17 +97,25 @@ defmodule TextingWeb.AuthController do
         # Redirect to signup page
         |> redirect(to: sign_up_path(conn, :new))
       user ->
-        token = Account.generate_token(user)
-        link = sign_in_url(conn, :create, token)
+        # Check if user's email has benn confirmed.
+        if(user.email_verified) do
+          token = Account.generate_token(user)
+          link = sign_in_url(conn, :create, token)
 
-        IO.puts("+++++++++++++++++++++++")
-        IO.puts(link)
-        IO.puts("+++++++++++++++++++++++")
-        # Send email a link
-        Email.sign_in(user, link) |> Mailer.deliver_later
-        conn
-        |> put_flash(:info, "We sent you One-Time Sign in link by email. Please check your email.")
-        |> redirect(to: sign_in_path(conn, :new))
+          IO.puts("+++++++++++++++++++++++")
+          IO.puts(link)
+          IO.puts("+++++++++++++++++++++++")
+          # Send email a link
+          Email.sign_in(user, link) |> Mailer.deliver_later
+          conn
+          |> put_flash(:info, "We sent you One-Time Sign in link by email. Please check your email.")
+          |> redirect(to: sign_in_path(conn, :new))
+        else
+          conn
+          |> put_flash(:error, "You have to confirm your email")
+          |> redirect(to: confirm_email_path(conn, :new))
+        end
+
     end
   end
 
@@ -119,5 +127,21 @@ defmodule TextingWeb.AuthController do
     conn
     |> configure_session(drop: true)
     |> redirect(to: page_path(conn, :index))
+  end
+
+  def confirm_email(conn, _params) do
+    user_id = get_session(conn, :user_id)
+    IO.puts("+++++++++USER ID++++++++++++++")
+    IO.puts(user_id)
+    IO.puts("++++++++++++++++++++++++++++++")
+    user = Account.get_user_by_id(user_id)
+    changeset = Account.change_user(user, %{email_verified: true})
+    Account.update_user(changeset)
+
+    IO.puts "++++++changeset+++++++"
+    IO.inspect changeset
+    conn
+    |> put_flash(:info, "You email is confirmed!")
+    |> render("new.html")
   end
 end

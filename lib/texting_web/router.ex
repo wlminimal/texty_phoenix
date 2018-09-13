@@ -51,18 +51,22 @@ defmodule TextingWeb.Router do
 
     # Sign in and out
     get "/sign-in", AuthController, :new, as: :sign_in
+    get "/sign-in/confirm-email/", AuthController, :confirm_email, as: :sign_in
     post "/sign-in", AuthController, :new, as: :sign_in
     get "/sign-out", AuthController, :delete, as: :sign_out
     get "/sign-in/:token", AuthController, :create, as: :sign_in
     get "/sign-up", UserController, :new,  as: :sign_up
     post "/sign-up", UserController, :create, as: :sign_up
 
+    get "/confirm-email", ConfirmEmailController, :new
+    post "/confirm-email", ConfirmEmailController, :create
+
   end
 
   scope "/", TextingWeb do
     pipe_through [:browser, :loaduser]
 
-    get "/phoneverify/:token", PhoneVerifyController, :new
+    get "/phoneverify/", PhoneVerifyController, :new
     post "/phoneverify", PhoneVerifyController, :create
     get "/codeverify", CodeVerifyController, :new
     post "/codeverify", CodeVerifyController, :create

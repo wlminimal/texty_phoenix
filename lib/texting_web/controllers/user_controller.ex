@@ -55,9 +55,12 @@ defmodule TextingWeb.UserController do
               {:ok, user} ->
                 IO.inspect user
                 # Create confirmation email link
-                token = Account.generate_token(user)
-                link = phone_verify_url(conn, :new, token)
+                # token = Account.generate_token(user)
+                # link = phone_verify_url(conn, :new, token)
 
+                link = sign_in_url(conn, :confirm_email)
+                IO.puts "++++++++++++++++sign in link ++++++++++++++++++++"
+                IO.inspect link
                 # Send email
                 welcome(user, link)
 
