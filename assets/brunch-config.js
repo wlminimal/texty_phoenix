@@ -143,7 +143,8 @@ exports.config = {
           'css/vendor/material-dashboard.css',
           'css/404.css',
           'css/menu.css',
-          'css/dashboard.css'
+          'css/dashboard.css',
+          'css/help.css'
         ]
       },
         order: {

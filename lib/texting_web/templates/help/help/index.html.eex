@@ -1,0 +1,56 @@
+
+  <div class="tutorial-list-block">
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="tutorial-item">
+          <h3><a href="<%= start_campaign_path(@conn, :index) %>">1. How to send your first text or image messages</h3></a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="tutorial-item">
+            <h3><a href="">2. How to set up yout welcome message</h3></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="tutorial-item">
+            <h3><a href="">3. How to use analytics page</h3></a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="tutorial-item">
+            <h3><a href="">4. How to grow your contact list</h3></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="tutorial-item">
+            <h3><a href="">5. Difference between Free plan and Paid plan</h3></a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="tutorial-item">
+            <h3><a href="">6. What is Business Phone number?</h3></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="tutorial-item">
+            <h3><a href="">7. Shoud I use Text campaign or Image campaign?</h3></a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="tutorial-item">
+            <h3><a href="">8. Why you must use Shorten Link function</h3></a>
+        </div>
+      </div>
+    </div>
+    
+  </div>

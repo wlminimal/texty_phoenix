@@ -1,0 +1,66 @@
+body {
+  background-color: #FFFFFF;
+}
+
+.help-logo {
+  height: 50px;
+}
+
+.help-wrapper {
+ background-color: #FFFFFF;
+}
+
+.tutorial-list-block {
+  padding: 50px 0;
+}
+
+.jumbotron {
+  background-color: #EEEEEE;
+}
+
+.jumbotron p.jumbo-description {
+  margin-bottom: 15px;
+  font-size: 17px;
+  font-weight: 200;
+}
+
+.tutorial-list-block{
+  text-align: center;
+}
+
+.tutorial-item {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.tutorial-item h3 {
+  margin-top: 10px;
+}
+
+.tutorial-item a {
+  color: #3C4858;
+}
+
+.tutorial-item a:hover {
+  color: #9c27b0;
+}
+
+.tutorial-item:hover {
+  background-color: #EEEEEE;
+}
+
+.help-header {
+  text-align: center;
+}
+
+.help-images {
+  width: 1100px;
+}
+
+.step-desc {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0;
+}

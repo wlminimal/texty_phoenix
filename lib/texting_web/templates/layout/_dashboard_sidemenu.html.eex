@@ -162,6 +162,13 @@
 							<p> Contact us </p>
 					</a>
 				</li>
+
+				<li class="">
+					<a href="<%= help_path(@conn, :index) %>">
+							<i class="material-icons">help</i>
+							<p> Help & Tutorials </p>
+					</a>
+				</li>
 					
         <li class="log-out">
           <a href="/sign-out">

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="google-site-verification" content="DSGiTI2Lf03gy_18eDtPF_y5wvxEZdsVgUDXef9LnEU" />
+    <link rel="shortcut icon" type="image/png" href="<%= static_path(@conn, "/images/favicon.png") %>"/>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125440102-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-125440102-1');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5K96KFG');</script>
+    <!-- End Google Tag Manager -->
+
+    <title>Texty Marketing - Help and Tutorials</title>
+    
+
+    <!--<link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">   
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet"> 
+    
+  <!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"> -->
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"> -->
+
+    <script src="https://js.stripe.com/v3/"></script>
+  </head>
+<body class="help-body">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5K96KFG"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div class="help-wrapper container-fluid">
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="<%= help_path(@conn, :index) %>">
+        <img class="help-logo" src="<%=static_path(@conn, "/images/t5.png")  %>" alt="Texty Logo">
+      </a>
+    </nav>
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4">Helps and Tutorials</h1>
+        <p class="lead">You can find how to use texty marketing service and lots of helpful information.</p>
+        <hr class="my-4">
+        <p class="jumbo-description">Are you not a member of texty marketing? Why don't you start now and get 100 credits for free?</p>
+        <a class="btn btn-primary btn-lg" href="<%= sign_up_path(@conn, :new) %>" role="button">Get 100 Credits for free</a>
+      </div>
+    </div>
+    
+    <div class="container">
+      <%= render @view_module, @view_template, assigns %>
+    </div>
+   
+  </div>
+  
+   <!-- ***** Footer Area Start ***** -->
+   <footer class="footer-social-icon text-center section_padding_70 clearfix">
+      <!-- footer logo -->
+      <div class="footer-text">
+    <img src="<%= static_path(@conn, "/images/l1.png") %>" style="height: 50px;" alt="">
+      </div>
+    
+      <div class="footer-menu">
+          <nav>
+              <ul>
+                  <li><a href="<%= terms_path(@conn, :index) %>">Terms &amp; Conditions</a></li>
+                  <li><a href="<%= privacy_path(@conn, :index) %>">Privacy Policy</a></li>
+              </ul>
+          </nav>
+      </div>
+      <!-- Foooter Text-->
+      <div class="footer-info-block">
+        <p class="footer-info">Texty Marketing is a 100% opt-in service. We do not provide lists of phone numbers nor do we access or share our users' contact lists.</p>
+      </div>
+      <div class="footer-info-block">
+        <p class="footer-info">This website uses <a href="https://stripe.com"><img class="stripe-logo" src="<%= static_path(@conn, "/images/stripe_logo.png") %>" alt="Powered by Stripe."></a> which is most secure online payment system. And also protected by <a href="https://en.wikipedia.org/wiki/HTTPS" target="_blank">https</a></p>
+        <p class="footer-info"></p>
+      </div>
+      <div class="copyright-text">
+          <p>Copyright ©2018 Texty. Designed by <a href="https://www.welikeminimal.com" target="_blank">We like minimal.</a></p>
+      </div>
+  </footer>
+  <!-- ***** Footer Area Start ***** -->
+
+  <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/5b96a874c666d426648aa016/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+  <!--End of Tawk.to Script-->
+</body>
+</html>

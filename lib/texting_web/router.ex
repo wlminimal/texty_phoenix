@@ -23,6 +23,10 @@ defmodule TextingWeb.Router do
     plug TextingWeb.Plugs.FetchRecipients
   end
 
+  pipeline :help do
+    plug TextingWeb.Plugs.HelpLayout
+  end
+
   pipeline :loaduser do
     plug TextingWeb.Plugs.LoadUser
   end
@@ -63,10 +67,17 @@ defmodule TextingWeb.Router do
 
   end
 
+     # Tutorial and Help
+  scope "/help", TextingWeb.Help do
+    pipe_through [:browser, :help]
+    get "/", HelpController, :index
+    get "/how-to-start-a-campaign", StartCampaignController, :index
+  end
+
   scope "/", TextingWeb do
     pipe_through [:browser, :loaduser]
 
-    get "/phoneverify/", PhoneVerifyController, :new
+    get "/phoneverify", PhoneVerifyController, :new
     post "/phoneverify", PhoneVerifyController, :create
     get "/codeverify", CodeVerifyController, :new
     post "/codeverify", CodeVerifyController, :create
