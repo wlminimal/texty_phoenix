@@ -2,7 +2,7 @@
 
     <p class="alert alert-primary" role="alert"><%= get_flash(@conn, :info) %></p>
     <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-   
+
     <div class="sign-in-flexbox">
 
         <div class="sign-in-flexitem">
@@ -10,14 +10,14 @@
             <div class="logo-wrapper">
               <a href="<%= page_path(@conn, :index) %>"><img src="<%= static_path(@conn, "/images/l1.png") %>" style="height: 100px;" alt=""></a>
             </div>
-            
+
             <div class="card">
                 <div class="card-header card-header-icon" data-background-color="purple">
-                  <i class="material-icons">contacts</i><span class="sign-in-header">Sign in to Dashboard</span>
+                  <i class="material-icons">contacts</i><span class="sign-in-header">Sign in to dashboard</span>
                 </div>
                 <div class="card-content">
-                  <p class="card-title">Please enter your login email. We will send you an one-time sign in link by email.</p>
-                  
+                  <p class="card-title">Please enter your sign-in email. We will send you an one time sign in link by email.</p>
+
                     <%= form_for @conn, sign_in_path(@conn, :new), [as: :auth, class: "ui form"], fn f -> %>
                       <div class="form-group label-floating">
                         <label class="control-label">Email</label>
@@ -25,7 +25,7 @@
                       </div>
                       <button type="submit" class="btn btn-sign-in">Sign in</button>
                     <% end %>
-                   
+
                     <div class="">
                      <span class="ui small header">Need an account? </span><a class="btn btn-simple" href="/sign-up">Sign up</a>
                     </div>
@@ -34,6 +34,6 @@
           </div>
         </div>
     </div>
-    
+
 </section>
 

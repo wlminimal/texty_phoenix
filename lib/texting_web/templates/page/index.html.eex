@@ -22,7 +22,7 @@
                               <li class="nav-item"><a class="nav-link" id="sign-in-link" href="/sign-in">Sign In</a></li>
                           </ul>
                           <div class="sing-up-button d-lg-none">
-                              <a href="/sign-up">Sign Up Free</a>
+                              <a href="/sign-up">Sign up free</a>
                           </div>
                       </div>
                   </nav>
@@ -31,7 +31,7 @@
           <!-- Signup btn -->
           <div class="col-12 col-lg-2">
               <div class="sing-up-button d-none d-lg-block">
-                  <a href="/sign-up">Sign Up Free</a>
+                  <a href="/sign-up">Sign up free</a>
               </div>
           </div>
       </div>
@@ -44,15 +44,15 @@
 			<div class="row h-100 align-items-center">
 					<div class="col-10 col-md">
 							<div class="wellcome-heading">
-								<h2>New & Easiest way</h2>
+								<h2>The new & easiest way</h2>
 								<h2>to engage customers</h2>
 								<h3>T</h3>
 								<br>
-								<p class="hero-desc">Send massive texts or image messages to your customer. </p>
-								<p class="hero-desc">It is Free to start. No Credit Card Required. </p>
+								<p class="hero-desc">Send massive texts or image messages to your customers. </p>
+								<p class="hero-desc">Free to start. No credit card required. </p>
 							</div>
 							<div class="get-start-area">
-								<a href="/sign-up" class="btn btn-primary">Get 100 Free Credits</a>
+								<a href="/sign-up" class="btn btn-primary">Get 100 credits for free</a>
 							</div>
 					</div>
 					<div class="col-2 col-md">
@@ -66,7 +66,7 @@
 			</div>
 	</div>
 	<!-- Welcome thumb -->
-	
+
 </section>
 <!-- ***** Wellcome Area End ***** -->
 
@@ -77,7 +77,7 @@
                 <div class="col-12">
                     <!-- Section Heading Area -->
                     <div class="section-heading text-center">
-                        <h2>Why You have to use Texty Marketing</h2>
+                        <h2>Why you should use text marketing</h2>
                         <div class="line-shape"></div>
                     </div>
                 </div>
@@ -90,8 +90,8 @@
                         <div class="single-icon">
                             <i class="ti-mobile" aria-hidden="true"></i>
                         </div>
-                        <h4>Open Rate over 99%</h4>
-                        <p>Every people has cell phones and everyone checks their messages upon arrival. 
+                        <h4>Open rate over 99%</h4>
+                        <p>Every person has a cell phone and everyone checks their messages upon arrival.
 												</p>
                     </div>
                 </div>
@@ -101,8 +101,8 @@
                         <div class="single-icon">
                             <i class="ti-text" aria-hidden="true"></i>
                         </div>
-                        <h4>Send Special Offer by Text Message</h4>
-                        <p>You can notify your customers about sales, discount coupons, special events and anything else with click.</p>
+                        <h4>Send special offer by text message</h4>
+                        <p>You can notify your customers about sales, discount coupons, special events and anything else with a single click.</p>
                     </div>
                 </div>
                 <!-- Single Special Area -->
@@ -111,8 +111,8 @@
                         <div class="single-icon">
                             <i class="ti-gallery" aria-hidden="true"></i>
                         </div>
-                        <h4>Send Pictures of New Products by Image Messages</h4>
-                        <p>Even better, Send text messages with your beautiful images. This will catch your customers' attention. For example, new arrival products, Sales Items etc</p>
+                        <h4>Send pictures of new products by image messages</h4>
+                        <p>Even better, send customized image messages to catch your customers' attention with new product arrivals and sales</p>
                     </div>
                 </div>
             </div>
@@ -128,13 +128,13 @@
                     </div>
                     <div class="col-lg-6 col-xl-5 ml-xl-auto">
                         <div class="special_description_content">
-                            <h2><span class="span-italic">Texty Marketing</span> must be the first choice of your marketing strategy.</h2>
-                            <p>Most business uses Email marketing for their marketing strategy, because it is free. However there are lots of spam filtering and customer tends to give up opening marketing emails. But Everyone check their messages.</p>
+                            <h2><span class="span-italic">Texty Marketing</span> should be the first choice of your marketing strategy.</h2>
+                            <p>Most businesses use email for their marketing strategy, because it is free. However most emails end up in the spam folder and customers ignore them, but everyone checks their messages.</p>
                             <div class="app-download-area">
                                 <div class="app-download-btn wow fadeInUp" data-wow-delay="0.2s">
                                     <!-- Google Store Btn -->
                                     <a href="/sign-up">
-                                        <p class="mb-0">Get 100 Free Credits</p>
+                                        <p class="mb-0">Get 100 Credits for free</p>
                                     </a>
                                 </div>
                             </div>
@@ -165,7 +165,7 @@
 							<div class="single-feature">
 									<i class="ti-infinite" aria-hidden="true"></i>
 									<h5>Unlimited Contacts</h5>
-									<p>You can add contacts as many as you want. There is no limit.</p>
+									<p>You can add as many contacts as you want. There is no limit.</p>
 							</div>
 					</div>
 					<!-- Single Feature Start -->
@@ -181,7 +181,7 @@
 							<div class="single-feature">
 									<i class="ti-dashboard" aria-hidden="true"></i>
 									<h5>Simple to use</h5>
-									<p>Our web interface is very simple to use. Create contacts, add it to list and click send!</p>
+									<p>Create contacts, add them to your list and click send.</p>
 							</div>
 					</div>
 					<!-- Single Feature Start -->
@@ -189,15 +189,15 @@
 							<div class="single-feature">
 									<i class="ti-mobile" aria-hidden="true"></i>
 									<h5>Dedicated Phone number</h5>
-									<p>You will get 1 to 10 dedicated phone number for your business depend on your plan.</p>
+									<p>You can choose between 1 to 10 dedicated phone number for your business depending on your plan.</p>
 							</div>
 					</div>
 					<!-- Single Feature Start -->
 					<div class="col-12 col-sm-6 col-lg-4">
 							<div class="single-feature">
 									<i class="ti-location-pin" aria-hidden="true"></i>
-									<h5>Asian Language</h5>
-									<p>You can send a message in your own language. Asign Language(Chinese, Japanese and Korean) is available.</p>
+									<h5>Multiple Asian language</h5>
+									<p>You can send  messages in either Chinese, Japanese and Korean.</p>
 							</div>
 					</div>
 					<!-- Single Feature Start -->
@@ -224,7 +224,7 @@
 							<div class="section-heading text-center">
 									<h2>Pricing Plan</h2>
                   <div class="line-shape"></div>
-                  <p class="plan-desc">You will need credits and need to buy credits seperately.</p>
+                  <p class="plan-desc">You will need to subscribe to plan & purchase credits separately.</p>
 							</div>
 					</div>
 			</div>
@@ -242,10 +242,10 @@
 											</div>
 									</div>
 									<div class="package-description">
-                      <p>0 Dedicated Phone Number</p>
-											<p>100 Free Credits</p>
+                      <p>0 Dedicated phone number</p>
+											<p>100 Free credits</p>
 									</div>
-								
+
 							</div>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3">
@@ -261,13 +261,13 @@
 											</div>
 									</div>
 									<div class="package-description">
-											<p>1 Dedicated Phone Number</p>
-											<p>Daily Message Limit is 250 messages</p>
+											<p>1 Dedicated phone number</p>
+											<p>Daily message limit is 250 messages</p>
 									</div>
-									
+
 							</div>
 					</div>
-					
+
 					<div class="col-12 col-md-6 col-lg-3">
 							<!-- Package Price  -->
 							<div class="single-price-plan active text-center">
@@ -281,10 +281,10 @@
 											</div>
 									</div>
 									<div class="package-description">
-											<p>3 Dedicated Phone Number</p>
-											<p>Daily Message Limit is 750 messages</p>
+											<p>3 Dedicated phone number</p>
+											<p>Daily message limit is 750 messages</p>
 									</div>
-									
+
 							</div>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3">
@@ -300,10 +300,10 @@
 											</div>
 									</div>
 									<div class="package-description">
-											<p>5 Dedicated Phone Number</p>
-											<p>Daily Message Limit is 1250 messages</p>
+											<p>5 Dedicated phone number</p>
+											<p>Daily message limit is 1250 messages</p>
 									</div>
-									
+
 							</div>
 					</div>
 			</div>
@@ -326,17 +326,17 @@
 							<div class="single-price-plan text-center">
 									<!-- Package Text  -->
 									<div class="package-plan">
-											<h5>700 Credits</h5>
+											<h5>700 credits</h5>
 											<div class="ca-price d-flex justify-content-center">
 													<span>$</span>
 													<h4>35</h4>
 											</div>
 									</div>
 									<div class="package-description">
-                      <p>Up to 700 Text Messages</p>
-											<p>Up to 233 Image Messages</p>
+                      <p>Up to 700 text messages</p>
+											<p>Up to 233 image messages</p>
 									</div>
-								
+
 							</div>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3">
@@ -344,36 +344,36 @@
 							<div class="single-price-plan text-center">
 									<!-- Package Text  -->
 									<div class="package-plan">
-											<h5>1125 Credits</h5>
+											<h5>1125 credits</h5>
 											<div class="ca-price d-flex justify-content-center">
 													<span>$</span>
 													<h4>55</h4>
 											</div>
 									</div>
 									<div class="package-description">
-											<p>Up to 1125 Text Messages</p>
-											<p>Up to 375 Image Messages</p>
+											<p>Up to 1125 text messages</p>
+											<p>Up to 375 image messages</p>
 									</div>
-									
+
 							</div>
 					</div>
-					
+
 					<div class="col-12 col-md-6 col-lg-3">
 							<!-- Package Price  -->
 							<div class="single-price-plan active text-center">
 									<!-- Package Text  -->
 									<div class="package-plan">
-											<h5>2000 Credits</h5>
+											<h5>2000 credits</h5>
 											<div class="ca-price d-flex justify-content-center">
 													<span>$</span>
 													<h4>95</h4>
 											</div>
 									</div>
 									<div class="package-description">
-											<p>Up to 2000 Text Messages</p>
-											<p>Up to 666 Image Messages</p>
+											<p>Up to 2000 text messages</p>
+											<p>Up to 666 image messages</p>
 									</div>
-									
+
 							</div>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3">
@@ -381,17 +381,17 @@
 							<div class="single-price-plan text-center">
 									<!-- Package Text  -->
 									<div class="package-plan">
-											<h5>2900 Credits</h5>
+											<h5>2900 credits</h5>
 											<div class="ca-price d-flex justify-content-center">
 													<span>$</span>
 													<h4>135</h4>
 											</div>
 									</div>
 									<div class="package-description">
-											<p>Up to 2900 Text Messages</p>
-											<p>Up to 966 Image Messages</p>
+											<p>Up to 2900 text messages</p>
+											<p>Up to 966 image messages</p>
 									</div>
-									
+
 							</div>
 					</div>
 			</div>
@@ -430,7 +430,7 @@
 									<div class="line-shape"></div>
 							</div>
 							<div class="footer-text">
-									<p>If you have a question, Feel free to send a message. We will get back to you within 24 hours.</p>
+									<p>If you have a question, feel free to send a message. We will get back to you within 24 hours.</p>
 							</div>
 														<div class="email-text">
 									<p><span>Email:</span> info@texty.marketing</p>
@@ -438,7 +438,7 @@
 					</div>
 					<div class="col-md-6">
 							<div class="card contact-card">
-					
+
 								<div class="card-content">
 									<%= form_for @conn, page_path(@conn, :create), [as: :contact_form], fn f -> %>
 										<div class="form-group label-floating">
@@ -455,7 +455,7 @@
 												<%= textarea f, :message, class: "form-control", cols: "30", id: "message", rows: "4", required: true %>
 										</div>
 
-									
+
 										<button type="submit" class="btn submit-btn">Submit</button>
 									<% end %>
 								</div>
@@ -473,7 +473,7 @@
         <div class="footer-text">
 			<img src="<%= static_path(@conn, "/images/l1.png") %>" style="height: 50px;" alt="">
         </div>
-      
+
         <div class="footer-menu">
             <nav>
                 <ul>
