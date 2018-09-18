@@ -7,7 +7,7 @@ defmodule Texting.CsvFormatter do
     |> File.stream!()
     |> CSV.decode!(headers: true)
     |> Enum.to_list()
-    |> filter_landline_number()
+    #|> filter_landline_number()
   end
 
   def convert_to_person(attrs, phonebook, user) do

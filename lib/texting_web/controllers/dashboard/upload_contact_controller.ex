@@ -14,17 +14,45 @@ defmodule TextingWeb.Dashboard.UploadContactController do
     render conn, "new.html", phonebooks: phonebooks
   end
 
+  # def upload(conn, %{"name" => phonebook_name, "contact_csv" => %Plug.Upload{path: path}}) do
+  #   user = conn.assigns.current_user
+  #   try do
+  #     contacts_map = CsvFormatter.read!(path)
+
+  #     case Contact.create_phonebook(user, %{"name" => phonebook_name}) do
+  #       {:ok, phonebook} ->
+  #         Enum.map(contacts_map, &CsvFormatter.convert_to_person(&1, phonebook, user))
+  #         conn
+  #         |> put_flash(:info, "Contacts created successfully. Check your phonebook!")
+  #         |> redirect(to: phonebook_path(conn, :index))
+  #       {:error, _changeset} ->
+  #         conn
+  #         |> put_flash(:error, "Phonebook name '#{phonebook_name}' already taken, Please use other name")
+  #         |> redirect(to: upload_contact_path(conn, :new))
+  #     end
+  #   rescue
+  #     _e in CSV.RowLengthError ->
+  #       conn
+  #       |> put_flash(:error, "Please upload only .csv format or check your file contents")
+  #       |> redirect(to: upload_contact_path(conn, :new))
+  #     _ ->
+  #       conn
+  #       |> put_flash(:error, "Please upload only .csv format or check your file contents")
+  #       |> redirect(to: upload_contact_path(conn, :new))
+  #   end
+  # end
+
   def upload(conn, %{"name" => phonebook_name, "contact_csv" => %Plug.Upload{path: path}}) do
     user = conn.assigns.current_user
     try do
       contacts_map = CsvFormatter.read!(path)
-      IO.puts "+++++++++++contacts_map++++++++++++++"
-      IO.inspect contacts_map
-      IO.puts "+++++++++++++++++++++++++++++++++++++"
 
       case Contact.create_phonebook(user, %{"name" => phonebook_name}) do
         {:ok, phonebook} ->
-          Enum.map(contacts_map, &CsvFormatter.convert_to_person(&1, phonebook, user))
+          #Enum.map(contacts_map, &CsvFormatter.convert_to_person(&1, phonebook, user))
+          Task.Supervisor.async_stream(TextingWeb.TaskSupervisor, contacts_map,
+          Texting.CsvFormatter, :convert_to_person, [phonebook, user], [max_concurrency: 20])
+          |> Enum.to_list()
           conn
           |> put_flash(:info, "Contacts created successfully. Check your phonebook!")
           |> redirect(to: phonebook_path(conn, :index))
@@ -50,10 +78,10 @@ defmodule TextingWeb.Dashboard.UploadContactController do
     phonebook = Contact.get_phonebook!( phonebook_id, user.id)
     try do
       contacts_map = CsvFormatter.read!(path)
-      IO.puts "+++++++++++contacts_map++++++++++++++"
-      IO.inspect contacts_map
-      IO.puts "+++++++++++++++++++++++++++++++++++++"
-      Enum.map(contacts_map, &CsvFormatter.convert_to_person(&1, phonebook, user))
+      #Enum.map(contacts_map, &CsvFormatter.convert_to_person(&1, phonebook, user))
+      Task.Supervisor.async_stream(TextingWeb.TaskSupervisor, contacts_map,
+      Texting.CsvFormatter, :convert_to_person, [phonebook, user], [max_concurrency: 20])
+      |> Enum.to_list()
       conn
       |> put_flash(:info, "Contacts added to #{phonebook.name} successfully. Check your phonebook!")
       |> redirect(to: phonebook_path(conn, :index))
