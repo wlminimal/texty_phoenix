@@ -294,4 +294,15 @@ defmodule Texting.Messenger do
     end
   end
 
+  ###################################################################
+  # Phone number lookup
+  ###################################################################
+
+  def is_mobile_number?(phone_number) do
+    Messageman.is_mobile_number?(phone_number)
+  end
+
+  def is_landline_number?(phone_number) do
+    Messageman.is_landline_number?(phone_number)
+  end
 end

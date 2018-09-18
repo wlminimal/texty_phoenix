@@ -18,6 +18,10 @@ defmodule TextingWeb.Dashboard.UploadContactController do
     user = conn.assigns.current_user
     try do
       contacts_map = CsvFormatter.read!(path)
+      IO.puts "+++++++++++contacts_map++++++++++++++"
+      IO.inspect contacts_map
+      IO.puts "+++++++++++++++++++++++++++++++++++++"
+
       case Contact.create_phonebook(user, %{"name" => phonebook_name}) do
         {:ok, phonebook} ->
           Enum.map(contacts_map, &CsvFormatter.convert_to_person(&1, phonebook, user))
@@ -46,6 +50,9 @@ defmodule TextingWeb.Dashboard.UploadContactController do
     phonebook = Contact.get_phonebook!( phonebook_id, user.id)
     try do
       contacts_map = CsvFormatter.read!(path)
+      IO.puts "+++++++++++contacts_map++++++++++++++"
+      IO.inspect contacts_map
+      IO.puts "+++++++++++++++++++++++++++++++++++++"
       Enum.map(contacts_map, &CsvFormatter.convert_to_person(&1, phonebook, user))
       conn
       |> put_flash(:info, "Contacts added to #{phonebook.name} successfully. Check your phonebook!")
