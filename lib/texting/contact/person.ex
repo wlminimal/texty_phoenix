@@ -25,6 +25,6 @@ defmodule Texting.Contact.Person do
     |> unique_constraint(:phone_number, name: :people_phone_number_phonebook_id_index)
     |> validate_format(:phone_number, ~r/^[0-9]+$/)
     |> validate_format(:email, ~r/@/)
-    |> validate_length(:phone_number, min: 10, max: 11)
+    |> validate_length(:phone_number, min: 11, max: 11)
   end
 end

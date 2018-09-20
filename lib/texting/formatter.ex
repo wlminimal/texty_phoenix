@@ -26,6 +26,37 @@ defmodule Texting.Formatter do
   end
 
   @doc """
+  Check if phone number already has a us international number "1"
+  """
+  @spec phone_number_formatter(String.t) :: String.t
+  def phone_number_formatter_check_count(phone_number) do
+    formatted_phone_number = phone_number
+      |> String.replace([" ", "-", ")", "(", "="], "")
+
+    if has_us_international_code?(formatted_phone_number) do
+      formatted_phone_number
+    else
+      "1" <> formatted_phone_number
+    end
+  end
+
+  def has_us_international_code?(phone_number) do
+    count = String.length(phone_number)
+    us_code = String.slice(phone_number, 0, 1)
+    with true <- count >= 11,
+         true <- us_code == "1" do
+      true
+    else
+      _ ->
+      false
+    end
+  end
+
+  def check_phone_number_length(phone_number) do
+
+  end
+
+  @doc """
   Convert phone number to  213 333 4444
   """
   @spec phone_number_formatter(String.t) :: String.t
