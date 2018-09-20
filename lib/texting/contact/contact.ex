@@ -124,8 +124,7 @@ defmodule Texting.Contact do
     Repo.get!(query, person_id)
   end
 
-  def create_person(phonebook, user, attrs \\ %{}) do
-    %{"phone_number" => phone_number, "name" => name} = attrs
+  def create_person(phonebook, user, %{"phone_number" => phone_number, "name" => name} = attrs) do
     # if name is empty, enter default name "No name"
     name =
       if name == "" do
@@ -149,6 +148,9 @@ defmodule Texting.Contact do
     end
   end
 
+  def create_person(_phonebook, _user, _) do
+    nil
+  end
 
   def update_person(%Person{} = person, attrs) do
 
