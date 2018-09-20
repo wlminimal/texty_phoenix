@@ -25,7 +25,7 @@
                           </div>
                         </div>
                       </div>
-    
+
                       <div class="row">
                         <div class="col-sm-12">
                           <input type="text" style="width: 250px;" id="contactFileName" placeholder="Choose File" disabled="disabled">
@@ -39,7 +39,7 @@
                           </div>
                           </div>
                         </div>
-                      
+
                       <div class="row">
                         <div class="col-sm-12">
                           <button class="btn btn-primary" type="submit" name="action">Upload
@@ -48,8 +48,8 @@
                           <a href="https://s3-us-west-1.amazonaws.com/text-marketing/admin/contact-template.csv" class="btn btn-rose">
                             Download Template
                           </a>
-                          <p>You can download our template or You can make your own. But make sure file must include header title as "name", "email", "phone_number".
-                          
+                          <p>You can download our template or make your own. But make sure file must include header title as "name", "phone_number".
+
                             </p>
                         </div>
                       </div>
@@ -69,14 +69,14 @@
             </div>
             <div class="card-content">
               <h4 class="card-title">Upload Contact to New Phonebook</h4>
-              
+
               <div class="row">
                 <div class="col-md-12">
                   <div class="row">
                     <div class="info-wrapper">
                       <%= form_for @conn, upload_contact_path(@conn, :upload), [multipart: true], fn f -> %>
                       <div class="col-sm-12">
-  
+
                         <div class="row">
                           <div class="col-sm-12">
                             <div class="form-group">
@@ -86,7 +86,7 @@
                             </div>
                           </div>
                         </div>
-      
+
                         <div class="row">
                           <div class="col-sm-12">
                             <input type="text" style="width: 250px;" id="contactFileName2" placeholder="Choose File" disabled="disabled">
@@ -100,7 +100,7 @@
                             </div>
                             </div>
                           </div>
-                        
+
                         <div class="row">
                           <div class="col-sm-12">
                             <button class="btn btn-primary" type="submit" name="action">Upload
@@ -109,8 +109,8 @@
                             <a href="https://s3-us-west-1.amazonaws.com/text-marketing/admin/contact-template.csv" class="btn btn-rose">
                               Download Template
                             </a>
-                            <p>You can download our template or You can make your own. But make sure file must include header title as "name", "email", "phone_number".
-                          
+                            <p>You can download our template or make your own. But make sure file must include header title as "name", "phone_number".
+
                             </p>
                           </div>
                         </div>
