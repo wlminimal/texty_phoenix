@@ -45,7 +45,7 @@
                           <button class="btn btn-primary" type="submit" name="action">Upload
                             <i class="material-icons right">cloud_upload</i>
                           </button>
-                          <a href="https://s3-us-west-1.amazonaws.com/text-marketing/admin/contact-template.csv" class="btn btn-rose">
+                          <a href="https://s3-us-west-1.amazonaws.com/text-marketing/admin/contacts-template.csv" class="btn btn-rose">
                             Download Template
                           </a>
                           <p>You can download our template or make your own. But make sure file must include header title as "name", "phone_number".
@@ -106,7 +106,7 @@
                             <button class="btn btn-primary" type="submit" name="action">Upload
                               <i class="material-icons right">cloud_upload</i>
                             </button>
-                            <a href="https://s3-us-west-1.amazonaws.com/text-marketing/admin/contact-template.csv" class="btn btn-rose">
+                            <a href="https://s3-us-west-1.amazonaws.com/text-marketing/admin/contacts-template.csv" class="btn btn-rose">
                               Download Template
                             </a>
                             <p>You can download our template or make your own. But make sure file must include header title as "name", "phone_number".
