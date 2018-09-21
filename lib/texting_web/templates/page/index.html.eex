@@ -101,7 +101,7 @@
                         <div class="single-icon">
                             <i class="ti-text" aria-hidden="true"></i>
                         </div>
-                        <h4>Send special offer by text message</h4>
+                        <h4>Send special offer by text messages</h4>
                         <p>You can notify your customers about sales, discount coupons, special events and anything else with a single click.</p>
                     </div>
                 </div>
@@ -173,7 +173,7 @@
 							<div class="single-feature">
 									<i class="ti-pulse" aria-hidden="true"></i>
 									<h5>Fast and Reliable</h5>
-									<p>Our messaging service is very fast and reliable. We reach up to 99% delivery rate.</p>
+									<p>We have a delivery rate of 99% .</p>
 							</div>
 					</div>
 					<!-- Single Feature Start -->
@@ -189,7 +189,7 @@
 							<div class="single-feature">
 									<i class="ti-mobile" aria-hidden="true"></i>
 									<h5>Dedicated Phone number</h5>
-									<p>You can choose between 1 to 10 dedicated phone number for your business depending on your plan.</p>
+									<p>You can choose between 1 to 10 dedicated phone numbers for your business depending on your plan.</p>
 							</div>
 					</div>
 					<!-- Single Feature Start -->
@@ -333,8 +333,9 @@
 											</div>
 									</div>
 									<div class="package-description">
-                      <p>Up to 700 text messages</p>
-											<p>Up to 233 image messages</p>
+											  <p>Up to 700 text messages</p>
+
+											<p>(or) Up to 233 image messages</p>
 									</div>
 
 							</div>
@@ -352,7 +353,7 @@
 									</div>
 									<div class="package-description">
 											<p>Up to 1125 text messages</p>
-											<p>Up to 375 image messages</p>
+											<p>(or) Up to 375 image messages</p>
 									</div>
 
 							</div>
@@ -371,7 +372,7 @@
 									</div>
 									<div class="package-description">
 											<p>Up to 2000 text messages</p>
-											<p>Up to 666 image messages</p>
+											<p>(or) Up to 666 image messages</p>
 									</div>
 
 							</div>
@@ -389,7 +390,7 @@
 									</div>
 									<div class="package-description">
 											<p>Up to 2900 text messages</p>
-											<p>Up to 966 image messages</p>
+											<p>(or) Up to 966 image messages</p>
 									</div>
 
 							</div>
@@ -405,7 +406,7 @@
 			<div class="row align-items-center">
 					<div class="col-md-8">
 							<div class="membership-description">
-									<h2>Join our Monthly Membership</h2>
+									<h2>Subscribe to our monthly plan</h2>
 									<p>Find the perfect plan for you — 100% satisfaction guaranteed.</p>
 							</div>
 					</div>
