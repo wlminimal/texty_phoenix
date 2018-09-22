@@ -50,12 +50,20 @@ defmodule TextingWeb.Dashboard.UploadContactController do
       case Contact.create_phonebook(user, %{"name" => phonebook_name}) do
         {:ok, phonebook} ->
           #Enum.map(contacts_map, &CsvFormatter.convert_to_person(&1, phonebook, user))
-          Task.Supervisor.async_stream(TextingWeb.TaskSupervisor, contacts_map,
+         try do
+          Task.Supervisor.async_stream(TextingWeb.TaskSupervisors, contacts_map,
           Texting.CsvFormatter, :convert_to_person, [phonebook, user], [max_concurrency: 20])
           |> Enum.to_list()
           conn
           |> put_flash(:info, "Contacts created successfully. Check your phonebook!")
           |> redirect(to: phonebook_path(conn, :index))
+         rescue
+          _ ->
+            conn
+            |> put_flash(:error, "Please upload only .csv format or check your file contents")
+            |> redirect(to: upload_contact_path(conn, :new))
+         end
+
         {:error, _changeset} ->
           conn
           |> put_flash(:error, "Phonebook name '#{phonebook_name}' already taken, Please use other name")

@@ -1,0 +1,10 @@
+<div class="help-content">
+  <div>
+    <h2 class="help-header">How to add multiple contacts by uploading csv file</h2>
+    <h4 style="text-align: center; margin-bottom: 50px;">Texty marketing provides very simple way to get you started. First <a href="<%= sign_in_path(@conn, :new) %>" target="_blank" >sign in to dashboard</a>
+    (Not a member? <a href="<%= sign_up_path(@conn, :new) %>" target="_blank"> sign up for free</a> ).
+    </h4>
+
+    <p class="step-desc">In Dashboard Click "Contact" then "Upload Contact" in side menu</p>
+  </div>
+</div>

@@ -84,7 +84,6 @@ defmodule Texting.Sales do
   Need to change %Person{} to %{}
   and then call add_to_recipients function in controller
   """
-  @spec struct_to_map_from_person(list) :: Map
   def struct_to_map_from_person(people) do
     line_items =
       people

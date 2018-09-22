@@ -72,6 +72,7 @@ defmodule TextingWeb.Router do
     pipe_through [:browser, :help]
     get "/", HelpController, :index
     get "/how-to-start-a-campaign", StartCampaignController, :index
+    get "/how-to-upload-contact", UploadContactController, :index
   end
 
   scope "/", TextingWeb do
@@ -153,6 +154,9 @@ defmodule TextingWeb.Router do
     resources "/phonebooks", PhonebookController do
       resources "/people", PersonController, except: [:index]
     end
+
+    # CSV Export
+    get "/csv/:id", CsvExportController, :export
 
   end
 

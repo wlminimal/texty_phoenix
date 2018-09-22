@@ -52,10 +52,6 @@ defmodule Texting.Formatter do
     end
   end
 
-  def check_phone_number_length(phone_number) do
-
-  end
-
   @doc """
   Convert phone number to  213 333 4444
   """
@@ -73,6 +69,10 @@ defmodule Texting.Formatter do
   """
   def remove_plus_sign_from_phonenumber(phone_number) do
     String.slice(phone_number, 1, 12)
+  end
+
+  def remove_international_code(phone_number) do
+    phone_number |> String.slice(1, 11)
   end
 
   @doc """
@@ -93,6 +93,12 @@ defmodule Texting.Formatter do
     end
   end
 
+  def convert_person_struct_to_map(people) do
+    for %{name: name, phone_number: phone_number}  <- people do
+      %{name: name, phone_number: phone_number}
+    end
+  end
+
   def stripe_money_converter(amount) when is_binary(amount) do
     {correct_format_amount, _} = Integer.parse(amount)
     div(correct_format_amount, 100)
@@ -102,6 +108,9 @@ defmodule Texting.Formatter do
     div(amount, 100)
   end
 
+  @doc """
+  Get customer's area code when they sign up
+  """
   def get_user_area_code(user) do
     phonenumber = user.phone_number
     area_code = String.slice(phonenumber, 1, 3)

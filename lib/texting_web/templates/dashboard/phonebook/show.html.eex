@@ -5,18 +5,21 @@
             <div class="card-header card-header-icon" data-background-color="purple">
                   <i class="material-icons">person</i>
             </div>
-  
+
             <div class="card-content">
                   <h2 class="card-title"><%= @phonebook.name %> <span class="header-description"> create a new contact or add it to a recipient list.</span></h2>
                   <div class="add-new-button-wrapper">
                     <%= if @phonebook.name == "Unsubscriber" || @phonebook.name == "Subscriber" do %>
-                      
+
                     <% else %>
                     <%= button to: phonebook_person_path(@conn, :new, @phonebook), method: "get", class: "btn btn-github btn-sm" do %>
                         <i class="material-icons">add</i>New Contact
                       <% end %>
                       <%= button to: phonebook_path(@conn, :edit, @phonebook), method: "get", class: "btn btn-github btn-sm" do %>
                         <i class="material-icons">edit</i>Edit Phonebook
+                      <% end %>
+                      <%= button to: csv_export_path(@conn, :export, @phonebook.id), method: "get", class: "btn btn-github btn-sm" do %>
+                        <i class="material-icons">file_download</i>export
                       <% end %>
                     <% end %>
                   </div>
@@ -42,7 +45,7 @@
                                   <div class="checkbox">
                                     <label>
                                       <input type="checkbox" name="optionsCheckboxes" onclick="checkAll(this)" />
-                                      
+
                                     </label>
                                   </div>
                                 </td>
@@ -53,13 +56,13 @@
                                     <div class="checkbox">
                                       <label>
                                         <input type="checkbox" name="recipients_list[]" value="<%= person.id %>,<%= person.name %>,<%= person.phone_number %>" class="filled-in" />
-                                       
+
                                       </label>
                                     </div>
                                   </td>
                                   <td><%= person.name %></td>
                                   <td><%= display_phone_number(person.phone_number) %></td>
-                                
+
                                   <td class="td-actions text-right">
                                     <%= button to: phonebook_person_path(@conn, :edit, @phonebook.id, person.id), method: "get", class: "btn btn-github" do %>
                                       <i class="material-icons icon-button">edit</i>
@@ -67,18 +70,18 @@
 
                                     <%= button to: phonebook_person_path(@conn, :delete, @phonebook.id, person.id), method: "delete", data: [confirm: "Are you sure?"], class: "btn btn-danger" do %>
                                       <i class="material-icons icon-button">close</i>
-                                    <% end %> 
+                                    <% end %>
                                   </td>
                               </tr>
                               <% end %>
-                            
+
                             </tbody>
                         </table>
-                        <%= pagination_links @people %> 
+                        <%= pagination_links @people %>
                         <div>
                             <%= submit "Add to Recipients", id: "recipients-button", class: "btn btn-primary" %>
                         </div>
-                        
+
                     </div>
                   </div>
                   <% end %>
