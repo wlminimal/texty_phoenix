@@ -10,20 +10,24 @@ defmodule Texting.CsvFormatter do
     |> Enum.to_list()
     #|> filter_landline_number()
   end
-
-  # def write!(data) do
-  #   file = File.open("contacts.csv", [:write, :utf8])
-  #   data
-  #   |> Enum.map(&Map.from_struct(&1))
-  #   |> Enum.map(&CSV.encode(&1, headers: [:name, :phone_number]))
-  #   |> Enum.map(&IO.write(file, &1))
+  @doc """
+    Write csv but without header. If I include header then sort, header will not be
+    header. TODO: Find to way to add header after sorting
+  """
+  # def write(people) do
+  #   [["name", "phone_number"]]
+  #   |> Stream.concat(people |> Stream.map(&[&1.name, Formatter.remove_international_code(&1.phone_number)]))
+  #   |> CSV.encode()
+  #   |> Enum.sort()
+  #  # |> Enum.into(File.stream!("contacts.csv"))
   # end
 
   def write(people) do
-    [["name", "phone_number"]]
-    |> Stream.concat(people |> Stream.map(&[&1.name, Formatter.remove_international_code(&1.phone_number)]))
+    people
+    |> Stream.map(&[&1.name, Formatter.remove_international_code(&1.phone_number)])
     |> CSV.encode()
-    |> Enum.into(File.stream!("contacts.csv"))
+    |> Enum.sort()
+   # |> Enum.into(File.stream!("contacts.csv"))
   end
 
   def convert_to_person(attrs, phonebook, user) do

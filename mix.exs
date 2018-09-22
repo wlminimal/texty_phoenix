@@ -79,7 +79,7 @@ defmodule Texting.Mixfile do
       {:number, "~> 0.5.7"},
       {:react_phoenix, "~>0.5.2"},
 
-      # {:rummage_ecto, "~> 1.3.0-rc.0"},
+      # {:rummage_ecto, "~> 2.0.0-rc.0"},
       # {:rummage_phoenix, "~> 1.2.0"}
 
     ]

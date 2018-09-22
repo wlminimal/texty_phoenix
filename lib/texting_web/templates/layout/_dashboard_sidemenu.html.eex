@@ -7,9 +7,9 @@
 
   <div class="logo">
      <!-- <a href="<%= dashboard_path(@conn, :new) %>" class="simple-text logo-mini">
-					
+
         <img src="<%= static_path(@conn, "/images/l1.png") %>" style="height: 50px;" alt="">
-       
+
       </a> -->
 
       <a href="<%= dashboard_path(@conn, :new) %>" class="simple-text logo-normal">
@@ -46,12 +46,12 @@
 							</a>
 						</li>
 					</ul>
-			
-				
+
+
 				</div>
 			</div>
 		</div>
-		
+
       <ul class="nav">
 				<li class="">
 					<a href="<%= dashboard_path(@conn, :new) %>">
@@ -62,20 +62,20 @@
 				<li class="">
 					<a href="<%= campaign_path(@conn, :index) %>">
 							<i class="material-icons">send</i>
-							<p> Start Campaign </p>
+							<p> Start campaign </p>
 					</a>
 				</li>
 
 				<li>
 						<a href="<%= campaign_history_path(@conn, :index) %>">
 								<i class="material-icons">history</i>
-								<p> Campaign History </p>
+								<p> Campaign history </p>
 						</a>
 				</li>
 				<li>
 					<a href="#collapseContactMenu" data-toggle="collapse" class="collapsed" role="button" aria-expanded="false" aria-controls="collapseAccountMenu">
 						<i class="material-icons">contact_phone</i>
-						<p>Contact <b class="caret"></b></p>
+						<p>Contacts <b class="caret"></b></p>
 					</a>
 					<div class="clearfix"></div>
 					<div id="collapseContactMenu" class="collapse">
@@ -95,9 +95,9 @@
 						</ul>
 					</div>
 				</li>
-       
-        
-        
+
+
+
         <li>
           <a href="<%= analytics_path(@conn, :index) %>">
               <i class="material-icons">assessment</i>
@@ -169,7 +169,7 @@
 							<p> Help & Tutorials </p>
 					</a>
 				</li>
-					
+
         <li class="log-out">
           <a href="/sign-out">
               <i class="material-icons">highlight_off</i>
@@ -186,6 +186,6 @@
 				<% end %>
       </ul>
 	</div>
-	
+
 	<div class="sidebar-background"></div>
 </div>
