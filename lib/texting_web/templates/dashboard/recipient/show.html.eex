@@ -5,7 +5,7 @@
               <div class="card-header card-header-icon" data-background-color="purple">
                     <i class="material-icons">assignment</i>
               </div>
-    
+
               <div class="card-content">
                     <h2 class="card-title">Recipients List<span class="header-description"> You can remove a contact from list or click to send text or image campaign</span></h2>
                     <div class="add-new-button-wrapper">
@@ -49,11 +49,11 @@
                                       </td>
                                       <td><%= recipient.name %></td>
                                       <td><%= display_phone_number(recipient.phone_number) %></td>
-                                    
+
                                       <td class="td-actions text-right">
                                         <%= button to: recipient_path(@conn, :delete, recipient.id), method: "delete", data: [confirm: "Are you sure?"], class: "btn btn-danger delete-each-button" do %>
                                           <i class="material-icons icon-button">close</i>Delete
-                                        <% end %> 
+                                        <% end %>
                                       </td>
                                   </tr>
                                   <% end %>
@@ -73,7 +73,7 @@
                                 <% end %>
                               </tbody>
                           </table>
-                          <%= pagination_links @page %> 
+                          <%= pagination_links @page %>
                       </div>
                     </div>
                     <% end %>

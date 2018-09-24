@@ -147,7 +147,7 @@ defmodule Texting.Sales do
 
   defp remove_duplicate_recipients(exisiting_recipients, new_recipients) do
     recipients_list = exisiting_recipients ++ new_recipients
-    ready_recipients = recipients_list |> Enum.uniq_by(& &1.name)
+    ready_recipients = recipients_list |> Enum.uniq_by(& &1.phone_number)
     counts = Enum.count(ready_recipients)
     attrs = %{line_items: ready_recipients, counts: counts}
     attrs

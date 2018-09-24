@@ -23,6 +23,35 @@
                       <% end %>
                     <% end %>
                   </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <!-- Search by name -->
+                      <div class="search-form">
+                        <%= form_for @conn, phonebook_path(@conn, :show, @phonebook.id), [method: :get], fn f -> %>
+                          <div class="form-group label-floating">
+                            <%= label f, :name, class: "control-label" %>
+                            <%= text_input f, :name, required: true, class: "form-control" %>
+                            <%= error_tag f, :name %>
+                          </div>
+                          <%= submit "search", id: "search-button", class: "btn btn-github" %>
+                        <% end %>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <!-- Search by phone_number -->
+                      <div class="search-form">
+                        <%= form_for @conn, phonebook_path(@conn, :show, @phonebook.id), [method: :get], fn f -> %>
+                          <div class="form-group label-floating">
+                            <%= label f, :phone_number, class: "control-label" %>
+                            <%= text_input f, :phone_number, required: true, class: "form-control" %>
+                            <%= error_tag f, :phone_number %>
+                          </div>
+                          <%= submit "search", id: "search-button", class: "btn btn-github" %>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+
                   <%= if Enum.count(@people.entries) == 0 do %>
                   <p>No Contact List</p>
                   <% else %>

@@ -3,6 +3,7 @@ defmodule TextingWeb.Dashboard.PhonebookController do
   alias Texting.Contact
   alias Texting.Contact.Phonebook
   alias TextingWeb.Plugs.AuthorizeUser
+  alias Texting.Contact.SearchContact
 
   plug AuthorizeUser when action in [:new, :create, :show, :edit, :update, :delete]
 
@@ -33,8 +34,43 @@ defmodule TextingWeb.Dashboard.PhonebookController do
     end
   end
 
-  # Show Contact List
+  @doc """
+  Search by name
+  """
+  def show(conn, %{"id" => id, "name" => name} = params) do
+    IO.puts "+++++++++ name ++++++++++++="
+    IO.inspect name
+    user = conn.assigns.current_user
+    phonebook = Contact.get_phonebook!(id, user.id)
+    # put a phonebook id in session for recipient page for continue adding button.
+    conn = put_session(conn, :phonebook_id, phonebook.id)
+    # search by params
+    page = SearchContact.get_search_results(conn, params, phonebook.id)
+    render(conn, "show.html", phonebook: phonebook, people: page)
+  end
+
+  @doc """
+  Search by phone_number
+  """
+  def show(conn, %{"id" => id, "phone_number" => phone_number} = params) do
+    IO.puts "+++++++++ phone_number ++++++++++++="
+    IO.inspect phone_number
+    user = conn.assigns.current_user
+    phonebook = Contact.get_phonebook!(id, user.id)
+    # put a phonebook id in session for recipient page for continue adding button.
+    conn = put_session(conn, :phonebook_id, phonebook.id)
+    # pass the params for pagination
+    page = SearchContact.get_search_results(conn, params, phonebook.id)
+    render(conn, "show.html", phonebook: phonebook, people: page)
+  end
+
+  @doc """
+  Default show function
+  Show contacts in phonebook
+  """
   def show(conn, %{"id" => id} = params) do
+    IO.puts "+++++++++ default show function ++++++++++++="
+    IO.inspect params
     user = conn.assigns.current_user
     phonebook = Contact.get_phonebook!(id, user.id)
     # put a phonebook id in session for recipient page for continue adding button.

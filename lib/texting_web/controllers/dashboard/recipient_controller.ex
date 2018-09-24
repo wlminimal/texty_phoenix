@@ -57,7 +57,10 @@ defmodule TextingWeb.Dashboard.RecipientController do
     end
   end
 
-  def add(conn, _) do
+  def add(conn, params) do
+    IO.puts "++++++++++++++ recipients params +++++++++++++++"
+    IO.inspect params
+    IO.puts "++++++++++++++ recipients params +++++++++++++++"
     conn
     |> put_flash(:error, "Please Check at least one contact.")
     |> redirect(to: recipient_path(conn, :show))

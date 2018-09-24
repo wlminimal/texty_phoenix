@@ -99,7 +99,7 @@ defmodule Texting.Contact do
   ## PERSON
 
   def get_people(phonebook_id, params) do
-    query = from p in Person, where: p.phonebook_id == ^phonebook_id
+    query = from p in Person, where: p.phonebook_id == ^phonebook_id, order_by: p.name
     Repo.paginate(query, params)
   end
 
