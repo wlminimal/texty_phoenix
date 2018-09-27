@@ -4,7 +4,42 @@
     <h4 style="text-align: center; margin-bottom: 50px;">Texty marketing provides very simple way to get you started. First <a href="<%= sign_in_path(@conn, :new) %>" target="_blank" >sign in to dashboard</a>
     (Not a member? <a href="<%= sign_up_path(@conn, :new) %>" target="_blank"> sign up for free</a> ).
     </h4>
-
+    <div class="note-block" style="text-align: center; margin-bottom: 50px;">
+      <h4 >IMPORTANT NOTE</h4>
+      <ol>
+        <li>For now Texty only accepts CSV file format.(.csv file extension)</li>
+        <li>Max file size is 2MB.</li>
+        <li>If there are duplicate phone numbers, Texty only saves 1 phone number. </li>
+        <li>If existing phonebook has same phone number from your upload file, Texty will keep current phone number(No same phone number allowed).</li>
+        <li>If you are getting errors, please contact info@texty.marketing so we can help you!</li>
+      </ol>
+    </div>
     <p class="step-desc">In Dashboard Click "Contact" then "Upload Contact" in side menu</p>
+<p class="step-desc">If you want to create a new phonebook for this upload file, 1) Enter new phonebook name
+       then 2) click "UPLOAD CONTACT" button and 3) click "UPLOAD" button. </p>
+    <img src="<%= static_path(@conn, "/images/help-image/sc22.png") %>" style="width: 550px" class="help-images" alt="">    <img src="<%= static_path(@conn, "/images/help-image/sc18.png") %>" class="help-images" alt="">
+
+    <p class="step-desc">First click "DOWNLOAD TEMPLATE" button and download csv file.</p>
+    <img src="<%= static_path(@conn, "/images/help-image/sc19.png") %>" style="width: 550px" class="help-images" alt="">
+
+    <p class="step-desc">Enter your contact name and phone number. Please don't remove header(name and phone_number) section.
+      Only 10 digits phone number and no special letters are allowed.</p>
+    <img src="<%= static_path(@conn, "/images/help-image/sc20.png") %>"  class="help-images" alt="">
+
+    <p class="step-desc">If you want to upload a file to existing phonebook, 1) choose a phonebook from
+      dropdown menu. then 2) click "UPLOAD CONTACT" button and 3) click "UPLOAD" button. </p>
+    <img src="<%= static_path(@conn, "/images/help-image/sc21.png") %>" style="width: 550px" class="help-images" alt="">
+
+    <p class="step-desc">If you want to create a new phonebook for this upload file, 1) Enter new phonebook name
+       then 2) click "UPLOAD CONTACT" button and 3) click "UPLOAD" button. </p>
+    <img src="<%= static_path(@conn, "/images/help-image/sc22.png") %>" style="width: 550px" class="help-images" alt="">
+
+    <p class="step-desc">You will be redirected to phonebook page and will see New phonebook(or existing phonebook) has new contacts uploaded. </p>
+     <img src="<%= static_path(@conn, "/images/help-image/sc23.png") %>" class="help-images" alt="">
+
+     <img src="<%= static_path(@conn, "/images/help-image/sc24.png") %>" class="help-images" alt="">
+
+     <p class="step-desc">Excellent! You have uploaded contacts from your own file. You are ready to send text or image messages.</p>
+     <p class="step-desc">Not registered yet? <a href="<%= sign_up_path(@conn, :new) %>">Sign up</a> and get 100 credtis for free!</p>
   </div>
 </div>

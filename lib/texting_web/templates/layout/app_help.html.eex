@@ -27,15 +27,15 @@
     <!-- End Google Tag Manager -->
 
     <title>Texty Marketing - Help and Tutorials</title>
-    
+
 
     <!--<link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">   
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet"> 
-    
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+
   <!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"> -->
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"> -->
@@ -61,22 +61,23 @@
         <hr class="my-4">
         <p class="jumbo-description">Are you not a member of texty marketing? Why don't you start now and get 100 credits for free?</p>
         <a class="btn btn-primary btn-lg" href="<%= sign_up_path(@conn, :new) %>" role="button">Get 100 Credits for free</a>
+        <a class="btn btn-github btn-lg" href="<%= help_path(@conn, :index) %>" role="button">Helps and Tutorials</a>
       </div>
     </div>
-    
+
     <div class="container">
       <%= render @view_module, @view_template, assigns %>
     </div>
-   
+
   </div>
-  
+
    <!-- ***** Footer Area Start ***** -->
    <footer class="footer-social-icon text-center section_padding_70 clearfix">
       <!-- footer logo -->
       <div class="footer-text">
     <img src="<%= static_path(@conn, "/images/l1.png") %>" style="height: 50px;" alt="">
       </div>
-    
+
       <div class="footer-menu">
           <nav>
               <ul>

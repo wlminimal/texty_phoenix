@@ -5,55 +5,55 @@
     (Not a member? <a href="<%= sign_up_path(@conn, :new) %>" target="_blank"> sign up for free</a> ).
     </h4>
     <p class="step-desc">In Dashboard Click "Start a Campaign" in side menu</p>
-    <img src="<%= static_path(@conn, "/images/sc1.png") %>" class="help-images" alt="">
+    <img src="<%= static_path(@conn, "/images/help-image/sc1.png") %>" class="help-images" alt="">
     <br />
     <p class="step-desc">Then click "Go to phonebook" button to go to Contact Page.</p>
-    <img src="<%= static_path(@conn, "/images/sc2.png") %>" class="help-images" alt="">
+    <img src="<%= static_path(@conn, "/images/help-image/sc2.png") %>" class="help-images" alt="">
 
     <p class="step-desc">In Contact page, Click " + New Phonebook " button to create new phonebook.
     </p>
-    <img src="<%= static_path(@conn, "/images/sc3.png") %>" class="help-images" alt="">
+    <img src="<%= static_path(@conn, "/images/help-image/sc3.png") %>" class="help-images" alt="">
 
     <p class="step-desc"> Also you can add contacts from existing phonebook.</p>
     <p class="step-desc"> 1. Add all contacts to recipients list.</p>
-    <img src="<%= static_path(@conn, "/images/sc13.png") %>" class="help-images" alt="">
+    <img src="<%= static_path(@conn, "/images/help-image/sc13.png") %>" class="help-images" alt="">
 
     <p class="step-desc"> 2. Pick a contact from existing phonebook. Click checkbox and click "Add to Recipients"</p>
-    <img src="<%= static_path(@conn, "/images/sc14.png") %>" class="help-images" alt="">
+    <img src="<%= static_path(@conn, "/images/help-image/sc14.png") %>" class="help-images" alt="">
 
     <p class="step-desc">In New phonebook page, Enter a name for your phonebook. and click submit.</p>
-    <img src="<%= static_path(@conn, "/images/sc4.png") %>" class="help-images" alt="">
+    <img src="<%= static_path(@conn, "/images/help-image/sc4.png") %>" class="help-images" alt="">
 
     <p class="step-desc">Click "New Contact" to add a new contact.</p>
     <p class="step-desc">If you want to add multiple contacts at once, <a href="<%= upload_contact_path(@conn, :index) %>">See upload contact here</a></p>
-    <img src="<%= static_path(@conn, "/images/sc5.png") %>" class="help-images" alt="">
+    <img src="<%= static_path(@conn, "/images/help-image/sc5.png") %>" class="help-images" alt="">
 
     <p class="step-desc">Type name and phone number including 3 digits area code. and click "Submit"</p>
-    <img src="<%= static_path(@conn, "/images/sc6.png") %>" class="help-images" alt="">
+    <img src="<%= static_path(@conn, "/images/help-image/sc6.png") %>" class="help-images" alt="">
 
     <p class="step-desc">After adding a new contact, click select all or click each contact checkbox then click "Add to Recipients" button.</p>
-    <img src="<%= static_path(@conn, "/images/sc7.png") %>" class="help-images" alt="">
+    <img src="<%= static_path(@conn, "/images/help-image/sc7.png") %>" class="help-images" alt="">
 
     <p class="step-desc">In Recipient page, you can add more recipients or delete current recipients. If you want to keep going, Click "Text Campaign" button
       (want to send Image Campaign? <a href="#image-campaign">Click here</a> ) .</p>
-    <img src="<%= static_path(@conn, "/images/sc8.png") %>" class="help-images" alt="">
+    <img src="<%= static_path(@conn, "/images/help-image/sc8.png") %>" class="help-images" alt="">
 
     <p class="step-desc">Type your long url to shorten (Read more about shorten link <a href="#" target="_blank">here</a>. then click "Shorten" button.
     then it will display shorten url(ex. http://bit.ly/2CYa5u5). Type campaign name and description for your record(it will not be displayed to your recipients), then
     type your message and paste shortened url also. And finally click "Next" to go to preview page.</p>
-    <img src="<%= static_path(@conn, "/images/sc9.png") %>" class="help-images" alt="">
+    <img src="<%= static_path(@conn, "/images/help-image/sc9.png") %>" class="help-images" alt="">
 
     <p class="step-desc">In Preview page, make sure all the information is correct, then Click "Send message"</p>
-    <img src="<%= static_path(@conn, "/images/sc10.png") %>" class="help-images" alt="">
+    <img src="<%= static_path(@conn, "/images/help-image/sc10.png") %>" class="help-images" alt="">
 
     <p class="step-desc">You will be redirected to Dashboard page, and will see result like below.If you click, red rectangled button, you
       will be redirected to campaign history page.
     </p>
-    <img src="<%= static_path(@conn, "/images/sc11.png") %>" class="help-images" alt="">
+    <img src="<%= static_path(@conn, "/images/help-image/sc11.png") %>" class="help-images" alt="">
 
     <p class="step-desc">You can check message status(delivered or undelivered) here.
       </p>
-      <img src="<%= static_path(@conn, "/images/sc12.png") %>" class="help-images" alt="">
+      <img src="<%= static_path(@conn, "/images/help-image/sc12.png") %>" class="help-images" alt="">
 
     <p class="step-desc">Congrats! You sent first campaign!</p>
   </div>
@@ -62,15 +62,15 @@
   <div id="image-campaign">
     <h2>Send Image Campaign</h2>
       <p class="step-desc">All steps are equal to text campaign. But in Recipients List page Click "Image Campaign".</p>
-      <img src="<%= static_path(@conn, "/images/sc15.png") %>" class="help-images" alt="">
+      <img src="<%= static_path(@conn, "/images/help-image/sc15.png") %>" class="help-images" alt="">
 
       <p class="step-desc">Type your long url to shorten (Read more about shorten link <a href="#" target="_blank">here</a>. then click "Shorten" button.
         then it will display shorten url(ex. http://bit.ly/2CYa5u5). Type campaign name and description for your record(it will not be displayed to your recipients), then
         type your message and paste shortened url also. And Click "Upload Image" then choose a image from your hard drive. And finally click "Next" to go to preview page.</p>
-      <img src="<%= static_path(@conn, "/images/sc16.png") %>" class="help-images" alt="">
+      <img src="<%= static_path(@conn, "/images/help-image/sc16.png") %>" class="help-images" alt="">
 
       <p class="step-desc">In preview page, you check all the information is correct then click "Send Message".</p>
-      <img src="<%= static_path(@conn, "/images/sc17.png") %>" class="help-images" alt="">
+      <img src="<%= static_path(@conn, "/images/help-image/sc17.png") %>" class="help-images" alt="">
 
       <p class="step-desc">Rest of steps are equal to Text Campaign. Congrats! You sent first Image Campaign!</p>
   </div>

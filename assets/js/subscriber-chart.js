@@ -4,8 +4,8 @@ let SubscriberChart = {
   chart: null,
   buildChart() {
     let ctx = document.getElementById("subscriberChart");
-    let labels = ["Contacts", "Unsubscriber"];
-   
+    let labels = ["Subscriber", "Unsubscriber"];
+
     let allContact = parseInt(document.getElementById("all-contact").value);
     let unsubscriber = parseInt(document.getElementById("unsubscriber").value);
 
@@ -22,7 +22,7 @@ let SubscriberChart = {
             'rgba(93, 80, 223, 0.5)',
             'rgba(216, 27, 96, 0.5)'
           ]
-        }] 
+        }]
       },
       options: {
         legend: {
@@ -31,7 +31,7 @@ let SubscriberChart = {
         }
       }
     });
-  
+
   }
 }
 
