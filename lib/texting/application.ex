@@ -19,7 +19,9 @@ defmodule Texting.Application do
       worker(Texting.Scheduler, []),
 
       # Task Supervisor for uploading large file async
-      {Task.Supervisor, name: TextingWeb.TaskSupervisor}
+      {Task.Supervisor, name: TextingWeb.TaskSupervisor},
+
+
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

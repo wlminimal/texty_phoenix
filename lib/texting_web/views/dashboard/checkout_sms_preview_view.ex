@@ -1,5 +1,6 @@
 defmodule TextingWeb.Dashboard.CheckoutSmsPreviewView do
   use TextingWeb, :view
+  alias Texting.Formatter
 
   def show_buy_credit_button(current_credit, request_credit) do
     # {request_credit, _} = Integer.parse request_credit
@@ -9,6 +10,10 @@ defmodule TextingWeb.Dashboard.CheckoutSmsPreviewView do
       current_credit - request_credit < 0 ->
         true
     end
+  end
+
+  def display_date_with_time(datetime) do
+    Formatter.display_date_with_time(datetime)
   end
 end
 

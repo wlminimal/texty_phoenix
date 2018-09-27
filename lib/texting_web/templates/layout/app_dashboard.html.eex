@@ -27,15 +27,17 @@
     <!-- End Google Tag Manager -->
 
     <title>Welcome to Texty!</title>
-    
-  
+
+
     <!--<link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">   
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet"> 
-    
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_green.css">
+
+
    <!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"> -->
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"> -->
@@ -64,7 +66,7 @@
           <div class="footer-text">
         <img src="<%= static_path(@conn, "/images/l1.png") %>" style="height: 50px;" alt="">
           </div>
-        
+
           <div class="footer-menu">
               <nav class="terms-menu">
                   <ul>
@@ -87,14 +89,14 @@
         </div>
       </div>
     </div>
-  
+
 
     <!-- Call each javascript in each page -->
     <%= render_existing @view_module, "scripts.html", assigns %>
 
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     <%= Drab.Client.run(@conn, [current_user_id: @conn.assigns.current_user.id, order_id: @conn.assigns.recipients.id]) %>
-    
+
     <!--Start of Tawk.to Script-->
       <script type="text/javascript">
       var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();

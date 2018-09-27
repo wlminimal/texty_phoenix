@@ -1,11 +1,6 @@
 defmodule TextingWeb.Dashboard.CheckoutSmsPreviewController do
   use TextingWeb, :controller
-  alias Texting.Account
-  alias Texting.Sales
-  alias Texting.Sms
-  alias Texting.Credit
-  alias Texting.Messenger
-  alias Texting.Bitly
+  alias Texting.{Account, Sales, Sms, Credit, Messenger, Bitly}
 
 
   def index(conn, _param) do
@@ -71,27 +66,8 @@ defmodule TextingWeb.Dashboard.CheckoutSmsPreviewController do
          results = Sms.send_sms_with_messaging_service_async(phone_numbers, recipients.message, msg_sid, status_callback, account, token)
 
          attrs = %{"message_type" => "sms"}
-         case Sales.confirm_order(recipients, attrs) do
-          {:ok, %{id: order_id, user_id: user_id}} ->
-            Messenger.create_message_status(results, order_id, user_id)
-            # Update Bitly status as Saved
-            bitly_id = get_session(conn, :bitly_id)
-            if bitly_id !== "" do
-              IO.puts "++++++++++BITLY_ID+++++++++++++++++++++++"
-              IO.inspect bitly_id
-              IO.puts "+++++++++++++++++++++++++++++++++"
+         confirm_order(conn, recipients, attrs, results)
 
-              bitly = Bitly.get_bitly_by_id(bitly_id)
-              Bitly.confirm_changeset(bitly) |> Bitly.update()
-            end
-            conn
-            |> put_flash(:info, "Message sent successfully. Your analytics data will be updated shortly.")
-            |> redirect(to: dashboard_path(conn, :new))
-          {:error, _changeset} ->
-            conn
-            |> put_flash(:error, "Can't send message!")
-            |> redirect(to: checkout_mms_preview_path(conn, :index))
-         end
 
        {:error, message} ->
          conn
@@ -101,4 +77,27 @@ defmodule TextingWeb.Dashboard.CheckoutSmsPreviewController do
      end
   end
 
+  def confirm_order(conn, recipients, attrs, results) do
+    case Sales.confirm_order(recipients, attrs) do
+      {:ok, %{id: order_id, user_id: user_id}} ->
+        Messenger.create_message_status(results, order_id, user_id)
+        # Update Bitly status as Saved
+        bitly_id = get_session(conn, :bitly_id)
+        if bitly_id !== "" do
+          IO.puts "++++++++++BITLY_ID+++++++++++++++++++++++"
+          IO.inspect bitly_id
+          IO.puts "+++++++++++++++++++++++++++++++++"
+
+          bitly = Bitly.get_bitly_by_id(bitly_id)
+          Bitly.confirm_changeset(bitly) |> Bitly.update()
+        end
+        conn
+        |> put_flash(:info, "Message sent successfully. Your analytics data will be updated shortly.")
+        |> redirect(to: dashboard_path(conn, :new))
+      {:error, _changeset} ->
+        conn
+        |> put_flash(:error, "Can't send message!")
+        |> redirect(to: checkout_mms_preview_path(conn, :index))
+    end
+  end
 end

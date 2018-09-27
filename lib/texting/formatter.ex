@@ -127,6 +127,36 @@ defmodule Texting.Formatter do
     datetime
   end
 
+  def display_date_with_time(datetime) do
+    {:ok, datetime} = Timex.format(datetime, "%m-%d-%Y" <> " at " <> "%H:%M%P", :strftime)
+    datetime
+  end
+
+
+  def build_datetime(date, time) do
+    with {:ok, datetime, 0} <- DateTime.from_iso8601("#{date} #{time}:00Z"),
+      do: datetime
+  end
+
+  @doc """
+  Datetime must be future(at least 30 min future)
+  """
+  def schedule_datetime_is_future?(schedule_datetime) do
+    # 30 mins future from now on
+    #TODO: add 30 min
+    future_datetime = DateTime.to_naive(Timex.add(Timex.now, Timex.Duration.from_minutes(2)))
+    case Timex.compare(schedule_datetime, future_datetime) do
+      1 ->
+        # schedule datetime is future
+        true
+      -1 ->
+        # schedule datetime is not future
+        false
+      _ ->
+        false
+    end
+  end
+
   def stripe_money_to_currency(amount) when is_binary(amount) do
     {amount, ""} = Integer.parse(amount)
     amount / 100 |> Number.Currency.number_to_currency()

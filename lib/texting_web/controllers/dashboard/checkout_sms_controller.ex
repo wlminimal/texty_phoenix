@@ -1,6 +1,6 @@
 defmodule TextingWeb.Dashboard.CheckoutSmsController do
   use TextingWeb, :controller
-  alias Texting.Sales
+  alias Texting.{Sales, Formatter}
 
   def show_sms(conn, _params) do
     recipients = conn.assigns.recipients
@@ -27,14 +27,65 @@ defmodule TextingWeb.Dashboard.CheckoutSmsController do
   @doc """
   get information and put_session and redirect to checkout preview page
   """
-  def preview_sms(conn, %{"sms" => %{"message" => message, "total_credit" => credit_used, "name" => name, "description" => description, "bitlink_id" => bitly_id}}) do
+  def preview_sms(conn, %{"sms" => %{"message" => message,
+                                     "total_credit" => credit_used,
+                                     "name" => name,
+                                     "description" => description,
+                                     "bitlink_id" => bitly_id}}) do
+
+    # if date and time is not specified in front end,
+    # redirect and show errors
+
+    # recipients = conn.assigns.recipients
+    # attrs = cond do
+    #   time_to_send == "now" or time_to_send == "" ->
+    #     %{
+    #       "message" => message,
+    #       "total" => credit_used,
+    #       "name" => name,
+    #       "description" => description,
+    #       "scheduled" => false,
+    #       "schedule_job_success" => false,
+    #       "schedule_datetime" => Timex.now
+    #     }
+    #   time_to_send == "scheduled" ->
+    #     if date == "" or time == "" do
+    #       conn
+    #       |> put_flash(:error, "Please check a date and time.")
+    #       |> redirect(to: checkout_sms_path(conn, :show_sms))
+    #     else
+    #       # Build datetime in naive datetime format
+    #       datetime = Formatter.build_datetime(date, time)
+    #       IO.puts "++++++++++++++++++++ datetime +++++++++++++++++++++"
+    #       IO.inspect datetime
+    #       case Formatter.schedule_datetime_is_future?(datetime) do
+    #         true ->
+
+    #           %{
+    #             "message" => message,
+    #             "total" => credit_used,
+    #             "name" => name,
+    #             "description" => description,
+    #             "scheduled" => true,
+    #             "schedule_job_success" => false,
+    #             "schedule_datetime" => datetime
+    #           }
+    #         false ->
+    #           conn
+    #           |> put_flash(:error, "Schedule time must be a future.")
+    #           |> redirect(to: checkout_sms_path(conn, :show_sms))
+    #       end
+    #     end
+
+    #   end
     recipients = conn.assigns.recipients
     attrs = %{
-      "message" => message,
-      "total" => credit_used,
-      "name" => name,
-      "description" => description
-    }
+            "message" => message,
+            "total" => credit_used,
+            "name" => name,
+            "description" => description
+          }
+
     order = Sales.update_recipients(recipients, attrs)
     conn = assign(conn, :recipients, order)
     IO.puts "++++++++++BITLY_ID+++++++++++++++++++++++"
@@ -43,5 +94,5 @@ defmodule TextingWeb.Dashboard.CheckoutSmsController do
     conn
     |> put_session(:bitly_id, bitly_id )
     |> redirect(to: checkout_sms_preview_path(conn, :index))
-   end
+    end
 end

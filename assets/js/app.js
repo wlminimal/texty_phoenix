@@ -24,6 +24,26 @@ import "phoenix_html"
 import swal from  "./sweetalert2"
 window.swal = swal;
 
+import flatpickr from "flatpickr";
+
+// For date picker
+// let datePicker = document.getElementById("sms_date");
+// let flatpickr_opts = {
+//   dateFormat: "Y-m-d",
+//   altInput: true,
+//   altFormat: "F j, Y",
+//   minDate: "today"
+// }
+// datePicker && flatpickr(datePicker, flatpickr_opts);
+// // For time picker
+// let timePicker = document.getElementById("sms_time");
+// let flatpickr_opts2 = {
+//   enableTime: true,
+//   noCalendar: true,
+//   dateFormat: "H:i",
+// }
+// timePicker && flatpickr(timePicker, flatpickr_opts2);
+
 
 // Analytics page
 import AnalyticsChart from "./analytics-chart"
@@ -36,7 +56,7 @@ let subscriberElement  = document.getElementById("subscriberChart");
 window.SubscriberChart = SubscriberChart;
 subscriberElement && window.SubscriberChart.buildChart();
 
-// Chart in Dashboard Page 
+// Chart in Dashboard Page
 import DashboardChart from "./dashboard-chart"
 let dashboardChart = document.getElementById("dashboardChart");
 window.DashboardChart = DashboardChart;

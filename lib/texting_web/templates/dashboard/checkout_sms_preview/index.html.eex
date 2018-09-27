@@ -4,7 +4,7 @@
       <div class="card-header card-header-icon" data-background-color="purple">
         <i class="material-icons">perm_device_information</i>
       </div>
-      
+
       <div class="card-content">
         <h4 class="card-title">Information</h4>
         <div class="row">
@@ -13,6 +13,11 @@
               <p>Number of Recipients: <strong><span id="recipients-count"><%= @recipients.counts %> recipients.</span></strong></p>
               <p>Your remaining Credits: <strong><%= @user.credits %> credits.</strong></p>
               <p>Total Credit will be used: <strong><span id="total-price"><%= @credit_used %> Credit(s).</span></strong></p>
+              <!--
+              <%= if @recipients.scheduled do %>
+              <p>Your message will be sent at: <strong> <%= display_date_with_time(@recipients.schedule_datetime) %> </strong></p>
+              <% end %>
+              -->
             </div>
           </div>
         </div>
@@ -50,15 +55,22 @@
           <div class="col-md-12">
             <div class="info-wrapper">
                 <div>
-                  <%= if show_buy_credit_button(@user.credits, @credit_used) do %> 
+                  <%= if show_buy_credit_button(@user.credits, @credit_used) do %>
                     <%= button "Buy Credit", method: "get", to: buy_credit_path(@conn, :new), class: "btn btn-primary" %>
                   <% else %>
                     <%= button "Back", method: "get",
-                                      to: checkout_sms_path(@conn, :show_sms),
-                                      class: "btn btn-github" %>
-                    <%= button "Send Message", method: "post", 
-                                      to: checkout_sms_preview_path(@conn, :send_sms), 
-                                      class: "btn btn-primary" %>
+                        to: checkout_sms_path(@conn, :show_sms),
+                        class: "btn btn-github" %>
+                    <%= if @recipients.scheduled do %>
+                      <%= button "Schedule Message", method: "post",
+                        to: checkout_sms_preview_path(@conn, :send_sms),
+                        class: "btn btn-primary" %>
+                    <% else %>
+                      <%= button "Send Message", method: "post",
+                        to: checkout_sms_preview_path(@conn, :send_sms),
+                        class: "btn btn-primary" %>
+                    <% end %>
+
                   <% end %>
                 </div>
             </div>

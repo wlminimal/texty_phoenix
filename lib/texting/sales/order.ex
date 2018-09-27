@@ -18,6 +18,9 @@ defmodule Texting.Sales.Order do
     field :media_url, :string
     field :media_url_exp, :naive_datetime
     field :s3_filename, :string
+    field :scheduled, :boolean, default: false
+    field :schedule_job_success, :boolean, default: false
+    field :schedule_datetime, :naive_datetime
     belongs_to :users, User, define_field: false
 
     has_many :message_status, MessageStatus
@@ -27,7 +30,7 @@ defmodule Texting.Sales.Order do
   @doc false
   def changeset(%Order{} = order, attrs) do
     order
-    |> cast(attrs, [:status, :counts, :user_id, :name, :description, :message, :total, :media_url, :s3_filename, :media_url_exp])
+    |> cast(attrs, [:status, :counts, :user_id, :name, :description, :message, :total, :media_url, :s3_filename, :media_url_exp, :scheduled, :schedule_job_success, :schedule_datetime])
     |> cast_embed(:line_items, with: &LineItem.changeset/2)
     |> validate_required([:status, :counts, :user_id])
   end

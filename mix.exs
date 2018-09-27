@@ -81,7 +81,11 @@ defmodule Texting.Mixfile do
 
       # {:rummage_ecto, "~> 2.0.0-rc.0"},
       # {:rummage_phoenix, "~> 1.2.0"}
-      {:inquisitor, "~> 0.5.0"}
+      # For Search in contacts
+      {:inquisitor, "~> 0.5.0"},
+
+      # For schedule a job
+
     ]
   end
 
