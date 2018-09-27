@@ -2,7 +2,7 @@ defmodule Texting.Sales do
   alias Texting.Repo
   alias Texting.Sales.{Order, LineItem}
   import Ecto.Query
-
+  import Ecto.Changeset
 
   def get_recipients_list_status_order(id, user_id) do
    # query = from r in Order, where: r.id == ^id and r.status == "In Recipients List"
@@ -95,9 +95,14 @@ defmodule Texting.Sales do
   end
 
   def update_recipients(recipients, attrs) do
-    recipients
-    |> Order.changeset(attrs)
-    |> Repo.update
+    # recipients
+    # |> Order.changeset(attrs)
+    # |> Repo.update
+
+    changeset = Order.changeset(recipients, attrs)
+    IO.puts "++++++++++++ changeset +++++++++++++"
+    IO.inspect changeset
+    Repo.update(changeset)
   end
 
   def delete_recipient(%{line_items: line_items} = recipients, id) do

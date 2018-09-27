@@ -6,9 +6,6 @@ defmodule TextingWeb.Dashboard.CheckoutSmsPreviewController do
   def index(conn, _param) do
     recipients = conn.assigns.recipients
     user = conn.assigns.current_user
-    bitlink_id = get_session(conn, :bitly_id)
-    IO.puts "++++++++++++++ Bitlink ID +++++++++++++++++"
-    IO.inspect bitlink_id
     case recipients.counts == 0 do
       true ->
         conn
@@ -82,13 +79,12 @@ defmodule TextingWeb.Dashboard.CheckoutSmsPreviewController do
       {:ok, %{id: order_id, user_id: user_id}} ->
         Messenger.create_message_status(results, order_id, user_id)
         # Update Bitly status as Saved
-        bitly_id = get_session(conn, :bitly_id)
-        if bitly_id !== "" do
+        bitly = Bitly.get_bitly_by_id(recipients.bitly_id)
+        if bitly !== nil do
           IO.puts "++++++++++BITLY_ID+++++++++++++++++++++++"
-          IO.inspect bitly_id
+          IO.inspect bitly
           IO.puts "+++++++++++++++++++++++++++++++++"
 
-          bitly = Bitly.get_bitly_by_id(bitly_id)
           Bitly.confirm_changeset(bitly) |> Bitly.update()
         end
         conn

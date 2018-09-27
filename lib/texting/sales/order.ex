@@ -5,6 +5,7 @@ defmodule Texting.Sales.Order do
   alias Texting.Account.User
   alias Texting.Messenger.MessageStatus
 
+
   schema "orders" do
     field :name, :string
     field :description, :string
@@ -21,7 +22,9 @@ defmodule Texting.Sales.Order do
     field :scheduled, :boolean, default: false
     field :schedule_job_success, :boolean, default: false
     field :schedule_datetime, :naive_datetime
+    field :bitly_id, :integer
     belongs_to :users, User, define_field: false
+
 
     has_many :message_status, MessageStatus
     timestamps()
@@ -30,7 +33,7 @@ defmodule Texting.Sales.Order do
   @doc false
   def changeset(%Order{} = order, attrs) do
     order
-    |> cast(attrs, [:status, :counts, :user_id, :name, :description, :message, :total, :media_url, :s3_filename, :media_url_exp, :scheduled, :schedule_job_success, :schedule_datetime])
+    |> cast(attrs, [:status, :counts, :user_id, :name, :description, :message, :total, :media_url, :s3_filename, :media_url_exp, :scheduled, :schedule_job_success, :schedule_datetime, :bitly_id])
     |> cast_embed(:line_items, with: &LineItem.changeset/2)
     |> validate_required([:status, :counts, :user_id])
   end

@@ -1,6 +1,6 @@
 defmodule TextingWeb.Dashboard.CheckoutSmsController do
   use TextingWeb, :controller
-  alias Texting.{Sales, Formatter}
+  alias Texting.{Sales, Bitly}
 
   def show_sms(conn, _params) do
     recipients = conn.assigns.recipients
@@ -32,6 +32,30 @@ defmodule TextingWeb.Dashboard.CheckoutSmsController do
                                      "name" => name,
                                      "description" => description,
                                      "bitlink_id" => bitly_id}}) do
+
+
+    recipients = conn.assigns.recipients
+    # get generated bitly by id
+    bitly = Texting.Bitly.get_not_saved_bitly_by_order_id(recipients.id)
+
+    attrs = %{
+            "message" => message,
+            "total" => credit_used,
+            "name" => name,
+            "description" => description,
+            "bitly_id" => bitly.id
+          }
+
+    order = Sales.update_recipients(recipients, attrs)
+    conn = assign(conn, :recipients, order)
+    IO.puts "++++++++++BITLY+++++++++++++++++++++++"
+    IO.inspect bitly
+    IO.puts "++++++++++BITLY_ID+++++++++++++++++++++++"
+    IO.inspect bitly_id
+    IO.puts "++++++++++++++attrs+++++++++++++++++++"
+    IO.inspect attrs
+    conn
+    |> redirect(to: checkout_sms_preview_path(conn, :index))
 
     # if date and time is not specified in front end,
     # redirect and show errors
@@ -78,21 +102,5 @@ defmodule TextingWeb.Dashboard.CheckoutSmsController do
     #     end
 
     #   end
-    recipients = conn.assigns.recipients
-    attrs = %{
-            "message" => message,
-            "total" => credit_used,
-            "name" => name,
-            "description" => description
-          }
-
-    order = Sales.update_recipients(recipients, attrs)
-    conn = assign(conn, :recipients, order)
-    IO.puts "++++++++++BITLY_ID+++++++++++++++++++++++"
-    IO.inspect bitly_id
-    IO.puts "+++++++++++++++++++++++++++++++++"
-    conn
-    |> put_session(:bitly_id, bitly_id )
-    |> redirect(to: checkout_sms_preview_path(conn, :index))
-    end
+  end
 end

@@ -36,10 +36,6 @@ defmodule Texting.Bitly do
     |> validate_required([:status])
   end
 
-  @spec create_bitly(
-          :invalid
-          | %{optional(:__struct__) => none(), optional(atom() | binary()) => any()}
-        ) :: any()
   def create_bitly(attrs \\ %{}) do
     %Bitly{status: "Not Saved"}
     |> changeset(attrs)
@@ -61,6 +57,16 @@ defmodule Texting.Bitly do
   def get_bitly_by_order_id(order_id) do
     query = from b in Bitly, where: b.order_id == ^order_id and b.status == "Saved"
     Repo.one(query)
+  end
+
+  @doc """
+  get not saved bitly(last one)
+  customer create a first bitly link in page and before confirm
+  they could be click "back" button, so create another one..
+  """
+  def get_not_saved_bitly_by_order_id(order_id) do
+    query = from b in Bitly, where: b.order_id == ^order_id and b.status == "Not Saved"
+    List.last(Repo.all(query))
   end
 
   def get_bitly_by_id(bitly_id) do
