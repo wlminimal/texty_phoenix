@@ -84,7 +84,8 @@ defmodule Texting.Mixfile do
       # For Search in contacts
       {:inquisitor, "~> 0.5.0"},
 
-      # For schedule a job
+      # Parse xlsx
+      {:xlsxir, "~> 1.6"}
 
     ]
   end

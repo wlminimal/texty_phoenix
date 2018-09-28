@@ -73,6 +73,7 @@ defmodule TextingWeb.Router do
     get "/", HelpController, :index
     get "/how-to-start-a-campaign", StartCampaignController, :index
     get "/how-to-upload-contact", UploadContactController, :index
+    get "/how-to-use-analytics", HowToUseAnalyticsController, :index
   end
 
   scope "/", TextingWeb do

@@ -9,7 +9,7 @@
       </div>
       <div class="col-md-6">
         <div class="tutorial-item">
-            <h3><a href="<%= upload_contact_path(@conn, :index) %>">2. How to add multiple contacts by uploading csv file.</h3></a>
+            <h3><a href="<%= upload_contact_path(@conn, :index) %>">2. How to add multiple contacts by uploading csv or xlsx (excel) file.</h3></a>
         </div>
       </div>
     </div>
@@ -17,7 +17,7 @@
     <div class="row">
       <div class="col-md-6">
         <div class="tutorial-item">
-            <h3><a href="">3. How to use analytics page</h3></a>
+            <h3><a href="<%= how_to_use_analytics_path(@conn, :index) %>">3. How to use analytics page</h3></a>
         </div>
       </div>
       <div class="col-md-6">
@@ -30,12 +30,12 @@
     <div class="row">
       <div class="col-md-6">
         <div class="tutorial-item">
-            <h3><a href="">5. Difference between Free plan and Paid plan</h3></a>
+            <h3><a href="">5. Difference between free plan and paid plan</h3></a>
         </div>
       </div>
       <div class="col-md-6">
         <div class="tutorial-item">
-            <h3><a href="">6. What is Business Phone number?</h3></a>
+            <h3><a href="">6. What is business phone number?</h3></a>
         </div>
       </div>
     </div>
@@ -43,12 +43,12 @@
     <div class="row">
       <div class="col-md-6">
         <div class="tutorial-item">
-            <h3><a href="">7. Shoud I use Text campaign or Image campaign?</h3></a>
+            <h3><a href="">7. Shoud I use text campaign or cmage campaign?</h3></a>
         </div>
       </div>
       <div class="col-md-6">
         <div class="tutorial-item">
-            <h3><a href="">8. Why you must use Shorten Link function</h3></a>
+            <h3><a href="">8. Why you must use shorten link function</h3></a>
         </div>
       </div>
     </div>

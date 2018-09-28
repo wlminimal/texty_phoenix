@@ -79,14 +79,12 @@ defmodule TextingWeb.Dashboard.CheckoutSmsPreviewController do
       {:ok, %{id: order_id, user_id: user_id}} ->
         Messenger.create_message_status(results, order_id, user_id)
         # Update Bitly status as Saved
-        bitly = Bitly.get_bitly_by_id(recipients.bitly_id)
-        if bitly !== nil do
-          IO.puts "++++++++++BITLY_ID+++++++++++++++++++++++"
-          IO.inspect bitly
-          IO.puts "+++++++++++++++++++++++++++++++++"
-
+        if is_nil(recipients.bitly_id) do
+        else
+          bitly = Texting.Bitly.get_bitly_by_id(recipients.bitly_id)
           Bitly.confirm_changeset(bitly) |> Bitly.update()
         end
+
         conn
         |> put_flash(:info, "Message sent successfully. Your analytics data will be updated shortly.")
         |> redirect(to: dashboard_path(conn, :new))

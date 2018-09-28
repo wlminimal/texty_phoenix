@@ -30,30 +30,28 @@ defmodule TextingWeb.Dashboard.CheckoutSmsController do
   def preview_sms(conn, %{"sms" => %{"message" => message,
                                      "total_credit" => credit_used,
                                      "name" => name,
-                                     "description" => description,
-                                     "bitlink_id" => bitly_id}}) do
+                                     "description" => description
+                                     }}) do
 
 
     recipients = conn.assigns.recipients
     # get generated bitly by id
     bitly = Texting.Bitly.get_not_saved_bitly_by_order_id(recipients.id)
-
+    bitly_id = if bitly == nil do
+                nil
+              else
+                bitly.id
+              end
     attrs = %{
             "message" => message,
             "total" => credit_used,
             "name" => name,
             "description" => description,
-            "bitly_id" => bitly.id
+            "bitly_id" => bitly_id
           }
 
     order = Sales.update_recipients(recipients, attrs)
     conn = assign(conn, :recipients, order)
-    IO.puts "++++++++++BITLY+++++++++++++++++++++++"
-    IO.inspect bitly
-    IO.puts "++++++++++BITLY_ID+++++++++++++++++++++++"
-    IO.inspect bitly_id
-    IO.puts "++++++++++++++attrs+++++++++++++++++++"
-    IO.inspect attrs
     conn
     |> redirect(to: checkout_sms_preview_path(conn, :index))
 

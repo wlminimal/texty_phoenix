@@ -2,6 +2,8 @@ defmodule TextingWeb.Dashboard.CheckoutMmsController do
   use TextingWeb, :controller
   alias Texting.Sales
   alias Texting.AmazonS3.S3Helpers
+  alias Texting.FileHandler
+
   use Drab.Controller, commanders: [TextingWeb.Dashboard.CheckoutSmsCommander]
 
   @spec show_mms(Plug.Conn.t(), any()) :: Plug.Conn.t()
@@ -29,15 +31,22 @@ defmodule TextingWeb.Dashboard.CheckoutMmsController do
   @doc """
   get information and put_session and redirect to checkout preview page
   """
-  def preview_mms(conn, %{"mms" => %{"message" => message, "total_credit" => credit_used, "name" => name, "description" => description, "bitlink_id" => bitly_id }, "upload-image" => file}) do
+  def preview_mms(conn, %{"mms" => %{"message" => message,
+                                     "total_credit" => credit_used,
+                                     "name" => name,
+                                     "description" => description},
+                                     "upload-image" => file}) do
     user = conn.assigns.current_user
-    case S3Helpers.validate?(file) do
+    IO.puts "+++++++++++ upload file ++++++++++++++"
+    IO.inspect file
+
+    case FileHandler.validate_image_file?(file) do
 
       true ->
-        case S3Helpers.validate_size?(file) do
+        case FileHandler.validate_size?(file) do
           true ->
             s3_filename = file
-            |> S3Helpers.get_extension()
+            |> FileHandler.get_extension()
             |> S3Helpers.create_s3_file_name(user)
             bucket_name = S3Helpers.get_bucket_name()
             {:ok, file_binary} = File.read(file.path)
@@ -46,19 +55,24 @@ defmodule TextingWeb.Dashboard.CheckoutMmsController do
               {:ok, url} ->
                 # Save information to Order.
                 recipients = conn.assigns.recipients
-                attrs = %{"message" => message,
+                bitly = Texting.Bitly.get_not_saved_bitly_by_order_id(recipients.id)
+                bitly_id = if bitly == nil do
+                             nil
+                           else
+                             bitly.id
+                           end
+                attrs = %{
+                          "message" => message,
                           "total" => credit_used,
                           "media_url" => url,
                           "name" => name,
                           "description" => description,
-                          "s3_filename" => s3_filename}
+                          "bitly" => bitly_id,
+                          "s3_filename" => s3_filename
+                        }
                 order = Sales.update_recipients(recipients, attrs)
                 conn = assign(conn, :recipients, order)
-                IO.puts "++++++++++BITLY_ID+++++++++++++++++++++++"
-                IO.inspect bitly_id
-                IO.puts "+++++++++++++++++++++++++++++++++"
                 conn
-                |> put_session(:bitly_id, bitly_id)
                 |> put_flash(:info, "Upload successful. Your campaign is ready to send!")
                 |> redirect(to: checkout_mms_preview_path(conn, :index))
               {:error, _message} ->

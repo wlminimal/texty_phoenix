@@ -1,6 +1,6 @@
 defmodule TextingWeb.Dashboard.CsvExportController do
   use TextingWeb, :controller
-  alias Texting.CsvFormatter
+  alias Texting.FileHandler.CsvHandler
   alias Texting.Contact
 
   def export(conn, %{"id" => phonebook_id}) do
@@ -14,7 +14,7 @@ defmodule TextingWeb.Dashboard.CsvExportController do
 
   def export_contacts_from_phonebook(phonebook_id) do
     Contact.get_people(phonebook_id)
-    |> CsvFormatter.write()
+    |> CsvHandler.write()
   end
 
 end

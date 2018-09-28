@@ -71,13 +71,9 @@ defmodule TextingWeb.Dashboard.CheckoutMmsPreviewController do
           {:ok, %{id: order_id, user_id: user_id}} ->
             Messenger.create_message_status(results, order_id, user_id)
             # Save bitly if available..
-            bitly_id = get_session(conn, :bitly_id)
-            if bitly_id !== "" do
-              IO.puts "++++++++++BITLY_ID+++++++++++++++++++++++"
-              IO.inspect bitly_id
-              IO.puts "+++++++++++++++++++++++++++++++++"
-
-              bitly = Bitly.get_bitly_by_id(bitly_id)
+            if is_nil(recipients.bitly_id) do
+            else
+              bitly = Texting.Bitly.get_bitly_by_id(recipients.bitly_id)
               Bitly.confirm_changeset(bitly) |> Bitly.update()
             end
             conn

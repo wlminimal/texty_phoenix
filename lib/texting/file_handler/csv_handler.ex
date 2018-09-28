@@ -1,4 +1,4 @@
-defmodule Texting.CsvFormatter do
+defmodule Texting.FileHandler.CsvHandler do
   alias Texting.Contact
   alias Texting.Messenger
   alias Texting.Formatter

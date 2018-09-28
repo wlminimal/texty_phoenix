@@ -1,0 +1,32 @@
+<div class="help-content">
+    <div>
+      <h2 class="help-header">How to use analytics page</h2>
+      <h4 style="text-align: center; margin-bottom: 50px;">Texty marketing provides very simple way to get you started. First <a href="<%= sign_in_path(@conn, :new) %>" target="_blank" >sign in to dashboard</a>
+      (Not a member? <a href="<%= sign_up_path(@conn, :new) %>" target="_blank"> sign up for free</a> ).
+      </h4>
+
+      <p class="step-desc">In Dashboard Click "Analytics"</p>
+      <img src="<%= static_path(@conn, "/images/help-image/sc25.png") %>" class="help-images" alt="">
+
+      <p class="step-desc">In analytics page, you will see 4 block 1) Campaign history - shows list of campaigns
+        2) Delivery result chart - shows chart that display campaign result(deilvered or failed)
+        3) Analytics data - shows same data with deilvery results chart but in numbers. 4) Subscriber chart - shows counts of subscriber or unsubscriber.
+      </p>
+      <img src="<%= static_path(@conn, "/images/help-image/sc26.png") %>" class="help-images" alt="">
+
+      <p class="step-desc">If you hover your mouse over the deilvery result chart or subscriber chart, you will see a numbers</p>
+      <img src="<%= static_path(@conn, "/images/help-image/sc27.png") %>" style="width: 550px" class="help-images" alt="">
+      <img src="<%= static_path(@conn, "/images/help-image/sc28.png") %>" style="width: 550px" class="help-images" alt="">
+
+      <p class="step-desc">Let's click button in details column to see campaign details</p>
+      <img src="<%= static_path(@conn, "/images/help-image/sc29.png") %>" class="help-images" alt="">
+
+      <p class="step-desc">In campaign detail page, you can check your 1) message 2) shorten url 3) total clicks of your shorten url
+        4) message status 5) your sent image(if your campaign is image campaign). We recommend to create shorten url when you send message.
+      Check this <a href="#">Why you must use Shorten Link function</a></p>
+      <img src="<%= static_path(@conn, "/images/help-image/sc30.png") %>" class="help-images" alt="">
+
+      <p class="step-desc">That's it for analytics page. More help? <a href="<%= help_path(@conn, :index) %>">More help</a> </p>
+      <p class="step-desc">Not registered yet? <a href="<%= sign_up_path(@conn, :new) %>">Sign up</a> and get 100 credtis for free!</p>
+    </div>
+  </div>

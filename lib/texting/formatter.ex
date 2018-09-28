@@ -166,9 +166,8 @@ defmodule Texting.Formatter do
     amount / 100 |> Number.Currency.number_to_currency()
   end
 
-
-
   def display_percentage(number) do
     Number.Percentage.number_to_percentage(number, precision: 0)
   end
+
 end

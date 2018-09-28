@@ -8,6 +8,7 @@ defmodule TextingWeb.Dashboard.CheckoutMmsCommander do
     long_url = sender.params["long_url_textarea"]
     #user_id = Drab.Core.get_session(socket, :user_id)
     user_id = socket.assigns.current_user_id
+    # get current recipients.id(order_id) to set order_id field in bitly struct
     order_id = socket.assigns.order_id
     long_url = String.trim(long_url)
     case Analytics.create_short_link(long_url) do
