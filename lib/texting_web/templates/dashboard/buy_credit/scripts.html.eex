@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
       var form = button.parentNode.parentNode.parentNode;
       console.log("Buy Credit Button Clicked!");
 
-      var hiddenInput = $(button).siblings()[5];
+      var hiddenInput = $(button).siblings()[4];
       console.log(hiddenInput);
       var amount = hiddenInput.getAttribute("data-amount");
       console.log(amount);
