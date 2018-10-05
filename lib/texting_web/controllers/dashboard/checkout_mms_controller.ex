@@ -67,7 +67,7 @@ defmodule TextingWeb.Dashboard.CheckoutMmsController do
                           "media_url" => url,
                           "name" => name,
                           "description" => description,
-                          "bitly" => bitly_id,
+                          "bitly_id" => bitly_id,
                           "s3_filename" => s3_filename
                         }
                 order = Sales.update_recipients(recipients, attrs)

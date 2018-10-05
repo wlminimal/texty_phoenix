@@ -51,45 +51,54 @@ defmodule TextingWeb.Dashboard.CheckoutMmsPreviewController do
     phone_numbers = Enum.map(line_items, fn r -> r.phone_number end)
      # 2. Deduct from remaining credits
     user = conn.assigns.current_user
-    msg_sid = user.twilio.msid
-    account = user.twilio.account
-    token = user.twilio.token
     changeset = Account.change_user(user)
     credit_used = Decimal.to_integer(recipients.total)
-     status_callback = System.get_env("MESSAGE_STATUS_CALLBACK")
      # Check if user has enought credit, if not redirect to buy credit page
      case Credit.substract_credit(changeset, credit_used) do
        {:ok, changeset} ->
-         Account.update_user(changeset)
-         # Send sms
-         results = Mms.send_mms_with_messaging_service_async(phone_numbers, recipients.message, msg_sid, recipients.media_url, status_callback, account, token)
-         media_url_exp = Helpers.add_days_to_current_time(5)
-         attrs = %{"message_type" => "mms",
-                   "media_url_exp" => media_url_exp
-                  }
-         case Sales.confirm_order(recipients, attrs) do
-          {:ok, %{id: order_id, user_id: user_id}} ->
-            Messenger.create_message_status(results, order_id, user_id)
-            # Save bitly if available..
-            if is_nil(recipients.bitly_id) do
-            else
-              bitly = Texting.Bitly.get_bitly_by_id(recipients.bitly_id)
-              Bitly.confirm_changeset(bitly) |> Bitly.update()
-            end
-            conn
-            |> put_flash(:info, "Message sent successfully. Your analytics data will be updated shortly.")
-            |> redirect(to: dashboard_path(conn, :new))
-          {:error, changeset} ->
-            conn
-            |> put_flash(:error, changeset)
-            |> redirect(to: checkout_mms_path(conn, :show_mms))
-         end
+        Account.update_user(changeset)
+
+        # Send sms witn new spauwned process
+        spawn(fn -> send_message_and_save(user, recipients, phone_numbers) end)
+
+        conn
+        |> put_flash(:info, "Message sent successfully. Your analytics data will be updated shortly.")
+        |> redirect(to: dashboard_path(conn, :new))
+
        {:error, message} ->
          conn
          |> put_session(:intending_to_visit, conn.request_path)
          |> put_flash(:info, message)
          |> redirect(to: buy_credit_path(conn, :new))
      end
+  end
+
+  def send_message_and_save(user, recipients, phone_numbers) do
+    Process.sleep(5000)
+    msg_sid = user.twilio.msid
+    account = user.twilio.account
+    token = user.twilio.token
+    status_callback = System.get_env("MESSAGE_STATUS_CALLBACK")
+    media_url_exp = Helpers.add_days_to_current_time(5)
+    attrs = %{"message_type" => "mms",
+              "media_url_exp" => media_url_exp
+             }
+    # Send message
+    results = Mms.send_mms_with_messaging_service_async(phone_numbers, recipients.message, msg_sid, recipients.media_url, status_callback, account, token)
+
+    case Sales.confirm_order(recipients, attrs) do
+      {:ok, %{id: order_id, user_id: user_id}} ->
+        Messenger.create_message_status(results, order_id, user_id)
+        # Update Bitly status as Saved
+        if is_nil(recipients.bitly_id) do
+        else
+          bitly = Texting.Bitly.get_bitly_by_id(recipients.bitly_id)
+          Bitly.confirm_changeset(bitly) |> Bitly.update()
+        end
+        {:ok, "Message sent successfully. Your analytics data will be updated shortly."}
+      {:error, _changeset} ->
+        {:error, "Can't send message!"}
+    end
   end
 end
 
