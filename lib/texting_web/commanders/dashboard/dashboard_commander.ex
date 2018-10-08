@@ -4,6 +4,9 @@ defmodule TextingWeb.Dashboard.DashboardCommander do
 
   defhandler show_dashboard_stats(socket, sender) do
     order_id = sender.params["campaign_id"]
+    IO.puts "++++ Order id ++++"
+    IO.inspect order_id
+
     user_id = socket.assigns.current_user_id
     order = Sales.get_order_by_id(order_id, user_id)
     message_status = Messenger.get_all_message_status(order_id)

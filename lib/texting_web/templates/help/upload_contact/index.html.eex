@@ -14,7 +14,7 @@
         <li>If you are getting errors, please contact info@texty.marketing so we can help you!</li>
       </ol>
     </div>
-    <p class="step-desc">In this tutorial we will upload csv file but you can do same thing with xlsx file</p>
+    <p class="step-desc">In this tutorial we will upload csv file but you can do same thing with xlsx file.</p>
     <p class="step-desc">In Dashboard Click "Contact" then "Upload Contact" in side menu</p>
     <img src="<%= static_path(@conn, "/images/help-image/sc18.png") %>" class="help-images" alt="">
 <p class="step-desc">If you want to create a new phonebook for this upload file, 1) Enter new phonebook name

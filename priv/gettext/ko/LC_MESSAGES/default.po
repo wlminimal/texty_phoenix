@@ -1,0 +1,1116 @@
+## `msgid`s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove `msgid`s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use `mix gettext.extract --merge` or `mix gettext.merge`
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: ko\n"
+"Plural-Forms: nplurals=1\n"
+
+#: lib/texting_web/templates/page/index.html.eex:56
+msgid "new & easiest way"
+msgstr "고객들과 소통하는"
+
+#: lib/texting_web/templates/page/index.html.eex:57
+msgid "to engage customers"
+msgstr "새롭고 쉬운 방법"
+
+#: lib/texting_web/templates/page/index.html.eex:347
+msgid "(or) Up to 233 image messages"
+msgstr "(또는) 최고 233개의 이미지 메세지"
+
+#: lib/texting_web/templates/page/index.html.eex:365
+msgid "(or) Up to 375 image messages"
+msgstr "(또는) 최고 375개의 이미지 메세지"
+
+#: lib/texting_web/templates/page/index.html.eex:384
+msgid "(or) Up to 666 image messages"
+msgstr "(또는) 최고 666개의 이미지 메시지"
+
+#: lib/texting_web/templates/page/index.html.eex:402
+msgid "(or) Up to 966 image messages"
+msgstr "(또는) 최고 966개의 이미지 메시지"
+
+#: lib/texting_web/templates/page/index.html.eex:254
+msgid "0 Dedicated phone number"
+msgstr "0개 비지니스 전용 전화번호"
+
+#: lib/texting_web/templates/page/index.html.eex:273
+msgid "1 Dedicated phone number"
+msgstr "1개 비지니스 전용 전화번호"
+
+#: lib/texting_web/templates/page/index.html.eex:255
+msgid "100 Free credits"
+msgstr "100개 무료 크레딧"
+
+#: lib/texting_web/templates/page/index.html.eex:357
+msgid "1125 credits"
+msgstr "1125개 크레딧"
+
+#: lib/texting_web/templates/page/index.html.eex:376
+msgid "2000 credits"
+msgstr "2000개 크레딧"
+
+#: lib/texting_web/templates/page/index.html.eex:394
+msgid "2900 credits"
+msgstr "2900개 크레딧"
+
+#: lib/texting_web/templates/page/index.html.eex:293
+msgid "3 Dedicated phone number"
+msgstr "3개 비지니스 전용 전화번호"
+
+#: lib/texting_web/templates/page/index.html.eex:312
+msgid "5 Dedicated phone number"
+msgstr "5개 비지니스 전용 전화번호"
+
+#: lib/texting_web/templates/page/index.html.eex:338
+msgid "700 credits"
+msgstr "700개 크레딧"
+
+#: lib/texting_web/templates/page/index.html.eex:18
+msgid "About"
+msgstr "회사소개"
+
+#: lib/texting_web/templates/page/index.html.eex:216
+msgid "Auto Scaler"
+msgstr "자동 확장 기능"
+
+#: lib/texting_web/templates/page/index.html.eex:165
+msgid "Awesome Features"
+msgstr "텍스티만의 특징들"
+
+#: lib/texting_web/templates/page/index.html.eex:265
+msgid "Bronze Plan"
+msgstr "브론즈 플랜"
+
+#: lib/texting_web/templates/dashboard/contact_us/index.html.eex:9
+#: lib/texting_web/templates/page/index.html.eex:21
+msgid "Contact"
+msgstr "연락하기"
+
+#: lib/texting_web/templates/page/index.html.eex:193
+msgid "Create contacts, add them to your list and click send."
+msgstr "고객 연락처를 추가하고 몇번의 클릭으로 바로 전송."
+
+#: lib/texting_web/templates/page/index.html.eex:325
+msgid "Credit Price"
+msgstr "크레딧 가격"
+
+#: lib/texting_web/templates/page/index.html.eex:313
+msgid "Daily message limit is 1250 messages"
+msgstr "하루동안 보낼수 있는 최고 메세지 1250개까지."
+
+#: lib/texting_web/templates/page/index.html.eex:274
+msgid "Daily message limit is 250 messages"
+msgstr "하루동안 보낼수 있는 최고 메세지 250개까지."
+
+#: lib/texting_web/templates/page/index.html.eex:294
+msgid "Daily message limit is 750 messages"
+msgstr "하루동안 보낼수 있는 최고 메세지 750개까지."
+
+#: lib/texting_web/templates/page/index.html.eex:200
+msgid "Dedicated Phone number"
+msgstr "비지니스 전용 전화번호"
+
+#: lib/texting_web/templates/page/index.html.eex:217
+msgid "Distribute messages across a group of dedicated phone numbers to reach large audiences in a short amount of time."
+msgstr "한번에 많은 양의 메세지를 비지니스 전용 전화번호가 균등하게 할당받아 메세지를 전송해서 짦은 시간안에 많은 수신자에게 메세지가 전달됩니다."
+
+#: lib/texting_web/templates/auth/new.html.eex:23
+#: lib/texting_web/templates/confirm_email/new.html.eex:23
+#: lib/texting_web/templates/dashboard/account_info/index.html.eex:48
+#: lib/texting_web/templates/dashboard/contact_us/index.html.eex:19
+#: lib/texting_web/templates/page/index.html.eex:446
+#: lib/texting_web/templates/user/new.html.eex:34
+msgid "Email"
+msgstr "이메일"
+
+#: lib/texting_web/templates/page/index.html.eex:123
+msgid "Even better, send customized image messages to catch your customers' attention with new product arrivals and sales"
+msgstr "'사진은 천마디의 말보다 가치가 있다' 라는 말처럼 메세지에 신상품 사진이나 할인상품의 사진을 첨부해서 보내세요."
+
+#: lib/texting_web/templates/page/index.html.eex:103
+msgid "Every person has a cell phone and everyone checks their messages upon arrival."
+msgstr "모든 사람들이 가지고 있는 휴대폰으로 메세지를 전송합니다. SMS를 통해 전송하기 때문에 특별한 앱이 없어도 누구나 확인할 수 있습니다."
+
+#: lib/texting_web/templates/page/index.html.eex:184
+msgid "Fast and Reliable"
+msgstr "빠른 속도와 최고의 안정성"
+
+#: lib/texting_web/templates/page/index.html.eex:19
+msgid "Features"
+msgstr "기능들"
+
+#: lib/texting_web/templates/page/index.html.eex:419
+msgid "Find the perfect plan for you — 100% satisfaction guaranteed."
+msgstr "비지니스의 가장 적합한 플랜을 선택하세요 - 100% 만족 보장"
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:16
+#: lib/texting_web/templates/page/index.html.eex:250
+msgid "Free"
+msgstr "무료"
+
+#: lib/texting_web/templates/page/index.html.eex:247
+msgid "Free Plan"
+msgstr "무료 플랜"
+
+#: lib/texting_web/templates/page/index.html.eex:61
+msgid "Free to start. No credit card required."
+msgstr "크레딧 카드없이 무료로 시작하세요"
+
+#: lib/texting_web/templates/page/index.html.eex:146
+msgid "Get 100 Credits for free"
+msgstr "가입하고 100개 크레딧 무료로 받기"
+
+#: lib/texting_web/templates/page/index.html.eex:64
+msgid "Get 100 credits for free"
+msgstr "가입하고 100개 크레딧 무료로 받기"
+
+#: lib/texting_web/templates/page/index.html.eex:424
+msgid "Get Started"
+msgstr "지금 시작하기"
+
+#: lib/texting_web/templates/page/index.html.eex:439
+msgid "Get in touch with us!"
+msgstr "연락하기"
+
+#: lib/texting_web/templates/page/index.html.eex:304
+msgid "Gold Plan"
+msgstr "골드 플랜"
+
+#: lib/texting_web/templates/page/index.html.eex:17
+msgid "Home"
+msgstr "처음화면"
+
+#: lib/texting_web/templates/page/index.html.eex:443
+msgid "If you have a question, feel free to send a message. We will get back to you within 24 hours."
+msgstr "서비스나 플랜에 질문이 있으시다면 언제든지 메세지를 보내주세요.  24시간안에 연락드리겠습니다."
+
+#: lib/texting_web/templates/page/index.html.eex:140
+msgid "Most businesses use email for their marketing strategy,\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tbecause it is free. However most emails end up in the spam folder and customers ignore them, but everyone checks their messages."
+msgstr "대부분의 기업들이 무료로 제공되는 이메일 마케팅을 선호합니다.\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t하지만 높은 확률로 이메일은 스팸처리되어 고객들에게 전달되지 않으며, 전달되어도 너무 많은 이메일 마케팅 메일 때문에 확인을 하지 않습니다. 문자 메세지는 높은 확률로 전송이 되며, 유익한 정보만 제공한다면 고객의 만족도가 올라감과 동시에 비지니스의 매출도 크게 증가할 것입니다."
+
+#: lib/texting_web/templates/page/index.html.eex:208
+msgid "Multiple Asian language"
+msgstr "다양한 아시아 언어 제공"
+
+#: lib/texting_web/templates/page/index.html.eex:102
+msgid "Open rate over 99%"
+msgstr "고객이 메세지를 확인할 확률 99%"
+
+#: lib/texting_web/templates/page/index.html.eex:327
+msgid "Pay as you go."
+msgstr "선지불하고 사용하기"
+
+#: lib/texting_web/templates/page/index.html.eex:20
+msgid "Pricing"
+msgstr "가격"
+
+#: lib/texting_web/templates/page/index.html.eex:234
+msgid "Pricing Plan"
+msgstr "가격표"
+
+#: lib/texting_web/templates/page/index.html.eex:60
+msgid "Send massive texts or image messages to your customers."
+msgstr "수백, 수천명의 고객에게 비지니스 소식, 신상품 정보, 할인 정보에 대해 문자 메세지나 이미지 메세지로 즉시 알리세요."
+
+#: lib/texting_web/templates/page/index.html.eex:122
+msgid "Send pictures of new products by image messages"
+msgstr "고객의 시선을 사로잡는 이미지 메세지"
+
+#: lib/texting_web/templates/page/index.html.eex:112
+msgid "Send special offer by text messages"
+msgstr "빠르고 정확환 문자 메세지"
+
+#: lib/texting_web/templates/page/index.html.eex:22
+msgid "Sign In"
+msgstr "접속하기"
+
+#: lib/texting_web/templates/page/index.html.eex:34
+#: lib/texting_web/templates/page/index.html.eex:43
+msgid "Sign up free"
+msgstr "무료 가입"
+
+#: lib/texting_web/templates/page/index.html.eex:285
+msgid "Silver Plan"
+msgstr "실버 플랜"
+
+#: lib/texting_web/templates/page/index.html.eex:192
+msgid "Simple to use"
+msgstr "사용하기 쉽다"
+
+#: lib/texting_web/templates/dashboard/billing_info/new.html.eex:125
+#: lib/texting_web/templates/dashboard/contact_us/index.html.eex:29
+#: lib/texting_web/templates/dashboard/phonebook/form.html.eex:25
+msgid "Submit"
+msgstr "등록하기"
+
+#: lib/texting_web/templates/page/index.html.eex:418
+msgid "Subscribe to our monthly plan"
+msgstr "월 플랜에 가입하세요."
+
+#: lib/texting_web/templates/page/index.html.eex:139
+msgid "Texty Marketing"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:176
+msgid "Unlimited Contacts"
+msgstr "무제한 연락처 추가"
+
+#: lib/texting_web/templates/page/index.html.eex:364
+msgid "Up to 1125 text messages"
+msgstr "최고 1125개의 문자메세지"
+
+#: lib/texting_web/templates/page/index.html.eex:383
+msgid "Up to 2000 text messages"
+msgstr "최고 2000개의 문자메세지"
+
+#: lib/texting_web/templates/page/index.html.eex:401
+msgid "Up to 2900 text messages"
+msgstr "최고 2900개의 문자메세지"
+
+#: lib/texting_web/templates/page/index.html.eex:345
+msgid "Up to 700 text messages"
+msgstr "최고 700개의 문자메세지"
+
+#: lib/texting_web/templates/page/index.html.eex:185
+msgid "We have a delivery rate of 99%."
+msgstr "99%의 메세지 전송률!"
+
+#: lib/texting_web/templates/page/index.html.eex:89
+msgid "Why you should use text marketing"
+msgstr "기업들이 Texty Marketing을 선택하는 이유"
+
+#: lib/texting_web/templates/page/index.html.eex:177
+msgid "You can add as many contacts as you want. There is no limit."
+msgstr "고객 연락처를 제한없이 원하는 만큼 추가하세요."
+
+#: lib/texting_web/templates/page/index.html.eex:201
+msgid "You can choose between 1 to 10 dedicated phone numbers for your business depending on your plan."
+msgstr "고객 연락처의 양에 따라 1개에서 최대 10개까지 비지니스 전용 전화번호를 사용하실수 있습니다."
+
+#: lib/texting_web/templates/page/index.html.eex:113
+msgid "You can notify your customers about sales, discount coupons, special events and anything else with a single click."
+msgstr "비지니스 소식, 신상품 소식, 할인 소식, 할인 쿠폰이나 특별한 이벤트에 대한 소식을 문자 메세지로 보내세요."
+
+#: lib/texting_web/templates/page/index.html.eex:209
+msgid "You can send  messages in either Chinese, Japanese and Korean."
+msgstr "다른 플팻폼에서 지원되지 않는 다국어 서비스(중국어, 일본어, 한국어)"
+
+#: lib/texting_web/templates/page/index.html.eex:236
+msgid "You will need to subscribe to plan & purchase credits separately."
+msgstr "고객 전용 전화번호를 받기 위해서는 플랜에 가입하고 크레딧은 별도로 구입하셔야 합니다."
+
+#: lib/texting_web/templates/page/index.html.eex:459
+msgid "Your Email"
+msgstr "이메일 주소"
+
+#: lib/texting_web/templates/dashboard/contact_us/index.html.eex:24
+#: lib/texting_web/templates/page/index.html.eex:464
+msgid "Your Message"
+msgstr "내용 쓰기"
+
+#: lib/texting_web/templates/page/index.html.eex:455
+msgid "Your Name"
+msgstr "이름"
+
+#: lib/texting_web/templates/page/index.html.eex:269
+#: lib/texting_web/templates/page/index.html.eex:289
+#: lib/texting_web/templates/page/index.html.eex:308
+msgid "month"
+msgstr "매달"
+
+#: lib/texting_web/templates/page/index.html.eex:139
+msgid "should be the first choice of your marketing strategy."
+msgstr "이 비지니스 홍보 전략에서 최선입니다."
+
+#: lib/texting_web/templates/user/new.html.eex:42
+msgid "Already a member?"
+msgstr "이미 회원이신가요?"
+
+#: lib/texting_web/templates/user/new.html.eex:22
+msgid "First name"
+msgstr "이름"
+
+#: lib/texting_web/templates/user/new.html.eex:28
+msgid "Last name"
+msgstr "성"
+
+#: lib/texting_web/templates/user/new.html.eex:18
+msgid "No credit card required."
+msgstr "크레딧 카드가 필요하지 않습니다."
+
+#: lib/texting_web/templates/auth/new.html.eex:26
+#: lib/texting_web/templates/user/new.html.eex:42
+msgid "Sign in"
+msgstr "접속하기"
+
+#: lib/texting_web/templates/auth/new.html.eex:30
+#: lib/texting_web/templates/confirm_email/new.html.eex:30
+#: lib/texting_web/templates/user/new.html.eex:15
+#: lib/texting_web/templates/user/new.html.eex:38
+msgid "Sign up"
+msgstr "가입하기"
+
+#: lib/texting_web/templates/user/new.html.eex:18
+msgid "Sign up and"
+msgstr "가입하고"
+
+#: lib/texting_web/templates/user/new.html.eex:18
+msgid "get 100 credits for free"
+msgstr "100개 크레딧 무료로 받기"
+
+#: lib/texting_web/templates/code_verify/new.html.drab:27
+msgid "Check"
+msgstr "인증하기"
+
+#: lib/texting_web/templates/code_verify/new.html.drab:23
+msgid "Code"
+msgstr "인증코드"
+
+#: lib/texting_web/templates/code_verify/new.html.drab:16
+msgid "Enter your Code"
+msgstr "휴대폰 인증하기"
+
+#: lib/texting_web/templates/code_verify/new.html.drab:19
+msgid "Please enter your 4 digits code."
+msgstr "휴대폰으로 전송된 4자리수 인증코드를 치세요."
+
+#: lib/texting_web/templates/code_verify/new.html.drab:33
+msgid "Send code again"
+msgstr "인증코드 다시 보내기"
+
+#: lib/texting_web/templates/auth/new.html.eex:30
+#: lib/texting_web/templates/confirm_email/new.html.eex:30
+msgid "Need an account?"
+msgstr "아직 가입하지 않으셨나요?"
+
+#: lib/texting_web/templates/auth/new.html.eex:19
+msgid "Please enter your sign-in email. We will send you an one time sign in link by email."
+msgstr "가입된 이메일 주소를 입력하세요.  일회용 접속 주소 링크를 이메일로 보내드립니다."
+
+#: lib/texting_web/templates/auth/new.html.eex:16
+msgid "Sign in to dashboard"
+msgstr "대쉬보드에 접속하기"
+
+#: lib/texting_web/templates/confirm_email/new.html.eex:16
+msgid "Please confirm your email"
+msgstr "이메일 인증하기"
+
+#: lib/texting_web/templates/confirm_email/new.html.eex:19
+msgid "Please enter your registered email. We will send you confirmation email."
+msgstr "텍스티 마케팅에 등록된 이메일 주소를 입력하세요. 메일로 인증 메일이 발송됩니다."
+
+#: lib/texting_web/templates/confirm_email/new.html.eex:26
+msgid "send confirm email"
+msgstr "인증메일 보내기"
+
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:111
+msgid "Account"
+msgstr "내 계정"
+
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:22
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:187
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:104
+msgid "Analytics"
+msgstr "분석 도구"
+
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:125
+msgid "Billing Info"
+msgstr "빌링 인포"
+
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:210
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:145
+msgid "Buy Credits"
+msgstr "크레딧 구입하기"
+
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:12
+#: lib/texting_web/templates/dashboard/campaign_history/index.html.eex:10
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:72
+msgid "Campaign history"
+msgstr "캠패인 기록"
+
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:162
+msgid "Contact us"
+msgstr "연락하기"
+
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:78
+msgid "Contacts"
+msgstr "연락처"
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:13
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:43
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:73
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:103
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:133
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:162
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:45
+msgid "Credits"
+msgstr "크레딧"
+
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:59
+msgid "Dashboard"
+msgstr "대쉬보드"
+
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:23
+#: lib/texting_web/templates/dashboard/campaign_history/index.html.eex:38
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:119
+msgid "Detail"
+msgstr "상세보기"
+
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:169
+msgid "Help & Tutorials"
+msgstr "도움말 & 강좌"
+
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:131
+msgid "Invoice"
+msgstr "영수증"
+
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:176
+msgid "Log out"
+msgstr "나가기"
+
+#: lib/texting_web/templates/dashboard/campaign/index.html.eex:12
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:86
+msgid "Phonebook"
+msgstr "전화 번호부"
+
+#: lib/texting_web/templates/dashboard/account_info/index.html.eex:90
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:138
+msgid "Plan"
+msgstr "플랜"
+
+#: lib/texting_web/templates/dashboard/campaign_history/index.html.eex:24
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:155
+msgid "Recipients"
+msgstr "수신자"
+
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:65
+msgid "Start campaign"
+msgstr "캠페인 시작하기"
+
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:35
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:101
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:92
+msgid "Upload Contact"
+msgstr "연락처 업로드"
+
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:19
+#: lib/texting_web/templates/dashboard/campaign_history/index.html.eex:22
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:20
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:50
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:89
+msgid "Date"
+msgstr "날짜"
+
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:101
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:68
+msgid "Deilvered"
+msgstr "전송 성공"
+
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:61
+msgid "Delivery Analytics"
+msgstr "전송 분석"
+
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:21
+msgid "Delivery Rate"
+msgstr "전송률"
+
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:61
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:94
+msgid "Delivery Result Chart"
+msgstr "전송 결과 차트"
+
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:10
+msgid "Most Recent Campaign"
+msgstr "가장 최근 캠페인"
+
+#: lib/texting_web/templates/dashboard/account_info/index.html.eex:33
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:20
+#: lib/texting_web/templates/dashboard/campaign_history/index.html.eex:20
+#: lib/texting_web/templates/dashboard/contact_us/index.html.eex:15
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:19
+#: lib/texting_web/templates/dashboard/phonebook/form.html.eex:19
+#: lib/texting_web/templates/dashboard/phonebook/index.html.eex:24
+#: lib/texting_web/templates/dashboard/phonebook/search_results.html.eex:66
+#: lib/texting_web/templates/dashboard/phonebook/show.html.eex:66
+#: lib/texting_web/templates/dashboard/recipient/show.html.eex:27
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:90
+msgid "Name"
+msgstr "이름"
+
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:163
+msgid "Picture is worth a thousand words. Send message with beautiful image."
+msgstr "문자 캠페인보다 5배 이상 효과적인 이미지 캠페인! 이제 문자와 함께 사진(이미지)를 보내세요."
+
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:137
+msgid "Send your text only messages. Somthing like discount coupon?"
+msgstr "저렴하고 효과적인 문자 캠페인! 기업들의 소식 또는 디스카운트 쿠폰을 문자로!"
+
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:211
+msgid "To send massive messages, you will need some credits!"
+msgstr "크레딧을 충분히 가지고 계신가요? 캠페인을 보내기 위해서 크레딧을 구입하세요"
+
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:103
+#: lib/texting_web/templates/dashboard/campaign_history/search_results.html.eex:20
+#: lib/texting_web/templates/dashboard/campaign_history/show.html.eex:20
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:70
+msgid "Total Clicks"
+msgstr "총 클릭수"
+
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:100
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:67
+msgid "Total Sent"
+msgstr "총 보낸 메세지"
+
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:102
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:69
+msgid "Undelivered"
+msgstr "전송 실패"
+
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:188
+msgid "Check how your message goes. Delivered? or Undelivered?"
+msgstr "캠페인이 잘 전송됬는지 결과가 궁금하시나요? 분석 도구에서 확인하세요."
+
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:162
+msgid "Send Image Campaign"
+msgstr "이미지 캠페인 보내기"
+
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:136
+msgid "Send Text Campaign"
+msgstr "문자 캠페인 보내기"
+
+#: lib/texting_web/templates/dashboard/campaign/index.html.eex:19
+msgid "Go to Phonebook"
+msgstr "전화 번호부로 바로가기"
+
+#: lib/texting_web/templates/dashboard/campaign/index.html.eex:36
+msgid "Go to Upload"
+msgstr "연락처 업로드로 바로가기"
+
+#: lib/texting_web/templates/dashboard/campaign/index.html.eex:3
+msgid "Send text messages or image messages by using two methods."
+msgstr "아래 두가지 방법으로 문자 메세지나 이미지 메세지를 보내실 수 있습니다."
+
+#: lib/texting_web/templates/dashboard/campaign/index.html.eex:2
+msgid "Start a Campaign"
+msgstr "캠페인 시작하기"
+
+#: lib/texting_web/templates/dashboard/campaign/index.html.eex:15
+msgid "Start by adding recipients from your contacts. You can add individual contact one by one or add whole\n            phonebooks to recipients list."
+msgstr "수신자를 전화 번호부에서 바로 추가하세요.  한명씩 수신자 목록에 추가하시거나 전화 번호부 전체를 수신자 목록에 추가하실 수 있습니다."
+
+#: lib/texting_web/templates/dashboard/campaign/index.html.eex:32
+msgid "Start by uploading contacts from your computer. You can upload csv file to existing phonebook or\n             you can create a new phonebook."
+msgstr "연락처 목록을 파일로(CSV, XLSX)로 가지고 계신가요? 새로운 전화 번호부에 업로드 하시거나 기존 전화 번호부에 업로드 하실수 있습니다."
+
+#: lib/texting_web/templates/dashboard/campaign/index.html.eex:29
+msgid "Uploading Contacts"
+msgstr "연락처 업로드"
+
+#: lib/texting_web/templates/dashboard/campaign_history/index.html.eex:25
+#: lib/texting_web/templates/dashboard/phonebook/index.html.eex:26
+#: lib/texting_web/templates/dashboard/phonebook/search_results.html.eex:68
+#: lib/texting_web/templates/dashboard/phonebook/show.html.eex:68
+#: lib/texting_web/templates/dashboard/recipient/show.html.eex:29
+msgid "Actions"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/campaign_history/index.html.eex:10
+msgid "Check your campaign history here."
+msgstr "이곳에서 캠폐인 기록을 확인하세요."
+
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:21
+#: lib/texting_web/templates/dashboard/campaign_history/index.html.eex:21
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:54
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:92
+msgid "Description"
+msgstr "설명"
+
+#: lib/texting_web/templates/dashboard/campaign_history/index.html.eex:23
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:51
+msgid "Type"
+msgstr "종류"
+
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:46
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:75
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:120
+#: lib/texting_web/templates/dashboard/campaign_history/index.html.eex:13
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:47
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:108
+msgid "You don't have any campaign history. Why don't you send a campaign?"
+msgstr "아직 캠페인 기록이 없습니다.  아직 한번도 캠페인을 시작하지 않으셨다고요? 당장 시작하세요!"
+
+#:
+#: lib/texting_web/templates/dashboard/campaign_history/search_results.html.eex:107
+#: lib/texting_web/templates/dashboard/campaign_history/show.html.eex:108
+msgid "Attached Image"
+msgstr "첨부 이미지"
+
+#:
+#: lib/texting_web/templates/dashboard/campaign_history/search_results.html.eex:15
+#: lib/texting_web/templates/dashboard/campaign_history/show.html.eex:15
+msgid "Messages"
+msgstr "문자 내용"
+
+#:
+#: lib/texting_web/templates/dashboard/campaign_history/search_results.html.eex:22
+#: lib/texting_web/templates/dashboard/campaign_history/show.html.eex:22
+msgid "No shorten url generated."
+msgstr "단축 링크를 사용하지 않으셨습니다."
+
+#: lib/texting_web/templates/dashboard/account_info/index.html.eex:63
+#: lib/texting_web/templates/dashboard/campaign_history/search_results.html.eex:75
+#: lib/texting_web/templates/dashboard/campaign_history/show.html.eex:76
+#: lib/texting_web/templates/dashboard/phonebook/search_results.html.eex:67
+#: lib/texting_web/templates/dashboard/phonebook/show.html.eex:67
+#: lib/texting_web/templates/dashboard/recipient/show.html.eex:28
+msgid "Phone Number"
+msgstr "전화 번호"
+
+#:
+#: lib/texting_web/templates/dashboard/campaign_history/search_results.html.eex:74
+#: lib/texting_web/templates/dashboard/campaign_history/show.html.eex:75
+msgid "Recipient Name"
+msgstr "수신자 이름"
+
+#:
+#: lib/texting_web/templates/dashboard/campaign_history/search_results.html.eex:17
+#: lib/texting_web/templates/dashboard/campaign_history/search_results.html.eex:22
+#: lib/texting_web/templates/dashboard/campaign_history/show.html.eex:17
+#: lib/texting_web/templates/dashboard/campaign_history/show.html.eex:22
+msgid "Shorten Url"
+msgstr "단축된 링크"
+
+#:
+#: lib/texting_web/templates/dashboard/campaign_history/search_results.html.eex:76
+#: lib/texting_web/templates/dashboard/campaign_history/show.html.eex:77
+msgid "Status"
+msgstr "상태"
+
+#: lib/texting_web/templates/dashboard/phonebook/index.html.eex:11
+msgid "'Unsubscriber' and 'Subscriber' phonebook is automatically generated. It will contain any unsubscriber from your contacts. And you can not delete it."
+msgstr "비구독자와 구독자 전화 번호부는 자동으로 생성되며 지우거나 임의로 수정하실 수 없습니다."
+
+#: lib/texting_web/templates/dashboard/phonebook/index.html.eex:63
+msgid "Add to Recipients List"
+msgstr "수신자 목록에 추가하기"
+
+#: lib/texting_web/templates/dashboard/phonebook/index.html.eex:25
+msgid "Contact counts"
+msgstr "연락처 갯수"
+
+#: lib/texting_web/templates/dashboard/phonebook/index.html.eex:14
+msgid "New Phonebook"
+msgstr "새 전화 번호부 만들기"
+
+#: lib/texting_web/templates/dashboard/phonebook/index.html.eex:10
+msgid "Phonebooks"
+msgstr "전화 번호부"
+
+#: lib/texting_web/templates/dashboard/phonebook/index.html.eex:18
+msgid "You don't have any phonebook.  Why don't you create one?"
+msgstr "표시할 전화번호가 없습니다. 지금 전화 번호부를 만드시고 연락처를 추가하세요"
+
+#: lib/texting_web/templates/dashboard/phonebook/index.html.eex:10
+msgid "create a new phonebook or add it to a recipient list."
+msgstr "새로운 전화 번호부를 만들거나 전화 번호부 전체를 수신자 목록에 추가하기"
+
+#: lib/texting_web/templates/dashboard/phonebook/form.html.eex:26
+msgid "Back"
+msgstr "돌아가기"
+
+#: lib/texting_web/templates/dashboard/phonebook/form.html.eex:14
+msgid "Oops, something went wrong! Please check the errors below."
+msgstr "이런, 뭔가 잘못 기입하신거 같습니다. 한번더 확인해주세요"
+
+#: lib/texting_web/templates/page/index.html.eex:469
+msgid "Send"
+msgstr "보내기"
+
+#: lib/texting_web/templates/dashboard/phonebook/form.html.eex:9
+msgid "Add or Edit Phonebook"
+msgstr "전화 번호부 추가 또는 수정"
+
+#: lib/texting_web/templates/dashboard/phonebook/search_results.html.eex:111
+#: lib/texting_web/templates/dashboard/phonebook/show.html.eex:111
+msgid "Add to Recipients"
+msgstr "수신자 목록에 추가하기"
+
+#: lib/texting_web/templates/dashboard/phonebook/search_results.html.eex:19
+#: lib/texting_web/templates/dashboard/phonebook/show.html.eex:19
+msgid "Edit Phonebook"
+msgstr "전화 번호부 수정하기"
+
+#: lib/texting_web/templates/dashboard/phonebook/search_results.html.eex:16
+#: lib/texting_web/templates/dashboard/phonebook/show.html.eex:16
+msgid "New Contact"
+msgstr "새 연락처 추가하기"
+
+#: lib/texting_web/templates/dashboard/phonebook/search_results.html.eex:65
+#: lib/texting_web/templates/dashboard/phonebook/show.html.eex:65
+#: lib/texting_web/templates/dashboard/recipient/show.html.eex:26
+msgid "Select All"
+msgstr "모두 선택"
+
+#: lib/texting_web/templates/dashboard/phonebook/search_results.html.eex:10
+#: lib/texting_web/templates/dashboard/phonebook/show.html.eex:10
+msgid "create a new contact or add it to a recipient list."
+msgstr "새로운 연락처를 추가하거나 연락처를 수신자 목록에 추가하세요"
+
+#: lib/texting_web/templates/dashboard/phonebook/search_results.html.eex:22
+#: lib/texting_web/templates/dashboard/phonebook/show.html.eex:22
+msgid "export"
+msgstr "연락처 CSV파일로 다운받기"
+
+#:
+#: lib/texting_web/templates/dashboard/campaign_history/search_results.html.eex:36
+#: lib/texting_web/templates/dashboard/campaign_history/search_results.html.eex:49
+#: lib/texting_web/templates/dashboard/campaign_history/show.html.eex:36
+#: lib/texting_web/templates/dashboard/campaign_history/show.html.eex:49
+#: lib/texting_web/templates/dashboard/phonebook/search_results.html.eex:36
+#: lib/texting_web/templates/dashboard/phonebook/search_results.html.eex:49
+#: lib/texting_web/templates/dashboard/phonebook/show.html.eex:36
+#: lib/texting_web/templates/dashboard/phonebook/show.html.eex:49
+msgid "search"
+msgstr "검색"
+
+#: lib/texting_web/templates/dashboard/phonebook/search_results.html.eex:56
+#: lib/texting_web/templates/dashboard/phonebook/show.html.eex:56
+msgid "No Contacts found in phonebook."
+msgstr "현재 전화 번호부에서 검색하신 정보가 발견되지 않았습니다."
+
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:24
+msgid "Choose Phonebook"
+msgstr "전화번호부를 고르세요."
+
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:51
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:117
+msgid "Download CSV"
+msgstr "CSV 템플레잇 다운받기"
+
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:54
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:120
+msgid "Download XLSX"
+msgstr "XLSX 템플레잇 다운받기"
+
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:58
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:124
+msgid "If you have contacts file in different format, please contact us to info@texty.marketing"
+msgstr "CSV 또는 XLSX 형식이 아닌 다른 포멧의 연락처를 가지고 있다면 info@texty.marketing으로 이메일을 보내셔서 문의하세요."
+
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:12
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:78
+msgid "If your contacts include Asian language, we suggest you to use .xlsx(excel) format."
+msgstr "연락처가 중국어, 한국어, 일본어를 포함하고 있다면 Excel에서 XLSX 형식으로 저장혀서서 업로드 하세요."
+
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:13
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:79
+msgid "If your file contains duplicate phone number, we will add just 1 contact."
+msgstr "전화번호부에 중복된 연락처가 있다면, 중복 전화번호는 저장되지 않고 한개만 유지됩니다."
+
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:11
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:77
+msgid "Only .csv and .xlsx(excel file) format."
+msgstr "CSV 또는 XLSX(엑셀파일)만 업로드가 가능합니다."
+
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:47
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:113
+msgid "Upload"
+msgstr "업로드"
+
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:9
+msgid "Upload Contact to Existing Phonebook"
+msgstr "기존 전화번호부에 연락처 업로드 하기"
+
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:76
+msgid "Upload Contact to New Phonebook"
+msgstr "새로운 전화번호부를 만들고 연락처 업로드하기"
+
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:56
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:122
+msgid "You can download our template or make your own. But make sure file must include header title as 'name', 'phone_number'."
+msgstr "템플레잇을 다운받으셔서 연락처를 채워넣거나 직접 새로운 파일을 만드실수 있습니다. 하지만 해더에 name과 phone_number 라고 적어주시길 바립니다."
+
+#:
+#: lib/texting_web/templates/dashboard/campaign_history/search_results.html.eex:62
+#: lib/texting_web/templates/dashboard/campaign_history/show.html.eex:63
+msgid "filter"
+msgstr "필터"
+
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:91
+msgid "Analytics Data"
+msgstr "분석 정보"
+
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:40
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:106
+msgid "Max size is 2 MB."
+msgstr "최대 파일 용량은 2메가 입니다."
+
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:136
+msgid "Subscriber Chart"
+msgstr "구독자 차트"
+
+#: lib/texting_web/templates/dashboard/account_info/index.html.eex:10
+msgid "Account Info"
+msgstr "계정 정보"
+
+#: lib/texting_web/templates/dashboard/account_info/index.html.eex:16
+msgid "Business Info"
+msgstr "비지니스 정보"
+
+#: lib/texting_web/templates/dashboard/account_info/index.html.eex:116
+msgid "Business Phone Number"
+msgstr "비지니스 전화번호"
+
+#: lib/texting_web/templates/dashboard/account_info/index.html.eex:76
+msgid "Credit"
+msgstr "크레딧"
+
+#: lib/texting_web/templates/dashboard/account_info/index.html.eex:132
+msgid "Welcome Message"
+msgstr "환영 메세지"
+
+#: lib/texting_web/templates/dashboard/billing_info/new.html.eex:18
+msgid "Add a new card"
+msgstr "새로운 카드 등록하기"
+
+#: lib/texting_web/templates/dashboard/billing_info/new.html.eex:12
+msgid "Credit Card"
+msgstr "크레딧 카드"
+
+#: lib/texting_web/templates/dashboard/billing_info/new.html.eex:111
+msgid "Enter your Card information"
+msgstr "카드 정보를 입력하세요"
+
+#: lib/texting_web/templates/dashboard/billing_info/new.html.eex:104
+msgid "No credit card information"
+msgstr "신용카드 정보가 없습니다."
+
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:52
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:90
+msgid "Amount"
+msgstr "총계"
+
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:38
+msgid "Amount due"
+msgstr "지불할 총계"
+
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:19
+msgid "Buy Credit Invoices"
+msgstr "크레딧 구입한 비용 청구서"
+
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:91
+msgid "Card"
+msgstr "결제카드"
+
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:53
+msgid "Invoice Number"
+msgstr "청구서 번호"
+
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:34
+msgid "No upcoming invoice available"
+msgstr "지불할 청구서가 없습니다."
+
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:13
+msgid "Subscription Invoices"
+msgstr "구독 비용 청구서"
+
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:37
+msgid "Your next billing date is"
+msgstr "다음 청구서 날짜"
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:8
+msgid "( 1 phone number daily limit is 250 messages. )"
+msgstr "( 비지니스 전화번호 1개로는 하루에 250개 메세지까지 보낼수 있습니다. )"
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:45
+msgid "Bronze"
+msgstr "브론즈"
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:32
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:61
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:90
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:119
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:148
+msgid "Choose Plan"
+msgstr "플랜 선택"
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:4
+msgid "Choose your plan according to your monthly volume"
+msgstr "한달 메세지 사용량에 따라서 플랜을 선택하세요."
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:175
+msgid "Contact Us"
+msgstr "연락하기"
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:27
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:56
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:85
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:114
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:143
+msgid "Daily limit is"
+msgstr "하루 사용 제한"
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:160
+msgid "Diamond"
+msgstr "다이아몬드"
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:5
+msgid "Each phone number can send messages up to 250 recipients daily. For example, 2 phone number can\n      send messages up to 500 recipients daily."
+msgstr "1개의 비지니스 전용 전화번호는 하루에 250개 메세지까지 보낼수 있습니다. 예를 들면 2개의 비지니스 전용 전화번호는 하루에 500명에게 메세지를 보내실 수 있습니다."
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:103
+msgid "Gold"
+msgstr "골드"
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:168
+msgid "More than 10 Dedicated Phone number"
+msgstr "10개 이상의 비지니스 전용 전화번호"
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:132
+msgid "Platinum"
+msgstr "플래티넘"
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:171
+msgid "Please Contact us"
+msgstr "Texty Marketing에 직접 연락하세요"
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:74
+msgid "Silver"
+msgstr "실버"
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:24
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:53
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:82
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:111
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:140
+msgid "dedicated business phone number"
+msgstr "비지니스 전용 전화번호"
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:166
+msgid "Custom"
+msgstr "커스텀"
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:27
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:56
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:85
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:114
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:143
+msgid "messages"
+msgstr "메세지"
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:30
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:60
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:90
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:120
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:150
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:179
+msgid "Buy Credit"
+msgstr "크레딧 구입"
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:4
+msgid "Text Campaign costs 1 credit and Image Campaign costs 3 credits"
+msgstr "1개의 크레딧으로 1개의 문자 메세지, 3개의 크레딧으로 1개의 이미지 메세지를 보낼 수 있습니다"
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:52
+msgid "Up to 1150 Text Campaigns"
+msgstr "문자 메세지를 1150개 까지"
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:145
+msgid "Up to 1333 Image Campaigns"
+msgstr "이미지 메세지를 1333개 까지 보낼 수 있습니다"
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:174
+msgid "Up to 1666 Image Campaigns"
+msgstr "이미지 메세지를 1666개 까지 보낼 수 있습니다"
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:82
+msgid "Up to 2000 Text Campaigns"
+msgstr "문자 메세지를 2000개 까지"
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:25
+msgid "Up to 233 Image Campaigns"
+msgstr "이미지 메세지를 233개 까지 보낼 수 있습니다"
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:112
+msgid "Up to 2900 Text Campaigns"
+msgstr "문자 메세지를 2900개 까지"
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:55
+msgid "Up to 375 Image Campaigns"
+msgstr "이미지 메세지를 375개 까지 보낼 수 있습니다"
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:142
+msgid "Up to 4000 Text Campaigns"
+msgstr "문자 메세지를 4000개 까지"
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:171
+msgid "Up to 5000 Text Campaigns"
+msgstr "문자 메세지를 5000개 까지"
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:85
+msgid "Up to 666 Image Campaigns"
+msgstr "이미지 메세지를 666개 까지 보낼 수 있습니다"
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:22
+msgid "Up to 700 Text Campaigns"
+msgstr "문자 메세지를 700개 까지"
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:115
+msgid "Up to 966 Image Campaigns"
+msgstr "이미지 메세지를 966개 까지 보낼 수 있습니다"
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:3
+msgid "You need credits for sending messages"
+msgstr "메세지를 보내기 위해서는 크레딧을 구입하세요"
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:22
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:52
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:82
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:112
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:142
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:171
+msgid "or"
+msgstr "또는"
+
+#: lib/texting_web/templates/dashboard/recipient/show.html.eex:15
+msgid "Add More"
+msgstr "더 추가하기"
+
+#: lib/texting_web/templates/dashboard/recipient/show.html.eex:57
+#: lib/texting_web/templates/dashboard/recipient/show.html.eex:63
+msgid "Delete"
+msgstr "삭제하기"
+
+#: lib/texting_web/templates/dashboard/recipient/show.html.eex:71
+msgid "Image Campaign"
+msgstr "이미지 캠페인"
+
+#: lib/texting_web/templates/dashboard/recipient/show.html.eex:10
+msgid "Recipients List"
+msgstr "수신자 목록"
+
+#: lib/texting_web/templates/dashboard/recipient/show.html.eex:68
+msgid "Text Campaign"
+msgstr "문자 캠페인"
+
+#: lib/texting_web/templates/dashboard/recipient/show.html.eex:11
+msgid "You can remove a contact from list or click to send text or image campaign"
+msgstr "수신자 목록에서 수신자를 삭제하거나 준비가 되었다면 문자 캠페인이나 이미지 캠페인을 클릭하세요"
+
+#: lib/texting_web/templates/dashboard/recipient/show.html.eex:19
+msgid "Your recipients list is empty"
+msgstr "수신자 목록에 연락처를 추가하지 않았습니다"
+
+#: lib/texting_web/templates/layout/_dashboard_topmenu.html.eex:23
+msgid "Choose a language"
+msgstr "언어 선택"
+
+#: lib/texting_web/templates/dashboard/contact_us/index.html.eex:11
+msgid "Have any question? Feel Free to contact us. Or send us a feedback"
+msgstr "질문이 있거나, 사용하기에 불편한 점이 있다면 주저하지 말고 연락하세요."

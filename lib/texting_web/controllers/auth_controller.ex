@@ -89,7 +89,9 @@ defmodule TextingWeb.AuthController do
   end
 
   # When a user do "POST" request in sign in via email
-  def new(conn, %{"auth" => %{"email" => email}}) do
+  def new(conn, %{"auth" => %{"email" => email}} = params) do
+    IO.puts "++++++++++++++ sign in +++++++++++++++++"
+    IO.inspect params
     case Account.get_user_by_email(email) do
       nil ->
         conn
@@ -119,7 +121,9 @@ defmodule TextingWeb.AuthController do
     end
   end
 
-  def new(conn, _params) do
+  def new(conn, params) do
+    IO.puts "++++++++++++++ sign in +++++++++++++++++"
+    IO.inspect params
     render(conn, "new.html")
   end
 

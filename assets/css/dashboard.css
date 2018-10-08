@@ -487,7 +487,7 @@ span.italic {
 }
 
 .upload-flexitem {
-  width: 500px;
+  /* width: 500px; */
 }
 
 /* Campaign History Page*/
@@ -508,11 +508,12 @@ span.italic {
 }
 
 .camp-history-flexitem.content {
-  flex-basis: 50%;
+  /* flex-basis: 50%; */
+  width: 100%;
 }
 
 .camp-history-flexitem.image {
-  flex-basis: 40%;
+  /* flex-basis: 40%; */
 }
 
 .camp-info-block {
@@ -644,7 +645,7 @@ img.card-icon {
 
 /* contact us page */
 .contact-us-block {
-  max-width: 600px;
+  /* max-width: 600px; */
 }
 
 /* Footer */

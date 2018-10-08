@@ -11,7 +11,7 @@ defmodule TextingWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
-    #plug TextingWeb.Plugs.Locale
+    plug TextingWeb.Plugs.Locale
   end
 
   pipeline :api do
@@ -48,8 +48,7 @@ defmodule TextingWeb.Router do
 
   scope "/", TextingWeb do
     pipe_through :browser # Use the default browser stack
-    # Load.io
-    get "/loaderio-f95477852e582a177f74a077dabf6ae9", LoadTestController, :index
+
     get "/", PageController, :index
     post "/", PageController, :create
     get "/privacy-policy", PrivacyController, :index
@@ -120,13 +119,13 @@ defmodule TextingWeb.Router do
     get "/campaign/history", CampaignHistoryController, :index
     get "/campaign/history/:id", CampaignHistoryController, :show
 
-    get "/buy-credit", BuyCreditController, :new
+    get "/buy-credit", BuyCreditController, :index
     post "/buy-credit", BuyCreditController, :create
 
     get "/payment", PaymentController, :new
     post "/payment", PaymentController, :create
 
-    get "/plan", PlanController, :new
+    get "/plan", PlanController, :index
     post "/plan", PlanController, :create
     post "/plan/cancel", PlanController, :delete
 
@@ -138,7 +137,7 @@ defmodule TextingWeb.Router do
     delete "/billing/:id", BillingInfoController, :delete_card
     post "/billing/change/default-card/:id", BillingInfoController, :make_default_card
 
-    get "/invoice", InvoiceController, :new
+    get "/invoice", InvoiceController, :index
 
     get "/analytics", AnalyticsController, :index
 

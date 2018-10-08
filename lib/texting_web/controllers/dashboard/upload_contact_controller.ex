@@ -13,7 +13,7 @@ defmodule TextingWeb.Dashboard.UploadContactController do
       Contact.list_phonebooks(user.id)
       |> Enum.reject(& &1.name == "Unsubscriber")
       |> Enum.reject(& &1.name == "Subscriber")
-    render conn, "new.html", phonebooks: phonebooks
+    render conn, "index.html", phonebooks: phonebooks
   end
 
   # Backup

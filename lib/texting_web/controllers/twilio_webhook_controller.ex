@@ -105,7 +105,7 @@ defmodule TextingWeb.TwilioWebhookController do
     end
   end
 
-  def message_status(conn, %{"MessageStatus" => status} = params) when status in ["delivered", "undelivered", "failed"] do
+  def message_status(conn, %{"MessageStatus" => status} = params) when status in ["undelivered", "failed"] do
     IO.puts "+++++++++++++++++++++++++++++"
     IO.inspect params
     IO.puts "+++++++++++++++++++++++++++++++++++++++++++"
@@ -122,7 +122,7 @@ defmodule TextingWeb.TwilioWebhookController do
     |> send_resp(200, "")
   end
 
-  def message_status(conn, %{"MessageStatus" => status} = params) when status in ["sent", "queued", "receiving", "received", "accepted", "sending" ] do
+  def message_status(conn, %{"MessageStatus" => status} = params) when status in ["delivered", "sent", "queued", "receiving", "received", "accepted", "sending" ] do
 
     IO.puts "+++++++++++++++Message Status++++++++++++++"
     IO.inspect params

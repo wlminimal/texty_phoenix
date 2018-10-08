@@ -1,178 +1,178 @@
 
  <div class="container">
   <div class="container header-block">
-    <h3>Choose your plan according to your monthly volume</h3>
-    <p>Each phone number can send messages up to 250 recipients daily. For example, 2 phone number can
-      send messages up to 500 recipients daily.
+    <h3><%= gettext "Choose your plan according to your monthly volume" %></h3>
+    <p><%= gettext "Each phone number can send messages up to 250 recipients daily. For example, 2 phone number can
+      send messages up to 500 recipients daily." %>
     </p>
-     <p>( 1 phone number daily limit is 250 messages. )</p>
+     <p><%= gettext "( 1 phone number daily limit is 250 messages. )" %></p>
   </div>
    <div class="plan-flexbox">
-     
+
         <div class="plan-flexitem" id="Free">
           <%= form_for @conn, plan_path(@conn, :create), fn f -> %>
             <div class="card card-pricing card-raised">
               <div class="card-content">
-                <h6 class="plan-name">Free</h6>
-                <!-- 
+                <h6 class="plan-name"><%= gettext "Free" %></h6>
+                <!--
                 <div class="icon icon-rose">
                   <i class="material-icons">home</i>
                 </div>
               -->
-                <h3 class="card-title plan-price">FREE</h3>
+                <h3 class="card-title plan-price">$0</h3>
                 <p class="card-description">
-                  No dedicated business phone number.                  
+                  0 <%= gettext "dedicated business phone number" %>.
                 </p>
                 <p class="card-description">
-                  Daily limit is 50.                  
+                  <%= gettext "Daily limit is" %> 50 <%= gettext "messages"%>.
                 </p>
-                <%= hidden_input f, :plan_id, class: "plan", value: @free_plan_id  %> 
+                <%= hidden_input f, :plan_id, class: "plan", value: @free_plan_id  %>
                 <%= submit id: "Free-Button", class: "btn btn-github btn-round choose-plan-button" do %>
                   <span class="fas fa-spinner fa-spin fa-lg hide-icon"></span>
-                  Choose Plan
+                  <%= gettext "Choose Plan" %>
                 <% end %>
               </div>
             </div>
           <%end%>
         </div>
-      
 
-      
+
+
         <div class="plan-flexitem" id="Bronze">
           <%= form_for @conn, plan_path(@conn, :create), fn f -> %>
           <div class="card card-pricing card-raised">
             <div class="card-content">
-              <h6 class="plan-name">Bronze</h6>
-              <!-- 
+              <h6 class="plan-name"><%= gettext "Bronze" %></h6>
+              <!--
               <div class="icon icon-rose">
                 <i class="material-icons">home</i>
               </div>
             -->
               <h3 class="card-title plan-price">$5</h3>
               <p class="card-description">
-                1 dedicated business phone number.
+                1 <%= gettext "dedicated business phone number" %>.
               </p>
               <p class="card-description">
-                Daily limit is 250 Recipients.                  
+                <%= gettext "Daily limit is" %> 250 <%= gettext "messages"%>.
               </p>
-              <%= hidden_input f, :plan_id, class: "plan", value: @bronze_plan_id  %> 
+              <%= hidden_input f, :plan_id, class: "plan", value: @bronze_plan_id  %>
               <%= submit id: "Bronze-Button", class: "btn btn-github btn-round choose-plan-button" do %>
-                <span class="fas fa-spinner fa-spin fa-lg hide-icon"></span> 
-                Choose Plan
+                <span class="fas fa-spinner fa-spin fa-lg hide-icon"></span>
+                <%= gettext "Choose Plan" %>
               <% end %>
             </div>
           </div>
           <% end %>
         </div>
-      
 
-      
+
+
         <div class="plan-flexitem" id="Silver">
           <%= form_for @conn, plan_path(@conn, :create), fn f -> %>
             <div class="card card-pricing card-raised">
               <div class="card-content">
-                <h6 class="plan-name">Silver</h6>
-                <!-- 
+                <h6 class="plan-name"><%= gettext "Silver" %></h6>
+                <!--
                 <div class="icon icon-rose">
                   <i class="material-icons">home</i>
                 </div>
               -->
                 <h3 class="card-title plan-price">$10</h3>
                 <p class="card-description">
-                  3 dedicated business phone number.
+                  3 <%= gettext "dedicated business phone number" %>.
                 </p>
                 <p class="card-description">
-                  Daily limit is 750 Recipients.                  
+                  <%= gettext "Daily limit is" %> 750 <%= gettext "messages" %>.
                 </p>
-                <%= hidden_input f, :plan_id, class: "plan", value: @silver_plan_id  %> 
+                <%= hidden_input f, :plan_id, class: "plan", value: @silver_plan_id  %>
                 <%= submit id: "Silver-Button", class: "btn btn-github btn-round choose-plan-button" do %>
-                  <span class="fas fa-spinner fa-spin fa-lg hide-icon"></span> 
-                  Choose Plan
+                  <span class="fas fa-spinner fa-spin fa-lg hide-icon"></span>
+                  <%= gettext "Choose Plan" %>
                 <% end %>
               </div>
             </div>
           <% end %>
         </div>
-      
 
-      
+
+
         <div class="plan-flexitem" id="Gold">
           <%= form_for @conn, plan_path(@conn, :create), fn f -> %>
             <div class="card card-pricing card-raised">
               <div class="card-content">
-                <h6 class="plan-name">Gold</h6>
-                <!-- 
+                <h6 class="plan-name"><%= gettext "Gold" %></h6>
+                <!--
                 <div class="icon icon-rose">
                   <i class="material-icons">home</i>
                 </div>
                 -->
                 <h3 class="card-title plan-price">$15</h3>
                 <p class="card-description">
-                  5 dedicated business phone number.
+                  5 <%= gettext "dedicated business phone number" %>.
                 </p>
                 <p class="card-description">
-                  Daily limit is 1250 Recipients.                  
+                  <%= gettext "Daily limit is" %> 1250 <%= gettext "messages" %>.
                 </p>
-                <%= hidden_input f, :plan_id, class: "plan", value: @gold_plan_id  %> 
+                <%= hidden_input f, :plan_id, class: "plan", value: @gold_plan_id  %>
                 <%= submit id: "Gold-Button", class: "btn btn-github btn-round choose-plan-button" do %>
-                  <span class="fas fa-spinner fa-spin fa-lg hide-icon"></span> 
-                  Choose Plan
+                  <span class="fas fa-spinner fa-spin fa-lg hide-icon"></span>
+                  <%= gettext "Choose Plan" %>
                 <% end %>
               </div>
             </div>
           <% end %>
         </div>
-      
 
-      
+
+
         <div class="plan-flexitem" id="Platinum">
           <%= form_for @conn, plan_path(@conn, :create), fn f -> %>
           <div class="card card-pricing card-raised">
             <div class="card-content">
-              <h6 class="plan-name">Platinum</h6>
-              <!-- 
+              <h6 class="plan-name"><%= gettext "Platinum" %></h6>
+              <!--
               <div class="icon icon-rose">
                 <i class="material-icons">home</i>
               </div>
               -->
               <h3 class="card-title plan-price">$30</h3>
               <p class="card-description">
-                10 dedicated business phone number.
+                10 <%= gettext "dedicated business phone number" %>.
               </p>
               <p class="card-description">
-                Daily limit is 2500 Recipients.                  
+                <%= gettext "Daily limit is" %> 2500 <%= gettext "messages" %>.
               </p>
-              <%= hidden_input f, :plan_id, class: "plan", value: @platinum_plan_id  %> 
+              <%= hidden_input f, :plan_id, class: "plan", value: @platinum_plan_id  %>
               <%= submit id: "Platinum-Button", class: "btn btn-github btn-round choose-plan-button" do %>
-                <span class="fas fa-spinner fa-spin fa-lg hide-icon"></span> 
-                Choose Plan
+                <span class="fas fa-spinner fa-spin fa-lg hide-icon"></span>
+                <%= gettext "Choose Plan" %>
               <% end %>
             </div>
           </div>
           <% end %>
         </div>
-      
-      
+
+
         <div class="plan-flexitem" id="Diamond">
-          
+
           <div class="card card-pricing card-raised">
             <div class="card-content">
-              <h6 class="plan-name">Diamond</h6>
-              <!-- 
+              <h6 class="plan-name"><%= gettext "Diamond" %></h6>
+              <!--
               <div class="icon icon-rose">
                 <i class="material-icons">home</i>
               </div>
             -->
-              <h3 class="card-title plan-price">Custom</h3>
+              <h3 class="card-title plan-price"><%= gettext "Custom" %></h3>
               <p class="card-description">
-                More than 10 Dedicated Phone number.
+                <%= gettext "More than 10 Dedicated Phone number" %>.
               </p>
               <p class="card-description">
-                  Please Contact us
+                <%= gettext "Please Contact us" %>
                 </p>
               <%= button id: "Diamond-Button", method: "get", to: contact_us_path(@conn, :index), class: "btn btn-github btn-round"  do %>
-                <span class="fas fa-spinner fa-spin fa-lg hide-icon"></span> 
-                Contact Us
+                <span class="fas fa-spinner fa-spin fa-lg hide-icon"></span>
+                <%= gettext "Contact Us" %>
               <% end %>
             </div>
           </div>

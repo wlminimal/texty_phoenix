@@ -4,7 +4,7 @@ defmodule Texting.ContactTest do
   alias Texting.Contact
 
   describe "phonenumbers" do
-    alias Textin.Messenger.Phonenumber
+    alias Texting.Messenger.Phonenumber
 
     @valid_attrs %{account_sid: "some account_sid", friendly_name: "some friendly_name", number: "some number", phonenumber_sid: "some phonenumber_sid"}
     @update_attrs %{account_sid: "some updated account_sid", friendly_name: "some updated friendly_name", number: "some updated number", phonenumber_sid: "some updated phonenumber_sid"}

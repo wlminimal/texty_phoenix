@@ -5,9 +5,9 @@ defmodule TextingWeb.Dashboard.BuyCreditController do
   alias Texting.Credit
   alias Texting.Formatter
 
-  def new(conn, _params) do
+  def index(conn, _params) do
     stripe_key = System.get_env("STRIPE_PUBLIC_KEY")
-    render conn, "new.html", stripe_key: stripe_key
+    render conn, "index.html", stripe_key: stripe_key
   end
 
   @doc """
@@ -35,14 +35,14 @@ defmodule TextingWeb.Dashboard.BuyCreditController do
         {:error, _error} ->
           conn
           |> put_flash(:error, "Something went wrong!")
-          |> redirect(to: buy_credit_path(conn, :new))
+          |> redirect(to: buy_credit_path(conn, :index))
       end
     else
       # When user tries to charge as a free planner. redirect plan page
       {:free_plan, true} ->
         conn
         |> put_flash(:info, "You must upgrade a plan first.")
-        |> redirect(to: plan_path(conn, :new))
+        |> redirect(to: plan_path(conn, :index))
       # When user has no card info, redirect to payment page
       {:no_card, false} ->
         conn
@@ -56,6 +56,6 @@ defmodule TextingWeb.Dashboard.BuyCreditController do
   def create(conn, _) do
     conn
     |> put_flash(:error, "Something went wrong!")
-    |> redirect(to: buy_credit_path(conn, :new))
+    |> redirect(to: buy_credit_path(conn, :index))
   end
 end

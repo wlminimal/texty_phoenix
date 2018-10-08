@@ -2,7 +2,7 @@
 
   <p class="alert alert-primary" role="alert"><%= get_flash(@conn, :info) %></p>
   <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
- 
+
   <div class="sign-in-flexbox">
 
       <div class="sign-in-flexitem">
@@ -10,30 +10,30 @@
           <div class="logo-wrapper">
             <a href="<%= page_path(@conn, :index) %>"><img src="<%= static_path(@conn, "/images/l1.png") %>" style="height: 100px;" alt=""></a>
           </div>
-          
+
           <div class="card">
               <div class="card-header card-header-icon" data-background-color="purple">
-                <i class="material-icons">contacts</i><span class="sign-in-header">Please confirm your email</span>
+                <i class="material-icons">contacts</i><span class="sign-in-header"><%= gettext "Please confirm your email" %></span>
               </div>
               <div class="card-content">
-                <p class="card-title">Please enter your registered email. We will send you confirmation email.</p>
-                
+                <p class="card-title"><%= gettext "Please enter your registered email. We will send you confirmation email." %></p>
+
                   <%= form_for @conn, confirm_email_path(@conn, :create), [as: :confirm, class: "ui form"], fn f -> %>
                     <div class="form-group label-floating">
-                      <label class="control-label">Email</label>
+                      <label class="control-label"><%= gettext "Email" %></label>
                       <%= email_input f, :email, required: "true", autocapitalize: "none", autofocus: "true", class: "form-control" %>
                     </div>
-                    <button type="submit" class="btn btn-sign-in">send confirm email</button>
+                    <button type="submit" class="btn btn-sign-in"><%= gettext "send confirm email" %></button>
                   <% end %>
-                 
+
                   <div class="">
-                   <span class="ui small header">Need an account? </span><a class="btn btn-simple" href="/sign-up">Sign up</a>
+                   <span class="ui small header"><%= gettext "Need an account?" %> </span><a class="btn btn-simple" href="/sign-up"><%= gettext "Sign up" %></a>
                   </div>
               </div>
           </div>
         </div>
       </div>
   </div>
-  
+
 </section>
 

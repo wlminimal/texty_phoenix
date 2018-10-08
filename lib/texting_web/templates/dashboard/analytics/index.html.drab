@@ -9,18 +9,18 @@
                   <i class="material-icons">assessment</i>
                 </div>
                 <div class="card-content">
-                  <h4 class="card-title">Campaign History</h4>
+                  <h4 class="card-title"><%= gettext "Campaign history" %></h4>
                   <%= if @has_campaign do %>
-                  
+
                       <div class="table-responsive table-sales">
                           <table class="table centered table-striped">
                             <thead>
                               <tr>
-                                <th>Date</th>
-                                <th>Name</th>
-                                <th>description</th>
-                                <th>Analytics</th>
-                                <th>Details</th>
+                                <th><%= gettext "Date" %></th>
+                                <th><%= gettext "Name" %></th>
+                                <th><%= gettext "Description" %></th>
+                                <th><%= gettext "Analytics" %></th>
+                                <th><%= gettext "Detail" %></th>
                               </tr>
                             </thead>
                             <tbody>
@@ -40,10 +40,10 @@
                               <% end %>
                             </tbody>
                           </table>
-                      </div> 
+                      </div>
                       <%= pagination_links @campaigns %>
                   <%= else %>
-                  <h4>You don't have any campaign history. Why don't you send campaign?</h4>
+                  <h4><%= gettext "You don't have any campaign history. Why don't you send a campaign?" %></h4>
                   <% end %>
                 </div>
               </div>
@@ -55,11 +55,11 @@
             <div class="analytics-sub-flexitem">
               <div class="card" >
                 <div class="card-header card-header-icon" data-background-color="rose">
-                  <i class="material-icons">pie_chart</i> 
+                  <i class="material-icons">pie_chart</i>
                 </div>
                 <div class="card-content">
-                  <h4 class="card-title">Delivery Result Chart</h4>
-                  
+                  <h4 class="card-title"><%= gettext "Delivery Result Chart" %></h4>
+
                   <div class="row">
                     <%= if @has_campaign do %>
                     <div class="col-md-12">
@@ -69,15 +69,15 @@
                         </div>
                       </div>
                     </div>
-                    
+
                     <%= else %>
                     <div class="col-md-12">
-                      <h4>You don't have any campaign history. Why don't you send campaign?</h4>
+                      <h4><%= gettext "You don't have any campaign history. Why don't you send a campaign?" %></h4>
                     </div>
                     <% end %>
                   </div>
                 </div>
-              </div> 
+              </div>
             </div>
             <!-- Chart 1 End -->
 
@@ -85,11 +85,11 @@
             <div class="analytics-sub-flexitem">
                 <div class="card" >
                   <div class="card-header card-header-icon" data-background-color="purple">
-                    <i class="material-icons">assessment</i> 
+                    <i class="material-icons">assessment</i>
                   </div>
                   <div class="card-content">
-                    <h4 class="card-title">Analytics Data</h4>
-                    
+                    <h4 class="card-title"><%= gettext "Analytics Data" %></h4>
+
                     <div class="row">
                       <%= if @has_campaign do %>
                       <div class="col-md-12">
@@ -97,10 +97,10 @@
                             <div class="table-responsive">
                               <table class="table centered">
                                 <thead>
-                                  <th>Total Sent</th>
-                                  <th>Deilvered</th>
-                                  <th>Undelivered</th>
-                                  <th>Total Clicks</th>
+                                  <th><%= gettext "Total Sent" %></th>
+                                  <th><%= gettext "Deilvered" %></th>
+                                  <th><%= gettext "Undelivered" %></th>
+                                  <th><%= gettext "Total Clicks" %></th>
                                 </thead>
                                 <tbody>
                                   <tr>
@@ -111,13 +111,13 @@
                                   </tr>
                                 </tbody>
                               </table>
-                            </div> 
+                            </div>
                         </div>
                       </div>
-                      
+
                       <%= else %>
                       <div class="col-md-12">
-                        <h4>You don't have any campaign history. Why don't you send campaign?</h4>
+                        <h4><%= gettext "You don't have any campaign history. Why don't you send a campaign?" %></h4>
                       </div>
                       <% end %>
                     </div>
@@ -130,11 +130,11 @@
             <div class="analytics-sub-flexitem">
                 <div class="card" >
                     <div class="card-header card-header-icon" data-background-color="rose">
-                      <i class="material-icons">pie_chart</i> 
+                      <i class="material-icons">pie_chart</i>
                     </div>
                     <div class="card-content">
-                      <h4 class="card-title">Subscriber Chart</h4>
-                      
+                      <h4 class="card-title"><%= gettext "Subscriber Chart" %></h4>
+
                       <div class="row">
                         <%= if @has_campaign do %>
                         <div class="col-md-12">
@@ -153,11 +153,11 @@
                         <% end %>
                       </div>
                     </div>
-                  </div> 
+                  </div>
             </div>
             <!-- Chart 2 End -->
           </div>
         </div>
-        
+
    </div>
 </div>

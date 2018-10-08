@@ -8,7 +8,7 @@
         </div>
         <div class="card-content">
           <h4 class="card-title">Most Recent Campaign</h4>
-          
+
           <div class="row">
             <%= if @has_campaign do %>
             <div class="col-md-12">
@@ -40,7 +40,7 @@
                         <% end %>
                       </tbody>
                     </table>
-                </div> 
+                </div>
               </div>
             </div>
             <%= else %>
@@ -57,7 +57,7 @@
           </div>
           <div class="card-content">
             <h4 class="card-title">Most Recent Campaign</h4>
-            
+
             <div class="row">
               <%= if @has_campaign do %>
               <div class="col-md-12">
@@ -95,7 +95,7 @@
       </div>
   </div>
 
-    
+
   </div>
 
   <div class="row">
@@ -177,7 +177,7 @@
           </div>
           <div class="card-content">
             <div class="card-actions">
-              <a type="button" class="btn btn-info btn-simple" href="<%= buy_credit_path(@conn, :new) %>" rel="tooltip" data-placement="bottom" title="Buy">
+              <a type="button" class="btn btn-info btn-simple" href="<%= buy_credit_path(@conn, :index) %>" rel="tooltip" data-placement="bottom" title="Buy">
                 <i class="material-icons">shopping_cart</i>
               </a>
             </div>
@@ -187,7 +187,7 @@
           </div>
           <div class="card-footer">
             <div class="stats">
-      
+
             </div>
           </div>
         </div>

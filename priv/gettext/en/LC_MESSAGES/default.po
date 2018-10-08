@@ -1,0 +1,1116 @@
+## `msgid`s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove `msgid`s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use `mix gettext.extract --merge` or `mix gettext.merge`
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: en\n"
+"Plural-Forms: nplurals=2\n"
+
+#: lib/texting_web/templates/page/index.html.eex:56
+msgid "new & easiest way"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:57
+msgid "to engage customers"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:347
+msgid "(or) Up to 233 image messages"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:365
+msgid "(or) Up to 375 image messages"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:384
+msgid "(or) Up to 666 image messages"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:402
+msgid "(or) Up to 966 image messages"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:254
+msgid "0 Dedicated phone number"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:273
+msgid "1 Dedicated phone number"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:255
+msgid "100 Free credits"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:357
+msgid "1125 credits"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:376
+msgid "2000 credits"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:394
+msgid "2900 credits"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:293
+msgid "3 Dedicated phone number"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:312
+msgid "5 Dedicated phone number"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:338
+msgid "700 credits"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:18
+msgid "About"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:216
+msgid "Auto Scaler"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:165
+msgid "Awesome Features"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:265
+msgid "Bronze Plan"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/contact_us/index.html.eex:9
+#: lib/texting_web/templates/page/index.html.eex:21
+msgid "Contact"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:193
+msgid "Create contacts, add them to your list and click send."
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:325
+msgid "Credit Price"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:313
+msgid "Daily message limit is 1250 messages"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:274
+msgid "Daily message limit is 250 messages"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:294
+msgid "Daily message limit is 750 messages"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:200
+msgid "Dedicated Phone number"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:217
+msgid "Distribute messages across a group of dedicated phone numbers to reach large audiences in a short amount of time."
+msgstr ""
+
+#: lib/texting_web/templates/auth/new.html.eex:23
+#: lib/texting_web/templates/confirm_email/new.html.eex:23
+#: lib/texting_web/templates/dashboard/account_info/index.html.eex:48
+#: lib/texting_web/templates/dashboard/contact_us/index.html.eex:19
+#: lib/texting_web/templates/page/index.html.eex:446
+#: lib/texting_web/templates/user/new.html.eex:34
+msgid "Email"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:123
+msgid "Even better, send customized image messages to catch your customers' attention with new product arrivals and sales"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:103
+msgid "Every person has a cell phone and everyone checks their messages upon arrival."
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:184
+msgid "Fast and Reliable"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:19
+msgid "Features"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:419
+msgid "Find the perfect plan for you — 100% satisfaction guaranteed."
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:16
+#: lib/texting_web/templates/page/index.html.eex:250
+msgid "Free"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:247
+msgid "Free Plan"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:61
+msgid "Free to start. No credit card required."
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:146
+msgid "Get 100 Credits for free"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:64
+msgid "Get 100 credits for free"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:424
+msgid "Get Started"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:439
+msgid "Get in touch with us!"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:304
+msgid "Gold Plan"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:17
+msgid "Home"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:443
+msgid "If you have a question, feel free to send a message. We will get back to you within 24 hours."
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:140
+msgid "Most businesses use email for their marketing strategy,\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tbecause it is free. However most emails end up in the spam folder and customers ignore them, but everyone checks their messages."
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:208
+msgid "Multiple Asian language"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:102
+msgid "Open rate over 99%"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:327
+msgid "Pay as you go."
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:20
+msgid "Pricing"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:234
+msgid "Pricing Plan"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:60
+msgid "Send massive texts or image messages to your customers."
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:122
+msgid "Send pictures of new products by image messages"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:112
+msgid "Send special offer by text messages"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:22
+msgid "Sign In"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:34
+#: lib/texting_web/templates/page/index.html.eex:43
+msgid "Sign up free"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:285
+msgid "Silver Plan"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:192
+msgid "Simple to use"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/billing_info/new.html.eex:125
+#: lib/texting_web/templates/dashboard/contact_us/index.html.eex:29
+#: lib/texting_web/templates/dashboard/phonebook/form.html.eex:25
+msgid "Submit"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:418
+msgid "Subscribe to our monthly plan"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:139
+msgid "Texty Marketing"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:176
+msgid "Unlimited Contacts"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:364
+msgid "Up to 1125 text messages"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:383
+msgid "Up to 2000 text messages"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:401
+msgid "Up to 2900 text messages"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:345
+msgid "Up to 700 text messages"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:185
+msgid "We have a delivery rate of 99%."
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:89
+msgid "Why you should use text marketing"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:177
+msgid "You can add as many contacts as you want. There is no limit."
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:201
+msgid "You can choose between 1 to 10 dedicated phone numbers for your business depending on your plan."
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:113
+msgid "You can notify your customers about sales, discount coupons, special events and anything else with a single click."
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:209
+msgid "You can send  messages in either Chinese, Japanese and Korean."
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:236
+msgid "You will need to subscribe to plan & purchase credits separately."
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:459
+msgid "Your Email"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/contact_us/index.html.eex:24
+#: lib/texting_web/templates/page/index.html.eex:464
+msgid "Your Message"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:455
+msgid "Your Name"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:269
+#: lib/texting_web/templates/page/index.html.eex:289
+#: lib/texting_web/templates/page/index.html.eex:308
+msgid "month"
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:139
+msgid "should be the first choice of your marketing strategy."
+msgstr ""
+
+#: lib/texting_web/templates/user/new.html.eex:42
+msgid "Already a member?"
+msgstr ""
+
+#: lib/texting_web/templates/user/new.html.eex:22
+msgid "First name"
+msgstr ""
+
+#: lib/texting_web/templates/user/new.html.eex:28
+msgid "Last name"
+msgstr ""
+
+#: lib/texting_web/templates/user/new.html.eex:18
+msgid "No credit card required."
+msgstr ""
+
+#: lib/texting_web/templates/auth/new.html.eex:26
+#: lib/texting_web/templates/user/new.html.eex:42
+msgid "Sign in"
+msgstr ""
+
+#: lib/texting_web/templates/auth/new.html.eex:30
+#: lib/texting_web/templates/confirm_email/new.html.eex:30
+#: lib/texting_web/templates/user/new.html.eex:15
+#: lib/texting_web/templates/user/new.html.eex:38
+msgid "Sign up"
+msgstr ""
+
+#: lib/texting_web/templates/user/new.html.eex:18
+msgid "Sign up and"
+msgstr ""
+
+#: lib/texting_web/templates/user/new.html.eex:18
+msgid "get 100 credits for free"
+msgstr ""
+
+#: lib/texting_web/templates/code_verify/new.html.drab:27
+msgid "Check"
+msgstr ""
+
+#: lib/texting_web/templates/code_verify/new.html.drab:23
+msgid "Code"
+msgstr ""
+
+#: lib/texting_web/templates/code_verify/new.html.drab:16
+msgid "Enter your Code"
+msgstr ""
+
+#: lib/texting_web/templates/code_verify/new.html.drab:19
+msgid "Please enter your 4 digits code."
+msgstr ""
+
+#: lib/texting_web/templates/code_verify/new.html.drab:33
+msgid "Send code again"
+msgstr ""
+
+#: lib/texting_web/templates/auth/new.html.eex:30
+#: lib/texting_web/templates/confirm_email/new.html.eex:30
+msgid "Need an account?"
+msgstr ""
+
+#: lib/texting_web/templates/auth/new.html.eex:19
+msgid "Please enter your sign-in email. We will send you an one time sign in link by email."
+msgstr ""
+
+#: lib/texting_web/templates/auth/new.html.eex:16
+msgid "Sign in to dashboard"
+msgstr ""
+
+#: lib/texting_web/templates/confirm_email/new.html.eex:16
+msgid "Please confirm your email"
+msgstr ""
+
+#: lib/texting_web/templates/confirm_email/new.html.eex:19
+msgid "Please enter your registered email. We will send you confirmation email."
+msgstr ""
+
+#: lib/texting_web/templates/confirm_email/new.html.eex:26
+msgid "send confirm email"
+msgstr ""
+
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:111
+msgid "Account"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:22
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:187
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:104
+msgid "Analytics"
+msgstr ""
+
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:125
+msgid "Billing Info"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:210
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:145
+msgid "Buy Credits"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:12
+#: lib/texting_web/templates/dashboard/campaign_history/index.html.eex:10
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:72
+msgid "Campaign history"
+msgstr ""
+
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:162
+msgid "Contact us"
+msgstr ""
+
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:78
+msgid "Contacts"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:13
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:43
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:73
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:103
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:133
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:162
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:45
+msgid "Credits"
+msgstr ""
+
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:59
+msgid "Dashboard"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:23
+#: lib/texting_web/templates/dashboard/campaign_history/index.html.eex:38
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:119
+msgid "Detail"
+msgstr ""
+
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:169
+msgid "Help & Tutorials"
+msgstr ""
+
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:131
+msgid "Invoice"
+msgstr ""
+
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:176
+msgid "Log out"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/campaign/index.html.eex:12
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:86
+msgid "Phonebook"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/account_info/index.html.eex:90
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:138
+msgid "Plan"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/campaign_history/index.html.eex:24
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:155
+msgid "Recipients"
+msgstr ""
+
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:65
+msgid "Start campaign"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:35
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:101
+#: lib/texting_web/templates/layout/_dashboard_sidemenu.html.eex:92
+msgid "Upload Contact"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:19
+#: lib/texting_web/templates/dashboard/campaign_history/index.html.eex:22
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:20
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:50
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:89
+msgid "Date"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:101
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:68
+msgid "Deilvered"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:61
+msgid "Delivery Analytics"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:21
+msgid "Delivery Rate"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:61
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:94
+msgid "Delivery Result Chart"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:10
+msgid "Most Recent Campaign"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/account_info/index.html.eex:33
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:20
+#: lib/texting_web/templates/dashboard/campaign_history/index.html.eex:20
+#: lib/texting_web/templates/dashboard/contact_us/index.html.eex:15
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:19
+#: lib/texting_web/templates/dashboard/phonebook/form.html.eex:19
+#: lib/texting_web/templates/dashboard/phonebook/index.html.eex:24
+#: lib/texting_web/templates/dashboard/phonebook/search_results.html.eex:66
+#: lib/texting_web/templates/dashboard/phonebook/show.html.eex:66
+#: lib/texting_web/templates/dashboard/recipient/show.html.eex:27
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:90
+msgid "Name"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:163
+msgid "Picture is worth a thousand words. Send message with beautiful image."
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:137
+msgid "Send your text only messages. Somthing like discount coupon?"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:211
+msgid "To send massive messages, you will need some credits!"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:103
+#: lib/texting_web/templates/dashboard/campaign_history/search_results.html.eex:20
+#: lib/texting_web/templates/dashboard/campaign_history/show.html.eex:20
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:70
+msgid "Total Clicks"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:100
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:67
+msgid "Total Sent"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:102
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:69
+msgid "Undelivered"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:188
+msgid "Check how your message goes. Delivered? or Undelivered?"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:162
+msgid "Send Image Campaign"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:136
+msgid "Send Text Campaign"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/campaign/index.html.eex:19
+msgid "Go to Phonebook"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/campaign/index.html.eex:36
+msgid "Go to Upload"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/campaign/index.html.eex:3
+msgid "Send text messages or image messages by using two methods."
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/campaign/index.html.eex:2
+msgid "Start a Campaign"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/campaign/index.html.eex:15
+msgid "Start by adding recipients from your contacts. You can add individual contact one by one or add whole\n            phonebooks to recipients list."
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/campaign/index.html.eex:32
+msgid "Start by uploading contacts from your computer. You can upload csv file to existing phonebook or\n             you can create a new phonebook."
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/campaign/index.html.eex:29
+msgid "Uploading Contacts"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/campaign_history/index.html.eex:25
+#: lib/texting_web/templates/dashboard/phonebook/index.html.eex:26
+#: lib/texting_web/templates/dashboard/phonebook/search_results.html.eex:68
+#: lib/texting_web/templates/dashboard/phonebook/show.html.eex:68
+#: lib/texting_web/templates/dashboard/recipient/show.html.eex:29
+msgid "Actions"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/campaign_history/index.html.eex:10
+msgid "Check your campaign history here."
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:21
+#: lib/texting_web/templates/dashboard/campaign_history/index.html.eex:21
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:54
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:92
+msgid "Description"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/campaign_history/index.html.eex:23
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:51
+msgid "Type"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:46
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:75
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:120
+#: lib/texting_web/templates/dashboard/campaign_history/index.html.eex:13
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:47
+#: lib/texting_web/templates/dashboard/dashboard/index.html.drab:108
+msgid "You don't have any campaign history. Why don't you send a campaign?"
+msgstr ""
+
+#:
+#: lib/texting_web/templates/dashboard/campaign_history/search_results.html.eex:107
+#: lib/texting_web/templates/dashboard/campaign_history/show.html.eex:108
+msgid "Attached Image"
+msgstr ""
+
+#:
+#: lib/texting_web/templates/dashboard/campaign_history/search_results.html.eex:15
+#: lib/texting_web/templates/dashboard/campaign_history/show.html.eex:15
+msgid "Messages"
+msgstr ""
+
+#:
+#: lib/texting_web/templates/dashboard/campaign_history/search_results.html.eex:22
+#: lib/texting_web/templates/dashboard/campaign_history/show.html.eex:22
+msgid "No shorten url generated."
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/account_info/index.html.eex:63
+#: lib/texting_web/templates/dashboard/campaign_history/search_results.html.eex:75
+#: lib/texting_web/templates/dashboard/campaign_history/show.html.eex:76
+#: lib/texting_web/templates/dashboard/phonebook/search_results.html.eex:67
+#: lib/texting_web/templates/dashboard/phonebook/show.html.eex:67
+#: lib/texting_web/templates/dashboard/recipient/show.html.eex:28
+msgid "Phone Number"
+msgstr ""
+
+#:
+#: lib/texting_web/templates/dashboard/campaign_history/search_results.html.eex:74
+#: lib/texting_web/templates/dashboard/campaign_history/show.html.eex:75
+msgid "Recipient Name"
+msgstr ""
+
+#:
+#: lib/texting_web/templates/dashboard/campaign_history/search_results.html.eex:17
+#: lib/texting_web/templates/dashboard/campaign_history/search_results.html.eex:22
+#: lib/texting_web/templates/dashboard/campaign_history/show.html.eex:17
+#: lib/texting_web/templates/dashboard/campaign_history/show.html.eex:22
+msgid "Shorten Url"
+msgstr ""
+
+#:
+#: lib/texting_web/templates/dashboard/campaign_history/search_results.html.eex:76
+#: lib/texting_web/templates/dashboard/campaign_history/show.html.eex:77
+msgid "Status"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/phonebook/index.html.eex:11
+msgid "'Unsubscriber' and 'Subscriber' phonebook is automatically generated. It will contain any unsubscriber from your contacts. And you can not delete it."
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/phonebook/index.html.eex:63
+msgid "Add to Recipients List"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/phonebook/index.html.eex:25
+msgid "Contact counts"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/phonebook/index.html.eex:14
+msgid "New Phonebook"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/phonebook/index.html.eex:10
+msgid "Phonebooks"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/phonebook/index.html.eex:18
+msgid "You don't have any phonebook.  Why don't you create one?"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/phonebook/index.html.eex:10
+msgid "create a new phonebook or add it to a recipient list."
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/phonebook/form.html.eex:26
+msgid "Back"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/phonebook/form.html.eex:14
+msgid "Oops, something went wrong! Please check the errors below."
+msgstr ""
+
+#: lib/texting_web/templates/page/index.html.eex:469
+msgid "Send"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/phonebook/form.html.eex:9
+msgid "Add or Edit Phonebook"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/phonebook/search_results.html.eex:111
+#: lib/texting_web/templates/dashboard/phonebook/show.html.eex:111
+msgid "Add to Recipients"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/phonebook/search_results.html.eex:19
+#: lib/texting_web/templates/dashboard/phonebook/show.html.eex:19
+msgid "Edit Phonebook"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/phonebook/search_results.html.eex:16
+#: lib/texting_web/templates/dashboard/phonebook/show.html.eex:16
+msgid "New Contact"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/phonebook/search_results.html.eex:65
+#: lib/texting_web/templates/dashboard/phonebook/show.html.eex:65
+#: lib/texting_web/templates/dashboard/recipient/show.html.eex:26
+msgid "Select All"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/phonebook/search_results.html.eex:10
+#: lib/texting_web/templates/dashboard/phonebook/show.html.eex:10
+msgid "create a new contact or add it to a recipient list."
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/phonebook/search_results.html.eex:22
+#: lib/texting_web/templates/dashboard/phonebook/show.html.eex:22
+msgid "export"
+msgstr ""
+
+#:
+#: lib/texting_web/templates/dashboard/campaign_history/search_results.html.eex:36
+#: lib/texting_web/templates/dashboard/campaign_history/search_results.html.eex:49
+#: lib/texting_web/templates/dashboard/campaign_history/show.html.eex:36
+#: lib/texting_web/templates/dashboard/campaign_history/show.html.eex:49
+#: lib/texting_web/templates/dashboard/phonebook/search_results.html.eex:36
+#: lib/texting_web/templates/dashboard/phonebook/search_results.html.eex:49
+#: lib/texting_web/templates/dashboard/phonebook/show.html.eex:36
+#: lib/texting_web/templates/dashboard/phonebook/show.html.eex:49
+msgid "search"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/phonebook/search_results.html.eex:56
+#: lib/texting_web/templates/dashboard/phonebook/show.html.eex:56
+msgid "No Contacts found in phonebook."
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:24
+msgid "Choose Phonebook"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:51
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:117
+msgid "Download CSV"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:54
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:120
+msgid "Download XLSX"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:58
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:124
+msgid "If you have contacts file in different format, please contact us to info@texty.marketing"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:12
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:78
+msgid "If your contacts include Asian language, we suggest you to use .xlsx(excel) format."
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:13
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:79
+msgid "If your file contains duplicate phone number, we will add just 1 contact."
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:11
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:77
+msgid "Only .csv and .xlsx(excel file) format."
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:47
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:113
+msgid "Upload"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:9
+msgid "Upload Contact to Existing Phonebook"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:76
+msgid "Upload Contact to New Phonebook"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:56
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:122
+msgid "You can download our template or make your own. But make sure file must include header title as 'name', 'phone_number'."
+msgstr ""
+
+#:
+#: lib/texting_web/templates/dashboard/campaign_history/search_results.html.eex:62
+#: lib/texting_web/templates/dashboard/campaign_history/show.html.eex:63
+msgid "filter"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:91
+msgid "Analytics Data"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:40
+#: lib/texting_web/templates/dashboard/upload_contact/index.html.eex:106
+msgid "Max size is 2 MB."
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/analytics/index.html.drab:136
+msgid "Subscriber Chart"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/account_info/index.html.eex:10
+msgid "Account Info"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/account_info/index.html.eex:16
+msgid "Business Info"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/account_info/index.html.eex:116
+msgid "Business Phone Number"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/account_info/index.html.eex:76
+msgid "Credit"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/account_info/index.html.eex:132
+msgid "Welcome Message"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/billing_info/new.html.eex:18
+msgid "Add a new card"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/billing_info/new.html.eex:12
+msgid "Credit Card"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/billing_info/new.html.eex:111
+msgid "Enter your Card information"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/billing_info/new.html.eex:104
+msgid "No credit card information"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:52
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:90
+msgid "Amount"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:38
+msgid "Amount due"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:19
+msgid "Buy Credit Invoices"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:91
+msgid "Card"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:53
+msgid "Invoice Number"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:34
+msgid "No upcoming invoice available"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:13
+msgid "Subscription Invoices"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/invoice/index.html.eex:37
+msgid "Your next billing date is"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:8
+msgid "( 1 phone number daily limit is 250 messages. )"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:45
+msgid "Bronze"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:32
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:61
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:90
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:119
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:148
+msgid "Choose Plan"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:4
+msgid "Choose your plan according to your monthly volume"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:175
+msgid "Contact Us"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:27
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:56
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:85
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:114
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:143
+msgid "Daily limit is"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:160
+msgid "Diamond"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:5
+msgid "Each phone number can send messages up to 250 recipients daily. For example, 2 phone number can\n      send messages up to 500 recipients daily."
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:103
+msgid "Gold"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:168
+msgid "More than 10 Dedicated Phone number"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:132
+msgid "Platinum"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:171
+msgid "Please Contact us"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:74
+msgid "Silver"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:24
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:53
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:82
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:111
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:140
+msgid "dedicated business phone number"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:166
+msgid "Custom"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:27
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:56
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:85
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:114
+#: lib/texting_web/templates/dashboard/plan/index.html.eex:143
+msgid "messages"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:30
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:60
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:90
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:120
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:150
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:179
+msgid "Buy Credit"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:4
+msgid "Text Campaign costs 1 credit and Image Campaign costs 3 credits"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:52
+msgid "Up to 1150 Text Campaigns"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:145
+msgid "Up to 1333 Image Campaigns"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:174
+msgid "Up to 1666 Image Campaigns"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:82
+msgid "Up to 2000 Text Campaigns"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:25
+msgid "Up to 233 Image Campaigns"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:112
+msgid "Up to 2900 Text Campaigns"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:55
+msgid "Up to 375 Image Campaigns"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:142
+msgid "Up to 4000 Text Campaigns"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:171
+msgid "Up to 5000 Text Campaigns"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:85
+msgid "Up to 666 Image Campaigns"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:22
+msgid "Up to 700 Text Campaigns"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:115
+msgid "Up to 966 Image Campaigns"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:3
+msgid "You need credits for sending messages"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:22
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:52
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:82
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:112
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:142
+#: lib/texting_web/templates/dashboard/buy_credit/index.html.eex:171
+msgid "or"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/recipient/show.html.eex:15
+msgid "Add More"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/recipient/show.html.eex:57
+#: lib/texting_web/templates/dashboard/recipient/show.html.eex:63
+msgid "Delete"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/recipient/show.html.eex:71
+msgid "Image Campaign"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/recipient/show.html.eex:10
+msgid "Recipients List"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/recipient/show.html.eex:68
+msgid "Text Campaign"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/recipient/show.html.eex:11
+msgid "You can remove a contact from list or click to send text or image campaign"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/recipient/show.html.eex:19
+msgid "Your recipients list is empty"
+msgstr ""
+
+#: lib/texting_web/templates/layout/_dashboard_topmenu.html.eex:23
+msgid "Choose a language"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/contact_us/index.html.eex:11
+msgid "Have any question? Feel Free to contact us. Or send us a feedback"
+msgstr ""

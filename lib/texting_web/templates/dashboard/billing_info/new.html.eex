@@ -9,25 +9,25 @@
                     <li class="active">
                       <a href="#profile" data-toggle="tab">
                         <i class="material-icons">credit_card</i>
-                        Credit Card
+                        <%= gettext "Credit Card" %>
                       <div class="ripple-container"></div></a>
                     </li>
                     <li class="">
                       <a href="#add-new-card" data-toggle="tab">
                         <i class="material-icons">fiber_new</i>
-                        Add a new card
+                        <%= gettext "Add a new card" %>
                       <div class="ripple-container"></div></a>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
-      
+
             <div class="card-content">
               <div class="tab-content">
                 <div class="tab-pane active" id="profile">
                   <%= if @has_card do %>
-                  
+
                   <div class="card">
                      <!--  <div class="card-header">
                           <h4 class="card-title">Collapsible Accordion</h4>
@@ -43,7 +43,7 @@
                                       Ending with <%= card.last4 %>   Exp <%= card.exp_month %> / <%= card.exp_year %>
                                       </h4>
                                   </a>
-                                  
+
                                   <%= if @default_card_id == card.id do %>
                                     <button class="btn btn-primary btn-simple btn-xs">DEFAULT</button>
                                   <% else %>
@@ -90,7 +90,7 @@
                                       <%= card.address_zip %>
                                     </div>
                                   </div>
-                                    
+
                                 </div>
                               </div>
                             </div>
@@ -99,17 +99,17 @@
                           </div>
                       </div>
                   </div>
-                 
+
                   <% else %>
-                    <p> No credit card information </p>
+                    <p> <%= gettext "No credit card information" %> </p>
                   <% end  %>
                 </div>
 
                 <div class="tab-pane" id="add-new-card">
                   <div class="card">
                     <div class="card-header">
-                      <h4 class="card-title">Enter your Card information</h4>
-                    </div> 
+                      <h4 class="card-title"><%= gettext "Enter your Card information" %></h4>
+                    </div>
                     <div class="card-content">
                       <div id="card-input">
                         <%= form_for @conn, billing_info_path(@conn, :new), [as: :card_input, id: "payment-form"], fn f -> %>
@@ -121,7 +121,9 @@
                           </div>
                           <!-- Used to display Element errors. -->
                           <div id="card-errors" role="alert"></div>
-                          <%= submit "Submit", class: "btn btn-rose" %>
+                          <%= submit class: "btn btn-rose" do %>
+                            <%= gettext "Submit" %>
+                          <% end %>
                         <% end %>
                       </div>
                     </div>

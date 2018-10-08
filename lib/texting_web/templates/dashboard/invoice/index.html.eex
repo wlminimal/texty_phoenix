@@ -10,13 +10,13 @@
                 <li class="active">
                   <a href="#subscription_invoices" data-toggle="tab">
                     <i class="material-icons">receipt</i>
-                    Subscription Invoices
+                    <%= gettext "Subscription Invoices" %>
                   <div class="ripple-container"></div></a>
                 </li>
                 <li class="">
                   <a href="#buy-credit-invoices" data-toggle="tab">
                     <i class="material-icons">receipt</i>
-                    Buy Credit Invoices
+                    <%= gettext "Buy Credit Invoices" %>
                   <div class="ripple-container"></div></a>
                 </li>
               </ul>
@@ -31,12 +31,12 @@
               <div class="card">
                 <div class="card-content">
                     <%= if @no_upcoming_invoice do %>
-                      <p class="billing-date">No upcoming invoice available</p>
+                      <p class="billing-date"><%= gettext "No upcoming invoice available" %></p>
                       <p class="billing-date"></p>
                     <% else %>
-                      <p class="billing-date">Your next billing date is <%= unit_time_to_normal_time(@next_billing_date) %></p>
-                      <p class="billing-date">Amount due: <%= display_stripe_money(@amount_due) %></p>
-                    
+                      <p class="billing-date"><%= gettext "Your next billing date is" %> <%= unit_time_to_normal_time(@next_billing_date) %></p>
+                      <p class="billing-date"><%= gettext "Amount due" %>: <%= display_stripe_money(@amount_due) %></p>
+
                     <% end %>
                     <%= if Enum.empty?(@invoices) do %>
 
@@ -45,20 +45,20 @@
                     <div class="table-responsive">
                       <table class="table table-striped">
                         <thead>
-                         
+
                           <tr>
-                            <th>Date</th>
-                            <th>Type</th>
-                            <th>Amount</th>
-                            <th>Invoice Number</th>
-                            <th>Description</th>
+                            <th><%= gettext "Date" %></th>
+                            <th><%= gettext "Type" %></th>
+                            <th><%= gettext "Amount" %></th>
+                            <th><%= gettext "Invoice Number" %></th>
+                            <th><%= gettext "Description" %></th>
                           </tr>
                         </thead>
                         <tbody>
                           <%= for invoice <- @invoices do %>
                           <tr>
                             <td><%= display_datetime(invoice.date) %></td>
-                            <td><%= invoice.type %></td> 
+                            <td><%= invoice.type %></td>
                             <td><%= display_stripe_money(invoice.amount) %></td>
                             <td><%= invoice.receipt_number %></td>
                             <td><%= invoice.description %></td>
@@ -73,23 +73,23 @@
               </div>
             </div>
             <!-- Subscription Invoices End -->
-            
+
             <!-- Buy Credit Invoices Start -->
             <div class="tab-pane" id="buy-credit-invoices">
                 <div class="card">
                   <div class="card-content">
                     <%= if Enum.empty?(@charge_history) do %>
-    
+
                       <p>You don't have any invoices.</p>
                     <% else %>
                       <div class="table-responsive">
                         <table class="table table-striped">
                           <thead>
                             <tr>
-                              <th>Date</th>
-                              <th>Amount</th>
-                              <th>Card</th>
-                              <th>Description</th>
+                              <th><%= gettext "Date" %></th>
+                              <th><%= gettext "Amount" %></th>
+                              <th><%= gettext "Card" %></th>
+                              <th><%= gettext "Description" %></th>
                             </tr>
                           </thead>
                           <tbody>

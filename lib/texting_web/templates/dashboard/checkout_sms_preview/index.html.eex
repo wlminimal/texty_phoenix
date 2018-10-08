@@ -57,7 +57,7 @@
             <div class="info-wrapper">
                 <div>
                   <%= if show_buy_credit_button(@user.credits, @credit_used) do %>
-                    <%= button "Buy Credit", method: "get", to: buy_credit_path(@conn, :new), class: "btn btn-primary" %>
+                    <%= button "Buy Credit", method: "get", to: buy_credit_path(@conn, :index), class: "btn btn-primary" %>
                   <% else %>
                     <%= button "Back", method: "get",
                         to: checkout_sms_path(@conn, :show_sms),

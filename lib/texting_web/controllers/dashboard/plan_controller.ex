@@ -12,7 +12,7 @@ defmodule TextingWeb.Dashboard.PlanController do
   # @unit_price_tier_7 2
 
 
-  def new(conn, _params) do
+  def index(conn, _params) do
     user = conn.assigns.current_user
     free_plan_id = System.get_env("FREE_PLAN_ID")
     bronze_plan_id = System.get_env("BRONZE_PLAN_ID")
@@ -22,7 +22,7 @@ defmodule TextingWeb.Dashboard.PlanController do
     diamond_plan_id = System.get_env("DIAMOND_PLAN_ID")
     master_plan_id = System.get_env("MASTER_PLAN_ID")
     grandmaster_plan_id = System.get_env("GRANDMASTER_PLAN_ID")
-    render conn, "new.html",
+    render conn, "index.html",
                  user: user,
                  free_plan_id: free_plan_id,
                  bronze_plan_id: bronze_plan_id,
@@ -59,7 +59,7 @@ defmodule TextingWeb.Dashboard.PlanController do
 
       conn
       |> put_flash(:info, "Downgraded to Free plan")
-      |> redirect(to: plan_path(conn, :new))
+      |> redirect(to: plan_path(conn, :index))
     else
       with {:free_plan, true} <- Finance.user_is_free_plan?(user) do
         # User upgrade Free plan to Paid Plan so create twilio account..
@@ -116,11 +116,11 @@ defmodule TextingWeb.Dashboard.PlanController do
                   Messenger.adjust_phonenumbers(user, twilio)
                   conn
                   |> put_flash(:info, "Your plan is updated successfully!")
-                  |> redirect(to: plan_path(conn, :new))
+                  |> redirect(to: plan_path(conn, :index))
                 {:error, _reason} ->
                   conn
                   |> put_flash(:error, "Something wrong. Please contact us")
-                  |> redirect(to: plan_path(conn, :new))
+                  |> redirect(to: plan_path(conn, :index))
               end
 
             {:error, message} ->

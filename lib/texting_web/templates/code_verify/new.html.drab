@@ -3,32 +3,34 @@
 
   <p class="alert alert-primary" role="alert"><%= get_flash(@conn, :info) %></p>
   <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
- 
+
   <div class="sign-in-flexbox">
 
       <div class="sign-in-flexitem">
         <div class="login-block">
-          <h2 class="signin-header">Texty</h2>
+          <<div class="logo-wrapper">
+            <a href="<%= page_path(@conn, :index) %>"><img src="<%= static_path(@conn, "/images/l1.png") %>" style="height: 100px;" alt=""></a>
+          </div>
           <div class="card">
               <div class="card-header card-header-icon" data-background-color="purple">
-                <i class="material-icons">confirmation_number</i><span class="sign-in-header">Enter your Code</span>
+                <i class="material-icons">confirmation_number</i><span class="sign-in-header"><%= gettext "Enter your Code" %></span>
               </div>
               <div class="card-content">
-                <p class="card-title">Please enter your 4 digits code.</p>
-                
+                <p class="card-title"><%= gettext "Please enter your 4 digits code." %></p>
+
                   <%= form_for @conn, code_verify_path(@conn, :create), [as: :verify_check_code, class: "ui form"], fn f -> %>
                     <div class="form-group label-floating">
-                      <label class="control-label">Code</label>
+                      <label class="control-label"><%= gettext "Code" %></label>
                       <%= text_input(f, :code_number, required: true, autofocus: "true", class: "form-control") %>
                       <%= error_message(f, :code_number) %>
                     </div>
-                    <button type="submit" class="btn btn-sign-in">Check</button>
+                    <button type="submit" class="btn btn-sign-in"><%= gettext "Check" %></button>
                   <% end %>
-                 
+
                   <div class="">
                     <form>
                       <input type="hidden" name="phone_number" value="<%= @phone_number %>">
-                      <button class="btn btn-danger" drab-click="send_verify_code">Send code again</button>
+                      <button class="btn btn-danger" drab-click="send_verify_code"><%= gettext "Send code again" %></button>
                       <p id="phone-verify-message"></p>
                     </form>
                   </div>
@@ -37,7 +39,7 @@
         </div>
       </div>
   </div>
-  
+
 </section>
 
 

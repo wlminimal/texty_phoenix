@@ -12,34 +12,34 @@
             </div>
             <div class="card">
                 <div class="card-header card-header-icon" data-background-color="purple">
-                  <i class="material-icons">contacts</i><span class="sign-in-header">Sign up</span>
+                  <i class="material-icons">contacts</i><span class="sign-in-header"><%= gettext "Sign up" %></span>
                 </div>
                 <div class="card-content">
-                  <p class="card-title">Sign up and <strong>get 100 credits for free</strong>. No credit card required.</p>
+                  <p class="card-title"><%= gettext "Sign up and" %> <strong><%= gettext "get 100 credits for free" %></strong>. <%= gettext "No credit card required." %></p>
 
                       <%= form_for @changeset, sign_up_path(@conn, :create), [as: :register, class: "ui form"], fn f -> %>
                       <div class="form-group label-floating">
-                          <label class="control-label">First name</label>
+                          <label class="control-label"><%= gettext "First name" %></label>
                           <%= text_input f, :first_name, required: true, class: "form-control", autofocus: "true" %>
                           <%= error_message(f, :first_name) %>
                       </div>
 
                       <div class="form-group label-floating">
-                        <label class="control-label">Last name</label>
+                        <label class="control-label"><%= gettext "Last name" %></label>
                         <%= text_input f, :last_name, required: true, class: "form-control" %>
                         <%= error_message(f, :last_name) %>
                       </div>
 
                       <div class="form-group label-floating">
-                        <label class="control-label">Email</label>
+                        <label class="control-label"><%= gettext "Email" %></label>
                         <%= email_input f, :email, required: "true", autocapitalize: "none",  class: "form-control" %>
                         <%= error_message(f, :email) %>
                       </div>
-                      <button type="submit" class="btn btn-sign-in">Sign up</button>
+                      <button type="submit" class="btn btn-sign-in"><%= gettext "Sign up" %></button>
                     <% end %>
 
                     <div class="">
-                     <span class="ui small header">Already a member? </span><a class="btn btn-simple" href="/sign-in">Sign in</a>
+                     <span class="ui small header"><%= gettext "Already a member?" %> </span><a class="btn btn-simple" href="/sign-in"><%= gettext "Sign in" %></a>
                     </div>
                 </div>
             </div>

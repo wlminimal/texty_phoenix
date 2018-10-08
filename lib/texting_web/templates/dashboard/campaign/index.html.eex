@@ -1,6 +1,6 @@
 <div class="container">
-  <h3 style="text-align: center;">Start a Campaign</h3>
-  <p style="text-align: center;">Send text messages or image messages by using two methods.</p>
+  <h3 style="text-align: center;"><%= gettext "Start a Campaign" %></h3>
+  <p style="text-align: center;"><%= gettext "Send text messages or image messages by using two methods." %></p>
   <div class="campaign-flexbox">
     <div class="campaign-flexitem">
 
@@ -9,14 +9,14 @@
           <i class="material-icons">contact_phone</i>
         </div>
         <div class="card-content">
-          <h4 class="card-title">Phonebook</h4>
+          <h4 class="card-title"><%= gettext "Phonebook" %></h4>
           <br>
           <br>
-          <p>Start by adding recipients from your contacts. You can add individual contact one by one or add whole
-            phonebooks to recipients list.
+          <p><%= gettext "Start by adding recipients from your contacts. You can add individual contact one by one or add whole
+            phonebooks to recipients list." %>
           </p>
           <br>
-          <a href="<%= phonebook_path(@conn, :index) %>" class="btn btn-primary">Go to Phonebook</a>
+          <a href="<%= phonebook_path(@conn, :index) %>" class="btn btn-primary"><%= gettext "Go to Phonebook" %></a>
         </div>
       </div>
     </div>
@@ -26,14 +26,14 @@
           <i class="material-icons">cloud_upload</i>
         </div>
         <div class="card-content">
-          <h4 class="card-title">Uploading Contacts</h4>
+          <h4 class="card-title"><%= gettext "Uploading Contacts" %></h4>
           <br>
           <br>
-          <p>Start by uploading contacts from your computer. You can upload csv file to existing phonebook or
-             you can create a new phonebook.
+          <p><%= gettext "Start by uploading contacts from your computer. You can upload csv file to existing phonebook or
+             you can create a new phonebook." %>
           </p>
           <br>
-          <a href="<%= upload_contact_path(@conn, :new) %>" class="btn btn-primary">Go to Upload</a>
+          <a href="<%= upload_contact_path(@conn, :new) %>" class="btn btn-primary"><%= gettext "Go to Upload" %></a>
         </div>
       </div>
     </div>

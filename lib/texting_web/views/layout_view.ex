@@ -24,6 +24,7 @@ defmodule TextingWeb.Layout.PageTitle do
   alias TextingWeb.Dashboard.Admin.{CustomerView}
   @app_name "Texty"
 
+
   def for({view, action, assigns}) do
     {view, action, assigns}
     |> get()
@@ -231,5 +232,9 @@ defmodule TextingWeb.LayoutView do
     view = view_module(conn)
     action = action_name(conn)
     PageTitle.for({view, action, conn.assigns})
+  end
+
+  def switch_locale_path(_conn, locale, language) do
+    "<a href=\"?locale=#{locale}\">#{language}</a>" |> Phoenix.HTML.raw()
   end
 end

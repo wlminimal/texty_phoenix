@@ -7,20 +7,20 @@
                 <li class="active">
                   <a href="#profile" data-toggle="tab">
                     <i class="material-icons">person</i>
-                    Account Info
+                    <%= gettext "Account Info" %>
                   <div class="ripple-container"></div></a>
                 </li>
                 <li class="">
                   <a href="#business-phone" data-toggle="tab">
                     <i class="material-icons">contact_phone</i>
-                    Business Info
+                    <%= gettext "Business Info" %>
                   <div class="ripple-container"></div></a>
                 </li>
               </ul>
             </div>
           </div>
         </div>
-  
+
         <div class="card-content">
           <div class="tab-content">
             <div class="tab-pane active" id="profile">
@@ -30,7 +30,7 @@
                     <td>
                       <div class="">
                         <label>
-                        Name
+                          <%= gettext "Name" %>
                         </label>
                       </div>
                     </td>
@@ -45,7 +45,7 @@
                     <td>
                       <div class="">
                         <label>
-                          Email
+                          <%= gettext "Email" %>
                         </label>
                       </div>
                     </td>
@@ -60,7 +60,7 @@
                     <td>
                       <div class="">
                         <label>
-                          Phone Number
+                          <%= gettext "Phone Number" %>
                         </label>
                       </div>
                     </td>
@@ -73,13 +73,13 @@
                     <td>
                       <div class="">
                         <label>
-                          Credit
+                          <%= gettext "Credit" %>
                         </label>
                       </div>
                     </td>
                     <td><%= @user.credits %> credits</td>
                     <td class="td-actions text-right">
-                      <a type="button" rel="tooltip" title="Buy Creidt" href="<%= buy_credit_path(@conn, :new) %>" class="btn btn-primary btn-simple btn-xs">
+                      <a type="button" rel="tooltip" title="Buy Creidt" href="<%= buy_credit_path(@conn, :index) %>" class="btn btn-primary btn-simple btn-xs">
                         <i class="material-icons">add</i>
                       </a>
                     </td>
@@ -87,17 +87,17 @@
                   <tr>
                     <td>
                       <div>
-                        <label>Plan</label>
+                        <label><%= gettext "Plan" %></label>
                       </div>
                     </td>
                     <td><%= @user.stripe.plan_name %></td>
                     <td class="td-actions text-right">
                       <%= if @user.stripe.plan_name !== "Free" do %>
-                        <a href="<%= plan_path(@conn, :new) %>" rel="tooltip" title="If you want to cancel plan, go to Plan page and select Free Plan" class="btn btn-danger btn-simple btn-xs">
+                        <a href="<%= plan_path(@conn, :index) %>" rel="tooltip" title="If you want to cancel plan, go to Plan page and select Free Plan" class="btn btn-danger btn-simple btn-xs">
                           <i class="material-icons">delete_forever</i>
                         </a>
                       <% end %>
-                      <a type="button" rel="tooltip" title="Change Plan" href="<%= plan_path(@conn, :new) %>" class="btn btn-primary btn-simple btn-xs">
+                      <a type="button" rel="tooltip" title="Change Plan" href="<%= plan_path(@conn, :index) %>" class="btn btn-primary btn-simple btn-xs">
                         <i class="material-icons">autorenew</i>
                       </a>
                     </td>
@@ -113,7 +113,7 @@
                     <td>
                       <div class="">
                         <label>
-                          Business Phone Number
+                          <%= gettext "Business Phone Number" %>
                         </label>
                       </div>
                     </td>
@@ -122,14 +122,14 @@
                         <% end %>
                     </td>
                     <td class="td-actions text-right">
-                      <a type="button" rel="tooltip" title="Upgrade Plan" href="<%= plan_path(@conn, :new) %>" class="btn btn-primary btn-simple btn-xs">
+                      <a type="button" rel="tooltip" title="Upgrade Plan" href="<%= plan_path(@conn, :index) %>" class="btn btn-primary btn-simple btn-xs">
                         <i class="material-icons">+</i>
                       </a>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <div><label for="">Welcome Message</label></div>
+                      <div><label for=""><%= gettext "Welcome Message" %></label></div>
                     </td>
                     <td>
                       <%= if @user.welcome_message == nil do %>
@@ -148,7 +148,7 @@
                           <i class="material-icons">edit</i>
                         </a>
                       <% end %>
-                      
+
                     </td>
                   </tr>
                 </tbody>

@@ -14,15 +14,24 @@
                       <!-- Menu Area -->
                       <div class="collapse navbar-collapse" id="ca-navbar">
                           <ul class="navbar-nav ml-auto" id="nav">
-                              <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                              <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                              <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-                              <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
-                              <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                              <li class="nav-item"><a class="nav-link" id="sign-in-link" href="/sign-in">Sign In</a></li>
-                          </ul>
+                              <li class="nav-item"><a class="nav-link" href="#home"><%= gettext "Home" %></a></li>
+                              <li class="nav-item"><a class="nav-link" href="#about"><%= gettext "About" %></a></li>
+                              <li class="nav-item"><a class="nav-link" href="#features"><%= gettext "Features" %></a></li>
+                              <li class="nav-item"><a class="nav-link" href="#pricing"><%= gettext "Pricing" %></a></li>
+                              <li class="nav-item"><a class="nav-link" href="#contact"><%= gettext "Contact" %></a></li>
+                              <li class="nav-item"><a class="nav-link" id="sign-in-link" href="/sign-in"><%= gettext "Sign In" %></a></li>
+						  						</ul>
+												<!--	<div class="dropdown">
+														<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															Choose a language
+														</button>
+														<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+															<a class="dropdown-item" href="#">English</a>
+															<a class="dropdown-item" href="#">Korean</a>
+														</div>
+													</div> -->
                           <div class="sing-up-button d-lg-none">
-                              <a href="/sign-up">Sign up free</a>
+                              <a href="/sign-up"><%= gettext "Sign up free" %></a>
                           </div>
                       </div>
                   </nav>
@@ -31,7 +40,7 @@
           <!-- Signup btn -->
           <div class="col-12 col-lg-2">
               <div class="sing-up-button d-none d-lg-block">
-                  <a href="/sign-up">Sign up free</a>
+                  <a href="/sign-up"><%= gettext "Sign up free" %></a>
               </div>
           </div>
       </div>
@@ -44,15 +53,15 @@
 			<div class="row h-100 align-items-center">
 					<div class="col-10 col-md">
 							<div class="wellcome-heading">
-								<h2>new & easiest way</h2>
-								<h2>to engage customers</h2>
+								<h2> <%= gettext "new & easiest way" %></h2>
+								<h2><%= gettext "to engage customers" %></h2>
 								<h3>T</h3>
 								<br>
-								<p class="hero-desc">Send massive texts or image messages to your customers. </p>
-								<p class="hero-desc">Free to start. No credit card required. </p>
+								<p class="hero-desc"><%= gettext "Send massive texts or image messages to your customers." %> </p>
+								<p class="hero-desc"><%= gettext "Free to start. No credit card required." %> </p>
 							</div>
 							<div class="get-start-area">
-								<a href="/sign-up" class="btn btn-primary">Get 100 credits for free</a>
+								<a href="/sign-up" class="btn btn-primary"><%= gettext "Get 100 credits for free" %></a>
 							</div>
 					</div>
 					<div class="col-2 col-md">
@@ -77,7 +86,7 @@
                 <div class="col-12">
                     <!-- Section Heading Area -->
                     <div class="section-heading text-center">
-                        <h2>Why you should use text marketing</h2>
+                        <h2><%= gettext "Why you should use text marketing" %></h2>
                         <div class="line-shape"></div>
                     </div>
                 </div>
@@ -90,9 +99,8 @@
                         <div class="single-icon">
                             <i class="ti-mobile" aria-hidden="true"></i>
                         </div>
-                        <h4>Open rate over 99%</h4>
-                        <p>Every person has a cell phone and everyone checks their messages upon arrival.
-												</p>
+                        <h4><%= gettext "Open rate over 99%" %></h4>
+                        <p><%= gettext "Every person has a cell phone and everyone checks their messages upon arrival." %></p>
                     </div>
                 </div>
                 <!-- Single Special Area -->
@@ -101,8 +109,8 @@
                         <div class="single-icon">
                             <i class="ti-text" aria-hidden="true"></i>
                         </div>
-                        <h4>Send special offer by text messages</h4>
-                        <p>You can notify your customers about sales, discount coupons, special events and anything else with a single click.</p>
+                        <h4><%= gettext "Send special offer by text messages" %></h4>
+                        <p><%= gettext "You can notify your customers about sales, discount coupons, special events and anything else with a single click." %></p>
                     </div>
                 </div>
                 <!-- Single Special Area -->
@@ -111,8 +119,8 @@
                         <div class="single-icon">
                             <i class="ti-gallery" aria-hidden="true"></i>
                         </div>
-                        <h4>Send pictures of new products by image messages</h4>
-                        <p>Even better, send customized image messages to catch your customers' attention with new product arrivals and sales</p>
+                        <h4><%= gettext "Send pictures of new products by image messages" %></h4>
+                        <p><%= gettext "Even better, send customized image messages to catch your customers' attention with new product arrivals and sales" %></p>
                     </div>
                 </div>
             </div>
@@ -128,13 +136,14 @@
                     </div>
                     <div class="col-lg-6 col-xl-5 ml-xl-auto">
                         <div class="special_description_content">
-                            <h2><span class="span-italic">Texty Marketing</span> should be the first choice of your marketing strategy.</h2>
-                            <p>Most businesses use email for their marketing strategy, because it is free. However most emails end up in the spam folder and customers ignore them, but everyone checks their messages.</p>
+                            <h2><span class="span-italic"><%= gettext "Texty Marketing" %></span> <%= gettext "should be the first choice of your marketing strategy." %></h2>
+														<p><%= gettext "Most businesses use email for their marketing strategy,
+															because it is free. However most emails end up in the spam folder and customers ignore them, but everyone checks their messages." %></p>
                             <div class="app-download-area">
                                 <div class="app-download-btn wow fadeInUp" data-wow-delay="0.2s">
                                     <!-- Google Store Btn -->
                                     <a href="/sign-up">
-                                        <p class="mb-0">Get 100 Credits for free</p>
+                                        <p class="mb-0"><%= gettext "Get 100 Credits for free" %></p>
                                     </a>
                                 </div>
                             </div>
@@ -153,7 +162,7 @@
 					<div class="col-12">
 							<!-- Heading Text -->
 							<div class="section-heading text-center">
-									<h2>Awesome Features</h2>
+									<h2><%= gettext "Awesome Features" %></h2>
 									<div class="line-shape"></div>
 							</div>
 					</div>
@@ -164,48 +173,48 @@
 					<div class="col-12 col-sm-6 col-lg-4">
 							<div class="single-feature">
 									<i class="ti-infinite" aria-hidden="true"></i>
-									<h5>Unlimited Contacts</h5>
-									<p>You can add as many contacts as you want. There is no limit.</p>
+									<h5><%= gettext "Unlimited Contacts" %></h5>
+									<p><%= gettext "You can add as many contacts as you want. There is no limit." %></p>
 							</div>
 					</div>
 					<!-- Single Feature Start -->
 					<div class="col-12 col-sm-6 col-lg-4">
 							<div class="single-feature">
 									<i class="ti-pulse" aria-hidden="true"></i>
-									<h5>Fast and Reliable</h5>
-									<p>We have a delivery rate of 99% .</p>
+									<h5><%= gettext "Fast and Reliable" %></h5>
+									<p><%= gettext "We have a delivery rate of 99%." %></p>
 							</div>
 					</div>
 					<!-- Single Feature Start -->
 					<div class="col-12 col-sm-6 col-lg-4">
 							<div class="single-feature">
 									<i class="ti-dashboard" aria-hidden="true"></i>
-									<h5>Simple to use</h5>
-									<p>Create contacts, add them to your list and click send.</p>
+									<h5><%= gettext "Simple to use" %></h5>
+									<p><%= gettext "Create contacts, add them to your list and click send." %></p>
 							</div>
 					</div>
 					<!-- Single Feature Start -->
 					<div class="col-12 col-sm-6 col-lg-4">
 							<div class="single-feature">
 									<i class="ti-mobile" aria-hidden="true"></i>
-									<h5>Dedicated Phone number</h5>
-									<p>You can choose between 1 to 10 dedicated phone numbers for your business depending on your plan.</p>
+									<h5><%= gettext "Dedicated Phone number" %></h5>
+									<p><%= gettext "You can choose between 1 to 10 dedicated phone numbers for your business depending on your plan." %></p>
 							</div>
 					</div>
 					<!-- Single Feature Start -->
 					<div class="col-12 col-sm-6 col-lg-4">
 							<div class="single-feature">
 									<i class="ti-location-pin" aria-hidden="true"></i>
-									<h5>Multiple Asian language</h5>
-									<p>You can send  messages in either Chinese, Japanese and Korean.</p>
+									<h5><%= gettext "Multiple Asian language" %></h5>
+									<p><%= gettext "You can send  messages in either Chinese, Japanese and Korean." %></p>
 							</div>
 					</div>
 					<!-- Single Feature Start -->
 					<div class="col-12 col-sm-6 col-lg-4">
 							<div class="single-feature">
 									<i class="ti-stats-up" aria-hidden="true"></i>
-									<h5>Auto Scaler</h5>
-									<p>Distribute messages across a group of dedicated phone numbers to reach large audiences in a short amount of time.</p>
+									<h5><%= gettext "Auto Scaler" %></h5>
+									<p><%= gettext "Distribute messages across a group of dedicated phone numbers to reach large audiences in a short amount of time." %></p>
 							</div>
 					</div>
 			</div>
@@ -222,9 +231,9 @@
 					<div class="col-12">
 							<!-- Heading Text  -->
 							<div class="section-heading text-center">
-									<h2>Pricing Plan</h2>
+									<h2><%= gettext "Pricing Plan" %></h2>
                   <div class="line-shape"></div>
-                  <p class="plan-desc">You will need to subscribe to plan & purchase credits separately.</p>
+                  <p class="plan-desc"><%= gettext "You will need to subscribe to plan & purchase credits separately." %></p>
 							</div>
 					</div>
 			</div>
@@ -235,15 +244,15 @@
 							<div class="single-price-plan text-center">
 									<!-- Package Text  -->
 									<div class="package-plan">
-											<h5>Free Plan</h5>
+											<h5><%= gettext "Free Plan" %></h5>
 											<div class="ca-price d-flex justify-content-center">
 													<span></span>
-													<h4>Free</h4>
+													<h4><%= gettext "Free" %></h4>
 											</div>
 									</div>
 									<div class="package-description">
-                      <p>0 Dedicated phone number</p>
-											<p>100 Free credits</p>
+                      <p><%= gettext "0 Dedicated phone number" %></p>
+											<p><%= gettext "100 Free credits" %></p>
 									</div>
 
 							</div>
@@ -253,16 +262,16 @@
 							<div class="single-price-plan text-center">
 									<!-- Package Text  -->
 									<div class="package-plan">
-											<h5>Bronze Plan</h5>
+											<h5><%= gettext "Bronze Plan" %></h5>
 											<div class="ca-price d-flex justify-content-center">
 													<span>$</span>
                           <h4>5</h4>
-                          <span> / month</span>
+                          <span> / <%= gettext "month" %></span>
 											</div>
 									</div>
 									<div class="package-description">
-											<p>1 Dedicated phone number</p>
-											<p>Daily message limit is 250 messages</p>
+											<p><%= gettext "1 Dedicated phone number" %></p>
+											<p><%= gettext "Daily message limit is 250 messages" %></p>
 									</div>
 
 							</div>
@@ -273,16 +282,16 @@
 							<div class="single-price-plan active text-center">
 									<!-- Package Text  -->
 									<div class="package-plan">
-											<h5>Silver Plan</h5>
+											<h5><%= gettext "Silver Plan" %></h5>
 											<div class="ca-price d-flex justify-content-center">
 													<span>$</span>
                           <h4>10 </h4>
-                          <span> / month</span>
+                          <span> / <%= gettext "month" %></span>
 											</div>
 									</div>
 									<div class="package-description">
-											<p>3 Dedicated phone number</p>
-											<p>Daily message limit is 750 messages</p>
+											<p><%= gettext "3 Dedicated phone number" %></p>
+											<p><%= gettext "Daily message limit is 750 messages" %></p>
 									</div>
 
 							</div>
@@ -292,16 +301,16 @@
 							<div class="single-price-plan text-center">
 									<!-- Package Text  -->
 									<div class="package-plan">
-											<h5>Gold Plan</h5>
+											<h5><%= gettext "Gold Plan" %></h5>
 											<div class="ca-price d-flex justify-content-center">
 													<span>$</span>
                           <h4>15</h4>
-                          <span> / month</span>
+                          <span> / <%= gettext "month" %></span>
 											</div>
 									</div>
 									<div class="package-description">
-											<p>5 Dedicated phone number</p>
-											<p>Daily message limit is 1250 messages</p>
+											<p><%= gettext "5 Dedicated phone number" %></p>
+											<p><%= gettext "Daily message limit is 1250 messages" %></p>
 									</div>
 
 							</div>
@@ -313,9 +322,9 @@
 					<div class="col-12">
 							<!-- Heading Text  -->
 							<div class="section-heading text-center">
-									<h2>Credit Price</h2>
+									<h2><%= gettext "Credit Price" %></h2>
                   <div class="line-shape"></div>
-                  <p class="plan-desc">Pay as you go.</p>
+                  <p class="plan-desc"><%= gettext "Pay as you go." %></p>
 							</div>
 					</div>
 			</div>
@@ -326,16 +335,16 @@
 							<div class="single-price-plan text-center">
 									<!-- Package Text  -->
 									<div class="package-plan">
-											<h5>700 credits</h5>
+											<h5><%= gettext "700 credits" %></h5>
 											<div class="ca-price d-flex justify-content-center">
 													<span>$</span>
 													<h4>35</h4>
 											</div>
 									</div>
 									<div class="package-description">
-											  <p>Up to 700 text messages</p>
+											  <p><%= gettext "Up to 700 text messages" %></p>
 
-											<p>(or) Up to 233 image messages</p>
+											<p><%= gettext "(or) Up to 233 image messages" %></p>
 									</div>
 
 							</div>
@@ -345,15 +354,15 @@
 							<div class="single-price-plan text-center">
 									<!-- Package Text  -->
 									<div class="package-plan">
-											<h5>1125 credits</h5>
+											<h5><%= gettext "1125 credits" %></h5>
 											<div class="ca-price d-flex justify-content-center">
 													<span>$</span>
 													<h4>55</h4>
 											</div>
 									</div>
 									<div class="package-description">
-											<p>Up to 1125 text messages</p>
-											<p>(or) Up to 375 image messages</p>
+											<p><%= gettext "Up to 1125 text messages" %></p>
+											<p><%= gettext "(or) Up to 375 image messages" %></p>
 									</div>
 
 							</div>
@@ -364,15 +373,15 @@
 							<div class="single-price-plan active text-center">
 									<!-- Package Text  -->
 									<div class="package-plan">
-											<h5>2000 credits</h5>
+											<h5><%= gettext "2000 credits" %></h5>
 											<div class="ca-price d-flex justify-content-center">
 													<span>$</span>
 													<h4>95</h4>
 											</div>
 									</div>
 									<div class="package-description">
-											<p>Up to 2000 text messages</p>
-											<p>(or) Up to 666 image messages</p>
+											<p><%= gettext "Up to 2000 text messages" %></p>
+											<p><%= gettext "(or) Up to 666 image messages" %></p>
 									</div>
 
 							</div>
@@ -382,15 +391,15 @@
 							<div class="single-price-plan text-center">
 									<!-- Package Text  -->
 									<div class="package-plan">
-											<h5>2900 credits</h5>
+											<h5><%= gettext "2900 credits" %></h5>
 											<div class="ca-price d-flex justify-content-center">
 													<span>$</span>
 													<h4>135</h4>
 											</div>
 									</div>
 									<div class="package-description">
-											<p>Up to 2900 text messages</p>
-											<p>(or) Up to 966 image messages</p>
+											<p><%= gettext "Up to 2900 text messages" %></p>
+											<p><%= gettext "(or) Up to 966 image messages" %></p>
 									</div>
 
 							</div>
@@ -406,13 +415,13 @@
 			<div class="row align-items-center">
 					<div class="col-md-8">
 							<div class="membership-description">
-									<h2>Subscribe to our monthly plan</h2>
-									<p>Find the perfect plan for you — 100% satisfaction guaranteed.</p>
+									<h2><%= gettext "Subscribe to our monthly plan" %></h2>
+									<p><%= gettext "Find the perfect plan for you — 100% satisfaction guaranteed." %></p>
 							</div>
 					</div>
 					<div class="col-md-4">
 							<div class="get-started-button wow bounceInDown" data-wow-delay="0.5s">
-									<a href="/sign-up">Get Started</a>
+									<a href="/sign-up"><%= gettext "Get Started" %></a>
 							</div>
 					</div>
 			</div>
@@ -427,14 +436,14 @@
 					<div class="col-md-6">
 							<!-- Heading Text  -->
 							<div class="section-heading">
-									<h2>Get in touch with us!</h2>
+									<h2><%= gettext "Get in touch with us!" %></h2>
 									<div class="line-shape"></div>
 							</div>
 							<div class="footer-text">
-									<p>If you have a question, feel free to send a message. We will get back to you within 24 hours.</p>
+									<p><%= gettext "If you have a question, feel free to send a message. We will get back to you within 24 hours." %></p>
 							</div>
 														<div class="email-text">
-									<p><span>Email:</span> info@texty.marketing</p>
+									<p><span><%= gettext "Email" %>:</span> info@texty.marketing</p>
 							</div>
 					</div>
 					<div class="col-md-6">
@@ -443,21 +452,21 @@
 								<div class="card-content">
 									<%= form_for @conn, page_path(@conn, :create), [as: :contact_form], fn f -> %>
 										<div class="form-group label-floating">
-												<label class="control-label">Your Name</label>
+												<label class="control-label"><%= gettext "Your Name" %></label>
 												<%= text_input f, :name, id: "name", class: "form-control", required: true %>
 										</div>
 										<div class="form-group label-floating">
-												<label class="control-label">Your Email</label>
+												<label class="control-label"><%= gettext "Your Email" %></label>
 												<%= email_input	f, :email, id: "email", class: "form-control", required: true %>
 										</div>
 
 										<div class="form-group label-floating">
-												<label class="control-label">Your Message *</label>
+												<label class="control-label"><%= gettext "Your Message" %> *</label>
 												<%= textarea f, :message, class: "form-control", cols: "30", id: "message", rows: "4", required: true %>
 										</div>
 
 
-										<button type="submit" class="btn submit-btn">Submit</button>
+										<button type="submit" class="btn submit-btn"><%= gettext "Send" %></button>
 									<% end %>
 								</div>
 							</div>

@@ -1,3 +1,19 @@
+.btn-secondary {
+  color: #fff;
+  background-color: transparent;
+  border-color: #FFFFFF;
+}
+
+.btn, .btn:hover, .btn:focus, .btn:active, .btn.active, .btn:active:focus, .btn:active:hover, .btn.active:focus, .btn.active:hover, .open > .btn.dropdown-toggle, .open > .btn.dropdown-toggle:focus, .open > .btn.dropdown-toggle:hover, .btn.btn-default, .btn.btn-default:hover, .btn.btn-default:focus, .btn.btn-default:active, .btn.btn-default.active, .btn.btn-default:active:focus, .btn.btn-default:active:hover, .btn.btn-default.active:focus, .btn.btn-default.active:hover, .open > .btn.btn-default.dropdown-toggle, .open > .btn.btn-default.dropdown-toggle:focus, .open > .btn.btn-default.dropdown-toggle:hover, .navbar .navbar-nav > li > a.btn, .navbar .navbar-nav > li > a.btn:hover, .navbar .navbar-nav > li > a.btn:focus, .navbar .navbar-nav > li > a.btn:active, .navbar .navbar-nav > li > a.btn.active, .navbar .navbar-nav > li > a.btn:active:focus, .navbar .navbar-nav > li > a.btn:active:hover, .navbar .navbar-nav > li > a.btn.active:focus, .navbar .navbar-nav > li > a.btn.active:hover, .open > .navbar .navbar-nav > li > a.btn.dropdown-toggle, .open > .navbar .navbar-nav > li > a.btn.dropdown-toggle:focus, .open > .navbar .navbar-nav > li > a.btn.dropdown-toggle:hover, .navbar .navbar-nav > li > a.btn.btn-default, .navbar .navbar-nav > li > a.btn.btn-default:hover, .navbar .navbar-nav > li > a.btn.btn-default:focus, .navbar .navbar-nav > li > a.btn.btn-default:active, .navbar .navbar-nav > li > a.btn.btn-default.active, .navbar .navbar-nav > li > a.btn.btn-default:active:focus, .navbar .navbar-nav > li > a.btn.btn-default:active:hover, .navbar .navbar-nav > li > a.btn.btn-default.active:focus, .navbar .navbar-nav > li > a.btn.btn-default.active:hover, .open > .navbar .navbar-nav > li > a.btn.btn-default.dropdown-toggle, .open > .navbar .navbar-nav > li > a.btn.btn-default.dropdown-toggle:focus, .open > .navbar .navbar-nav > li > a.btn.btn-default.dropdown-toggle:hover {
+  background-color: transparent;
+  color: #FFFFFF;
+}
+
+.btn-secondary:hover {
+  color: #fff;
+  background-color: transparent;
+  border-color: #FFFFFF;
+}
 
 .wellcome-heading > h2 {
   font-size: 45px;
@@ -50,7 +66,7 @@ section#features {
 }
 
 .menu_area #nav .nav-link#sign-in-link:hover {
-  
+
   color: #222222;
   border-color: transparent;
   -webkit-transition-duration: 500ms;
@@ -83,7 +99,7 @@ section#features {
   z-index: 9;
   bottom: 0;
   top: 70px;
-  right: -200px;  
+  right: -200px;
   background-image: url("../images/mobile-bg.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -119,7 +135,7 @@ section#features {
   .navbar .navbar-collapse.collapse, .navbar .navbar-collapse.collapsing {
     display: none !important;
   }
-  
+
   .navbar .navbar-collapse.collapse.in {
     display: block !important;
   }
@@ -271,7 +287,7 @@ section#features {
 
 .terms-logo-block {
   margin: 50px auto;
-  
+
 }
 .signin-header > a {
   color: #89229b;

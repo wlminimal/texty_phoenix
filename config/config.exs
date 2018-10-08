@@ -12,6 +12,9 @@ config :texting,
 config :texting, Texting.Repo,
   loggers: [Appsignal.Ecto, Ecto.LogEntry]
 
+config :texting, TextingWeb.Gettext,
+  locales: ~w(en ko)
+
 # Configures the endpoint
 config :texting, TextingWeb.Endpoint,
   url: [host: "localhost"],

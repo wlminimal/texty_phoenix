@@ -13,21 +13,21 @@
 
             <div class="card">
                 <div class="card-header card-header-icon" data-background-color="purple">
-                  <i class="material-icons">contacts</i><span class="sign-in-header">Sign in to dashboard</span>
+                  <i class="material-icons">contacts</i><span class="sign-in-header"><%= gettext "Sign in to dashboard" %></span>
                 </div>
                 <div class="card-content">
-                  <p class="card-title">Please enter your sign-in email. We will send you an one time sign in link by email.</p>
+                  <p class="card-title"><%= gettext "Please enter your sign-in email. We will send you an one time sign in link by email." %></p>
 
                     <%= form_for @conn, sign_in_path(@conn, :new), [as: :auth, class: "ui form"], fn f -> %>
                       <div class="form-group label-floating">
-                        <label class="control-label">Email</label>
+                        <label class="control-label"><%= gettext "Email" %></label>
                         <%= email_input f, :email, required: "true", autocapitalize: "none", autofocus: "true", class: "form-control" %>
                       </div>
-                      <button type="submit" class="btn btn-sign-in">Sign in</button>
+                      <button type="submit" class="btn btn-sign-in"><%= gettext "Sign in" %></button>
                     <% end %>
 
                     <div class="">
-                     <span class="ui small header">Need an account? </span><a class="btn btn-simple" href="/sign-up">Sign up</a>
+                     <span class="ui small header"><%= gettext "Need an account?" %> </span><a class="btn btn-simple" href="/sign-up"><%= gettext "Sign up" %></a>
                     </div>
                 </div>
             </div>

@@ -85,7 +85,8 @@ defmodule Texting.Mixfile do
       {:inquisitor, "~> 0.5.0"},
 
       # Parse xlsx
-      {:xlsxir, "~> 1.6"}
+      {:xlsxir, "~> 1.6"},
+
 
     ]
   end

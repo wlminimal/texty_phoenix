@@ -6,29 +6,29 @@
         </div>
 
         <div class="card-content">
-          <h2 class="card-title">Contact</h2>
+          <h2 class="card-title"><%= gettext "Contact" %></h2>
           <br>
-          <p>Have any question? Feel Free to contact us. Or send us a feedback</p>
+          <p><%= gettext "Have any question? Feel Free to contact us. Or send us a feedback" %></p>
           <br>
           <%= form_for @conn, contact_us_path(@conn, :create), [as: :contact_us], fn f -> %>
 						<div class="form-group label-floating">
-								<label class="control-label">Your Name</label>
+								<label class="control-label"><%= gettext "Name" %></label>
 								<%= text_input f, :name, id: "name", class: "form-control", required: true %>
 						</div>
 						<div class="form-group label-floating">
-								<label class="control-label">Your Email</label>
+								<label class="control-label"><%= gettext "Email" %></label>
 								<%= email_input	f, :email, id: "email", class: "form-control", required: true %>
 						</div>
 
 						<div class="form-group label-floating">
-								<label class="control-label">Your Message *</label>
+								<label class="control-label"><%= gettext "Your Message" %> *</label>
 								<%= textarea f, :message, class: "form-control", cols: "30", id: "message", rows: "4", required: true %>
 						</div>
 
-					
-						<button type="submit" class="btn btn-primary">Submit</button>
+
+						<button type="submit" class="btn btn-primary"><%= gettext "Submit" %></button>
 					<% end %>
-          
+
         </div>
     </div>
   </div>

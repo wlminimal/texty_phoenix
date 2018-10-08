@@ -22,7 +22,7 @@ This page will be hit by who has no card information.
         conn
         |> put_flash(:info, "We got your card information!, Now choose your plan.")
         |> delete_session(:redirect_from_plan_page)
-        |> redirect(to: plan_path(conn, :new))
+        |> redirect(to: plan_path(conn, :index))
       nil ->
         amount = get_session(conn, :amount_to_pay)
         description = get_session(conn, :amount_description)
@@ -45,7 +45,7 @@ This page will be hit by who has no card information.
             conn
             |> delete_session(:buy_credit_amount)
             |> put_flash(:error, "Can't buy credit, Please check card information.")
-            |> redirect(to: buy_credit_path(conn, :new))
+            |> redirect(to: buy_credit_path(conn, :index))
         end
     end
   end
@@ -53,6 +53,6 @@ This page will be hit by who has no card information.
   def create(conn, _params) do
     conn
     |> put_flash(:error, "Sometshing went wrong!")
-    |> redirect(to: buy_credit_path(conn, :new))
+    |> redirect(to: buy_credit_path(conn, :index))
   end
 end

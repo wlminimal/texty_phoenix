@@ -64,7 +64,7 @@ defmodule TextingWeb.Dashboard.CheckoutSmsPreviewController do
          conn
          |> put_session(:intending_to_visit, conn.request_path)
          |> put_flash(:info, message)
-         |> redirect(to: buy_credit_path(conn, :new))
+         |> redirect(to: buy_credit_path(conn, :index))
      end
   end
 
