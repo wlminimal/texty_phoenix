@@ -11,6 +11,7 @@ defmodule TextingWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug TextingWeb.Plugs.Locale
   end
 
   pipeline :api do
@@ -47,7 +48,8 @@ defmodule TextingWeb.Router do
 
   scope "/", TextingWeb do
     pipe_through :browser # Use the default browser stack
-
+    # Load.io
+    get "/loaderio-f95477852e582a177f74a077dabf6ae9", LoadTestController, :index
     get "/", PageController, :index
     post "/", PageController, :create
     get "/privacy-policy", PrivacyController, :index
@@ -67,7 +69,7 @@ defmodule TextingWeb.Router do
 
   end
 
-     # Tutorial and Help
+  # Tutorial and Help
   scope "/help", TextingWeb.Help do
     pipe_through [:browser, :help]
     get "/", HelpController, :index
