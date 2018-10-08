@@ -8,28 +8,73 @@
             <div class="card-header card-header-icon" data-background-color="purple">
                   <i class="material-icons">history</i>
             </div>
-      
+
             <div class="card-content">
               <h2 class="card-title"><%= @campaign.name %> <span class="header-description"><%= @campaign.description %></span></h2>
               <div class="camp-info-block">
-                <p class="sent-message">Messages: <%= @campaign.message %></p>
+                <p class="sent-message"><%= gettext "Messages" %>: <%= @campaign.message %></p>
                 <%= if @has_bitly do %>
-                  <p>Shorten Url: 
+                  <p><%= gettext "Shorten Url" %>:
                     <a href="<%= @bitly.bitlink_url %>"><%= @bitly.bitlink_id %></a>
                   </p>
-                  <p>Total Clicks: <%= @bitly.total_clicks %></p>
+                  <p><%= gettext "Total Clicks" %>: <%= @bitly.total_clicks %></p>
                 <% else %>
-                  <p>Shorten Url:  No shorten url generated.</p>
+                  <p><%= gettext "Shorten Url" %>:  <%= gettext "No shorten url generated." %></p>
                 <% end %>
               </div>
+              <!-- Search -->
+              <div class="row">
+                <div class="col-md-4">
+                  <!-- Search by name -->
+                  <div class="search-form">
+                    <%= form_for @conn, campaign_history_path(@conn, :show, @campaign.id), [method: :get], fn f -> %>
+                      <div class="form-group label-floating">
+                        <%= label f, :name, class: "control-label" %>
+                        <%= text_input f, :name, required: true, class: "form-control" %>
+                        <%= error_tag f, :name %>
+                      </div>
+                      <%= submit id: "search-button", class: "btn btn-github" do %><%= gettext "search" %> <% end %>
+                    <% end %>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <!-- Search by phone_number -->
+                  <div class="search-form">
+                    <%= form_for @conn, campaign_history_path(@conn, :show, @campaign.id), [method: :get], fn f -> %>
+                      <div class="form-group label-floating">
+                        <%= label f, :to, class: "control-label" %>
+                        <%= text_input f, :to, required: true, class: "form-control" %>
+                        <%= error_tag f, :to %>
+                      </div>
+                      <%= submit id: "search-button", class: "btn btn-github" do %><%= gettext "search" %> <% end %>
+                    <% end %>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <!-- Filter by status -->
+                  <div class="search-form">
+                    <%= form_for @conn, campaign_history_path(@conn, :show, @campaign.id), [method: :get], fn f -> %>
+                      <div class="form-group label-floating filter-block">
+                        <%= select f, :by_status, ["Delivered": "delivered", "Undelivered": "undelivered"],
+                          class: "selectpicker", title: "Choose a filter", data: [style: "select-with-transition", size: "7"] %>
+                        <%= error_tag f, :by_status %>
+                      </div>
+                      <%= submit id: "search-button", class: "btn btn-github" do %><%= gettext "filter" %> <% end %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+
+
               <div class="table-wrapper">
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
                           <tr>
-                            <th>Recipient Name</th>
-                            <th>Phone Number</th>
-                            <th>Status</th>
+                            <th><%= gettext "Recipient Name" %></th>
+                            <th><%= gettext "Phone Number" %></th>
+                            <th><%= gettext "Status" %></th>
                           </tr>
                         </thead>
                         <tbody>
@@ -42,10 +87,10 @@
                           <% end %>
                         </tbody>
                     </table>
-                    <%= pagination_links @message_statuses %> 
+                    <%= pagination_links @message_statuses %>
                     <div>
                     </div>
-                    
+
                 </div>
               </div>
             </div>
@@ -58,9 +103,9 @@
               <div class="card-header card-header-icon" data-background-color="purple">
                     <i class="material-icons">image</i>
               </div>
-          
+
               <div class="card-content">
-                <h2 class="card-title">Attached Image</h2>
+                <h2 class="card-title"><%= gettext "Attached Image" %></h2>
                 <img src="<%= @image_url %>" alt="Sent Image" class="attached-image">
               </div>
             </div>

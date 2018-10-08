@@ -7,19 +7,19 @@
             </div>
 
             <div class="card-content">
-                  <h2 class="card-title"><%= @phonebook.name %> <span class="header-description"> create a new contact or add it to a recipient list.</span></h2>
+                  <h2 class="card-title"><%= @phonebook.name %> <span class="header-description"> <%= gettext "create a new contact or add it to a recipient list." %></span></h2>
                   <div class="add-new-button-wrapper">
                     <%= if @phonebook.name == "Unsubscriber" || @phonebook.name == "Subscriber" do %>
 
                     <% else %>
                     <%= button to: phonebook_person_path(@conn, :new, @phonebook), method: "get", class: "btn btn-github btn-sm" do %>
-                        <i class="material-icons">add</i>New Contact
+                        <i class="material-icons">add</i><%= gettext "New Contact" %>
                       <% end %>
                       <%= button to: phonebook_path(@conn, :edit, @phonebook), method: "get", class: "btn btn-github btn-sm" do %>
-                        <i class="material-icons">edit</i>Edit Phonebook
+                        <i class="material-icons">edit</i><%= gettext "Edit Phonebook" %>
                       <% end %>
                       <%= button to: csv_export_path(@conn, :export, @phonebook.id), method: "get", class: "btn btn-github btn-sm" do %>
-                        <i class="material-icons">file_download</i>export
+                        <i class="material-icons">file_download</i><%= gettext "export" %>
                       <% end %>
                     <% end %>
                   </div>
@@ -33,7 +33,7 @@
                             <%= text_input f, :name, required: true, class: "form-control" %>
                             <%= error_tag f, :name %>
                           </div>
-                          <%= submit "search", id: "search-button", class: "btn btn-github" %>
+                          <%= submit id: "search-button", class: "btn btn-github" do %><%= gettext "search" %> <% end %>
                         <% end %>
                       </div>
                     </div>
@@ -46,14 +46,14 @@
                             <%= text_input f, :phone_number, required: true, class: "form-control" %>
                             <%= error_tag f, :phone_number %>
                           </div>
-                          <%= submit "search", id: "search-button", class: "btn btn-github" %>
+                          <%= submit id: "search-button", class: "btn btn-github" do %><%= gettext "search" %> <% end %>
                         <% end %>
                       </div>
                     </div>
                   </div>
 
                   <%= if Enum.count(@people.entries) == 0 do %>
-                  <p>No Contact List</p>
+                  <p><%= gettext "No Contacts found in phonebook." %></p>
                   <% else %>
 
                   <%= form_for @conn, recipient_path(@conn, :add), [as: :recipients], fn f -> %>
@@ -62,10 +62,10 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Select All</th>
-                                    <th>Name</th>
-                                    <th>Phone Number</th>
-                                    <th class="text-right">Actions</th>
+                                    <th><%= gettext "Select All" %></th>
+                                    <th><%= gettext "Name" %></th>
+                                    <th><%= gettext "Phone Number" %></th>
+                                    <th class="text-right"><%= gettext "Actions" %></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -108,7 +108,7 @@
                         </table>
                         <%= pagination_links @people %>
                         <div>
-                            <%= submit "Add to Recipients", id: "recipients-button", class: "btn btn-primary" %>
+                            <%= submit id: "recipients-button", class: "btn btn-primary" do %> <%= gettext "Add to Recipients" %> <% end %>
                         </div>
 
                     </div>
