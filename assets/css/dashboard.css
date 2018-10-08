@@ -73,7 +73,7 @@ body {
 }
 
 .dashboard-sub-flexitem {
-  
+
 }
 
 .card .card-content .card-title.dashboard-chart-title{
@@ -176,7 +176,7 @@ body {
   padding: 15px;
   position: relative;
   z-index: 3;
- 
+
 } */
 .card-chart .card-header {
   min-height: 90px;
@@ -285,7 +285,7 @@ body {
   float: left;
 }
 
-/* 
+/*
 .card .card-header {
   background: linear-gradient(60deg, #26c6da, #00acc1);
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 188, 212, 0.4);
@@ -417,7 +417,7 @@ span.italic {
 
 .image-wrapper {
   margin: 20px auto 0 auto;
-  
+
 }
 
 
@@ -518,10 +518,15 @@ span.italic {
 .camp-info-block {
   border: 1px solid #d5d2d2;
   margin-top: 20px;
+  margin-bottom: 20px;
   padding-top: 15px;
   padding-bottom: 5px;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.filter-block {
+  margin-top: -8px;
 }
 
 .attached-image {
@@ -571,7 +576,7 @@ span.italic {
 }
 
 .tab-pane i.material-icons {
- padding-top: 10px; 
+ padding-top: 10px;
 }
 
 .tab-pane .table tbody > tr > td:first-child {
@@ -618,7 +623,7 @@ img.card-icon {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-  
+
 }
 
 .campaign-flexitem {
@@ -722,7 +727,7 @@ nav.terms-menu ul a:hover {
   /* .dashboard-flexitem.dashboard-wide {
     flex-basis: 50%;
   }
-  
+
   .dashboard-flexitem.dashboard-narrow {
     flex-basis: 35%;
   } */
@@ -749,7 +754,7 @@ nav.terms-menu ul a:hover {
   .analytics-flexitem.wide {
     flex-basis: 60%;
   }
-  
+
   .analytics-flexitem.narrow {
     flex-basis: 30%;
   }
@@ -772,7 +777,7 @@ nav.terms-menu ul a:hover {
   .analytics-flexitem.wide {
     flex-basis: 60%;
   }
-  
+
   .analytics-flexitem.narrow {
     flex-basis: 20%;
   }
@@ -810,7 +815,7 @@ nav.terms-menu ul a:hover {
   .card-pricing .card-title {
     margin-top: 5px;
   }
-} 
+}
 
 @media(max-width: 1024px) {
   .app-fab--absolute {
@@ -826,7 +831,7 @@ nav.terms-menu ul a:hover {
     flex-basis: 100%;
     padding: 0 10px;
   }
-  
+
   .dashboard-flexitem.wide {
     flex-basis: 100%;
     padding: 0 10px;
@@ -872,7 +877,7 @@ nav.terms-menu ul a:hover {
     padding: 0 10px;
     flex-basis: 100%;
   }
-  
+
   .dashboard-flexitem.wide {
     padding: 0 10px;
     flex-basis: 100%;
@@ -895,7 +900,7 @@ nav.terms-menu ul a:hover {
   .analytics-flexitem.wide {
     flex-basis: 100%;
   }
-  
+
   .analytics-flexitem.narrow {
     flex-basis: 100%;
   }
@@ -926,7 +931,7 @@ nav.terms-menu ul a:hover {
   .analytics-flexitem.wide {
     flex-basis: 100%;
   }
-  
+
   .analytics-flexitem.narrow {
     flex-basis: 100%;
   }
@@ -953,7 +958,7 @@ nav.terms-menu ul a:hover {
   .dashboard-flexitem.narrow {
     flex-basis: 100%;
   }
-  
+
   .dashboard-flexitem.wide {
     flex-basis: 100%;
   }
@@ -985,7 +990,7 @@ nav.terms-menu ul a:hover {
   .analytics-flexitem.wide {
     flex-basis: 100%;
   }
-  
+
   .analytics-flexitem.narrow {
     flex-basis: 100%;
   }
@@ -998,7 +1003,7 @@ nav.terms-menu ul a:hover {
   .dashboard-flexitem .card {
     width: 300px;
   }
-  
+
   .analytics-flexitem .card {
     width: 300px;
   }
