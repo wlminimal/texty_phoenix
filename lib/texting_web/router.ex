@@ -11,7 +11,7 @@ defmodule TextingWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
-    plug TextingWeb.Plugs.Locale
+    #plug TextingWeb.Plugs.Locale
   end
 
   pipeline :api do
