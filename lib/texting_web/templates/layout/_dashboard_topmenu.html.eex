@@ -22,7 +22,7 @@
 							<div class="dropdown">
 								<button href="#pablo" class="dropdown-toggle btn btn-primary btn-block" data-toggle="dropdown"><%= gettext "Choose a language" %> <b class="caret"></b></button>
 								<ul class="dropdown-menu dropdown-menu-left">
-									<li class="dropdown-header">Choose a preferred language</li>
+									<li class="dropdown-header"><%= gettext "Choose a preferred language" %></li>
 									<li><%= switch_locale_path(@conn, :en, "English") %></li>
 									<li><%= switch_locale_path(@conn, :ko, "Korean") %></li>
 

@@ -1114,3 +1114,7 @@ msgstr "언어 선택"
 #: lib/texting_web/templates/dashboard/contact_us/index.html.eex:11
 msgid "Have any question? Feel Free to contact us. Or send us a feedback"
 msgstr "질문이 있거나, 사용하기에 불편한 점이 있다면 주저하지 말고 연락하세요."
+
+#: lib/texting_web/templates/layout/_dashboard_topmenu.html.eex:25
+msgid "Choose a preferred language"
+msgstr "원하는 언어선택"

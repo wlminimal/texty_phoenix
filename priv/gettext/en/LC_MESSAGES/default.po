@@ -1114,3 +1114,7 @@ msgstr ""
 #: lib/texting_web/templates/dashboard/contact_us/index.html.eex:11
 msgid "Have any question? Feel Free to contact us. Or send us a feedback"
 msgstr ""
+
+#: lib/texting_web/templates/layout/_dashboard_topmenu.html.eex:25
+msgid "Choose a preferred language"
+msgstr ""
