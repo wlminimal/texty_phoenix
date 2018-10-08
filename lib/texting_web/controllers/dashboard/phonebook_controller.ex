@@ -4,6 +4,8 @@ defmodule TextingWeb.Dashboard.PhonebookController do
   alias Texting.Contact.Phonebook
   alias TextingWeb.Plugs.AuthorizeUser
   alias Texting.Contact.SearchContact
+  alias Texting.Contact.Person
+  alias Texting.Search
 
   plug AuthorizeUser when action in [:new, :create, :show, :edit, :update, :delete]
 
@@ -45,8 +47,9 @@ defmodule TextingWeb.Dashboard.PhonebookController do
     # put a phonebook id in session for recipient page for continue adding button.
     conn = put_session(conn, :phonebook_id, phonebook.id)
     # search by params
-    page = SearchContact.get_search_results(conn, params, phonebook.id)
-    render(conn, "show.html", phonebook: phonebook, people: page)
+    page = SearchContact.get_search_results_in_phonebook(conn, params, phonebook.id)
+
+    render(conn, "search_results.html", phonebook: phonebook, people: page)
   end
 
   @doc """
@@ -60,8 +63,10 @@ defmodule TextingWeb.Dashboard.PhonebookController do
     # put a phonebook id in session for recipient page for continue adding button.
     conn = put_session(conn, :phonebook_id, phonebook.id)
     # pass the params for pagination
-    page = SearchContact.get_search_results(conn, params, phonebook.id)
-    render(conn, "show.html", phonebook: phonebook, people: page)
+    page = SearchContact.get_search_results_in_phonebook(conn, params, phonebook.id)
+    IO.puts "+++++++++++++++ query param +++++++++++++++++++"
+    IO.inspect conn.query_params
+    render(conn, "search_results.html", phonebook: phonebook, people: page )
   end
 
   @doc """
