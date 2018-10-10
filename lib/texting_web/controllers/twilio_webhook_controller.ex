@@ -138,6 +138,8 @@ defmodule TextingWeb.TwilioWebhookController do
       "MessageStatus" => status,
       "SmsSid" => _sms_sid,
       } = params
+
+
     message_status_struct = Messenger.get_message_status_by_message_sid(message_sid)
     Messenger.update_message_status(message_status_struct, %{from: Formatter.remove_plus_sign_from_phonenumber(from), status: "delivered"})
     conn

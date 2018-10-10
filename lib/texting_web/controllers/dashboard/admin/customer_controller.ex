@@ -54,8 +54,8 @@ defmodule TextingWeb.Dashboard.Admin.CustomerController do
     render conn, "edit.html", customer: user, changeset: changeset
   end
 
-  def update(conn, %{"admin" => params}) do
-    user = conn.assigns.current_user
+  def update(conn, %{"admin" => params, "id" => id}) do
+    user = Account.get_user_by_id(id)
     %{"credits" => credit, "email" => email,
       "first_name" => first_name,
       "last_name" => last_name,

@@ -35,6 +35,7 @@ defmodule Texting.Account.User do
     struct
     |> cast(params, [:email, :first_name, :last_name, :phone_number, :phone_verified, :credits, :email_verified, :admin, :last_login])
     |> validate_required([:email, :first_name, :last_name])
+    |> unique_constraint(:email)
     # |> validate_format(:phone_number, ~r/^[2-9]\d{2}-\d{3}-\d{4}$/)
 
   end

@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     function calculate_total_credits() {
       var info = window.splitter.split(textArea.value);
       var recipientsCountNumber =  parseInt(recipientsCount);
+      //var remainingLetters = info.remainingInPart + 1;
       infoBlock.innerHTML = "Your Remaining Letters are " +info.remainingInPart + " and will charge " +credit * info.parts.length + " credit(s) for each recipients";
       totalCredit = credit * info.parts.length * recipientsCountNumber;
       totalPriceBlock.innerHTML = totalCredit + " Credit(s)";

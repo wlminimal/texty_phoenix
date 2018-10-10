@@ -20,7 +20,7 @@ defmodule Texting.Messenger.MessageStatus do
 
   def changeset(%MessageStatus{} = message_status, attrs) do
     message_status
-    |> cast(attrs, [:name, :to, :from, :message, :status, :message_sid, :account_sid])
+    |> cast(attrs, [:name, :to, :from, :message, :status, :message_sid, :account_sid, :order_id])
     |> validate_required([:to])
     |> foreign_key_constraint(:order_id)
   end

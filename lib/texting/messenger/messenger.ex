@@ -23,9 +23,16 @@ defmodule Texting.Messenger do
     |> Enum.map(&Repo.insert/1)
   end
 
+  def create_message_status_from_recipients(recipients) do
+    recipients
+    |> extracting_info_from_recipients()
+    |> Enum.map(&Repo.insert/1)
+  end
+
   def extracting_msessage(results, order_id, user_id) do
     for %{account_sid: account_sid, body: body, message_sid: message_sid, status: status, to: to} <- results do
       to = Formatter.remove_plus_sign_from_phonenumber(to)
+      #TODO: Is there better way to get person's name?
       people = Contact.get_people_by_phonenumber(user_id, to)
       person = List.first(people)
       if person.name == nil do
@@ -39,8 +46,26 @@ defmodule Texting.Messenger do
         status: status, message_sid: message_sid,
         account_sid: account_sid, order_id: order_id, name: name}
       end
-
     end
+  end
+
+  @doc """
+  Extract name and phonenumber and map to
+  %MessageStatus{name: name, to: phonenumber}
+
+  param is recipients(order)
+  """
+  def extracting_info_from_recipients(recipients) do
+    recipients.line_items
+    |> Enum.map(fn person ->
+      if person.name == nil do
+        MessageStatus.changeset(%MessageStatus{}, %{name: "No name",
+        to: person.phone_number, order_id: recipients.id, status: "sent"})
+      else
+        MessageStatus.changeset(%MessageStatus{}, %{name: person.name,
+        to: person.phone_number, order_id: recipients.id, status: "sent"})
+      end
+    end)
   end
 
   def get_message_status_with_pagination(order_id, params) do
