@@ -531,6 +531,8 @@ msgstr ""
 #: lib/texting_web/templates/dashboard/account_info/index.html.eex:33
 #: lib/texting_web/templates/dashboard/analytics/index.html.drab:20
 #: lib/texting_web/templates/dashboard/campaign_history/index.html.eex:20
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:87
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:84
 #: lib/texting_web/templates/dashboard/contact_us/index.html.eex:15
 #: lib/texting_web/templates/dashboard/dashboard/index.html.drab:19
 #: lib/texting_web/templates/dashboard/phonebook/form.html.eex:19
@@ -575,10 +577,12 @@ msgstr ""
 msgid "Check how your message goes. Delivered? or Undelivered?"
 msgstr ""
 
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:75
 #: lib/texting_web/templates/dashboard/dashboard/index.html.drab:162
 msgid "Send Image Campaign"
 msgstr ""
 
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:73
 #: lib/texting_web/templates/dashboard/dashboard/index.html.drab:136
 msgid "Send Text Campaign"
 msgstr ""
@@ -625,6 +629,8 @@ msgstr ""
 
 #: lib/texting_web/templates/dashboard/analytics/index.html.drab:21
 #: lib/texting_web/templates/dashboard/campaign_history/index.html.eex:21
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:96
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:91
 #: lib/texting_web/templates/dashboard/invoice/index.html.eex:54
 #: lib/texting_web/templates/dashboard/invoice/index.html.eex:92
 msgid "Description"
@@ -1116,4 +1122,101 @@ msgstr ""
 
 #: lib/texting_web/templates/layout/_dashboard_topmenu.html.eex:25
 msgid "Choose a preferred language"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:58
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:57
+msgid "Copy this text and paste in your message"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:116
+msgid "If you want no limit on length of text? try sending image campaign. It has no text limit"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:12
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:12
+msgid "Information"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:114
+msgid "Max length of text is 158 in English(alphabetic language) and other languages(Korean, Japanese, Chinese etc)'s limit is 68 character.\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tif you try to send message longer than a limit, it will charge double (like sending 2 messages)"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:16
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:16
+msgid "Number of Recipients"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:32
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:33
+msgid "Paste or Type your url for better customer experience and analytics"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:44
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:44
+msgid "Shorten"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:31
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:32
+msgid "Shorten Your Link"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:18
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:18
+msgid "Total Credit will be used"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:40
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:40
+msgid "Type long URL here.(Including http://)"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:145
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:135
+msgid "We highly recommend using our"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:17
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:17
+msgid "Your remaining Credits"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:56
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:54
+msgid "Your short Url"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:135
+msgid "and paste it in the message. Then when customers click\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\twe can track how many customers responded your campaign"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:122
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:110
+msgid "message"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:145
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:135
+msgid "shorten link function"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:111
+msgid "Max size is 2 MB"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:135
+msgid "Next"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:124
+msgid "There is no text limit in Image Campaign"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:107
+msgid "Upload Image"
+msgstr ""
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:145
+msgid "and paste it in the message. Then when customers click\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\twe can track how many customers responded your campaign"
 msgstr ""

@@ -9,13 +9,13 @@
 											<i class="material-icons">perm_device_information</i>
 										</div>
 										<div class="card-content">
-											<h4 class="card-title">Information</h4>
+											<h4 class="card-title"><%= gettext "Information" %></h4>
 											<div class="row">
 												<div class="col-md-12">
 													<div class="info-wrapper">
-														<p>Number of Recipients: <strong><span id="recipients-count"><%= @recipients.counts %> recipients.</span></strong></p>
-														<p>Your remaining Credits: <strong><%= @user.credits %> credits.</strong></p>
-														<p>Total Credit will be used: <strong><span id="total-price"><%= total_sms_price(@recipients.counts)%> Credit(s).</span></strong></p>
+														<p><%= gettext "Number of Recipients" %>: <strong><span id="recipients-count"><%= @recipients.counts %> recipients.</span></strong></p>
+														<p><%= gettext "Your remaining Credits" %>: <strong><%= @user.credits %> credits.</strong></p>
+														<p><%= gettext "Total Credit will be used" %>: <strong><span id="total-price"><%= total_sms_price(@recipients.counts)%> Credit(s).</span></strong></p>
 													</div>
 												</div>
 											</div>
@@ -29,19 +29,19 @@
 											<i class="material-icons">content_cut</i>
 										</div>
 										<div class="card-content">
-											<h4 class="card-title">Shorten Your Link</h4>
-											<p class="helper-text">Paste or Type your url for better customer experience and analytics.</p>
+											<h4 class="card-title"><%= gettext "Shorten Your Link" %></h4>
+											<p class="helper-text"><%= gettext "Paste or Type your url for better customer experience and analytics" %>.</p>
 											<div class="row">
 												<div class="col-md-12">
 													<div class="row">
 														<div class="form-group col-sm-12">
 															<div class="info-wrapper">
 																<form>
-																	<label for="long_url">Type long URL here.(Including http://)</label>
+																	<label for="long_url"><%= gettext "Type long URL here.(Including http://)" %></label>
 																	<textarea class="form-control"  row="2" id="long-url-textarea" name="long_url_textarea"><%= @long_url %> </textarea>
 																	<p id="long-url-error"></p>
 																	<button class="btn btn-github" drab="click:shorten_url">
-																		<i class="material-icons right">content_cut</i>Shorten
+																		<i class="material-icons right">content_cut</i><%= gettext "Shorten" %>
 																	</button>
 																</form>
 															</div>
@@ -51,10 +51,10 @@
 													<!-- Shortened Url -->
 													<div class="row">
 														<div class="form-group col-sm-12">
-															<label for="long_url">Your short Url</label>
+															<label for="long_url"><%= gettext "Your short Url" %></label>
 															<textarea class="form-control" id="short-url-textarea" readonly><%= @shorten_url %> </textarea>
 															<input type="hidden" name="bitlink_id" value="<%= @bitlink_id %>" id="bitlink_id">
-															<p class="helper-text d-helper-text">Copy this text and paste in your message. </p>
+															<p class="helper-text d-helper-text"><%= gettext "Copy this text and paste in your message" %>. </p>
 														</div>
 													</div>
 											</div>
@@ -70,7 +70,7 @@
                 <i class="material-icons">send</i>
               </div>
               <div class="card-content">
-                <h4 class="card-title">Send Text Campaign</h4>
+                <h4 class="card-title"><%= gettext "Send Text Campaign" %></h4>
 
                 <div class="row">
                   <div class="col-md-12">
@@ -81,14 +81,14 @@
 														<div>
 															<div class="row">
 																<div class="form-group">
-																	<label for="sms[name]">Name</label>
+																	<label for="sms[name]"><%= gettext "Name" %></label>
 																	<%= text_input f, :name, placeholder: "Enter Name for this campaign", maxlength: 25, class: "form-control", required: true  %>
 																	<%= error_tag f, :name %>
 																</div>
 															</div>
 															<div class="row">
 																<div class="form-group">
-																<label for="sms[description]">Description</label>
+																<label for="sms[description]"><%= gettext "Description" %></label>
 																<%= text_input f, :description, placeholder: "Enter Description for this campaign", maxlength: 50, class: "form-control", required: true %>
 																<%= error_tag f, :description %>
 																</div>
@@ -107,12 +107,13 @@
 
 															<div class="row">
 																<div class="form-group">
-																	<i class="material-icons prefix">message</i>
+																	<i class="material-icons prefix"><%= gettext "message" %></i>
 																	<%= textarea f, :message, class: "form-control", id: "message", row: "3", required: true %>
 																	<label for="message">Message</label>
 																	<%= error_tag f, :message %>
-																	<p class="helper-text d-helper-text">Max length of text is 160 in English(alphabetic language) and other languages(Korean, Japanese, Chinese etc)'s limit is 70 character.
-																	if you try to send message longer than a limit, it will charge double (like sending 2 messages). </p>
+																	<p class="helper-text d-helper-text"><%= gettext "Max length of text is 158 in English(alphabetic language) and other languages(Korean, Japanese, Chinese etc)'s limit is 68 character.
+																	if you try to send message longer than a limit, it will charge double (like sending 2 messages)" %>. </p>
+																	<p class="helper-text d-helper-text"><%= gettext "If you want no limit on length of text? try sending image campaign. It has no text limit" %>.</p>
 																	<p id="message-length-info" class="">
 																	</p>
 
@@ -123,7 +124,9 @@
 															<%= hidden_input f, :bitlink_id, value: "" %>
 															<div class="row">
 																<div class="col-sm-12">
-																	<%= submit "Next", class: "btn btn-primary", id: "next-button" %>
+																	<%= submit class: "btn btn-primary", id: "next-button" do %>
+																		<%= gettext "Next" %>
+																	<% end %>
 																</div>
 															</div>
 
@@ -131,8 +134,8 @@
 																<div class="col-sm-12">
 																	<div class="sms-description">
 																		<blockquote>
-																			We highly recommend using our  <strong><span class="italic">shorten link function </span></strong>  and paste it in the message. Then when customers click
-																			we can track how many customers responded your campaign.
+																			<%= gettext "We highly recommend using our" %>  <strong><span class="italic"><%= gettext "shorten link function" %>  </span></strong>  <%= gettext "and paste it in the message. Then when customers click
+																			we can track how many customers responded your campaign" %>.
 																		</blockquote>
 																	</div>
 																</div>

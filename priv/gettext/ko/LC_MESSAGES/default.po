@@ -532,6 +532,8 @@ msgstr "가장 최근 캠페인"
 #: lib/texting_web/templates/dashboard/account_info/index.html.eex:33
 #: lib/texting_web/templates/dashboard/analytics/index.html.drab:20
 #: lib/texting_web/templates/dashboard/campaign_history/index.html.eex:20
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:87
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:84
 #: lib/texting_web/templates/dashboard/contact_us/index.html.eex:15
 #: lib/texting_web/templates/dashboard/dashboard/index.html.drab:19
 #: lib/texting_web/templates/dashboard/phonebook/form.html.eex:19
@@ -576,10 +578,12 @@ msgstr "전송 실패"
 msgid "Check how your message goes. Delivered? or Undelivered?"
 msgstr "캠페인이 잘 전송됬는지 결과가 궁금하시나요? 분석 도구에서 확인하세요."
 
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:75
 #: lib/texting_web/templates/dashboard/dashboard/index.html.drab:162
 msgid "Send Image Campaign"
 msgstr "이미지 캠페인 보내기"
 
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:73
 #: lib/texting_web/templates/dashboard/dashboard/index.html.drab:136
 msgid "Send Text Campaign"
 msgstr "문자 캠페인 보내기"
@@ -626,6 +630,8 @@ msgstr "이곳에서 캠폐인 기록을 확인하세요."
 
 #: lib/texting_web/templates/dashboard/analytics/index.html.drab:21
 #: lib/texting_web/templates/dashboard/campaign_history/index.html.eex:21
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:96
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:91
 #: lib/texting_web/templates/dashboard/invoice/index.html.eex:54
 #: lib/texting_web/templates/dashboard/invoice/index.html.eex:92
 msgid "Description"
@@ -1118,3 +1124,96 @@ msgstr "질문이 있거나, 사용하기에 불편한 점이 있다면 주저�
 #: lib/texting_web/templates/layout/_dashboard_topmenu.html.eex:25
 msgid "Choose a preferred language"
 msgstr "원하는 언어선택"
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:58
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:57
+msgid "Copy this text and paste in your message"
+msgstr "이 내용을 복사해서 메세지란에 붙여 넣으세요"
+
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:116
+msgid "If you want no limit on length of text? try sending image campaign. It has no text limit"
+msgstr "문자길이 제한을 받고 싶으시지 않다면, 문자길이 제한이 없는 이미지 켐패인을 사용해보세요"
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:12
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:12
+msgid "Information"
+msgstr "내역"
+
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:114
+msgid "Max length of text is 158 in English(alphabetic language) and other languages(Korean, Japanese, Chinese etc)'s limit is 68 character.\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tif you try to send message longer than a limit, it will charge double (like sending 2 messages)"
+msgstr "영어로는 158자까지, 한국어나 일본어 중국어는 68자까지 1개의 크레딧으로 가능하며 제한된 글자수를 넘을때마다 지출되는 크레딧 수도 2, 3, 4개로 늘어납니다."
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:16
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:16
+msgid "Number of Recipients"
+msgstr "수신자 명수"
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:32
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:33
+msgid "Paste or Type your url for better customer experience and analytics"
+msgstr "http:// 를 포함하는 웹주소를 이곳에 붙여넣으세요"
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:44
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:44
+msgid "Shorten"
+msgstr "줄이기"
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:31
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:32
+msgid "Shorten Your Link"
+msgstr "웹주소 줄이기"
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:18
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:18
+msgid "Total Credit will be used"
+msgstr "사용될 총 크레딧 개수"
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:40
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:40
+msgid "Type long URL here.(Including http://)"
+msgstr "http:// 를 포함하는 웹주소를 치세요"
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:145
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:135
+msgid "We highly recommend using our"
+msgstr "왼쪽에 표시되어 있는"
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:17
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:17
+msgid "Your remaining Credits"
+msgstr "현재 남은 크레딧 개수"
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:56
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:54
+msgid "Your short Url"
+msgstr "단축된 새 웹주소"
+
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:135
+msgid "and paste it in the message. Then when customers click\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\twe can track how many customers responded your campaign"
+msgstr "반드시 사용하시길 바랍니다. 단축된 웹주소를 몇명의 고객들이 클릭을 했는지 추적이 가능하기 때문에, 몇명의 고객들이 여러분의 캠페인에 반응했는지 알수 있습니다"
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:122
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:110
+msgid "message"
+msgstr "내용"
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:145
+#: lib/texting_web/templates/dashboard/checkout_sms/send_sms.html.drab:135
+msgid "shorten link function"
+msgstr "웹주소 줄이기 기능을"
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:135
+msgid "Next"
+msgstr "다음"
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:124
+msgid "There is no text limit in Image Campaign"
+msgstr "이미지 캠페인에는 문자길이 제한이 없습니다"
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:107
+msgid "Upload Image"
+msgstr "이미지 업로드하기"
+
+#: lib/texting_web/templates/dashboard/checkout_mms/send_mms.html.drab:145
+msgid "and paste it in the message. Then when customers click\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\twe can track how many customers responded your campaign"
+msgstr "반드시 사용하시길 바랍니다. 단축된 웹주소를 몇명의 고객들이 클릭을 했는지 추적이 가능하기 때문에, 몇명의 고객들이 여러분의 캠페인에 반응했는지 알수 있습니다"
