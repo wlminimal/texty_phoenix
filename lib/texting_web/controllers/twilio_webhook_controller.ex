@@ -5,6 +5,7 @@ defmodule TextingWeb.TwilioWebhookController do
   alias Texting.Messenger
   alias Texting.Formatter
   alias Texting.Sms
+  alias Texting.MessageStatusTable
 
   @stop_message ["stop", "no", "unsubscribe"]
   @subscribe_message ["start", "yes", "subscribe"]
@@ -105,24 +106,30 @@ defmodule TextingWeb.TwilioWebhookController do
     end
   end
 
-  def message_status(conn, %{"MessageStatus" => status} = params) when status in ["undelivered", "failed"] do
-    IO.puts "+++++++++++++++++++++++++++++"
-    IO.inspect params
-    IO.puts "+++++++++++++++++++++++++++++++++++++++++++"
-    %{"AccountSid" => _account_sid,
-      "From" => from,
-      "MessageSid" => message_sid,
-      "MessageStatus" => status,
-      "SmsSid" => _sms_sid,
-      } = params
-    message_status_struct = Messenger.get_message_status_by_message_sid(message_sid)
-    Messenger.update_message_status(message_status_struct, %{from: Formatter.remove_plus_sign_from_phonenumber(from), status: status})
-    conn
-    |> put_resp_content_type("text/xml")
-    |> send_resp(200, "")
-  end
 
-  def message_status(conn, %{"MessageStatus" => status} = params) when status in ["delivered", "sent", "queued", "receiving", "received", "accepted", "sending" ] do
+  # def message_status(conn, %{"MessageStatus" => status} = params) when status in ["undelivered", "failed"] do
+
+  #   IO.puts "+++++++++++++++++++++++++++++"
+  #   IO.inspect params
+  #   IO.puts "+++++++++++++++++++++++++++++++++++++++++++"
+  #   %{"AccountSid" => _account_sid,
+  #     "From" => from,
+  #     "MessageSid" => message_sid,
+  #     "MessageStatus" => status,
+  #     "SmsSid" => _sms_sid,
+  #     } = params
+  #   # message_status_struct = Messenger.get_message_status_by_message_sid(message_sid)
+  #   # Messenger.update_message_status(message_status_struct, %{from: Formatter.remove_plus_sign_from_phonenumber(from), status: status})
+
+  #   #MessageStatusTable.put(message_sid, status, from)
+  #   conn
+  #   |> put_resp_content_type("text/xml")
+  #   |> send_resp(200, "")
+  # end
+
+  @complete_status ["delivered", "undelivered"]
+
+  def message_status(conn, %{"MessageStatus" => status} = params) do
 
     IO.puts "+++++++++++++++Message Status++++++++++++++"
     IO.inspect params
@@ -132,16 +139,24 @@ defmodule TextingWeb.TwilioWebhookController do
     # Even though that message is delivered, status is not updated to "Delivered"
     # So I just marked delivered for this message status
 
-    %{"AccountSid" => _account_sid,
-      "From" => from,
-      "MessageSid" => message_sid,
-      "MessageStatus" => status,
-      "SmsSid" => _sms_sid,
-      } = params
+    cond do
+      status in @complete_status ->
+        %{"AccountSid" => _account_sid,
+          "From" => from,
+          "MessageSid" => message_sid,
+          "MessageStatus" => status,
+          "SmsSid" => _sms_sid,
+          } = params
+        message_status_struct = Messenger.get_message_status_by_message_sid(message_sid)
+        Messenger.update_message_status(message_status_struct, %{from: Formatter.remove_plus_sign_from_phonenumber(from), status: status})
 
+        send_response_to_twilio(conn)
+      true ->
+        send_response_to_twilio(conn)
+    end
+  end
 
-    message_status_struct = Messenger.get_message_status_by_message_sid(message_sid)
-    Messenger.update_message_status(message_status_struct, %{from: Formatter.remove_plus_sign_from_phonenumber(from), status: "delivered"})
+  defp send_response_to_twilio(conn) do
     conn
     |> put_resp_content_type("text/xml")
     |> send_resp(200, "")

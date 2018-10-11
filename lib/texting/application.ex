@@ -21,6 +21,7 @@ defmodule Texting.Application do
       # Task Supervisor for uploading large file async
       {Task.Supervisor, name: TextingWeb.TaskSupervisor},
 
+      #Texting.MessageStatusTable
 
     ]
 
