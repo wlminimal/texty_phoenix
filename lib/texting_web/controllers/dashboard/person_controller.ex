@@ -74,13 +74,16 @@ defmodule TextingWeb.Dashboard.PersonController do
     end
   end
 
-  def delete(conn, %{"id" => id}, phonebook) do
+  def delete(conn, %{"id" => id} = params, phonebook) do
+    IO.puts "+++++++++++ params from delete +++++++++++++"
+    IO.inspect params
+
     person = Contact.get_person!(id, phonebook.id)
     {:ok, _person} = Contact.delete_person(person)
 
     conn
     |> put_flash(:info, "Contact deleted successfully.")
-    |> redirect(to: phonebook_path(conn, :show, phonebook))
+    |> redirect(to: phonebook_path(conn, :show, phonebook, page: conn.params["page"]))
   end
 
   # ADD Later

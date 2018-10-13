@@ -164,7 +164,7 @@
 				</li>
 
 				<li class="">
-					<a href="<%= help_path(@conn, :index) %>">
+					<a href="<%= help_path(@conn, :index) %>" target="_blank">
 							<i class="material-icons">help</i>
 							<p> <%= gettext "Help & Tutorials" %> </p>
 					</a>

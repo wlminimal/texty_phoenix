@@ -97,7 +97,7 @@
                                       <i class="material-icons icon-button">edit</i>
                                     <% end %>
 
-                                    <%= button to: phonebook_person_path(@conn, :delete, @phonebook.id, person.id), method: "delete", data: [confirm: "Are you sure?"], class: "btn btn-danger" do %>
+                                    <%= button to: phonebook_person_path(@conn, :delete, @phonebook.id, person.id, page: @conn.params["page"]), method: "delete", data: [confirm: "Are you sure?"], class: "btn btn-danger" do %>
                                       <i class="material-icons icon-button">close</i>
                                     <% end %>
                                   </td>
