@@ -1,5 +1,4 @@
 defmodule Texting.Messenger do
-
   import Ecto.Query
   import Ecto
   alias Messageman
@@ -7,6 +6,9 @@ defmodule Texting.Messenger do
   alias Texting.Repo
   alias Texting.Formatter
   alias Texting.Contact
+
+  # To check function performance
+  use Appsignal.Instrumentation.Decorators
 
   ###################################################################
   # MessageStatus Struct
@@ -30,21 +32,39 @@ defmodule Texting.Messenger do
   end
 
   def extracting_msessage(results, order_id, user_id) do
-    for %{account_sid: account_sid, body: body, message_sid: message_sid, status: status, to: to} <- results do
+    for %{account_sid: account_sid, body: body, message_sid: message_sid, status: status, to: to} <-
+          results do
       to = Formatter.remove_plus_sign_from_phonenumber(to)
-      #TODO: Is there better way to get person's name?
+      # TODO: Is there better way to get person's name?
       people = Contact.get_people_by_phonenumber(user_id, to)
       person = List.first(people)
+
       if person.name == nil do
         name = "No name"
-        %MessageStatus{to: to, from: nil, message: body,
-        status: status, message_sid: message_sid,
-        account_sid: account_sid, order_id: order_id, name: name}
+
+        %MessageStatus{
+          to: to,
+          from: nil,
+          message: body,
+          status: status,
+          message_sid: message_sid,
+          account_sid: account_sid,
+          order_id: order_id,
+          name: name
+        }
       else
         name = person.name
-        %MessageStatus{to: to, from: nil, message: body,
-        status: status, message_sid: message_sid,
-        account_sid: account_sid, order_id: order_id, name: name}
+
+        %MessageStatus{
+          to: to,
+          from: nil,
+          message: body,
+          status: status,
+          message_sid: message_sid,
+          account_sid: account_sid,
+          order_id: order_id,
+          name: name
+        }
       end
     end
   end
@@ -59,22 +79,30 @@ defmodule Texting.Messenger do
     recipients.line_items
     |> Enum.map(fn person ->
       if person.name == nil do
-        MessageStatus.changeset(%MessageStatus{}, %{name: "No name",
-        to: person.phone_number, order_id: recipients.id, status: "sent"})
+        MessageStatus.changeset(%MessageStatus{}, %{
+          name: "No name",
+          to: person.phone_number,
+          order_id: recipients.id,
+          status: "sent"
+        })
       else
-        MessageStatus.changeset(%MessageStatus{}, %{name: person.name,
-        to: person.phone_number, order_id: recipients.id, status: "sent"})
+        MessageStatus.changeset(%MessageStatus{}, %{
+          name: person.name,
+          to: person.phone_number,
+          order_id: recipients.id,
+          status: "sent"
+        })
       end
     end)
   end
 
   def get_message_status_with_pagination(order_id, params) do
-    query = from m in MessageStatus, where: m.order_id == ^order_id
+    query = from(m in MessageStatus, where: m.order_id == ^order_id)
     Repo.paginate(query, params)
   end
 
   def get_message_status_by_message_sid(message_sid) do
-    query = from m in MessageStatus, where: m.message_sid == ^message_sid
+    query = from(m in MessageStatus, where: m.message_sid == ^message_sid)
     Repo.one(query)
   end
 
@@ -85,22 +113,26 @@ defmodule Texting.Messenger do
   end
 
   def get_message_status_by_status(order_id, status) do
-    query = from m in MessageStatus, where: m.order_id == ^order_id and m.status == ^status
+    query = from(m in MessageStatus, where: m.order_id == ^order_id and m.status == ^status)
     Repo.all(query)
   end
 
+  @decorate transaction_event()
   def get_all_message_status(order_id) do
-    query = from m in MessageStatus, where: m.order_id == ^order_id
+    query = from(m in MessageStatus, where: m.order_id == ^order_id)
     Repo.all(query)
   end
 
   def get_most_recent_updated_message_status(order_id) do
-    query = from m in MessageStatus, where: m.order_id == ^order_id, order_by: [desc: m.updated_at], limit: 1
+    query =
+      from(m in MessageStatus,
+        where: m.order_id == ^order_id,
+        order_by: [desc: m.updated_at],
+        limit: 1
+      )
+
     Repo.all(query)
   end
-
-
-
 
   ###################################################################
   # Twilio Struct
@@ -108,17 +140,18 @@ defmodule Texting.Messenger do
   def create_twilio(user, attrs \\ %{}) do
     build_assoc(user, :twilio)
     |> Twilio.changeset(attrs)
-   # |> Repo.insert() # Repo.insert() calling in codeverify_controller..
+
+    # |> Repo.insert() # Repo.insert() calling in codeverify_controller..
   end
 
   def insert_twilio(changeset) do
     changeset
-    |> Repo.insert
+    |> Repo.insert()
   end
 
   def update_twilio(changeset) do
     changeset
-    |> Repo.update
+    |> Repo.update()
   end
 
   def change_twilio(%Twilio{} = twilio) do
@@ -132,12 +165,12 @@ defmodule Texting.Messenger do
   end
 
   def get_twilio_by_user_id(user_id) do
-    query = from t in Twilio, where: t.user_id == ^user_id
+    query = from(t in Twilio, where: t.user_id == ^user_id)
     Repo.one(query)
   end
 
   def get_twilio_struct(account_sid) do
-    query = from t in Twilio, where: t.account == ^account_sid
+    query = from(t in Twilio, where: t.account == ^account_sid)
     Repo.one(query)
   end
 
@@ -150,14 +183,13 @@ defmodule Texting.Messenger do
     {twilio_sid, twilio_token, twilio_msid}
   end
 
-
   ###################################################################
   # Twilio Account
   ###################################################################
 
   def create_twilio_subaccount(changeset, user) do
     email = user.email
-    { sid, token, _friendly_name } = Messageman.create_account(email)
+    {sid, token, _friendly_name} = Messageman.create_account(email)
     Ecto.Changeset.change(changeset, %{account: sid, token: token})
   end
 
@@ -181,9 +213,9 @@ defmodule Texting.Messenger do
     plan_name = String.upcase(plan_name)
     available_phonenumber_counts = System.get_env(plan_name <> "_PLAN_PHONENUMBER_COUNTS")
     {counts, ""} = Integer.parse(available_phonenumber_counts)
-    IO.puts "++++++++++++++PHONENUMBER COUNTS+++++++++++++++++"
-    IO.inspect counts
-    IO.puts "+++++++++++++++++++++++++++++++++++++"
+    IO.puts("++++++++++++++PHONENUMBER COUNTS+++++++++++++++++")
+    IO.inspect(counts)
+    IO.puts("+++++++++++++++++++++++++++++++++++++")
     Ecto.Changeset.change(changeset, %{available_phone_number_count: counts})
   end
 
@@ -196,7 +228,10 @@ defmodule Texting.Messenger do
     twilio_sid = changeset.changes.account
     token = changeset.changes.token
     incoming_request_url = System.get_env("TWILIO_INCOMING_REQUEST_URL")
-    twilio_msid = Messageman.create_messaging_service(twilio_sid, token, email, incoming_request_url)
+
+    twilio_msid =
+      Messageman.create_messaging_service(twilio_sid, token, email, incoming_request_url)
+
     Ecto.Changeset.change(changeset, %{msid: twilio_msid})
   end
 
@@ -211,16 +246,16 @@ defmodule Texting.Messenger do
   def create_phonenumber(user, attrs \\ %{}) do
     build_assoc(user, :phonenumbers)
     |> Phonenumber.changeset(attrs)
-    |> Repo.insert!
+    |> Repo.insert!()
   end
 
   def get_phonenumbers(user) do
-    query = from p in Phonenumber, where: p.user_id == ^user.id
+    query = from(p in Phonenumber, where: p.user_id == ^user.id)
     Repo.all(query)
   end
 
   def get_phonenumbers(user, count) do
-    query = from p in Phonenumber, where: p.user_id == ^user.id, limit: ^count
+    query = from(p in Phonenumber, where: p.user_id == ^user.id, limit: ^count)
     Repo.all(query)
   end
 
@@ -231,11 +266,11 @@ defmodule Texting.Messenger do
 
   def delete_phonenumbers(phonenumber) do
     phonenumber
-    |> Repo.delete!
+    |> Repo.delete!()
   end
 
   def delete_all_phonenumbers(user) do
-    query = from p in Phonenumber, where: p.user_id == ^user.id
+    query = from(p in Phonenumber, where: p.user_id == ^user.id)
     Repo.delete_all(query)
   end
 
@@ -255,15 +290,21 @@ defmodule Texting.Messenger do
   def buy_and_setup_phonenumber(user, twilio, count) do
     area_code = Texting.Formatter.get_user_area_code(user)
 
-    account = twilio.account #System.get_env("TWILIO_TEST_ACCOUNT_SID")
-    token = twilio.token #System.get_env("TWILIO_TEST_AUTH_TOKEN")
+    # System.get_env("TWILIO_TEST_ACCOUNT_SID")
+    account = twilio.account
+    # System.get_env("TWILIO_TEST_AUTH_TOKEN")
+    token = twilio.token
     msid = twilio.msid
+
     Enum.each(1..count, fn _n ->
       phonenumber = buy_phone_number(area_code, account, token)
-      create_phonenumber(user, %{number: phonenumber.phone_number,
-                                 account_sid: phonenumber.account_sid,
-                                 phonenumber_sid: phonenumber.sid,
-                                 friendly_name: phonenumber.friendly_name})
+
+      create_phonenumber(user, %{
+        number: phonenumber.phone_number,
+        account_sid: phonenumber.account_sid,
+        phonenumber_sid: phonenumber.sid,
+        friendly_name: phonenumber.friendly_name
+      })
 
       add_phone_number_to_messaging_service(phonenumber.sid, msid, account, token)
     end)
@@ -289,10 +330,13 @@ defmodule Texting.Messenger do
   # end
 
   def remove_and_release_phonenumber(user, twilio, count) do
-    #TODO: Change to user's twilio account info
-    account = twilio.account #System.get_env("TWILIO_TEST_ACCOUNT_SID")
-    token = twilio.token #System.get_env("TWILIO_TEST_AUTH_TOKEN")
+    # TODO: Change to user's twilio account info
+    # System.get_env("TWILIO_TEST_ACCOUNT_SID")
+    account = twilio.account
+    # System.get_env("TWILIO_TEST_AUTH_TOKEN")
+    token = twilio.token
     phonenumbers = get_phonenumbers(user, count)
+
     Enum.each(phonenumbers, fn p ->
       release_phone_number(p.phonenumber_sid, account, token)
       delete_phonenumbers(p)

@@ -2,10 +2,10 @@ defmodule TextingWeb.Dashboard.CheckoutSmsPreviewController do
   use TextingWeb, :controller
   alias Texting.{Account, Sales, Sms, Credit, Messenger, Bitly}
 
-
   def index(conn, _param) do
     recipients = conn.assigns.recipients
     user = conn.assigns.current_user
+
     case recipients.counts == 0 do
       true ->
         conn
@@ -14,23 +14,29 @@ defmodule TextingWeb.Dashboard.CheckoutSmsPreviewController do
 
       false ->
         credit_used = Decimal.to_integer(recipients.total)
+
         cond do
           user.credits - credit_used >= 0 ->
-            render conn, "index.html", recipients: recipients,
-                                      message: recipients.message,
-                                      credit_used: credit_used,
-                                      user: user,
-                                      name: recipients.name,
-                                      description: recipients.description
+            render(conn, "index.html",
+              recipients: recipients,
+              message: recipients.message,
+              credit_used: credit_used,
+              user: user,
+              name: recipients.name,
+              description: recipients.description
+            )
+
           user.credits - credit_used < 0 ->
             conn
             |> put_flash(:info, "You need a more credit!")
-            |> render("index.html", recipients: recipients,
-                                    message: recipients.message,
-                                    credit_used: credit_used,
-                                    user: user,
-                                    name: recipients.name,
-                                    description: recipients.description)
+            |> render("index.html",
+              recipients: recipients,
+              message: recipients.message,
+              credit_used: credit_used,
+              user: user,
+              name: recipients.name,
+              description: recipients.description
+            )
         end
     end
   end
@@ -50,8 +56,12 @@ defmodule TextingWeb.Dashboard.CheckoutSmsPreviewController do
         spawn(fn -> send_message_and_save(user, recipients) end)
 
         conn
-        |> put_flash(:info, "Message sent successfully. Your analytics data will be updated shortly.")
+        |> put_flash(
+          :info,
+          "We are sending messages. Your analytics data will be updated shortly."
+        )
         |> redirect(to: dashboard_path(conn, :new))
+
       {:error, message} ->
         conn
         |> put_session(:intending_to_visit, conn.request_path)
@@ -70,9 +80,19 @@ defmodule TextingWeb.Dashboard.CheckoutSmsPreviewController do
     status_callback = System.get_env("MESSAGE_STATUS_CALLBACK")
     attrs = %{"message_type" => "sms"}
     # Send message
-    results = Sms.send_sms_with_messaging_service_async(phone_numbers, recipients.message, msg_sid, status_callback, account, token)
-    IO.puts "++++++++++= Results +++++++++++++++="
-    IO.inspect results
+    results =
+      Sms.send_sms_with_messaging_service_async(
+        phone_numbers,
+        recipients.message,
+        msg_sid,
+        status_callback,
+        account,
+        token
+      )
+
+    IO.puts("++++++++++= Results +++++++++++++++=")
+    IO.inspect(results)
+
     case Sales.confirm_order(recipients, attrs) do
       {:ok, %{id: order_id, user_id: user_id}} ->
         Messenger.create_message_status(results, order_id, user_id)
@@ -83,11 +103,11 @@ defmodule TextingWeb.Dashboard.CheckoutSmsPreviewController do
           bitly = Texting.Bitly.get_bitly_by_id(recipients.bitly_id)
           Bitly.confirm_changeset(bitly) |> Bitly.update()
         end
-        {:ok, "Message sent successfully. Your analytics data will be updated shortly."}
+
+        {:ok, "We are sending messages. Your analytics data will be updated shortly."}
+
       {:error, _changeset} ->
         {:error, "Can't send message!"}
     end
   end
-
-
 end

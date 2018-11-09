@@ -2,9 +2,13 @@ defmodule Texting.Analytics do
   alias Bitly.Bitly, as: BitlyApp
   alias Texting.{Bitly, Messenger, Formatter, Sales}
 
+  # To check function performance
+  use Appsignal.Instrumentation.Decorators
+
   def create_short_link(long_url) do
     domain = System.get_env("BITLY_DOMAIN")
     group_guid = System.get_env("BITLY_GROUP_ID")
+
     case BitlyApp.shorten(long_url, domain, group_guid) do
       {:ok, results} -> {:ok, results}
       {:error, errors} -> {:error, errors}
@@ -13,27 +17,31 @@ defmodule Texting.Analytics do
 
   def get_click_summary(bitlink_id) do
     case BitlyApp.click_summary(bitlink_id) do
-      {:ok, %{total_clicks: total_clicks}} ->  total_clicks
+      {:ok, %{total_clicks: total_clicks}} -> total_clicks
       {:error, errors} -> {:errors, errors}
     end
   end
 
+  @decorate transaction_event()
   def get_undelivered_message_status_count(message_status) do
     message_status
     |> Enum.filter(fn ms -> ms.status !== "delivered" end)
-    |> Enum.count
+    |> Enum.count()
   end
 
+  @decorate transaction_event()
   def get_delivered_message_status_count(message_status) do
     message_status
     |> Enum.filter(fn ms -> ms.status == "delivered" end)
-    |> Enum.count
+    |> Enum.count()
   end
 
   @doc """
   Get Click summary and update Bitly
   """
   def load_clicks(bitly) when bitly == nil, do: 0
+
+  @decorate transaction_event()
   def load_clicks(%Bitly{} = bitly) do
     total_clicks = get_click_summary(bitly.bitlink_id)
     Bitly.update(bitly, %{total_clicks: total_clicks})
@@ -45,7 +53,7 @@ defmodule Texting.Analytics do
     total_count = Enum.count(message_status)
     delivery_count = get_delivered_message_status_count(message_status)
 
-    percentage_number = (delivery_count / total_count) * 100
+    percentage_number = delivery_count / total_count * 100
     Formatter.display_percentage(percentage_number)
   end
 
@@ -56,14 +64,15 @@ defmodule Texting.Analytics do
   """
   def get_time_last_sent_message(user_id, message_type) do
     most_recent_campaign = Sales.get_most_recent_order_by_type(user_id, message_type)
+
     cond do
       Enum.count(most_recent_campaign) <= 0 ->
         "You have 0 history."
+
       Enum.count(most_recent_campaign) > 0 ->
         [most_recent_campaign] = most_recent_campaign
         Timex.from_now(most_recent_campaign.inserted_at)
     end
-
   end
 
   @doc """
