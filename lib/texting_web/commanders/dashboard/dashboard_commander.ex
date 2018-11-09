@@ -33,6 +33,7 @@ defmodule TextingWeb.Dashboard.DashboardCommander do
     #   Analytics.get_total_analytics(user_id, order_id)
 
     IO.puts("++++ poking ++++")
+    t0 = :os.system_time(:milli_seconds)
 
     poke(socket,
       total_sent: total_sent,
@@ -40,6 +41,9 @@ defmodule TextingWeb.Dashboard.DashboardCommander do
       undelivered_count: undelivered_count,
       total_clicks: total_clicks
     )
+
+    IO.puts("+++++++++++++ poking is done ++++++++++")
+    IO.puts("it took #{:os.system_time(:milli_seconds) - t0} ms")
 
     # recent_order: order
     IO.puts("++++ update charts ++++")
