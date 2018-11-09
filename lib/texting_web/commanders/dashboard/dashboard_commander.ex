@@ -4,8 +4,8 @@ defmodule TextingWeb.Dashboard.DashboardCommander do
 
   defhandler show_dashboard_stats(socket, sender) do
     order_id = sender.params["campaign_id"]
-    IO.puts "++++ Order id ++++"
-    IO.inspect order_id
+    IO.puts("++++ Order id ++++")
+    IO.inspect(order_id)
 
     user_id = socket.assigns.current_user_id
     order = Sales.get_order_by_id(order_id, user_id)
@@ -15,14 +15,16 @@ defmodule TextingWeb.Dashboard.DashboardCommander do
     deilvered_count = Analytics.get_delivered_message_status_count(message_status)
     undelivered_count = Analytics.get_undelivered_message_status_count(message_status)
     bitly = Bitly.get_bitly_by_order_id(order_id)
-    total_clicks = Analytics.load_clicks(bitly)
+    # total_clicks = Analytics.load_clicks(bitly)
 
-    poke socket,
-                total_sent: total_sent,
-                deilvered_count: deilvered_count,
-                undelivered_count: undelivered_count,
-                total_clicks: total_clicks
-                #recent_order: order
+    poke(socket,
+      total_sent: total_sent,
+      deilvered_count: deilvered_count,
+      undelivered_count: undelivered_count,
+      total_clicks: 0
+    )
+
+    # recent_order: order
     socket |> exec_js!("DashboardChart.update()")
   end
 end
