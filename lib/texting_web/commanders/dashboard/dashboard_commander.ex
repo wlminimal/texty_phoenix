@@ -35,12 +35,30 @@ defmodule TextingWeb.Dashboard.DashboardCommander do
     IO.puts("++++ poking ++++")
     t0 = :os.system_time(:milli_seconds)
 
-    poke(socket,
-      total_sent: total_sent,
-      deilvered_count: deilvered_count,
-      undelivered_count: undelivered_count,
-      total_clicks: total_clicks
-    )
+    # poke(socket,
+    #   total_sent: total_sent,
+    #   deilvered_count: deilvered_count,
+    #   undelivered_count: undelivered_count,
+    #   total_clicks: total_clicks
+    # )
+
+    set_prop!(socket, "#total-sent", %{"attributes" => %{"data-total-sent" => total_sent}})
+    set_prop!(socket, "#total-sent", innerHTML: total_sent)
+
+    set_prop!(socket, "#deilvered-count", %{
+      "attributes" => %{"data-deilvered-count" => deilvered_count}
+    })
+
+    set_prop!(socket, "#deilvered-count", innerHTML: deilvered_count)
+
+    set_prop!(socket, "#undelivered-count", %{
+      "attributes" => %{"data-undelivered-count" => undelivered_count}
+    })
+
+    set_prop!(socket, "#undelivered-count", innerHTML: undelivered_count)
+
+    set_prop!(socket, "#total-clicks", %{"attributes" => %{"data-total-clicks" => total_clicks}})
+    set_prop!(socket, "#total-clicks", innerHTML: total_clicks)
 
     IO.puts("+++++++++++++ poking is done ++++++++++")
     IO.puts("it took #{:os.system_time(:milli_seconds) - t0} ms")
