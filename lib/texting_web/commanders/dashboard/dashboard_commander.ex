@@ -29,18 +29,8 @@ defmodule TextingWeb.Dashboard.DashboardCommander do
     IO.puts("++++ load_clicks ++++")
     total_clicks = Analytics.load_clicks(bitly)
 
-    # {total_sent, deilvered_count, undelivered_count, total_clicks} =
-    #   Analytics.get_total_analytics(user_id, order_id)
-
     IO.puts("++++ poking ++++")
     t0 = :os.system_time(:milli_seconds)
-
-    # poke(socket,
-    #   total_sent: total_sent,
-    #   deilvered_count: deilvered_count,
-    #   undelivered_count: undelivered_count,
-    #   total_clicks: total_clicks
-    # )
 
     set_prop!(socket, "#total-sent", %{"attributes" => %{"data-total-sent" => total_sent}})
     set_prop!(socket, "#total-sent", innerHTML: total_sent)
