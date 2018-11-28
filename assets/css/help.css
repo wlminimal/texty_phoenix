@@ -63,6 +63,7 @@ body {
   font-size: 18px;
   font-weight: bold;
   margin: 20px 0;
+  line-height: 1.5;
 }
 
 .note-block {
@@ -72,4 +73,30 @@ body {
 
 .note-block h4 {
   color: red;
+}
+
+.casestudy-images {
+  width: 800px;
+  text-align: center;
+}
+
+.casestudy-desc {
+  font-size: 16px;
+  margin: 20px 0;
+  line-height: 1.7;
+}
+
+@media(max-width: 479px) {
+  .casestudy-images {
+    width: 300px;
+    text-align: center;
+  }
+
+  .jumbotron {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #eee;
+  }
 }

@@ -61,6 +61,7 @@ config :texting, Texting.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  database: "texting_prod_copy",
+  database: "texting_dev",
+  # database: "texting_prod_copy",
   hostname: "localhost",
   pool_size: 10

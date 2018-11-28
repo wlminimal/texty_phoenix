@@ -29,7 +29,7 @@ defmodule TextingWeb.Dashboard.DashboardCommander do
     IO.puts("++++ load_clicks ++++")
     total_clicks = Analytics.load_clicks(bitly)
 
-    IO.puts("++++ poking ++++")
+    IO.puts("++++ setting_props ++++")
     t0 = :os.system_time(:milli_seconds)
 
     set_prop!(socket, "#total-sent", %{"attributes" => %{"data-total-sent" => total_sent}})
@@ -50,7 +50,7 @@ defmodule TextingWeb.Dashboard.DashboardCommander do
     set_prop!(socket, "#total-clicks", %{"attributes" => %{"data-total-clicks" => total_clicks}})
     set_prop!(socket, "#total-clicks", innerHTML: total_clicks)
 
-    IO.puts("+++++++++++++ poking is done ++++++++++")
+    IO.puts("+++++++++++++ setting_props is done ++++++++++")
     IO.puts("it took #{:os.system_time(:milli_seconds) - t0} ms")
 
     # recent_order: order

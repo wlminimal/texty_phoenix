@@ -1,0 +1,82 @@
+<div class="help-content">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2 class="help-header">성도랑 소통하는 가장 좋은 방법</h2>
+      <h4 style="text-align: center; margin-bottom: 50px;">Texty marketing provides very simple way to get you started.
+        First <a href="<%= sign_in_path(@conn, :new) %>" target="_blank">sign in to dashboard</a>
+        (Not a member? <a href="<%= sign_up_path(@conn, :new) %>" target="_blank"> sign up for free</a> ).
+      </h4>
+
+      <img src="<%= static_path(@conn, "/images/casestudy/church.jpg") %>" class="casestudy-images" alt="">
+
+      <p class="casestudy-desc">먼저 Texty Marketing을 소개해 드리겠습니다.
+
+        텍스티 마케팅은, 회사, 단체, 교회의 소식을 고객들이나 직원 또는 교인들에게
+        핸드폰 문자(sms) 메세지 또는 이미지(mms) 메세지를 이용해서 단체 메세지를 전송하는 웹 기반 플랫폼 마케팅 회사입니다.
+
+        더욱 간단히 설명하자면, 단체 알림 문자 시스템입니다.
+      </p>
+      <img src="<%= static_path(@conn, "/images/casestudy/intro.jpg") %>" class="casestudy-images" alt="">
+
+      <p class="casestudy-desc">Texty Marketing의 적용 사례</p>
+      <img src="<%= static_path(@conn, "/images/casestudy/screenshot.png") %>"
+      class="casestudy-images"
+      alt="">
+
+      <p class="casestudy-desc">
+        <span style="font-weight: bold; font-style: italic; color: blueviolet; font-size: 20px; ">첫번째 적용사례는 교회소식을 단체문자를
+          통해서 알리는 것입니다.</span><br>
+        <br> 요즘 성도들은 보통 일주일에 한번 주일 예배를 참석해서 주보를 통해 교회의 소식이나 중요한 행사에 대한 소식을 접하게 되는 경우가 많습니다. <br>
+        평일에는 보통 그런 소식들이나 행사소식을 잊어버리기 쉽습니다.
+        그래서 보통 전화심방으로 알리기도 하며, 요즘에 가장 많이 쓰는 카카오톡으로 개인에게 알리거나 단체 카카오 채팅방을 만들어서 알리기도 합니다.
+        <br><br>
+        하지만 일일이 전화하거나 따로 문자나 카카오톡을 보내는 방법에는 그 수에 한계가 있고 시간의 효율성에 있어서 적합하지 않습니다.
+        또한 카카오톡을 이용해서 소식을 알리는 방법에는 여러 불편한 점이 있습니다. <br><br>
+
+        <span style="font-weight: bold;">첫번째</span>는 보내는 사람이 일일이 한사람 한사람 선택해서 대화창을 만들어서 같은 내용을 복사해서 붙여 넣기를 해야하는 불편함,<br>
+        <span style="font-weight: bold;">두번째</span>는 단체 카카오 채팅방을 만들게되면 여러명이 한방에 있게 됨으로 인해서 원치 않는 메세지를 받게 될수도 (다른 사람의
+        대답을 듣게 되는 경우) 있고,
+        <br>
+        <span style="font-weight: bold;">세번째</span>는 단체로 메세지를 보내는 양도 제한되 있어서 너무 많은 사람을 초대해서 메세지를 보내게 되면 일정기간동안 카카오톡이
+        정지될 수 있습니다.
+        <br><br>
+
+        <span style="font-weight: bold; font-style: italic; color:darkcyan;">하지만 텍스티 마케팅 서비스를 사용하시게 되면 이 모든것이 아주 쉽게
+          해결됩니다.</span>
+        <br><br>
+        1. 핸드폰 기본 기능인 문자(sms) 또는 이미지(mms) 메세지 서비스를 사용하기 때문에 특별한 앱의 제한(다른앱을 설치하지 않고서도) 없이 사용하실 수 있습니다.
+        <br>
+        2. 누구나 핸드폰을 소지하고 있고 수시로 확인하기 때문에 소식 전달하기에 가장 효율적입니다.
+        <br>
+        3. 수신자의 숫자에 제한을 받지 않습니다.
+        <br>
+        4. 수신자의 핸드폰으로 개별적으로 전송되기 때문에 단체 카카오 채팅방에서 발견되는 산만한 채팅방의 단점이 없습니다.
+        <br>
+        5. 문자에 인터넷 링크도 포함시킬수 있고 또한 사진도 첨부해서 보내실 수 있습니다.
+        <br><br>
+
+        <span style="font-weight: bold; font-style: italic; color: blueviolet; font-size: 20px;">두번째 적용 사례는 텍스티 마케팅
+          서비스를 이용해서 목사님의
+          설교링크를 보내는 것입니다.</span> <br><br>
+        대부분의 교회가 목사님의 귀한 설교를 교회 홈페이지나 Youtube에 올립니다. <br>
+        하지만 중요한것은 대부분의 사람들은 그 설교링크를 직접 입력하고 찾아가서 보질 않습니다. <br>
+        번거롭다고 생각하기 때문입니다. 하지만 설교링크를 문자메세지로 보내면 어떻게 될까요? <br>
+        많은 사람들이 아주 쉽게 목사님의 귀한 설교를 아무때나 접할 수 있습니다. <br>
+        <br><br>
+
+        <span style="font-weight: bold; font-style: italic; color:darkcyan;">텍스티 마케팅 서비스의 실제 사례를 요점하면 이렇습니다.</span>
+        <br><br>
+        1. 성도들에게 교회 소식과 행사소식을 빠른 시간 안에 알린다. <br>
+
+        2. 목사님의 설교링크를 문자 메세지로 바로 보내서 성도들이 원할때 언제든지 볼수 있게 한다. <br><br>
+
+
+        지금 당장 www.texty.marketing 접속하셔서 무료로 가입하셔서 100개 크레딧을 무료로 받으시고 직접 체험해 보시길 바랍니다. <br>
+
+        또한 지금 현재 무료 컨설팅과 무료 셋업을 진행중이니 이 좋은 기회를 놓치지 마시고 info@texty.marketing 또는 (213) 884 - 8790 으로 연락 바랍니다.
+
+      </p>
+      <br><br><br>
+    </div>
+  </div>
+</div>

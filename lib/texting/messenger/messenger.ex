@@ -106,6 +106,11 @@ defmodule Texting.Messenger do
     Repo.one(query)
   end
 
+  def get_message_status_by_phonenumber(phonenumber) do
+    query = from(m in MessageStatus, where: m.to == ^phonenumber)
+    Repo.all(query)
+  end
+
   def update_message_status(%MessageStatus{} = message_status, attrs \\ %{}) do
     message_status
     |> MessageStatus.changeset(attrs)

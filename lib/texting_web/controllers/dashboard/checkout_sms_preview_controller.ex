@@ -80,6 +80,9 @@ defmodule TextingWeb.Dashboard.CheckoutSmsPreviewController do
     status_callback = System.get_env("MESSAGE_STATUS_CALLBACK")
     attrs = %{"message_type" => "sms"}
     # Send message
+    IO.puts("++++++++++++ Start send message +++++++++++++++")
+    t0 = :os.system_time(:milli_seconds)
+
     results =
       Sms.send_sms_with_messaging_service_async(
         phone_numbers,
@@ -89,6 +92,9 @@ defmodule TextingWeb.Dashboard.CheckoutSmsPreviewController do
         account,
         token
       )
+
+    IO.puts("++++++++++++ Finish send message +++++++++++++++")
+    IO.puts("It took #{:os.system_time(:milli_seconds) - t0} ms")
 
     IO.puts("++++++++++= Results +++++++++++++++=")
     IO.inspect(results)

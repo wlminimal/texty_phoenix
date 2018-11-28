@@ -89,16 +89,16 @@ defmodule Texting.Analytics do
   @doc """
 
   """
-  def get_total_analytics(user_id, order_id) do
-    order = Sales.get_order_by_id(order_id, user_id)
-    message_status = Messenger.get_all_message_status(order_id)
+  # def get_total_analytics(user_id, order_id) do
+  #   order = Sales.get_order_by_id(order_id, user_id)
+  #   message_status = Messenger.get_all_message_status(order_id)
 
-    total_sent = Enum.count(message_status)
-    deilvered_count = get_delivered_message_status_count(message_status)
-    undelivered_count = get_undelivered_message_status_count(message_status)
-    bitly = Bitly.get_bitly_by_order_id(order_id)
-    total_clicks = load_clicks(bitly)
+  #   total_sent = Enum.count(message_status)
+  #   deilvered_count = get_delivered_message_status_count(message_status)
+  #   undelivered_count = get_undelivered_message_status_count(message_status)
+  #   bitly = Bitly.get_bitly_by_order_id(order_id)
+  #   total_clicks = load_clicks(bitly)
 
-    {total_sent, deilvered_count, undelivered_count, total_clicks}
-  end
+  #   {total_sent, deilvered_count, undelivered_count, total_clicks}
+  # end
 end
