@@ -2,18 +2,28 @@ defmodule TextingWeb.StripeWebhookController do
   use TextingWeb, :controller
 
   alias Texting.{Messenger, Finance, Account}
+
   @doc """
   Handle Stripe invoiceitem.created webhook.
   This occurs when user subscribe to plan or upgrade or downgrade.
   So adjust credits accordingly.
   """
   def handle_invoiceitem_created(conn, params) do
-    #IO.inspect params
-    %{"data" => %{"object" => %{"amount" => amount, "customer" => stripe_id, "plan" => %{"nickname" => plan_name, "id" => _plan_id}}}} = params
+    # IO.inspect params
+    %{
+      "data" => %{
+        "object" => %{
+          "amount" => amount,
+          "customer" => stripe_id,
+          "plan" => %{"nickname" => plan_name, "id" => _plan_id}
+        }
+      }
+    } = params
+
     IO.inspect(params)
     # Get customer id and query it from database.
-    #user = Account.get_user_by_stripe_id(stripe_id)
-    #user_changeset = Account.change_user(user)
+    # user = Account.get_user_by_stripe_id(stripe_id)
+    # user_changeset = Account.change_user(user)
     # Calculate credits to add.
     # user_changeset
     # |> Credit.add_extra_amount(amount, plan_name)
@@ -32,7 +42,7 @@ defmodule TextingWeb.StripeWebhookController do
   """
   def handle_subscription_deleted(conn, params) do
     %{"data" => %{"object" => %{"id" => sub_id}}} = params
-    IO.inspect sub_id
+    IO.inspect(sub_id)
     # Get user id
     %{user_id: user_id} = Finance.get_stripe_by_subs_id(sub_id)
     user = Account.get_user_by_id(user_id)
@@ -40,12 +50,14 @@ defmodule TextingWeb.StripeWebhookController do
     # token = user.twilio.token # get account token
     # TODO: change to live version before deploy
     # Testing
-    account_sid = System.get_env("TWILIO_TEST_ACCOUNT_SID") #twilio.account
-    token = System.get_env("TWILIO_TEST_AUTH_TOKEN")#twilio.token
+    # twilio.account
+    account_sid = System.get_env("TWILIO_TEST_ACCOUNT_SID")
+    # twilio.token
+    token = System.get_env("TWILIO_TEST_AUTH_TOKEN")
 
     user.phonenumbers
     |> Enum.map(& &1.phonenumber_sid)
-    |> Enum.map(& Messenger.release_phone_number(&1, account_sid, token))
+    |> Enum.map(&Messenger.release_phone_number(&1, account_sid, token))
 
     # Delete phone numbers from database
     Messenger.delete_all_phonenumbers(user)
@@ -57,7 +69,15 @@ defmodule TextingWeb.StripeWebhookController do
     twilio = Messenger.get_twilio_by_user_id(user_id)
     twilio_changeset = Messenger.change_twilio(twilio)
     {twilio_sid, twilio_token, twilio_msid} = Messenger.set_free_account_info_to_user()
-    twilio_changeset = Ecto.Changeset.change(twilio_changeset, %{account: twilio_sid, token: twilio_token, msid: twilio_msid, available_phone_number_count: 0})
+
+    twilio_changeset =
+      Ecto.Changeset.change(twilio_changeset, %{
+        account: twilio_sid,
+        token: twilio_token,
+        msid: twilio_msid,
+        available_phone_number_count: 0
+      })
+
     Messenger.update_twilio(twilio_changeset)
 
     send_resp(conn, 200, "")
@@ -69,14 +89,38 @@ defmodule TextingWeb.StripeWebhookController do
   save to the database.
   """
   def handle_invoice_payment_succeeded(conn, params) do
-    IO.puts "++++++++++++Invoice Payment Succeeded++++++++++++++"
-    IO.inspect params
-    IO.puts "++++++++++++Invoice Payment Succeeded++++++++++++++"
+    IO.puts("++++++++++++Invoice Payment Succeeded++++++++++++++")
+    IO.inspect(params)
+    IO.puts("++++++++++++Invoice Payment Succeeded++++++++++++++")
 
-    %{"data" => %{"object" => %{"customer" => stripe_id, "number" => receipt_number, "lines" => %{"data" => [%{"amount" => amount, "description" => description, "id" => invoice_id, "type" => type, "period" => %{"end" => _end, "start" => date}}]}}}} = params
-    IO.puts "++++++++++++receipt_number++++++++++++++"
-    IO.inspect receipt_number
-    IO.inspect stripe_id
+    %{
+      "data" => %{
+        "object" => %{
+          "customer" => stripe_id,
+          "number" => receipt_number,
+          "lines" => %{
+            "data" => [
+              %{
+                "amount" => amount,
+                "description" => description,
+                "id" => invoice_id,
+                "type" => type,
+                "period" => %{"end" => _end, "start" => date}
+              }
+            ]
+          }
+        }
+      }
+    } = params
+
+    IO.puts("++++++++++++receipt_number++++++++++++++")
+    IO.inspect(receipt_number)
+    IO.inspect(stripe_id)
+    IO.inspect(amount)
+    IO.inspect(description)
+    IO.inspect(invoice_id)
+    IO.inspect(type)
+    IO.inspect(date)
 
     Finance.create_invoice(params)
     send_resp(conn, 200, "")
@@ -90,9 +134,9 @@ defmodule TextingWeb.StripeWebhookController do
   TODO: Instead using webhook, I chose to implement while user make a payment...
   """
   def handle_charge_succeeded(conn, params) do
-    IO.puts "+++++++++++ Charge Succeeded +++++++++++++"
-    IO.inspect params
-    IO.puts "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+    IO.puts("+++++++++++ Charge Succeeded +++++++++++++")
+    IO.inspect(params)
+    IO.puts("+++++++++++++++++++++++++++++++++++++++++++++++++++")
 
     send_resp(conn, 200, "")
   end
