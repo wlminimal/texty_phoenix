@@ -121,7 +121,8 @@ defmodule TextingWeb.StripeWebhookController do
     IO.inspect(invoice_id)
     IO.inspect(type)
     IO.inspect(date)
-
+    IO.puts("++++++++++++stripe params ++++++++++++++")
+    IO.inspect(params)
     Finance.create_invoice(params)
     send_resp(conn, 200, "")
   end
