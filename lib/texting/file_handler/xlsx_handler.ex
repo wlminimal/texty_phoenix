@@ -11,7 +11,16 @@ defmodule Texting.FileHandler.XlsxHandler do
 
     # convert list to map
     for [name, phone_number] <- contacts do
-      %{"name" => name, "phone_number" => "#{phone_number}"}
+      cond do
+        name == nil ->
+          %{"name" => "No name", "phone_number" => "#{phone_number}"}
+
+        name != nil ->
+          %{"name" => name, "phone_number" => "#{phone_number}"}
+
+        true ->
+          %{"name" => name, "phone_number" => "#{phone_number}"}
+      end
     end
   end
 
